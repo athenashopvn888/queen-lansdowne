@@ -673,7 +673,7 @@ function AddOnsCard({ items, hiIdx }: { items: Item[]; hiIdx: number }) {
 const TICKER_SLIDES = [
   "🔥 Queen Lansdowne Cannabis — 1472 Queen St W, Toronto",
   "200+ Strains In Stock",
-  "Open 24 Hours",
+  "Open Daily: 10:00 AM - 03:00 AM",
   "ALL SALES ARE FINAL",
   "🎮 Play Games at queenlansdownecannabis.ca/games",
 ];
