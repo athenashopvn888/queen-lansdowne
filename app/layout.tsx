@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | Queen Lansdowne Cannabis",
   },
   description:
-    "Shop 200+ premium cannabis strains at Queen Lansdowne Cannabis. Exotic, Premium, AAA+, AA & Budget flower from $3/g. Toronto's uplifting dispensary at 1472 Queen St W. Open 24 Hours.",
+    "Shop 200+ premium cannabis strains at Queen Lansdowne Cannabis. Exotic, Premium, AAA+, AA & Budget flower from $3/g. Toronto's uplifting dispensary at 1472 Queen St W. Open Daily: 10:00 AM - 03:00 AM.",
   keywords: [
     "cannabis dispensary Toronto",
     "weed store Toronto",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "Queen Lansdowne Cannabis",
     title: "Queen Lansdowne Cannabis — Premium Toronto Cannabis Dispensary",
     description:
-      "200+ strains from $3/g. Exotic to Budget. Toronto's uplifting dispensary at 1472 Queen St W. Open 24 Hours.",
+      "200+ strains from $3/g. Exotic to Budget. Toronto's uplifting dispensary at 1472 Queen St W. Open Daily: 10:00 AM - 03:00 AM.",
     images: [
       {
         url: "https://queenlansdownecannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Queen Lansdowne Cannabis — Toronto's Uplifting Dispensary",
-    description: "200+ strains from $3/g. Open 24 Hours at 1472 Queen St W, Toronto.",
+    description: "200+ strains from $3/g. Open Daily: 10:00 AM - 03:00 AM at 1472 Queen St W, Toronto.",
     images: ["https://queenlansdownecannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg"],
   },
   robots: {
@@ -75,7 +75,7 @@ const jsonLd = {
   additionalType: "https://schema.org/Store",
   "@id": "https://queenlansdownecannabis.ca",
   name: "Queen Lansdowne Cannabis",
-  description: "Cannabis dispensary at 1472 Queen St W in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
+  description: "Cannabis dispensary at 1472 Queen St W in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open Daily: 10:00 AM - 03:00 AM.",
   url: "https://queenlansdownecannabis.ca",
   telephone: "+16475531472",
   image: "https://queenlansdownecannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
@@ -94,13 +94,21 @@ const jsonLd = {
     longitude: -79.4370110,
   },
   openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "00:00",
-      closes: "23:59",
-    },
-  ],
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "10:00",
+    "closes": "03:00"
+  }
+],
   sameAs: [
     "https://queenlansdownecannabis.ca/",
     "https://queenlansdownecannabis.ca/",

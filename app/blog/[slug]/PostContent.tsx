@@ -128,7 +128,7 @@ export default function PostContent() {
 
         <div className={styles.cta}>
           <p>
-            <strong>Queen Lansdowne Cannabis</strong> — 1472 Queen St W, Toronto · Open 24 Hours · (647) 553-1472
+            <strong>Queen Lansdowne Cannabis</strong> — 1472 Queen St W, Toronto · Open Daily: 10:00 AM - 03:00 AM · (647) 553-1472
           </p>
           <Link href="/exotic" className={styles.ctaBtn}>Browse Our Menu</Link>
         </div>
