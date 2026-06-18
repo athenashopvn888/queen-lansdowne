@@ -40,7 +40,7 @@ export default function Footer() {
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Address:</span>
               <span>1472 Queen St W</span>
-              <span>Toronto, ON M6K 1M3</span>
+              <span>Toronto, ON M6K 1M4</span>
               <span>Canada</span>
             </div>
             <div className={styles.infoBlock}>

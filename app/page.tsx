@@ -78,7 +78,7 @@ const LOCAL_FAQS = [
   },
   {
     q: "Where is Queen Lansdowne Cannabis located?",
-    a: "We are located at 1472 Queen St W, Toronto, ON M6K 1M3. Visit us in person or call us at (647) 553-1472. Free evening street parking is available.",
+    a: "We are located at 1472 Queen St W, Toronto, ON M6K 1M4. Visit us in person or call us at (647) 553-1472. Free evening street parking is available.",
   },
   {
     q: "What is the cheapest weed at Queen Lansdowne Cannabis?",
@@ -404,7 +404,7 @@ export default function HomePage() {
               <p className={styles.storeCardText}>
                 1472 Queen St W
                 <br />
-                Toronto, ON M6K 1M3
+                Toronto, ON M6K 1M4
                 <br />
                 <a
                   href="https://queenlansdownecannabis.ca/"
@@ -439,7 +439,7 @@ export default function HomePage() {
           {/* Map wrapper */}
           <div className={styles.mapWrap}>
             <iframe
-              src="https://maps.google.com/maps?q=1472%20Queen%20St%20W,+Toronto,+ON+M6K%201M3&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=1472%20Queen%20St%20W,+Toronto,+ON+M6K%201M4&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="350"
               style={{ border: 0, display: "block" }}

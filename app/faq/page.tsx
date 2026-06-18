@@ -16,7 +16,7 @@ const FAQ_CATEGORIES = [
   {
     title: "📍 Location & Hours",
     faqs: [
-      { q: "Where is Queen Lansdowne Cannabis located?", a: "We are located at 1472 Queen St W, Toronto, ON M6K 1M3. We're easily accessible by TTC bus routes and close to major highways like the 401." },
+      { q: "Where is Queen Lansdowne Cannabis located?", a: "We are located at 1472 Queen St W, Toronto, ON M6K 1M4. We're easily accessible by TTC bus routes and close to major highways like the 401." },
       { q: "What are your hours?", a: "We are open daily from 10:00 AM to 03:00 AM. Walk in anytime — no appointment needed." },
       { q: "Is there parking nearby?", a: "Yes. Free street parking is available nearby on surrounding streets in the evenings. We're also easily accessible by local transit." },
       { q: "How far are you from Mississauga?", a: "We're just 5 minutes from the highways and central transit routes. We are centrally located and easy to reach." },

@@ -6,7 +6,7 @@ import styles from "./contact.module.css";
 export const metadata: Metadata = {
   title: "Contact Us — Queen Lansdowne Cannabis | 1472 Queen St W, Toronto",
   description:
-    "Visit Queen Lansdowne Cannabis at 1472 Queen St W, Toronto, ON M6K 1M3. We are open daily from 10:00 AM to 03:00 AM. Walk-ins welcome.",
+    "Visit Queen Lansdowne Cannabis at 1472 Queen St W, Toronto, ON M6K 1M4. We are open daily from 10:00 AM to 03:00 AM. Walk-ins welcome.",
   alternates: {
     canonical: "https://queenlansdownecannabis.ca/contact",
   },
@@ -40,7 +40,7 @@ export default function ContactPage() {
               <p className={styles.infoText}>
                 1472 Queen St W
                 <br />
-                Toronto, ON M6K 1M3
+                Toronto, ON M6K 1M4
                 <br />
                 <span className={styles.infoMuted}>1472 Queen St W & Nearby Expressway</span>
               </p>
@@ -108,7 +108,7 @@ export default function ContactPage() {
           {/* Map */}
           <div className={styles.mapSection}>
             <iframe
-              src="https://maps.google.com/maps?q=1472%20Queen%20St%20W,+Toronto,+ON+M6K%201M3&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=1472%20Queen%20St%20W,+Toronto,+ON+M6K%201M4&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="400"
               style={{ border: 0 }}

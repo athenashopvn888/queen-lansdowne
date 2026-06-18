@@ -128,7 +128,7 @@ export default async function ItemsCategoryPage({
           <div className={styles.visitCta}>
             <h3 className={styles.visitTitle}>Visit Queen Lansdowne Cannabis</h3>
             <p className={styles.visitText}>
-              1472 Queen St W, Toronto, ON M6K 1M3 · Open Daily: 10:00 AM - 03:00 AM
+              1472 Queen St W, Toronto, ON M6K 1M4 · Open Daily: 10:00 AM - 03:00 AM
             </p>
             <a
               href="https://queenlansdownecannabis.ca/"

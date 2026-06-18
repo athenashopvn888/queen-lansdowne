@@ -85,7 +85,7 @@ const jsonLd = {
     streetAddress: "1472 Queen St W",
     addressLocality: "Toronto",
     addressRegion: "ON",
-    postalCode: "M6K 1M3",
+    postalCode: "M6K 1M4",
     addressCountry: "CA",
   },
   geo: {

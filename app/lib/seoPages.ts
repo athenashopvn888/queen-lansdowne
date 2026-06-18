@@ -44,11 +44,11 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Serving Toronto, Toronto & Mississauga",
-        body: "Queen Lansdowne Cannabis proudly serves customers from across the Greater Toronto Area. Whether you're coming from Weston, Mount Dennis, North Toronto, Etobicoke, Mississauga, Brampton, or downtown Toronto, we welcome you. Call us at (647) 553-1472 or visit us at 1472 Queen St W, Toronto, ON M6K 1M3.",
+        body: "Queen Lansdowne Cannabis proudly serves customers from across the Greater Toronto Area. Whether you're coming from Weston, Mount Dennis, North Toronto, Etobicoke, Mississauga, Brampton, or downtown Toronto, we welcome you. Call us at (647) 553-1472 or visit us at 1472 Queen St W, Toronto, ON M6K 1M4.",
       },
     ],
     faqs: [
-      { q: "Where is Queen Lansdowne Cannabis located?", a: "We are located at 1472 Queen St W, Toronto, ON M6K 1M3 — in the heart of 1472 Queen St W & Nearby Expressway area — one of Toronto's most accessible areas. We're near major transit bus routes and close to major highways." },
+      { q: "Where is Queen Lansdowne Cannabis located?", a: "We are located at 1472 Queen St W, Toronto, ON M6K 1M4 — in the heart of 1472 Queen St W & Nearby Expressway area — one of Toronto's most accessible areas. We're near major transit bus routes and close to major highways." },
       { q: "What are the hours for Queen Lansdowne Cannabis?", a: "We are open daily from 10:00 AM to 03:00 AM. Walk in anytime — no appointment needed. Whether it's day or night, our staff is here to help." },
       { q: "What cannabis products does Queen Lansdowne Cannabis carry?", a: "We carry 200+ strains of cannabis flower across 5 quality tiers (Exotic, Premium, AAA+, AA, Budget), plus edibles, vapes, concentrates, pre-rolls, magic mushrooms, native cigarettes, and accessories. Our menu updates in real time online." },
       { q: "What is the cheapest weed at Queen Lansdowne Cannabis?", a: "Our Budget tier starts at $3/g with value ounces from $40. Our AA tier is $4/g. Every tier includes our Buy 2g Get 1g FREE promotion, making our prices even more competitive." },
@@ -127,7 +127,7 @@ export const SEO_PAGES: SeoPageData[] = [
       { q: "Where can I buy cheap cigarettes in Toronto?", a: "Queen Lansdowne Cannabis at 1472 Queen St W offers some of the best cigarette prices in Toronto's Weston area. We are open daily from 10:00 AM to 03:00 AM so you can shop on your own schedule." },
       { q: "Are you open late for cigarette purchases?", a: "We are open daily from 10:00 AM to 03:00 AM. Whether you need cigarettes at noon or late at night, our doors are open." },
       { q: "Can I buy cigarettes and cannabis at Queen Lansdowne Cannabis?", a: "Absolutely. Queen Lansdowne Cannabis is both a fully-licensed cannabis dispensary and a tobacco retailer. Many customers appreciate the convenience of one stop for both products." },
-      { q: "Where is Queen Lansdowne Cannabis located?", a: "1472 Queen St W, Toronto, ON M6K 1M3 — in 1472 Queen St W & Nearby Expressway area. Near transit routes with free street parking available." },
+      { q: "Where is Queen Lansdowne Cannabis located?", a: "1472 Queen St W, Toronto, ON M6K 1M4 — in 1472 Queen St W & Nearby Expressway area. Near transit routes with free street parking available." },
     ],
   },
 
