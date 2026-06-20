@@ -130,14 +130,6 @@ export default async function ItemsCategoryPage({
             <p className={styles.visitText}>
               1472 Queen St W, Toronto, ON M6K 1M4 · Open Daily: 10:00 AM - 03:00 AM
             </p>
-            <a
-              href="https://queenlansdownecannabis.ca/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.visitBtn}
-            >
-              📍 Get Directions
-            </a>
           </div>
         </div>
       </section>

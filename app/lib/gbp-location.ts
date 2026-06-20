@@ -24,8 +24,8 @@ export const gbpLocation = {
     "Accessories"
   ],
   menuUrl: "/",
-  directionsUrl: "https://www.google.com/maps/search/?api=1&query=1472%20Queen%20St%20W%2C%20Toronto%2C%20ON%20M6K%201M4",
-  mapEmbedUrl: "https://maps.google.com/maps?q=Queen%20Lansdowne%20Cannabis%201472%20Queen%20St%20W%2C%20Toronto%2C%20ON%20M6K%201M4&t=&z=15&ie=UTF8&iwloc=&output=embed",
+  directionsUrl: "",
+  mapEmbedUrl: "",
   latitude: "43.6406611",
   longitude: "-79.4370110",
   hours: ["Open Daily: 10:00 AM - 03:00 AM"],
