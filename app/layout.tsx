@@ -5,11 +5,11 @@ import AgeGate from "./components/AgeGate";
 export const metadata: Metadata = {
   metadataBase: new URL("https://queenlansdownecannabis.ca"),
   title: {
-    default: "Queen Lansdowne Cannabis — Premium Cannabis Dispensary, Toronto",
+    default: "Queen Lansdowne Cannabis | Toronto Weed Dispensary & Menu",
     template: "%s | Queen Lansdowne Cannabis",
   },
   description:
-    "Shop 200+ premium cannabis strains at Queen Lansdowne Cannabis. Exotic, Premium, AAA+, AA & Budget flower from $3/g. Toronto's uplifting dispensary at 1472 Queen St W. Open Daily: 10:00 AM - 03:00 AM.",
+    "Queen Lansdowne Cannabis is a Toronto cannabis dispensary website for adults 19+. Use the site to check store info and browse flower, vape, edible, concentrate, pre-roll, and accessory categories.",
   keywords: [
     "cannabis dispensary Toronto",
     "weed store Toronto",

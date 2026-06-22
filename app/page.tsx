@@ -261,7 +261,7 @@ export default function HomePage() {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Explore Categories</h2>
             <p className={styles.sectionSubtitle}>
-              From custom disposable vapes and concentrates to accessories and cigarettes.
+              Browse Queen Lansdowne Cannabis store info and menu categories, including flower, vapes, edibles, concentrates, pre-rolls, and accessories.
             </p>
           </div>
 
