@@ -172,12 +172,12 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   "VAPE PENS": {
     banner: "/banners/01_Vape_Pens.webp",
     name: "THC Vape", slug: "vapes", color: "#8b5cf6", icon: "💨",
-    seoTitle: "Vape Pens Toronto — THC & Nicotine Cartridges",
-    seoIntro: "Shop THC and nicotine vape pens at Queen Lansdowne Cannabis, Toronto. Cartridges, 510-thread batteries, and premium vape brands — all in stock.",
-    seoDescription: "Queen Lansdowne Cannabis carries a curated selection of vape pens and cartridges in Toronto. From 510-thread THC cartridges to nicotine vape pods, we stock the most popular brands and flavours. Our knowledgeable budtenders can help you choose the right cartridge and battery setup. Visit us at 1472 Queen St W for the best vape selection in ByWard Market.",
+    seoTitle: "Vape Pens in Toronto | Queen Lansdowne Cannabis",
+    seoIntro: "Browse vape category information at Queen Lansdowne Cannabis in Toronto. Review vape-related menu categories and confirm current menu details before visiting.",
+    seoDescription: "Queen Lansdowne Cannabis provides a vape category page for adult shoppers reviewing vape-related menu information in Toronto. The page may include vape-related categories such as cartridges, pods, batteries, or disposable vape items when they are listed on the current menu. Use the website category page to review menu information, then confirm current store details before visiting Queen Lansdowne Cannabis at 1472 Queen St W in Toronto.",
     faqs: [
-      { q: "What vape pens do you sell?", a: "We carry 510-thread THC cartridges, nicotine vape pods, disposable vapes, and compatible batteries from top Canadian brands." },
-      { q: "Do you sell vape batteries?", a: "Yes! We stock 510-thread batteries and pod systems that pair with our cartridge selection." },
+      { q: "What vape-related items are listed on the menu?", a: "The vape category may include cartridges, pods, disposable vape items, and compatible batteries when they are listed on the current menu." },
+      { q: "Can customers check vape batteries on the menu?", a: "When batteries or pod systems are listed, customers can review them on the current menu before visiting." },
     ],
   },
   "VAPE DISPOSABLE": {
