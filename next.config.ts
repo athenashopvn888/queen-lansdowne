@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
     return [
       { source: "/cannabis-flower-strains/", destination: "/flower", permanent: true },
       { source: "/product-category/vape-pens", destination: "/items/vapes", permanent: true },
+      { source: "/product-category/accessories", destination: "/items/add-ons", permanent: true },
+      { source: "/product-category/edibles", destination: "/items/edibles", permanent: true },
       { source: "/edibles", destination: "/items/edibles", permanent: true },
       { source: "/vapes", destination: "/items/vapes", permanent: true },
       { source: "/vape-disposables", destination: "/items/vape-disposables", permanent: true },
