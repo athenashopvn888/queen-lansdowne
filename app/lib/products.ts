@@ -160,13 +160,13 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   EDIBLES: {
     banner: "/banners/edibles_prerolls_more_banner.webp",
     name: "Edibles", slug: "edibles", color: "#f97316", icon: "🍬",
-    seoTitle: "Cannabis Edibles Toronto — Gummies, Chocolates & Drinks",
-    seoIntro: "Browse the full cannabis edibles menu at Queen Lansdowne Cannabis on Toronto St, Toronto. We carry THC gummies, chocolates, drinks, and more from top Canadian brands.",
-    seoDescription: "Looking for cannabis edibles in Toronto? Queen Lansdowne Cannabis stocks a wide range of THC-infused gummies, chocolates, beverages, and baked goods. Our edibles range from micro-dose options for beginners to high-potency products for experienced consumers. All products are lab-tested and sourced from licensed Canadian producers. Visit us at 1472 Queen St W — we are Open Daily: 10:00 AM - 03:00 AM.",
+    seoTitle: "Cannabis Edibles in Toronto | Queen Lansdowne Cannabis",
+    seoIntro: "Browse cannabis edibles category information at Queen Lansdowne Cannabis in Toronto. Review edible-related menu details and confirm current store information before visiting.",
+    seoDescription: "Queen Lansdowne Cannabis provides an edibles category page for adult shoppers reviewing edible-related menu information in Toronto. Use this page to review current menu details, then confirm store information before visiting Queen Lansdowne Cannabis at 1472 Queen St W in Toronto.",
     faqs: [
-      { q: "What cannabis edibles do you carry?", a: "We stock THC gummies, chocolates, beverages, capsules, and baked goods from top Canadian brands. Potencies range from 10mg to 1000mg+ THC." },
+      { q: "What edible-related information can shoppers review?", a: "This category page helps adult shoppers review edible-related menu information when it is listed on the current menu." },
       { q: "How long do edibles take to kick in?", a: "Cannabis edibles typically take 30-90 minutes to take effect. Start with a low dose (5-10mg) and wait at least 2 hours before consuming more." },
-      { q: "Can I buy edibles at Queen Lansdowne Cannabis?", a: "Yes! Visit us at 1472 Queen St W, Toronto. We're open daily from 10:00 AM to 03:00 AM with a full edibles selection in store." },
+      { q: "How should customers confirm current edible menu details?", a: "Review the current menu information on this page and confirm store details before visiting Queen Lansdowne Cannabis." },
     ],
   },
   "VAPE PENS": {
@@ -215,11 +215,11 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   "ADD ONS": {
     banner: "/banners/05_Accessories.webp",
     name: "Accessories", slug: "add-ons", color: "#34d399", icon: "➕",
-    seoTitle: "Cannabis Accessories Toronto — Grinders, Papers, Lighters & More",
-    seoIntro: "Essential cannabis accessories at Queen Lansdowne Cannabis, Toronto. Grinders, rolling papers, lighters, trays, and more.",
-    seoDescription: "Queen Lansdowne Cannabis carries all the accessories you need for the perfect smoke session. From premium grinders and rolling papers to lighters, trays, and storage containers, we have everything in stock. Visit us at 1472 Queen St W, Toronto.",
+    seoTitle: "Cannabis Accessories in Toronto | Queen Lansdowne Cannabis",
+    seoIntro: "Browse accessories category information at Queen Lansdowne Cannabis in Toronto. Review accessory-related menu details and confirm current store information before visiting.",
+    seoDescription: "Queen Lansdowne Cannabis provides an accessories category page for adult shoppers reviewing accessory-related menu information in Toronto. Use this page to review current menu details, then confirm store information before visiting Queen Lansdowne Cannabis at 1472 Queen St W in Toronto.",
     faqs: [
-      { q: "What accessories do you sell?", a: "We carry grinders, rolling papers, filter tips, lighters, rolling trays, storage jars, and more." },
+      { q: "What accessory-related information can shoppers review?", a: "This category page helps adult shoppers review accessory-related menu information when it is listed on the current menu." },
     ],
   },
   "MAGIC & OTHERS": {
