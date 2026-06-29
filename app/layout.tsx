@@ -5,11 +5,11 @@ import AgeGate from "./components/AgeGate";
 export const metadata: Metadata = {
   metadataBase: new URL("https://queenlansdownecannabis.ca"),
   title: {
-    default: "Queen Lansdowne Cannabis | Toronto Weed Dispensary & Menu",
+    default: "Queen Lansdowne Cannabis | Queen West Dispensary",
     template: "%s | Queen Lansdowne Cannabis",
   },
   description:
-    "Queen Lansdowne Cannabis is a Toronto cannabis dispensary website for adults 19+. Use the site to check store info and browse flower, vape, edible, concentrate, pre-roll, and accessory categories.",
+    "Queen Lansdowne Cannabis is a Toronto dispensary on Queen St W near Lansdowne and Parkdale with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info.",
   keywords: [
     "cannabis dispensary Toronto",
     "weed store Toronto",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "https://queenlansdownecannabis.ca",
     siteName: "Queen Lansdowne Cannabis",
-    title: "Queen Lansdowne Cannabis — Premium Toronto Cannabis Dispensary",
+    title: "Queen Lansdowne Cannabis | Queen West Dispensary",
     description:
-      "200+ strains from $3/g. Exotic to Budget. Toronto's uplifting dispensary at 1472 Queen St W. Open Daily: 10:00 AM - 03:00 AM.",
+      "Queen Lansdowne Cannabis is a Toronto dispensary on Queen St W near Lansdowne and Parkdale with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info.",
     images: [
       {
         url: "https://queenlansdownecannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Queen Lansdowne Cannabis — Toronto's Uplifting Dispensary",
-    description: "200+ strains from $3/g. Open Daily: 10:00 AM - 03:00 AM at 1472 Queen St W, Toronto.",
+    title: "Queen Lansdowne Cannabis | Queen West Dispensary",
+    description: "Queen Lansdowne Cannabis is a Toronto dispensary on Queen St W near Lansdowne and Parkdale with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info.",
     images: ["https://queenlansdownecannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg"],
   },
   robots: {
