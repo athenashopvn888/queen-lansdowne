@@ -30,33 +30,33 @@ export const STATIC_POSTS: StaticBlogPost[] = [
     readTime: "4 min",
     content: `## Planning A Visit To Queen Lansdowne Cannabis
 
-Queen Lansdowne Cannabis is connected to a highly recognizable Toronto intersection: Queen Street West and Lansdowne Avenue. For adults 19+, a useful visit-planning article should help answer simple questions before a shopper leaves home: is this the right store page, what information should I check, and what should I avoid assuming from a blog article?
+Queen Lansdowne Cannabis is connected to a highly recognizable Toronto intersection: Queen Street West and Lansdowne Avenue. For adults 19+, a useful visit-planning article should make the next step feel simple: confirm the right store page, review the menu/category links, and plan the visit with local context in mind.
 
-This draft supports the store page. It does not replace it and does not create live claims about item status or store operations.
+This guide supports the store page with local context, category navigation, and clear next steps for shoppers planning a visit.
 
 ## Why The Queen And Lansdowne Area Needs Clear Store Context
 
 Queen Street West is a busy corridor with local residents, transit users, visitors, and people planning multiple stops. When someone searches for Queen Lansdowne Cannabis, they are usually looking for practical store information and local context.
 
-The article keeps that local framing without drifting into unsupported comparisons. It explains the Queen and Lansdowne area, reminds readers that cannabis retail is for adults 19+, and points them toward the store page for details that may change.
+The guide keeps that local framing focused on real shopper needs. It explains the Queen and Lansdowne area, keeps the content adult 19+, and points readers toward the store page and menu links for the next useful step.
 
 ## What To Check On The Store Page
 
 Before visiting, adult shoppers can review the Queen Lansdowne Cannabis store page for store identity, location details, contact information, and broad category browsing. These checks help avoid confusion and make the visit more straightforward.
 
-The store page should remain the source of truth. Blog content can help explain how to use it, but the blog should not create its own business facts.
+The store page brings those details together, while the guide helps shoppers understand how to use it before heading out.
 
-## Category Browsing Without Overclaiming
+## Category Browsing That Helps Shoppers
 
-Category names can help shoppers understand the structure of a cannabis menu. They may see broad browsing groups such as flower, pre-rolls, vapes, edibles, concentrates, or accessories. Those labels are helpful for orientation, but the article should not claim that a particular item is currently present.
+Category names help shoppers understand the structure of a cannabis menu. Broad browsing groups such as flower, pre-rolls, vapes, edibles, concentrates, or accessories make it easier to move from local research to the right section of the site.
 
-The safe framing is simple: use the categories to understand how the store organizes browsing, then use the store page or direct store contact for current item-specific questions.
+The helpful path is simple: use categories to understand how the store organizes browsing, then use the store page or direct store contact when you want staff help with a specific question.
 
 ## Adult 19+ Visit Basics
 
 Adults 19+ should bring valid government identification and check the store page before visiting. If a reader is planning around transit, local errands, or a specific time window, they should rely on the store page for the latest store-specific details.
 
-This keeps the guide useful and trustworthy. It gives a real shopper a checklist while respecting NAP Lock, Hours Lock, and content compliance boundaries.
+This keeps the guide useful, local, and easy to act on. It gives shoppers a simple checklist before they visit.
 
 ## FAQ
 
@@ -64,17 +64,17 @@ This keeps the guide useful and trustworthy. It gives a real shopper a checklist
 
 Yes. The article is written for adults 19+ planning a visit to Queen Lansdowne Cannabis.
 
-### Does this guide confirm current item details?
+### How can shoppers check current menu details?
 
-No. It explains how to prepare and where to check details. The store page remains the source of truth.
+Use the store page and menu/category links before visiting, then ask staff if you need help comparing options.
 
-### Can this article say Queen Lansdowne Cannabis is better than nearby stores?
+### What makes this guide useful for local shoppers?
 
-No. This draft avoids ranking, review, rating, and superiority claims.
+It keeps the focus on Queen and Lansdowne visit planning, store-specific navigation, and the next page a shopper should use.
 
-### Does this guide change NAP or hours?
+### What should shoppers check before heading out?
 
-No. NAP Lock and Hours Lock remain preserved.`,
+Confirm the store page, bring valid government identification, and use the contact or directions options when planning your visit.`,
     relatedLinks: [
       {
         title: "Queen Lansdowne Cannabis Toronto store page",
