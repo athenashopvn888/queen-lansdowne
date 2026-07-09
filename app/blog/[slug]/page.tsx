@@ -15,7 +15,7 @@ export async function generateMetadata({
       title: staticPost.seoTitle,
       description: staticPost.metaDescription,
       alternates: {
-        canonical: `https://queenlansdownecannabis.ca/blog/${slug}`,
+        canonical: `https://www.queenlansdownecannabis.ca/blog/${slug}`,
       },
     };
   }
@@ -29,7 +29,7 @@ export async function generateMetadata({
     title: `${title} - Blog | Queen Lansdowne Cannabis`,
     description: `Read about ${title.toLowerCase()} and other cannabis guides from Queen Lansdowne Cannabis in Toronto.`,
     alternates: {
-      canonical: `https://queenlansdownecannabis.ca/blog/${slug}`,
+      canonical: `https://www.queenlansdownecannabis.ca/blog/${slug}`,
     },
   };
 }

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Cannabis Blog & Guides — Queen Lansdowne Cannabis | Toronto",
   description: "Read the latest strain reviews, dosing guides, and cannabis news from Queen Lansdowne Cannabis in Toronto.",
   alternates: {
-    canonical: "https://queenlansdownecannabis.ca/blog",
+    canonical: "https://www.queenlansdownecannabis.ca/blog",
   },
 };
 

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://queenlansdownecannabis.ca/sitemap.xml",
+    sitemap: "https://www.queenlansdownecannabis.ca/sitemap.xml",
   };
 }

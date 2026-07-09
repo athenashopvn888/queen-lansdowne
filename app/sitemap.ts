@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { TIER_CONFIG, CATEGORY_CONFIG, allFlowers, allItems } from "./lib/products";
 import { SEO_PAGES } from "./lib/seoPages";
 
-const BASE = "https://queenlansdownecannabis.ca";
+const BASE = "https://www.queenlansdownecannabis.ca";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();
@@ -60,4 +60,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...seoPages];
 }
-
