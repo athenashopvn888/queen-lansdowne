@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { TIER_CONFIG, CATEGORY_CONFIG, allFlowers, allItems } from "./lib/products";
 import { SEO_PAGES } from "./lib/seoPages";
+import { STATIC_POSTS } from "./blog/staticPosts";
 
 const BASE = "https://www.queenlansdownecannabis.ca";
 
@@ -58,5 +59,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...seoPages];
+  /* Static blog posts */
+  const blogPosts: MetadataRoute.Sitemap = STATIC_POSTS.map((p) => ({
+    url: `${BASE}/blog/${p.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...seoPages, ...blogPosts];
 }
