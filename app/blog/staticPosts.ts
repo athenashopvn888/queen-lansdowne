@@ -24,7 +24,7 @@ export const STATIC_POSTS: StaticBlogPost[] = [
     metaDescription:
       "Plan a visit to Queen Lansdowne Cannabis near Queen St W and Lansdowne with adult 19+ store info, local context, and safe page checks.",
     excerpt: "Planning a visit to Queen Lansdowne Cannabis.",
-    author: "Athena SEO Team",
+    author: "Queen Lansdowne Cannabis Team",
     date: "2026-07-01",
     category: "Visit Guide",
     readTime: "4 min",
