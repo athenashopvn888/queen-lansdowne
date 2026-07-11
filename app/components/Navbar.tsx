@@ -21,6 +21,7 @@ const ALL_LINKS = [
   { href: "/delivery", label: "🚗 Delivery" },
   { href: "/faq", label: "FAQ" },
   { href: "/blog", label: "Blog" },
+  { href: "/resources", label: "Resources" },
   { href: "/games", label: "🎮" },
 ];
 

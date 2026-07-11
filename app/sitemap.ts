@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { TIER_CONFIG, CATEGORY_CONFIG, allFlowers, allItems } from "./lib/products";
 import { SEO_PAGES } from "./lib/seoPages";
 import { STATIC_POSTS } from "./blog/staticPosts";
+import { RESOURCE_PAGES } from "./resources/resourceData";
 
 const BASE = "https://www.queenlansdownecannabis.ca";
 
@@ -67,5 +68,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...seoPages, ...blogPosts];
+  /* Queen Lansdowne Resource Centre */
+  const resourcePages: MetadataRoute.Sitemap = RESOURCE_PAGES.map((p) => ({
+    url: `${BASE}${p.route}`,
+    lastModified: p.dateModified,
+    changeFrequency: p.kind === "update" ? ("monthly" as const) : ("weekly" as const),
+    priority: p.kind === "main" ? 0.85 : p.kind === "hub" ? 0.75 : 0.7,
+  }));
+
+  return [...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...seoPages, ...blogPosts, ...resourcePages];
 }
