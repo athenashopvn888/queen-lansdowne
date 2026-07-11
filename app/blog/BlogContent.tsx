@@ -17,18 +17,18 @@ export default function BlogContent() {
             Queen Lansdowne Cannabis <span className={styles.heroAccent}>Blog</span>
           </h1>
           <p className={styles.heroSub}>
-            Adult 19+ visit-planning notes, local context, and safe menu-category guidance.
+            Real-world menu tips for Queen West shoppers who want the right page, the right category, and fewer wasted clicks.
           </p>
         </div>
       </section>
 
       <section className={styles.postsSection}>
         <div className={styles.container}>
-          <h2 className={styles.sectionTitle}>Guides &amp; Resources</h2>
+          <h2 className={styles.sectionTitle}>Menu Guides for Real Shoppers</h2>
           <div className={styles.postsGrid}>
             {[...STATIC_POSTS].sort((a, b) => b.date.localeCompare(a.date)).map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className={styles.postCard}>
-                <div className={styles.postEmoji}>Guide</div>
+                <div className={styles.postEmoji}>Read</div>
                 <div className={styles.postMeta}>
                   <span className={styles.postCategory}>{post.category}</span>
                   <span className={styles.postDot}>-</span>
@@ -51,9 +51,9 @@ export default function BlogContent() {
 
       <section className={styles.ctaSection}>
         <div className={styles.ctaInner}>
-          <h2 className={styles.ctaTitle}>Plan Your Visit</h2>
+          <h2 className={styles.ctaTitle}>Shop the Live Menu</h2>
           <p className={styles.ctaSub}>
-            Review store details and menu categories before visiting as an adult 19+ shopper.
+            Check current categories, prices, and listings before heading over. If one item makes the trip, ask the store first.
           </p>
           <div className={styles.ctaBtns}>
             <Link href="/weed-dispensary-toronto" className={styles.ctaBtn}>

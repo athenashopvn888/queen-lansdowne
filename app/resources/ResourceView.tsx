@@ -223,7 +223,7 @@ function SecondTake({ page }: { page: ResourcePage }) {
       <p className={styles.sectionLabel}>{page.secondTake.label}</p>
       <p className={styles.secondAuthor}>
         <strong>{page.secondTake.name}</strong>
-        {page.secondTake.handle ? ` - ${page.secondTake.handle}` : ""} - {page.secondTake.role}
+        {page.secondTake.handle ? ` - ${page.secondTake.handle}` : ""}
       </p>
       <p>{page.secondTake.body}</p>
     </aside>
@@ -238,7 +238,7 @@ export default function ResourceView({ page }: { page: ResourcePage }) {
           title: child.h1,
           href: child.route,
           description: child.excerpt || child.metaDescription,
-          category: "Resource category",
+          category: "Menu guide",
           author: child.author.name,
           updated: child.dateModified,
         }))
@@ -266,8 +266,6 @@ export default function ResourceView({ page }: { page: ResourcePage }) {
             <p className={styles.summary}>{page.excerpt}</p>
             <div className={styles.meta}>
               <span>By {page.author.name}{page.author.handle ? ` - ${page.author.handle}` : ""}</span>
-              <span>{page.author.role}</span>
-              <span>Published {displayDate(page.datePublished)}</span>
               <span>Updated {displayDate(page.dateModified)}</span>
             </div>
           </div>

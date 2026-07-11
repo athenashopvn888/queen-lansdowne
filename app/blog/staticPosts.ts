@@ -58,7 +58,7 @@ export const STATIC_POSTS: StaticBlogPost[] = [
     "author": "Quinn West",
     "authorName": "Quinn West",
     "authorHandle": "@QuinnLansdowne",
-    "authorRole": "House Writer",
+    "authorRole": "Menu Blogger",
     "date": "2026-07-01",
     "modifiedDate": "2026-07-11",
     "category": "Store Guide",
@@ -67,10 +67,10 @@ export const STATIC_POSTS: StaticBlogPost[] = [
     "faq": "",
     "internal_links_used": "",
     "editorialRemark": {
-      "label": "Another House Writer Adds",
+      "label": "Second take",
       "authorName": "Lana Queen",
       "authorHandle": "@LanaOnQueen",
-      "authorRole": "House Writer",
+      "authorRole": "Menu Blogger",
       "body": "One extra move I like: keep the store page open until the visit is actually happening. Old tabs make people confident about the wrong details, and that is how a quick stop turns into a detour nobody asked for."
     },
     "relatedLinks": [
@@ -107,7 +107,7 @@ export const STATIC_POSTS: StaticBlogPost[] = [
     "author": "Lana Queen",
     "authorName": "Lana Queen",
     "authorHandle": "@LanaOnQueen",
-    "authorRole": "House Writer",
+    "authorRole": "Menu Blogger",
     "date": "2026-07-09",
     "modifiedDate": "2026-07-11",
     "category": "Flower Guide",
@@ -116,10 +116,10 @@ export const STATIC_POSTS: StaticBlogPost[] = [
     "faq": "",
     "internal_links_used": "",
     "editorialRemark": {
-      "label": "Another House Writer Adds",
+      "label": "Second take",
       "authorName": "Quinn West",
       "authorHandle": "@QuinnLansdowne",
-      "authorRole": "House Writer",
+      "authorRole": "Menu Blogger",
       "body": "The cleanest flower question is not always what is best. It is what section am I comparing today? Budget, AA, AAA+, Premium, and Exotic all save time when the shopper chooses the lane first and checks what is current before deciding."
     },
     "relatedLinks": [
@@ -171,7 +171,7 @@ export const STATIC_POSTS: StaticBlogPost[] = [
     "author": "Quinn West",
     "authorName": "Quinn West",
     "authorHandle": "@QuinnLansdowne",
-    "authorRole": "House Writer",
+    "authorRole": "Menu Blogger",
     "date": "2026-07-09",
     "modifiedDate": "2026-07-11",
     "category": "Menu Guide",
@@ -180,10 +180,10 @@ export const STATIC_POSTS: StaticBlogPost[] = [
     "faq": "",
     "internal_links_used": "",
     "editorialRemark": {
-      "label": "Another House Writer Adds",
+      "label": "Second take",
       "authorName": "Lana Queen",
       "authorHandle": "@LanaOnQueen",
-      "authorRole": "House Writer",
+      "authorRole": "Menu Blogger",
       "body": "The menu feels less crowded once the first decision is format. Flower, pre-rolls, edibles, THC vapes, and concentrates are not the same errand, so they should not be browsed like one. Pick the lane first and the whole page gets friendlier."
     },
     "relatedLinks": [

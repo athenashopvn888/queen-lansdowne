@@ -8,7 +8,7 @@
 .content {
   max-width: 780px;
   margin: 0 auto;
-  padding: 100px 24px 60px;
+  padding: 150px 24px 60px;
 }
 
 .loading, .notFound {
@@ -59,12 +59,13 @@
   font-weight: 900;
   color: var(--text-primary);
   margin: 0 0 12px;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   line-height: 1.15;
 }
 
 .meta {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   font-size: 14px;
   color: var(--text-secondary);
@@ -195,4 +196,18 @@
   color: var(--text-secondary);
   font-size: 14px;
   line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 190px 24px 56px;
+  }
+
+  .breadcrumb {
+    margin-bottom: 24px;
+  }
+
+  .meta {
+    gap: 6px 12px;
+  }
 }

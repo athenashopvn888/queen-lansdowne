@@ -113,7 +113,6 @@ export default function PostContent({ managerPost = null, slug, storeName = STOR
   }
   const relatedLinks = relatedLinksForPost(post);
   const authorName = post.authorName || post.author || `The ${storeName} Team`;
-  const authorRole = post.authorRole || "House Writer";
   const authorHandle = post.authorHandle || "";
   return (
     <main className={styles.main}>
@@ -127,8 +126,7 @@ export default function PostContent({ managerPost = null, slug, storeName = STOR
         <header className={styles.header}>
           <h1 className={styles.title}>{post.h1 || post.title}</h1>
           <div className={styles.meta}>
-            <span>By {authorName}{authorHandle ? ` · ${authorHandle}` : ""}</span>
-            <span>{authorRole}</span>
+            <span>By {authorName}{authorHandle ? ` - ${authorHandle}` : ""}</span>
             <span>Published {displayDate(post.date)}</span>
             {post.modifiedDate && post.modifiedDate !== post.date && <span>Updated {displayDate(post.modifiedDate)}</span>}
           </div>
@@ -137,8 +135,8 @@ export default function PostContent({ managerPost = null, slug, storeName = STOR
         {post.faq && <div className={styles.body}>{renderContent(post.faq)}</div>}
         {post.editorialRemark?.body && (
           <section className={styles.relatedLinks}>
-            <h2 className={styles.contentH2}>{post.editorialRemark.label || "Another House Writer Adds"}</h2>
-            <p className={styles.contentP}><strong>{post.editorialRemark.authorName} · {post.editorialRemark.authorHandle}</strong><br />{post.editorialRemark.authorRole}</p>
+            <h2 className={styles.contentH2}>{post.editorialRemark.label || "Second take"}</h2>
+            <p className={styles.contentP}><strong>{post.editorialRemark.authorName} - {post.editorialRemark.authorHandle}</strong></p>
             <p className={styles.contentP}>{post.editorialRemark.body}</p>
           </section>
         )}
@@ -149,9 +147,9 @@ export default function PostContent({ managerPost = null, slug, storeName = STOR
           </section>
         )}
         <div className={styles.cta}>
-          <p><strong>{storeName}</strong> - use the store page for current store details before visiting.</p>
+          <p><strong>{storeName}</strong> - check the live menu for current products, prices, and stock before heading over.</p>
           {ctaLine && <p>{ctaLine}</p>}
-          <Link href={STORE_BLOG_CONFIG.storePath} className={styles.ctaBtn}>Store Page</Link>
+          <Link href={STORE_BLOG_CONFIG.storePath} className={styles.ctaBtn}>Open Store Page</Link>
         </div>
         <Link href="/blog" className={styles.backLink}>Back to Blog</Link>
       </article>
