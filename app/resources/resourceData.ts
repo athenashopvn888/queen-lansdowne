@@ -921,7 +921,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "dateModified": "2026-07-11",
     "heroImage": "/storeFavicon.webp",
     "excerpt": "This section helps adults 19+ understand how native cigarettes may be organized on the Queen Lansdowne Cannabis menu and what details to check before visiting. Selection can rotate, so brand, variety, pack, carton, and p",
-    "body": "This section helps adults 19+ understand how native cigarettes may be organized on the Queen Lansdowne Cannabis menu and what details to check before visiting. Selection can rotate, so brand, variety, pack, carton, and price questions should always be confirmed through the current store information.\n\nFor native cigarettes in Toronto, the useful move is checking the current store information instead of trusting an old brand list.\n\nThese resources do not make health or safety claims about tobacco. Smoking and nicotine use carry serious health risks. The purpose of the section is menu clarity and accurate store navigation.\n\n### Guides in this section\n\n**Native Cigarettes in Toronto: What to Check Before Visiting**\nA current-information guide for Queen West shoppers looking for native smokes.\n\n**Cigarette Packs vs Cartons: What the Listing Means**\nA simple explanation of units, packaging, and why the current listing matters.\n\n### Current store information\n\nExisting native-cigarette landing page: `/info/native-cigarettes-york`\nCurrent menu category: `/items/cigarettes`\n\n### Quinns note\n\nFor a category that changes by brand and variety, accuracy matters more than a long list that can become stale.",
+    "body": "This section helps adults 19+ understand how native cigarettes may be organized on the Queen Lansdowne Cannabis menu and what details to check before visiting. Selection can rotate, so brand, variety, pack, carton, and price questions should always be confirmed through the current store information.\n\nFor native cigarettes in Toronto, the useful move is checking the current cigarette category before making the trip.\n\n### Confirmed $25 carton listings\n\nThe current QLC cigarette category lists Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, Canadian Classics Silver, Rolled Gold Lights, Nexus Full, Nexus Lights, and Time Full at $25 per carton. Selection can still move, so use `/items/cigarettes` or ask the store when one brand decides the trip.\n\nThese resources do not make health or safety claims about tobacco. Smoking and nicotine use carry serious health risks. The purpose of the section is menu clarity and accurate store navigation.\n\n### Guides in this section\n\n**Native Cigarettes in Toronto: What to Check Before Visiting**\nA current-information guide for Queen West shoppers looking for native smokes.\n\n**Cigarette Packs vs Cartons: What the Listing Means**\nA simple explanation of units, packaging, and why the current listing matters.\n\n### Current store information\n\nExisting native-cigarette landing page: `/info/native-cigarettes-york`\nCurrent menu category: `/items/cigarettes`\n\n### Quinns note\n\nFor a category that changes by brand and variety, accuracy matters more than a long list that can become stale.",
     "secondTake": null,
     "linkRoutes": [
       "/info/native-cigarettes-york",
@@ -1775,7 +1775,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "parentRoute": "/resources/native-smokes",
     "h1": "Native Cigarettes in Toronto: What to Check Before Visiting",
     "seoTitle": "Native Cigarettes in Toronto | Queen Lansdowne Cannabis",
-    "metaDescription": "An informational guide to checking current native cigarette selection, packs, cartons, varieties, and Queen West store details at Queen Lansdowne Cannabis.",
+    "metaDescription": "Native cigarette guide for Queen Lansdowne Cannabis with confirmed brand examples, $25 carton listings, pack/carton checks, and Queen West store links.",
     "primaryKeyword": "native cigarettes in Toronto",
     "supportingKeywords": [
       "native smokes Toronto",
@@ -1791,18 +1791,19 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "datePublished": "2026-07-11",
     "dateModified": "2026-07-11",
     "heroImage": "/storeFavicon.webp",
-    "excerpt": "Adults 19+ looking for native cigarettes in Toronto usually need current answers: which brands or varieties are listed, whether the item is sold as a pack or carton, the current price, and whether the selection is availa",
-    "body": "Adults 19+ looking for native cigarettes in Toronto usually need current answers: which brands or varieties are listed, whether the item is sold as a pack or carton, the current price, and whether the selection is available at this location.\n\nQueen Lansdowne Cannabis has an existing native-cigarette information page, but current selection should still be confirmed before visiting for one specific product.\n\n## Brand and variety can change\n\nA long brand list can become inaccurate quickly. A better resource explains which details to check:\n\n- Brand\n- Variety\n- Pack or carton\n- Quantity\n- Current price\n- Current availability\n- Store location\n\nWhen a specific brand or variety matters, confirm it through the current store information.\n\n## Native smokes and native cigarettes\n\nBoth phrases are commonly used by shoppers. The Resource Centre uses Native Smokes as the category name while naturally including native cigarettes in page titles and descriptions.\n\nThat allows the section to match real search language without forcing the same phrase into every paragraph.\n\n## Queen West location\n\nQueen Lansdowne Cannabis is located at 1472 Queen St W near Lansdowne. Use the main store page to confirm current hours and contact details.\n\n## Tobacco health note\n\nSmoking and nicotine use carry serious health risks. This guide provides store and menu-navigation information only. It does not make safety or health claims about tobacco products.\n\n## Current links\n\n- Native cigarette information: `/info/native-cigarettes-york`\n- Store page: `/weed-dispensary-toronto`\n- Resource hub: `/resources/native-smokes/`",
+    "excerpt": "Adults 19+ looking for native cigarettes in Toronto can check confirmed QLC brand examples, $25 carton listings, pack/carton wording, current price, and availability before visiting.",
+    "body": "Adults 19+ looking for native cigarettes in Toronto usually need current answers: which brands or varieties are listed, whether the item is sold as a pack or carton, the current price, and whether the selection is available at this location.\n\nQueen Lansdowne Cannabis has an existing native-cigarette information page and a current cigarette category. For adults comparing cheap native cigarettes in Queen West, the current menu is the place to check the brand, unit, and price before visiting.\n\n## Confirmed $25 carton brands\n\nThe current QLC cigarette category lists these native cigarette carton options at $25 per carton:\n\n- Canadian Lights\n- Canadian Full\n- Putters\n- Canadian Goose Full\n- Canadian Goose Lights\n- Canadian Menthol\n- Canadian Classics Original\n- Canadian Classics Silver\n- Rolled Gold Lights\n- Nexus Full\n- Nexus Lights\n- Time Full\n\nUse that list as a menu snapshot, not a forever promise. If one brand matters, check `/items/cigarettes` or contact the store before leaving.\n\n## What to check before visiting\n\nA useful cigarette listing gives you the details to compare:\n\n- Brand\n- Variety\n- Pack or carton\n- Quantity\n- Current price\n- Current availability\n- Store location\n\nWhen a specific brand or variety matters, confirm it through the current store information.\n\n## Native smokes and native cigarettes\n\nBoth phrases are commonly used by shoppers. The Resource Centre uses Native Smokes as the category name while naturally including native cigarettes in page titles and descriptions.\n\nThat allows the section to match real search language without forcing the same phrase into every paragraph.\n\n## Queen West location\n\nQueen Lansdowne Cannabis is located at 1472 Queen St W near Lansdowne. Use the main store page to confirm current hours and contact details.\n\n## Tobacco health note\n\nSmoking and nicotine use carry serious health risks. This guide provides store and menu-navigation information only. It does not make safety or health claims about tobacco products.\n\n## Current links\n\n- Native cigarette information: `/info/native-cigarettes-york`\n- Cigarette category: `/items/cigarettes`\n- Store page: `/weed-dispensary-toronto`\n- Resource hub: `/resources/native-smokes`",
     "secondTake": {
       "label": "A Second Take",
       "name": "Queen Lansdowne Cannabis Team",
       "handle": "@QueenLansdowneTeam",
       "role": "Official Store Team",
       "type": "Organization",
-      "body": "Current brand, variety, package, and price information should be confirmed before visiting for a specific cigarette product."
+      "body": "Current brand, variety, carton, and $25 price information should still be checked before visiting for a specific cigarette product."
     },
     "linkRoutes": [
       "/info/native-cigarettes-york",
+      "/items/cigarettes",
       "/weed-dispensary-toronto",
       "/resources/native-smokes"
     ],
@@ -1816,6 +1817,11 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         "title": "Native cigarettes information",
         "href": "/info/native-cigarettes-york",
         "description": "Read the current native-cigarette information page."
+      },
+      {
+        "title": "Cigarettes",
+        "href": "/items/cigarettes",
+        "description": "Browse current cigarette listings."
       },
       {
         "title": "Queen Lansdowne Cannabis store page",
@@ -1868,7 +1874,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "dateModified": "2026-07-11",
     "heroImage": "/storeFavicon.webp",
     "excerpt": "A pack and a carton are different sales units. That sounds obvious, but menu comparisons become confusing when the package type is not read beside the current price.",
-    "body": "A pack and a carton are different sales units. That sounds obvious, but menu comparisons become confusing when the package type is not read beside the current price.\n\nThe purpose of this guide is not to recommend one format. It is to make the listing easier to understand.\n\n## Pack listings\n\nA pack listing refers to an individual retail pack. The listing should be checked for:\n\n- Brand\n- Variety\n- Pack size where shown\n- Current price\n- Current availability\n\n## Carton listings\n\nA carton contains multiple packs. The exact number and packaging details should be confirmed from the current listing or store information rather than assumed.\n\nCarton price and pack price should not be compared as if they describe the same quantity.\n\n## Compare the same unit\n\nWhen comparing current products:\n\n1. Confirm pack or carton.\n2. Confirm quantity.\n3. Confirm brand and variety.\n4. Read the current posted price.\n5. Ask the store when the listing does not show enough detail.\n\n## Why current information matters\n\nNative cigarette selection can rotate. A static resource should explain the terminology without locking a brand or price into the page.\n\n## Tobacco health note\n\nSmoking and nicotine use carry serious health risks. This page is informational and intended for adults 19+.",
+    "body": "A pack and a carton are different sales units. That sounds obvious, but menu comparisons become confusing when the package type is not read beside the current price.\n\nThe purpose of this guide is not to recommend one format. It is to make the listing easier to understand.\n\n## Pack listings\n\nA pack listing refers to an individual retail pack. The listing should be checked for:\n\n- Brand\n- Variety\n- Pack size where shown\n- Current price\n- Current availability\n\n## Carton listings\n\nA carton contains multiple packs. Queen Lansdowne Cannabis currently lists confirmed native cigarette carton options at $25 per carton, including Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, Canadian Classics Silver, Rolled Gold Lights, Nexus Full, Nexus Lights, and Time Full.\n\nCarton price and pack price should not be compared as if they describe the same quantity. If one brand or carton count matters, check `/items/cigarettes` or ask the store before leaving.\n\n## Compare the same unit\n\nWhen comparing current products:\n\n1. Confirm pack or carton.\n2. Confirm quantity.\n3. Confirm brand and variety.\n4. Read the current posted price.\n5. Ask the store when the listing does not show enough detail.\n\n## Why current information matters\n\nNative cigarette selection can rotate. A static resource should explain the terminology while pointing shoppers back to the current $25 carton listings.\n\n## Tobacco health note\n\nSmoking and nicotine use carry serious health risks. This page is informational and intended for adults 19+.",
     "secondTake": {
       "label": "A Second Take",
       "name": "Queen Lansdowne Cannabis Team",
@@ -1877,13 +1883,21 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "type": "Organization",
       "body": "Most confusion disappears once the unit is clear. Pack and carton are not two prices for the same amount."
     },
-    "linkRoutes": [],
+    "linkRoutes": [
+      "/items/cigarettes"
+    ],
     "childRoutes": [],
     "relatedRoutes": [
       "/resources/native-smokes",
       "/resources/native-smokes/native-cigarettes-guide"
     ],
-    "commercialLinks": [],
+    "commercialLinks": [
+      {
+        "title": "Cigarettes",
+        "href": "/items/cigarettes",
+        "description": "Browse current cigarette listings."
+      }
+    ],
     "cards": [
       {
         "title": "Native Smokes and Cigarette Guides",

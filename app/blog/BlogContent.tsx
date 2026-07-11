@@ -1,6 +1,5 @@
 ﻿"use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -11,18 +10,6 @@ export default function BlogContent() {
   return (
     <main className={styles.main}>
       <Navbar />
-
-      <section style={{ width: "100%", overflow: "hidden", marginTop: "92px" }}>
-        <Image
-          src="/banners/blog_banner.webp"
-          alt="Queen Lansdowne Cannabis Blog"
-          width={1920}
-          height={640}
-          priority
-          sizes="100vw"
-          style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
-        />
-      </section>
 
       <section className={styles.hero}>
         <div className={styles.heroInner}>
