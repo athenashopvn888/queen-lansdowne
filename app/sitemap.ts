@@ -1,8 +1,6 @@
 import type { MetadataRoute } from "next";
 import { TIER_CONFIG, CATEGORY_CONFIG, allFlowers, allItems } from "./lib/products";
 import { SEO_PAGES } from "./lib/seoPages";
-import { STATIC_POSTS } from "./blog/staticPosts";
-import { RESOURCE_PAGES } from "./resources/resourceData";
 
 const BASE = "https://www.queenlansdownecannabis.ca";
 
@@ -14,7 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/flower`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
     { url: `${BASE}/weed-dispensary-toronto/`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/delivery`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
   ];
@@ -59,21 +56,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  /* Static blog posts */
-  const blogPosts: MetadataRoute.Sitemap = STATIC_POSTS.map((p) => ({
-    url: `${BASE}/blog/${p.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
-
-  /* Queen Lansdowne Resource Centre */
-  const resourcePages: MetadataRoute.Sitemap = RESOURCE_PAGES.map((p) => ({
-    url: `${BASE}${p.route}`,
-    lastModified: p.dateModified,
-    changeFrequency: p.kind === "update" ? ("monthly" as const) : ("weekly" as const),
-    priority: p.kind === "main" ? 0.85 : p.kind === "hub" ? 0.75 : 0.7,
-  }));
-
-  return [...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...seoPages, ...blogPosts, ...resourcePages];
+  return [...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...seoPages];
 }

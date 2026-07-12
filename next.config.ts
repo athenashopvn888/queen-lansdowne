@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      { source: "/blog", destination: "/", permanent: true },
+      { source: "/blog/:path*", destination: "/", permanent: true },
       { source: "/cannabis-flower-strains/", destination: "/flower", permanent: true },
       { source: "/product-category/vape-pens", destination: "/items/vapes", permanent: true },
       { source: "/product-category/accessories", destination: "/items/add-ons", permanent: true },
