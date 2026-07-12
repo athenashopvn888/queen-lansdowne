@@ -1,36 +1,34 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ResourceView from "../ResourceView";
-import { getResourcePageBySlugParts, getResourceStaticParams, resourceCanonical } from "../resourceData";
+import { getResourcePage, RESOURCE_PAGES } from "../resourceData";
 
 type ResourceRouteProps = {
-  params: Promise<{ slug: string[] }>;
+  params: Promise<{ slug?: string[] }>;
 };
 
+function routeSlug(slug?: string[]) {
+  return (slug || []).join("/");
+}
+
 export function generateStaticParams() {
-  return getResourceStaticParams();
+  return RESOURCE_PAGES.filter((page) => page.slug).map((page) => ({ slug: page.slug.split("/") }));
 }
 
 export async function generateMetadata({ params }: ResourceRouteProps): Promise<Metadata> {
   const { slug } = await params;
-  const page = getResourcePageBySlugParts(slug);
+  const page = getResourcePage(routeSlug(slug));
   if (!page) return {};
   return {
-    title: { absolute: page.seoTitle },
-    description: page.metaDescription,
-    alternates: { canonical: resourceCanonical(page) },
-    openGraph: {
-      title: page.seoTitle,
-      description: page.metaDescription,
-      url: resourceCanonical(page),
-      type: page.kind === "article" || page.kind === "update" ? "article" : "website",
-    },
+    title: page.seoTitle,
+    description: page.description,
+    alternates: { canonical: "https://www.queenlansdownecannabis.ca/resources/" + page.slug },
   };
 }
 
-export default async function ResourceRoute({ params }: ResourceRouteProps) {
+export default async function ResourcePage({ params }: ResourceRouteProps) {
   const { slug } = await params;
-  const page = getResourcePageBySlugParts(slug);
+  const page = getResourcePage(routeSlug(slug));
   if (!page) notFound();
   return <ResourceView page={page} />;
 }

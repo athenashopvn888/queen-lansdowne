@@ -1,25 +1,13 @@
 import type { Metadata } from "next";
 import ResourceView from "./ResourceView";
-import { getResourcePageByRoute, resourceCanonical } from "./resourceData";
+import { RESOURCE_HOME } from "./resourceData";
 
-const page = getResourcePageByRoute("/resources");
-
-export function generateMetadata(): Metadata {
-  if (!page) return {};
-  return {
-    title: { absolute: page.seoTitle },
-    description: page.metaDescription,
-    alternates: { canonical: resourceCanonical(page) },
-    openGraph: {
-      title: page.seoTitle,
-      description: page.metaDescription,
-      url: resourceCanonical(page),
-      type: "website",
-    },
-  };
-}
+export const metadata: Metadata = {
+  title: RESOURCE_HOME.seoTitle,
+  description: RESOURCE_HOME.description,
+  alternates: { canonical: "https://www.queenlansdownecannabis.ca/resources" },
+};
 
 export default function ResourcesPage() {
-  if (!page) return null;
-  return <ResourceView page={page} />;
+  return <ResourceView page={RESOURCE_HOME} />;
 }
