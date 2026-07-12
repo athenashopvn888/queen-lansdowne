@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { TIER_CONFIG, CATEGORY_CONFIG, allFlowers, allItems } from "./lib/products";
 import { SEO_PAGES } from "./lib/seoPages";
+import { RESOURCE_PAGES } from "./resources/resourceData";
 
 const BASE = "https://www.queenlansdownecannabis.ca";
 
@@ -56,5 +57,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...seoPages];
+  const resourcePages: MetadataRoute.Sitemap = RESOURCE_PAGES.map((p) => ({
+    url: `${BASE}${p.route}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: p.route === "/resources" ? 0.8 : 0.65,
+  }));
+
+  return [...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...seoPages, ...resourcePages];
 }
