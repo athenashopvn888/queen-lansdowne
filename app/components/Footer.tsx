@@ -67,7 +67,6 @@ export default function Footer() {
               >
                 Google Maps
               </a>
-                          <Link href="/resources">Resources</Link>
             </nav>
           </div>
         </div>
