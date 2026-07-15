@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { TIER_CONFIG, CATEGORY_CONFIG, allFlowers, allItems } from "./lib/products";
 import { SEO_PAGES } from "./lib/seoPages";
-import { RESOURCE_PAGES } from "./resources/resourceData";
+import { RESOURCE_PATHS } from "./resources/resourceData";
 
 const BASE = "https://www.queenlansdownecannabis.ca";
 
@@ -13,9 +13,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/flower`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
     { url: `${BASE}/weed-dispensary-toronto/`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE}/resources`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${BASE}/careers/budtender`, lastModified: now, changeFrequency: "monthly", priority: 0.65 },
     { url: `${BASE}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/delivery`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
   ];
+
+  const resourcePages: MetadataRoute.Sitemap = RESOURCE_PATHS
+    .filter((path) => path !== "/resources")
+    .map((path) => ({
+      url: `${BASE}${path}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: path.split("/").length > 3 ? 0.65 : 0.75,
+    }));
 
   /* Tier pages */
   const tierPages: MetadataRoute.Sitemap = Object.values(TIER_CONFIG).map((t) => ({
@@ -57,12 +68,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const resourcePages: MetadataRoute.Sitemap = RESOURCE_PAGES.map((p) => ({
-    url: `${BASE}${p.route}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: p.route === "/resources" ? 0.8 : 0.65,
-  }));
-
-  return [...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...seoPages, ...resourcePages];
+  return [...staticPages, ...resourcePages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...seoPages];
 }

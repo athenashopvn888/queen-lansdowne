@@ -217,6 +217,21 @@ export default function HomePage() {
       )}
 
       {/* ── BENTO MOSAIC HERO ── */}
+      <section className={styles.hiringBannerSection} aria-label="Queen Lansdowne Cannabis hiring">
+        <div className={styles.hiringBanner}>
+          <div className={styles.hiringBannerCopy}>
+            <span className={styles.hiringBannerLabel}>Now Hiring</span>
+            <h2 className={styles.hiringBannerTitle}>Budtenders / Managers Wanted At Queen Lansdowne Cannabis</h2>
+            <p className={styles.hiringBannerText}>
+              Love talking cannabis, helping people shop smarter, and keeping a busy retail floor sharp? Online applications only. If we think you may be a good fit, we will contact you.
+            </p>
+          </div>
+          <Link href="/careers/budtender" className={styles.hiringBannerButton}>
+            Apply Online
+          </Link>
+        </div>
+      </section>
+
       <section className={styles.hero}>
         <div className={styles.heroBg} />
         <div className={styles.heroOverlay} />

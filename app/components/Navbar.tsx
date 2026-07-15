@@ -19,6 +19,8 @@ const ALL_LINKS = [
   { href: "/items/cigarettes", label: "Cigarettes" },
   { href: "/items/add-ons", label: "Accessories" },
   { href: "/delivery", label: "🚗 Delivery" },
+  { href: "/careers/budtender", label: "Hiring" },
+  { href: "/resources", label: "Resources" },
   { href: "/faq", label: "FAQ" },
 ];
 
@@ -27,7 +29,7 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar} id="main-nav">
-      {/* Top bar — logo + open now */}
+      {/* Top bar — logo + hiring CTA */}
       <div className={styles.topBar}>
         <Link href="/" className={styles.logo} style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none" }}>
           <img src="/storeFavicon.webp" alt="Queen Lansdowne Cannabis Logo" style={{ height: "30px", width: "30px", objectFit: "contain", borderRadius: "4px" }} />
@@ -43,10 +45,10 @@ export default function Navbar() {
           </span>
         </Link>
         <div className={styles.topBarRight}>
-          <span className={styles.open}>
+          <Link href="/careers/budtender" className={styles.open} aria-label="Join the Queen Lansdowne Cannabis team">
             <span className={styles.dot}></span>
-            Open Now
-          </span>
+            Join Team
+          </Link>
         </div>
       </div>
 

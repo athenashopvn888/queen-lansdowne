@@ -9,7 +9,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* ── Top bar: logo + open now ── */
+/* Top bar: logo + hiring CTA */
 .topBar {
   display: flex;
   align-items: center;
@@ -57,19 +57,28 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #34d399;
-  background: rgba(52, 211, 153, 0.1);
-  border: 1px solid rgba(52, 211, 153, 0.25);
+  color: #111827;
+  background: #fbbf24;
+  border: 1px solid #fbbf24;
   padding: 5px 12px;
   border-radius: 100px;
   white-space: nowrap;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(251, 191, 36, 0.24);
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.open:hover {
+  background: #fde68a;
+  border-color: #fde68a;
+  box-shadow: 0 14px 30px rgba(251, 191, 36, 0.32);
+  transform: translateY(-1px);
 }
 .dot {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #34d399;
-  box-shadow: 0 0 6px #34d399;
+  background: #111827;
+  box-shadow: 0 0 6px rgba(17, 24, 39, 0.5);
   animation: pulse 2s ease-in-out infinite;
 }
 @keyframes pulse {
