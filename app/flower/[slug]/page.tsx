@@ -31,7 +31,7 @@ export async function generateMetadata({
     title: `${flower.name} | ${tierName} ${flower.type === "indica" ? "Indica" : flower.type === "sativa" ? "Sativa" : "Hybrid"} | THC ${flower.thc} | Queen Lansdowne Cannabis Toronto`,
     description: strainData.metaDescription,
     alternates: {
-      canonical: `https://queenlansdownecannabis.ca/flower/${slug}`,
+      canonical: `https://www.queenlansdownecannabis.ca/flower/${slug}`,
     },
     openGraph: {
       title: `${flower.name} | Queen Lansdowne Cannabis`,
@@ -60,9 +60,8 @@ function getJsonLd(flower: FlowerProduct) {
 
   const offers: any = {
     "@type": "Offer",
-    url: `https://queenlansdownecannabis.ca/flower/${flower.slug}`,
+    url: `https://www.queenlansdownecannabis.ca/flower/${flower.slug}`,
     priceCurrency: "CAD",
-    availability: "https://schema.org/InStock",
     itemCondition: "https://schema.org/NewCondition",
     seller: { "@type": "Organization", name: "Queen Lansdowne Cannabis" },
     hasMerchantReturnPolicy: {
@@ -80,7 +79,7 @@ function getJsonLd(flower: FlowerProduct) {
     "@context": "https://schema.org",
     "@type": "Product",
     name: flower.name,
-    image: flower.image ? [flower.image.startsWith('http') ? flower.image : `https://queenlansdownecannabis.ca${flower.image.startsWith('/') ? '' : '/'}${flower.image}`] : undefined,
+    image: flower.image ? [flower.image.startsWith('http') ? flower.image : `https://www.queenlansdownecannabis.ca${flower.image.startsWith('/') ? '' : '/'}${flower.image}`] : undefined,
     description: strainData.description,
     brand: { "@type": "Brand", name: "Queen Lansdowne Cannabis" },
     sku: cleanSku(flower.sku || flower.slug),
@@ -101,19 +100,19 @@ function getBreadcrumbJsonLd(flower: FlowerProduct) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://queenlansdownecannabis.ca"
+        "item": "https://www.queenlansdownecannabis.ca"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": tierName,
-        "item": `https://queenlansdownecannabis.ca/${tierSlug}`
+        "item": `https://www.queenlansdownecannabis.ca/${tierSlug}`
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": flower.name,
-        "item": `https://queenlansdownecannabis.ca/flower/${flower.slug}`
+        "item": `https://www.queenlansdownecannabis.ca/flower/${flower.slug}`
       }
     ]
   };
@@ -297,7 +296,7 @@ export default async function FlowerPage({
               </div>
 
               <div className={styles.visitCta}>
-                <p>Available in-store &middot; Walk-in welcome &middot; No appointment needed</p>
+                <p>Check the current menu &middot; Walk-in welcome &middot; No appointment needed</p>
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@ import "./globals.css";
 import AgeGate from "./components/AgeGate";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://queenlansdownecannabis.ca"),
+  metadataBase: new URL("https://www.queenlansdownecannabis.ca"),
   title: {
     default: "Queen Lansdowne Cannabis | Queen West Dispensary",
     template: "%s | Queen Lansdowne Cannabis",
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://queenlansdownecannabis.ca",
+    url: "https://www.queenlansdownecannabis.ca",
     siteName: "Queen Lansdowne Cannabis",
     title: "Queen Lansdowne Cannabis | Queen West Dispensary",
     description:
       "Queen Lansdowne Cannabis is a Toronto dispensary on Queen St W near Lansdowne and Parkdale with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info.",
     images: [
       {
-        url: "https://queenlansdownecannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
+        url: "https://www.queenlansdownecannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
         width: 1200,
         height: 630,
         alt: "Queen Lansdowne Cannabis — Premium Cannabis Dispensary Toronto",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Queen Lansdowne Cannabis | Queen West Dispensary",
     description: "Queen Lansdowne Cannabis is a Toronto dispensary on Queen St W near Lansdowne and Parkdale with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info.",
-    images: ["https://queenlansdownecannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg"],
+    images: ["https://www.queenlansdownecannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg"],
   },
   robots: {
     index: true,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://queenlansdownecannabis.ca",
+    canonical: "https://www.queenlansdownecannabis.ca",
   },
   verification: {
     // google: "your-google-verification-code",
@@ -73,12 +73,12 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Store",
   additionalType: "https://schema.org/Store",
-  "@id": "https://queenlansdownecannabis.ca",
+  "@id": "https://www.queenlansdownecannabis.ca",
   name: "Queen Lansdowne Cannabis",
   description: "Cannabis dispensary at 1472 Queen St W in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open Daily: 10:00 AM - 03:00 AM.",
-  url: "https://queenlansdownecannabis.ca",
+  url: "https://www.queenlansdownecannabis.ca",
   telephone: "+16475531472",
-  image: "https://queenlansdownecannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
+  image: "https://www.queenlansdownecannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
   priceRange: "$3 - $12/g",
   address: {
     "@type": "PostalAddress",
@@ -110,10 +110,10 @@ const jsonLd = {
   }
 ],
   sameAs: [
-    "https://queenlansdownecannabis.ca/",
-    "https://queenlansdownecannabis.ca/",
+    "https://www.queenlansdownecannabis.ca/",
+    "https://www.queenlansdownecannabis.ca/",
   ],
-  hasMap: "https://queenlansdownecannabis.ca/",
+  hasMap: "https://www.queenlansdownecannabis.ca/",
   areaServed: {
     "@type": "City",
     name: "Toronto",

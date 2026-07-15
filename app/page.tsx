@@ -308,7 +308,7 @@ export default function HomePage() {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Featured Strains</h2>
             <p className={styles.sectionSubtitle}>
-              Staff picks and top sellers dynamically updated from our real-time stock sheet.
+              A rotating sample from the current flower menu.
             </p>
           </div>
 
@@ -326,15 +326,15 @@ export default function HomePage() {
       <section className={styles.seoSection}>
         <div className={styles.container}>
           <div className={styles.seoPanel}>
-            <h2 className={styles.seoPanelTitle}>1472 Queen St W & Nearby Expressway's Premier Cannabis Dispensary — Open Daily: 10:00 AM - 03:00 AM</h2>
+            <h2 className={styles.seoPanelTitle}>1472 Queen St W & Nearby Expressway&apos;s Local Cannabis Dispensary — Open Daily: 10:00 AM - 03:00 AM</h2>
             <p className={styles.seoPanelText}>
-              Welcome to <strong>Queen Lansdowne Cannabis</strong>, Toronto's premier cannabis destination at 1472 Queen St W. We carry an electrifying selection of top-shelf strains — from ultra-rare exotics to solid everyday budget picks.
+              Welcome to <strong>Queen Lansdowne Cannabis</strong> at 1472 Queen St W. Browse flower across several price tiers, from Exotic and Premium to everyday Budget options.
             </p>
             <p className={styles.seoPanelText}>
-              We are open Open Daily: 10:00 AM - 03:00 AM — Queen Lansdowne Cannabis is here to serve you. Our live menu is constantly refreshed with the freshest drops, premium prerolls, artisan edibles, and everything in between. Whether you're winding down or stocking up for the weekend, our knowledgeable staff can help during listed store hours.
+              We are open Open Daily: 10:00 AM - 03:00 AM — Queen Lansdowne Cannabis is here to serve you. The current menu brings together flower, pre-rolls, edibles, vapes, and other categories. Our staff can help shoppers compare those categories during listed store hours.
             </p>
             <p className={styles.seoPanelText}>
-              Searching for a cannabis dispensary in Toronto or the surrounding area? Queen Lansdowne Cannabis is your go-to destination for premium flower, potent prerolls, and artisan edibles. Our six-tier pricing system means quality cannabis at every budget level — starting from just $3/g.
+              Searching for a cannabis dispensary in Toronto or the surrounding area? Queen Lansdowne Cannabis offers flower, pre-rolls, edibles, vapes, and other menu categories. Clear flower tiers help shoppers compare prices before visiting.
             </p>
           </div>
         </div>

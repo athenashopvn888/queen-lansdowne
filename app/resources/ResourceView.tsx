@@ -278,7 +278,7 @@ export default function ResourceView({ page }: { page: ResourcePage }) {
 
         <div className={styles.storeCta}>
           <p>
-            Use the live menu for current product details and the store page for current visit information before
+            Use the current menu for product details and the store page for current visit information before
             heading to Queen and Lansdowne.
           </p>
           <Link href={STORE_ROUTE}>Open the store page</Link>

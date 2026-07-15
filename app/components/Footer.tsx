@@ -63,7 +63,7 @@ export default function Footer() {
               <Link href="/weed-dispensary-toronto/">Queen Lansdowne Cannabis Weed Dispensary in Toronto</Link>
               <Link href="/contact">Contact Us</Link>
               <a
-                href="https://queenlansdownecannabis.ca/"
+                href="https://www.queenlansdownecannabis.ca/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -76,7 +76,7 @@ export default function Footer() {
         <div className={styles.bottom}>
           <p>
             © {new Date().getFullYear()} Queen Lansdowne Cannabis. Must be 19+ to
-            enter. Please consume responsibly.
+            enter. Please follow applicable laws and product labels.
           </p>
         </div>
       </div>

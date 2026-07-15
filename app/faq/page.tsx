@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Frequently asked questions about Queen Lansdowne Cannabis in Toronto. Hours, location, products, pricing, bundle offers, and everything you need to know before visiting.",
   alternates: {
-    canonical: "https://queenlansdownecannabis.ca/faq",
+    canonical: "https://www.queenlansdownecannabis.ca/faq",
   },
 };
 
@@ -27,10 +27,10 @@ const FAQ_CATEGORIES = [
     title: "🌿 Products & Menu",
     faqs: [
       { q: "What products do you carry?", a: "We carry over 200 strains of cannabis flower across 5 quality tiers (Exotic, Premium, AAA+, AA, Budget), plus edibles (gummies, chocolates, baked goods), vape pens, disposable vapes, concentrates (shatter, wax, hash, diamonds, live resin), pre-rolled joints, native cigarettes, and accessories." },
-      { q: "Do you have a live menu?", a: "Yes! Our online menu at queenlansdownecannabis.ca updates in real time with current stock, prices, THC levels, and availability. You can check what's in stock before you visit." },
-      { q: "What are your flower tiers?", a: "Exotic ($10-$12/g, THC 35-39%) — ultra-rare top-shelf genetics. Premium ($7-$10/g, THC 32-34%) — connoisseur-grade. AAA+ ($5-$6/g, THC 30-32%) — heavy hitters, our most popular tier. AA ($4/g, THC 27-29%) — quality daily drivers. Budget ($3/g, THC 24-27%) — reliable value flower." },
-      { q: "Do you sell edibles?", a: "Yes! We carry a variety of edibles including gummies, chocolates, baked goods, and more. THC content varies. Check our live menu for current availability." },
-      { q: "Do you sell vapes?", a: "Yes — both disposable vapes and refillable vape pens. We carry both nicotine vapes and THC vapes from top brands." },
+      { q: "Do you have a current menu?", a: "Yes. The online menu at queenlansdownecannabis.ca lists current menu items and prices. Check it before visiting because listings can change." },
+      { q: "What are your flower tiers?", a: "The menu groups flower into Exotic, Premium, AAA+, AA, and Budget tiers. Each tier page shows its current prices and menu items." },
+      { q: "Do you sell edibles?", a: "The menu includes an edibles category with gummies, chocolates, baked goods, and other formats when listed. Check the current menu before visiting." },
+      { q: "Do you sell vapes?", a: "The menu includes categories for disposable vapes, refillable vape pens, nicotine vapes, and THC vapes. Check the current listings before visiting." },
       { q: "Do you sell native cigarettes?", a: "Yes! We carry one of the widest selections of native cigarettes in downtown Toronto, including premium and value brands in multiple varieties." },
     ],
   },
@@ -39,7 +39,7 @@ const FAQ_CATEGORIES = [
     faqs: [
       { q: "What is the cheapest weed you sell?", a: "Our Budget tier starts at $3/g with value ounces from $40. Our AA tier is $4/g. These are the most competitive prices you'll find in Toronto." },
       { q: "What bundle pricing do you offer?", a: "Flower bundle pricing includes a 3g total option — the 3g total is shown clearly before purchase. Our Exotic, Premium, and AAA+ tiers also offer 6g bundle pricing, with 6g total pricing." },
-      { q: "Do you have ounce deals?", a: "Yes! Budget ounces from $40, AA ounces from $90, AAA+ ounces from $100. All with freshness and quality guaranteed." },
+      { q: "Do you have ounce options?", a: "The menu lists ounce options and prices when offered. Check the relevant flower tier for current details." },
       { q: "How does bundle pricing work?", a: "The 3g bundle pricing applies to every tier automatically. The 6g bundle pricing applies to Exotic, Premium, and AAA+ tiers. These are our standard everyday bundle offers." },
       { q: "How does the tier pricing work?", a: "Each flower strain is graded into one of five quality tiers. The tier determines the per-gram price. This transparent system means you always know exactly what you're paying — no confusing markups or inconsistent pricing." },
     ],
@@ -48,10 +48,10 @@ const FAQ_CATEGORIES = [
     title: "🛒 Shopping & Experience",
     faqs: [
       { q: "Do I need an appointment?", a: "No! Queen Lansdowne Cannabis is walk-in only. Just show up anytime — we are open daily from 10:00 AM to 03:00 AM." },
-      { q: "Can I order online?", a: "Currently, Queen Lansdowne Cannabis is an in-store shopping experience only. You can browse our live menu online to see what's in stock before visiting." },
+      { q: "Can I order online?", a: "Currently, Queen Lansdowne Cannabis is an in-store shopping experience only. You can browse the current menu online before visiting." },
       { q: "Do you offer delivery?", a: "Delivery is coming soon! Visit our delivery page to sign up for email notifications when we launch our delivery service." },
       { q: "What payment methods do you accept?", a: "We accept cash and debit. No credit cards at this time." },
-      { q: "Can your staff help me choose a strain?", a: "Absolutely! Our knowledgeable budtenders are here to help. Whether you're a first-time buyer or a seasoned connoisseur, we can recommend strains based on your preferences, desired effects, and budget." },
+      { q: "Can your staff help me compare flower listings?", a: "Yes. Our staff can help you compare the category, package size, and posted details shown for current flower listings." },
       { q: "Is there a minimum purchase?", a: "No minimum purchase required. You can buy as little as 1 gram." },
     ],
   },

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Visit Queen Lansdowne Cannabis at 1472 Queen St W, Toronto, ON M6K 1M4. We are open daily from 10:00 AM to 03:00 AM. Walk-ins welcome.",
   alternates: {
-    canonical: "https://queenlansdownecannabis.ca/contact",
+    canonical: "https://www.queenlansdownecannabis.ca/contact",
   },
   openGraph: {
     title: "Contact Queen Lansdowne Cannabis — Toronto Dispensary",
@@ -74,16 +74,16 @@ export default function ContactPage() {
                 <br />
                 Just walk in and our staff will
                 <br />
-                help you find the perfect strain.
+                help you compare current menu options.
               </p>
               <div className={styles.featureList}>
                 <div className={styles.featureItem}>
                   <span className={styles.featureCheck}>✓</span>
-                  200+ strains in stock
+                  Browse the current flower menu
                 </div>
                 <div className={styles.featureItem}>
                   <span className={styles.featureCheck}>✓</span>
-                  Lab-tested &amp; safe
+                  Ask staff about product labels
                 </div>
                 <div className={styles.featureItem}>
                   <span className={styles.featureCheck}>✓</span>

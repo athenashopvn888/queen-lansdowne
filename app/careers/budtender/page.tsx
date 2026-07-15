@@ -6,11 +6,11 @@ import BudtenderApplicationForm from "./BudtenderApplicationForm";
 import styles from "./budtender.module.css";
 
 export const metadata: Metadata = {
-  title: "Budtender Or Manager Application",
+  title: { absolute: "Budtender Or Manager Application | Queen Lansdowne Cannabis" },
   description:
     "Apply for budtender or manager opportunities at Queen Lansdowne Cannabis in Toronto. Submit availability, retail experience, motivation, determination, and customer-service answers.",
   alternates: {
-    canonical: "https://queenlansdownecannabis.ca/careers/budtender",
+    canonical: "https://www.queenlansdownecannabis.ca/careers/budtender",
   },
 };
 

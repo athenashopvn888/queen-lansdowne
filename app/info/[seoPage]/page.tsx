@@ -28,7 +28,7 @@ export async function generateMetadata({
     title: page.title,
     description: page.metaDescription,
     alternates: {
-      canonical: `https://queenlansdownecannabis.ca/info/${slug}`,
+      canonical: `https://www.queenlansdownecannabis.ca/info/${slug}`,
     },
   };
 }

@@ -1,7 +1,6 @@
-// Auto-generated Google Business Profile Local SEO Location Configuration
 export const gbpLocation = {
   storeName: "Queen Lansdowne Cannabis",
-  domain: "queenlansdownecannabis.ca",
+  domain: "www.queenlansdownecannabis.ca",
   city: "Toronto",
   province: "ON",
   country: "CA",

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Browse Queen Lansdowne Cannabis flower category pages in Toronto. Use this overview to choose Exotic, Premium, AAA+, AA, or Budget flower tiers and review store details before visiting.",
   alternates: {
-    canonical: "https://queenlansdownecannabis.ca/flower",
+    canonical: "https://www.queenlansdownecannabis.ca/flower",
   },
 };
 
