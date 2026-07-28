@@ -1,0 +1,95 @@
+import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
+import { readFile } from "node:fs/promises";
+
+const expectedBranch = "feature/qlc-delivery-launch-ready-20260728";
+const expectedKeys = ["category", "description", "effects", "images", "name", "offers", "priceOptions", "publicProductId", "strain", "thc", "tier"].sort();
+const previewOrigin = "https://qlc-delivery-launch-ready.vercel.app";
+const sodStatus = "https://milestone-1-demo.vercel.app/api/web-chat/status";
+const expectProductionLive = process.env.QLC_DELIVERY_EXPECT_LIVE === "1";
+
+const branch = execFileSync("git", ["branch", "--show-current"], { encoding: "utf8" }).trim();
+assert.equal(branch, expectedBranch, "Launch acceptance must run from the staging feature branch");
+
+const menu = JSON.parse(await readFile(new URL("../app/delivery/delivery-menu.json", import.meta.url), "utf8"));
+const products = menu.products;
+const serialized = JSON.stringify(menu);
+assert.equal(products.length, 63);
+assert.equal(products.filter((product) => product.description).length, 58);
+assert.equal(products.filter((product) => product.images?.length).length, 63);
+assert(products.every((product) => product.publicProductId && product.tier));
+for (const product of products) assert.deepEqual(Object.keys(product).sort(), expectedKeys);
+assert(!/"sku"|sourceProductId|sourceUrl|provenance|farmerslink/i.test(serialized));
+
+const catalog = await readFile(new URL("../app/delivery/DeliveryCatalog.tsx", import.meta.url), "utf8");
+const drawer = await readFile(new URL("../app/delivery/ProductDetailsDrawer.tsx", import.meta.url), "utf8");
+const chat = await readFile(new URL("../app/delivery/IdVerificationChat.tsx", import.meta.url), "utf8");
+const css = await readFile(new URL("../app/delivery/delivery-experience.css", import.meta.url), "utf8");
+const page = await readFile(new URL("../app/delivery/page.tsx", import.meta.url), "utf8");
+const home = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+const homeCss = await readFile(new URL("../app/page.module.css", import.meta.url), "utf8");
+assert(catalog.includes("api/catalog?store=QLC") && catalog.includes("View details"));
+assert(catalog.includes("DELIVERY HOURS 10:00 a.m.–10:00 p.m."));
+assert(!catalog.includes("product.sku") && !catalog.includes("parseTierSku"));
+assert(css.includes("@scope (.qlc-delivery-scope)") && css.includes(".qlc-list-grid { grid-template-columns: repeat(2, minmax(0, 1fr));"));
+assert(css.includes("@keyframes qlc-live-order-pulse") && css.includes("@media (prefers-reduced-motion:reduce)"));
+assert(css.includes('background:#b42318;color:#fff') && css.includes('.sod-chat-launcher[aria-expanded="false"] { animation:qlc-live-order-pulse'));
+assert(css.includes('.sod-chat-launcher[aria-expanded="true"] { background:#fff;color:#8f1d14') && css.includes("transform:scale(1.06)"));
+assert(drawer.includes('role="dialog"') && drawer.includes('aria-modal="true"') && drawer.includes('event.key==="Escape"') && drawer.includes('event.key!=="Tab"'));
+assert(drawer.includes("document.body.style.overflow") && drawer.includes('alt={product.name}'));
+assert(chat.includes('"NEW_CUSTOMER"') && chat.includes('"RETURNING_CUSTOMER"') && chat.includes("preparePhoto") && chat.includes("id-review"));
+assert(chat.includes('"Close chat" : "LIVE ORDER"'));
+assert(catalog.includes('href="/" aria-label="Queen and Lansdowne Cannabis homepage"'));
+assert(page.includes("Cannabis Delivery Menu") && !page.includes("index: false") && !page.includes("Launch Preview"));
+assert(home.includes("NEW DELIVERY — ORDER NOW — MENU AVAILABLE") && home.includes('href="/delivery"'));
+assert(homeCss.includes("@keyframes deliveryLaunchPulse") && homeCss.includes("background: #c5161d") && homeCss.includes("@media (prefers-reduced-motion: reduce)"));
+
+for (const productionUrl of [
+  "https://queenlansdownecannabis.ca/delivery",
+  "https://www.queenlansdownecannabis.ca/delivery",
+]) {
+  const response = await fetch(productionUrl, { redirect: "follow" });
+  const html = await response.text();
+  assert.equal(response.status, 200);
+  if (expectProductionLive) {
+    assert.match(html, /View details/i);
+    assert.match(html, /LIVE ORDER/);
+    assert.doesNotMatch(html, /Delivery Coming Soon/i);
+    assert.doesNotMatch(html, /noindex/i);
+  } else {
+    assert.match(html, /Delivery Coming Soon/i);
+    assert.doesNotMatch(html, /View details/i);
+  }
+}
+
+for (const origin of [
+  previewOrigin,
+  "https://queenlansdownecannabis.ca",
+  "https://www.queenlansdownecannabis.ca",
+]) {
+  const response = await fetch(sodStatus, { headers: { Origin: origin } });
+  assert.equal(response.status, 200, `Expected Web Chat status for ${origin}`);
+  assert.equal(response.headers.get("access-control-allow-origin"), origin);
+}
+const unrelated = await fetch(sodStatus, { headers: { Origin: "https://unrelated.example" } });
+assert.equal(unrelated.status, 403);
+assert.equal(unrelated.headers.get("access-control-allow-origin"), null);
+
+const previewUrl = String(process.env.QLC_DELIVERY_PREVIEW_URL || "").replace(/\/$/, "");
+if (previewUrl) {
+  const response = await fetch(`${previewUrl}/delivery`);
+  const html = await response.text();
+  assert.equal(response.status, 200);
+  assert.match(html, /View details/);
+  assert.doesNotMatch(html, /farmerslink|sourceProductId|sourceUrl|provenance/i);
+}
+
+console.log(JSON.stringify({
+  branch,
+  mode: expectProductionLive ? "production-live" : "pre-production",
+  products: products.length,
+  descriptions: products.filter((product) => product.description).length,
+  images: products.filter((product) => product.images?.length).length,
+  productionLiveChecked: expectProductionLive,
+  previewChecked: Boolean(previewUrl),
+}, null, 2));
