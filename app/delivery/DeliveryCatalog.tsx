@@ -102,7 +102,7 @@ export default function Catalog() {
     <div className="qlc-original-shell">
       <header className="store-header qlc-store-header">
         <div className="header-main">
-          <a className="brand-lockup" href="#top"><span className="brand-mark">QLC</span><span><strong>Queen &amp; Lansdowne</strong><small>Delivery menu</small></span></a>
+          <Link className="brand-lockup" href="/" aria-label="Queen and Lansdowne Cannabis homepage"><span className="brand-mark">QLC</span><span><strong>Queen &amp; Lansdowne</strong><small>Delivery menu</small></span></Link>
           <nav className="desktop-nav"><a href="#menu">Shop</a><Link href="/how-to-order">How to order</Link></nav>
           <div className="header-actions"><a className="header-guide" href="#menu">Search</a></div>
         </div>

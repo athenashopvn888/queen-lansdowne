@@ -3,20 +3,15 @@ import DeliveryContent from "./DeliveryContent";
 import menu from "./delivery-menu.json";
 
 export const metadata: Metadata = {
-  title: "Delivery Launch Preview — Queen Lansdowne Cannabis",
-  description: "Private launch-acceptance preview for the Queen Lansdowne Cannabis delivery menu.",
-  robots: {
-    index: false,
-    follow: false,
-    googleBot: { index: false, follow: false },
-  },
+  title: "Cannabis Delivery Menu — Queen Lansdowne Cannabis",
+  description: "Browse the Queen Lansdowne Cannabis delivery menu and start your order with the live dispatcher.",
 };
 
 export default function DeliveryPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Queen Lansdowne Cannabis Delivery Menu Preview",
+    name: "Queen Lansdowne Cannabis Delivery Menu",
     mainEntity: {
       "@type": "ItemList",
       numberOfItems: menu.products.length,
