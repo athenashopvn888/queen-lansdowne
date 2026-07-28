@@ -29,8 +29,47 @@
 .welcomeBannerSection {
   width: 100%;
   overflow: hidden;
-  margin-top: 92px;
   background-color: #020617;
+}
+
+.deliveryBannerSection {
+  width: 100%;
+  margin-top: 92px;
+  overflow: hidden;
+  padding: 24px 24px 0;
+  background: #020617;
+}
+
+.deliveryBannerLink {
+  display: block;
+  width: min(100%, 1200px);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 2px solid rgba(192, 132, 252, 0.72);
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: 0 14px 38px rgba(88, 28, 135, 0.38);
+}
+
+.deliveryBannerLink:focus-visible {
+  outline: 4px solid #facc15;
+  outline-offset: 4px;
+}
+
+.deliveryBannerImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 640px) {
+  .deliveryBannerSection {
+    padding: 12px 12px 0;
+  }
+
+  .deliveryBannerLink {
+    border-width: 1px;
+    border-radius: 12px;
+  }
 }
 
 .welcomeBannerContainer {

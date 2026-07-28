@@ -1856,6 +1856,20 @@ body.product-open .product-drawer {
 .qlc-menu-main .menu-search input::placeholder { color: #8f828f; }
 .qlc-menu-main .result-summary { margin: 16px 3px; color: #c9bdc9; font-size: 15px; }
 .qlc-list-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.qlc-order-steps {
+  scroll-margin-top: 140px;
+  margin-top: 24px;
+  border: 1px solid rgba(184,151,79,.32);
+  border-radius: 14px;
+  padding: clamp(18px,3vw,30px);
+  background: #fffaf1;
+  color: #25122c;
+}
+.qlc-order-steps:focus-visible { outline: 4px solid #2563eb; outline-offset: 4px; }
+.qlc-order-steps h2 { margin: 6px 0 18px; font-family: Georgia,serif; font-size: clamp(25px,3vw,38px); line-height: 1.08; }
+.qlc-order-steps ol { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0; padding:0; list-style:none; counter-reset:qlc-order-step; }
+.qlc-order-steps li { min-width:0; border:1px solid #d8cbb7; border-radius:10px; padding:14px; background:#fff; line-height:1.5; counter-increment:qlc-order-step; }
+.qlc-order-steps li::before { content:counter(qlc-order-step); display:grid; width:28px; height:28px; place-items:center; margin-bottom:9px; border-radius:50%; background:#7b1f24; color:#fff; font-weight:900; }
 .qlc-horizontal-card {
   grid-template-columns: 132px minmax(0, 1fr);
   gap: 16px;
@@ -2093,6 +2107,7 @@ body.product-open .product-drawer {
   .standard-28 { grid-column:auto; min-height:58px; }
   .decision-tile>strong { font-size:23px; }
   .bundle-numbers strong,.bundle-numbers b { font-size:18px; }
+  .qlc-order-steps ol { grid-template-columns:1fr; }
 }
 @media(max-width:420px){
   .qlc-list-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:5px; }
