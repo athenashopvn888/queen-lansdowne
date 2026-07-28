@@ -103,9 +103,6 @@ export default function HomePage() {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [reviewsStats, setReviewsStats] = useState<ReviewStats | null>(null);
   const [reviewsLoading, setReviewsLoading] = useState(true);
-  const [welcomeBannerError, setWelcomeBannerError] = useState(false);
-  const welcomeBannerSrc: string = "/banners/welcome_banner.webp";
-  const hasWelcomeBanner = welcomeBannerSrc && welcomeBannerSrc !== "/banners/" && !welcomeBannerSrc.includes("HERO_BANNER") && !welcomeBannerSrc.includes("WELCOME_BANNER") && welcomeBannerSrc !== "";
 
   /* ── 1. Fetch Client-Side Review Comments ── */
   useEffect(() => {
@@ -204,20 +201,6 @@ export default function HomePage() {
           />
         </Link>
       </section>
-
-      {/* ── WELCOME BANNER ── */}
-      {hasWelcomeBanner && !welcomeBannerError && (
-        <section className={styles.welcomeBannerSection}>
-          <div className={styles.welcomeBannerContainer}>
-            <img
-              src={welcomeBannerSrc}
-              alt="Welcome to Queen Lansdowne Cannabis — Premium Toronto Cannabis Dispensary"
-              className={styles.welcomeBannerImg}
-              onError={() => setWelcomeBannerError(true)}
-            />
-          </div>
-        </section>
-      )}
 
       {/* ── BENTO MOSAIC HERO ── */}
       <section className={styles.hiringBannerSection} aria-label="Queen Lansdowne Cannabis hiring">

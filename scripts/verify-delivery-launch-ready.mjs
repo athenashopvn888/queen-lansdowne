@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
 
-const acceptedBranches = new Set(["feature/qlc-home-delivery-banner-20260728", "feature/qlc-24-hours-daily-20260729", "main"]);
+const acceptedBranches = new Set(["feature/qlc-home-delivery-banner-20260728", "feature/qlc-24-hours-daily-20260729", "feature/remove-qlc-lower-home-banner-20260729", "main"]);
 const expectedKeys = ["category", "description", "effects", "images", "name", "offers", "priceOptions", "publicProductId", "strain", "thc", "tier"].sort();
 const previewOrigin = "https://qlc-delivery-launch-ready.vercel.app";
 const sodStatus = "https://milestone-1-demo.vercel.app/api/web-chat/status";
@@ -55,6 +55,8 @@ assert(!home.includes("NEW DELIVERY MENU — ORDER NOW"));
 assert(navbar.includes('pathname === "/"') && navbar.includes("NEW DELIVERY MENU — ORDER NOW") && navbar.includes('href="/delivery"'));
 assert(navbarCss.includes("@keyframes deliveryMenuPulse") && navbarCss.includes("background: #c5161d") && navbarCss.includes("@media (prefers-reduced-motion: reduce)"));
 assert(home.includes('href="/delivery"') && home.includes('src="/qlc-home-delivery-banner.webp"') && home.includes("priority"));
+assert.equal((home.match(/qlc-home-delivery-banner\.webp/g) || []).length, 1);
+assert(!home.includes("welcome_banner.webp") && !home.includes("welcomeBanner"));
 assert(footer.includes('<Link href="/delivery">Delivery Menu</Link>') && !footer.includes("Coming Soon"));
 assert(faq.includes("use LIVE ORDER to start your order") && faq.includes("Delivery ordering is available daily"));
 assert(!faq.includes("sign up for email notifications") && !faq.includes("in-store shopping experience only"));
