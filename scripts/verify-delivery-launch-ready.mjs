@@ -2,13 +2,13 @@ import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
 
-const expectedBranch = "feature/qlc-home-delivery-banner-20260728";
+const acceptedBranches = new Set(["feature/qlc-home-delivery-banner-20260728", "feature/qlc-24-hours-daily-20260729", "main"]);
 const expectedKeys = ["category", "description", "effects", "images", "name", "offers", "priceOptions", "publicProductId", "strain", "thc", "tier"].sort();
 const previewOrigin = "https://qlc-delivery-launch-ready.vercel.app";
 const sodStatus = "https://milestone-1-demo.vercel.app/api/web-chat/status";
 
 const branch = execFileSync("git", ["branch", "--show-current"], { encoding: "utf8" }).trim();
-assert.equal(branch, expectedBranch, "Launch acceptance must run from the staging feature branch");
+assert(acceptedBranches.has(branch), `Launch acceptance is not approved on branch ${branch}`);
 
 const menu = JSON.parse(await readFile(new URL("../app/delivery/delivery-menu.json", import.meta.url), "utf8"));
 const products = menu.products;

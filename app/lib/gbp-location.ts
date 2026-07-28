@@ -27,7 +27,7 @@ export const gbpLocation = {
   mapEmbedUrl: "",
   latitude: "43.6406611",
   longitude: "-79.4370110",
-  hours: ["Open Daily: 10:00 AM - 03:00 AM"],
+  hours: ["Open 24 Hours Daily"],
   seoTitle: "Queen Lansdowne Cannabis | Weed Dispensary in Toronto",
   metaDescription: "Queen Lansdowne Cannabis is a local weed dispensary in Toronto offering flower, pre-rolls, edibles, vapes, concentrates, CBD, and service for adults 19+.",
   localLandmarks: ["Queen Street West", "Lansdowne", "Parkdale"],

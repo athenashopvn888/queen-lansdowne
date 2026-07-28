@@ -206,7 +206,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     banner: "/banners/04_Pre_Rolls.webp", name: "Pre-Rolls", slug: "prerolls", color: "#22c55e", icon: "🚬",
     seoTitle: "Pre-Rolls Toronto — Ready-to-Smoke Cannabis Joints",
     seoIntro: "Pre-rolled cannabis joints at Queen Lansdowne Cannabis, Toronto. Singles, multi-packs, and infused pre-rolls — ready to light up.",
-    seoDescription: "Skip the rolling and grab a pre-roll from Queen Lansdowne Cannabis in Toronto. We carry singles, multi-packs, and infused pre-rolls from premium flower. Whether you want a quick smoke or a party pack, our pre-roll selection has something for everyone. Visit us at 1472 Queen St W — we are Open Daily: 10:00 AM - 03:00 AM.",
+    seoDescription: "Skip the rolling and grab a pre-roll from Queen Lansdowne Cannabis in Toronto. We carry singles, multi-packs, and infused pre-rolls from premium flower. Whether you want a quick smoke or a party pack, our pre-roll selection has something for everyone. Visit us at 1472 Queen St W — we are open 24 hours daily.",
     faqs: [
       { q: "What pre-roll formats may be listed?", a: "The category may include singles, 3-packs, multi-packs, and infused pre-rolls. Check the current menu." },
       { q: "Are your pre-rolls made with quality flower?", a: "Yes! Our pre-rolls are filled with ground flower from our regular menu tiers — not shake or trim." },
@@ -237,7 +237,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     name: "Cigarettes", slug: "cigarettes", color: "#78716c", icon: "🏷️",
     seoTitle: "Native Cigarettes Toronto — Discount Tobacco at Queen Lansdowne Cannabis",
     seoIntro: "Browse current Native cigarette brands and listed prices at Queen Lansdowne Cannabis in Toronto.",
-    seoDescription: "Queen Lansdowne Cannabis is your go-to source for affordable native cigarettes in Toronto. We carry a wide selection of premium and value tobacco brands at competitive prices. Located at 1472 Queen St W in the heart of 1472 Queen St W & Nearby Expressway, we're Open Daily: 10:00 AM - 03:00 AM.",
+    seoDescription: "Queen Lansdowne Cannabis is your go-to source for affordable native cigarettes in Toronto. We carry a wide selection of premium and value tobacco brands at competitive prices. Located at 1472 Queen St W in the heart of 1472 Queen St W & Nearby Expressway, we're open 24 hours daily.",
     faqs: [
       { q: "Do you sell cigarettes at Queen Lansdowne Cannabis?", a: "Yes! We carry a wide selection of native cigarette brands at competitive prices." },
       { q: "What cigarette brands may be listed?", a: "Check the current cigarette category for listed brands and prices." },

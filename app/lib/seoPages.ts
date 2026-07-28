@@ -10,13 +10,13 @@ export interface SeoPageData {
   faqs: { q: string; a: string }[];
 }
 
-const hours = "Open Daily: 10:00 AM - 03:00 AM";
+const hours = "Open 24 Hours Daily";
 
 export const SEO_PAGES: SeoPageData[] = [
   {
     slug: "york-weed-dispensary",
     title: `Toronto Weed Dispensary — Queen Lansdowne Cannabis | ${hours} | 1472 Queen St W & Nearby Expressway`,
-    metaDescription: "Queen Lansdowne Cannabis is at 1472 Queen St W in Toronto with flower, pre-rolls, edibles, vapes, concentrates, cigarettes, and accessories. We are open daily from 10:00 AM to 03:00 AM.",
+    metaDescription: "Queen Lansdowne Cannabis is at 1472 Queen St W in Toronto with flower, pre-rolls, edibles, vapes, concentrates, cigarettes, and accessories. We are open 24 hours daily.",
     h1: "Toronto Weed Dispensary — Queen Lansdowne Cannabis",
     icon: "*",
     heroTagline: `Cannabis on 1472 Queen St W & Nearby Expressway · ${hours} · Walk-In Welcome`,

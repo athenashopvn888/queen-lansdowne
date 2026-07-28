@@ -71,7 +71,7 @@ const EXPLORE_CATEGORIES = [
 const LOCAL_FAQS = [
   {
     q: "What are the hours for Queen Lansdowne Cannabis?",
-    a: "Queen Lansdowne Cannabis at 1472 Queen St W, Toronto is open daily from 10:00 AM to 03:00 AM. Walk in anytime — no appointment needed.",
+    a: "Queen Lansdowne Cannabis at 1472 Queen St W, Toronto is open 24 hours daily. Walk in anytime — no appointment needed.",
   },
   {
     q: "What cannabis products do you carry?",
@@ -246,7 +246,7 @@ export default function HomePage() {
             <img src="/storeFavicon.webp" alt="Queen Lansdowne Cannabis Icon" style={{ height: "60px", width: "60px", objectFit: "contain", borderRadius: "8px", marginBottom: "8px" }} />
             <h1 className={styles.brandTitle}>QUEEN LANSDOWNE CANNABIS</h1>
             <p className={styles.brandSub}>Premium Cannabis Dispensary</p>
-            <div className={styles.brandBadge}>Open Daily: 10:00 AM - 03:00 AM</div>
+            <div className={styles.brandBadge}>Open 24 Hours Daily</div>
           </div>
 
           {/* Bento Grid */}
@@ -329,12 +329,12 @@ export default function HomePage() {
       <section className={styles.seoSection}>
         <div className={styles.container}>
           <div className={styles.seoPanel}>
-            <h2 className={styles.seoPanelTitle}>1472 Queen St W & Nearby Expressway&apos;s Local Cannabis Dispensary — Open Daily: 10:00 AM - 03:00 AM</h2>
+            <h2 className={styles.seoPanelTitle}>1472 Queen St W & Nearby Expressway&apos;s Local Cannabis Dispensary — Open 24 Hours Daily</h2>
             <p className={styles.seoPanelText}>
               Welcome to <strong>Queen Lansdowne Cannabis</strong> at 1472 Queen St W. Browse flower across several price tiers, from Exotic and Premium to everyday Budget options.
             </p>
             <p className={styles.seoPanelText}>
-              We are open Open Daily: 10:00 AM - 03:00 AM — Queen Lansdowne Cannabis is here to serve you. The current menu brings together flower, pre-rolls, edibles, vapes, and other categories. Our staff can help shoppers compare those categories during listed store hours.
+              We are open 24 hours daily — Queen Lansdowne Cannabis is here to serve you. The current menu brings together flower, pre-rolls, edibles, vapes, and other categories. Our staff can help shoppers compare those categories during listed store hours.
             </p>
             <p className={styles.seoPanelText}>
               Searching for a cannabis dispensary in Toronto or the surrounding area? Queen Lansdowne Cannabis offers flower, pre-rolls, edibles, vapes, and other menu categories. Clear flower tiers help shoppers compare prices before visiting.
@@ -436,7 +436,7 @@ export default function HomePage() {
               <p className={styles.storeCardText}>
                 Open 7 Days a Week
                 <br />
-                <span className={styles.storeHighlight}>Open Daily: 10:00 AM - 03:00 AM</span>
+                <span className={styles.storeHighlight}>Open 24 Hours Daily</span>
               </p>
             </div>
             <div className={styles.storeCard}>
