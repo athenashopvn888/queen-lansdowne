@@ -26,11 +26,15 @@ const chat = await readFile(new URL("../app/delivery/IdVerificationChat.tsx", im
 const css = await readFile(new URL("../app/delivery/delivery-experience.css", import.meta.url), "utf8");
 const page = await readFile(new URL("../app/delivery/page.tsx", import.meta.url), "utf8");
 assert(catalog.includes("api/catalog?store=QLC") && catalog.includes("View details"));
+assert(catalog.includes("DELIVERY HOURS 10:00 a.m.–10:00 p.m."));
 assert(!catalog.includes("product.sku") && !catalog.includes("parseTierSku"));
 assert(css.includes("@scope (.qlc-delivery-scope)") && css.includes(".qlc-list-grid { grid-template-columns: repeat(2, minmax(0, 1fr));"));
+assert(css.includes("@keyframes qlc-live-order-pulse") && css.includes("@media (prefers-reduced-motion:reduce)"));
+assert(css.includes("border:2px solid #b42318") && css.includes("background:#fff;color:#8f1d14"));
 assert(drawer.includes('role="dialog"') && drawer.includes('aria-modal="true"') && drawer.includes('event.key==="Escape"') && drawer.includes('event.key!=="Tab"'));
 assert(drawer.includes("document.body.style.overflow") && drawer.includes('alt={product.name}'));
 assert(chat.includes('"NEW_CUSTOMER"') && chat.includes('"RETURNING_CUSTOMER"') && chat.includes("preparePhoto") && chat.includes("id-review"));
+assert(chat.includes('"Close chat" : "LIVE ORDER"'));
 assert(page.includes("index: false") && page.includes("follow: false"));
 
 for (const productionUrl of [

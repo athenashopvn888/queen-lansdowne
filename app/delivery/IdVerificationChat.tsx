@@ -280,7 +280,7 @@ export default function IdVerificationChat() {
   return (
     <aside className={`sod-web-chat ${open ? "open" : ""}`} aria-label="QLC Web Chat">
       <button className="sod-chat-launcher" type="button" onClick={() => { if (!open) void refreshAvailability(); setOpen((value) => !value); }} aria-expanded={open}>
-        {open ? "Close chat" : "Web Chat"}
+        {open ? "Close chat" : "LIVE ORDER"}
       </button>
       {open && <section className="sod-chat-panel" role="dialog" aria-modal="true" aria-label="QLC Web Chat">
         <header><div><strong>QLC Web Chat</strong><small>Start your delivery order with a dispatcher</small></div><button type="button" onClick={() => setOpen(false)} aria-label="Minimize chat">×</button></header>

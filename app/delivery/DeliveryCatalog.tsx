@@ -111,7 +111,7 @@ export default function Catalog() {
         </div>
       </header>
 
-      <section className="qlc-terms-ribbon" aria-labelledby="qlc-terms"><div><p>QLC DELIVERY DETAILS</p><h2 id="qlc-terms"><span>$60 PRODUCT MINIMUM</span><span>$10 DELIVERY FEE</span></h2></div><Link href="/how-to-order">Read the ordering steps</Link></section>
+      <section className="qlc-terms-ribbon" aria-labelledby="qlc-terms"><div><p>QLC DELIVERY DETAILS</p><h2 id="qlc-terms"><span>$60 PRODUCT MINIMUM</span><span>$10 DELIVERY FEE</span><span>DELIVERY HOURS 10:00 a.m.–10:00 p.m.</span></h2></div><Link href="/how-to-order">Read the ordering steps</Link></section>
 
       <main className="delivery-page" id="top">
         <section className="store-hero qlc-editorial-hero">
