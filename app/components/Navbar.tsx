@@ -51,6 +51,11 @@ export default function Navbar() {
           </span>
         </Link>
         <div className={styles.topBarRight}>
+          {pathname === "/" && (
+            <Link href="/delivery" className={styles.deliveryMenuCta}>
+              NEW DELIVERY MENU — ORDER NOW
+            </Link>
+          )}
           <Link href="/careers/budtender" className={styles.open} aria-label="Join the Queen Lansdowne Cannabis team">
             <span className={styles.dot}></span>
             Join Team

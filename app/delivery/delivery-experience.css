@@ -1,8 +1,9 @@
 ﻿.qlc-delivery-scope {
   --bg:#f5f7f4;--ink:#111b16;--muted:#5f6c65;--line:#d8e2dc;--panel:#fff;--green:#1f7a4e;--green-2:#0f5f38;--green-soft:#e3f5eb;--mint:#f0faf5;--purple:#4d2777;--gold:#c2a24b;--shadow:0 18px 48px rgba(18,33,25,.12);--soft-shadow:0 8px 24px rgba(18,33,25,.08);
-  min-height:100vh;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45;
+  width:100%;max-width:100%;min-height:100vh;overflow-x:clip;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45;
 }
 
+html:has(.qlc-delivery-scope),body:has(.qlc-delivery-scope) { max-width:100%;overflow-x:clip; }
 body.sod-chat-open:has(.qlc-delivery-scope) { overflow:hidden; }
 @scope (.qlc-delivery-scope) {
 :root {
@@ -1460,7 +1461,8 @@ body.product-open .product-drawer {
   }
 
   .product-drawer {
-    width: 100vw;
+    width: 100%;
+    max-width: 100vw;
   }
 
   .detail-body {
@@ -1500,7 +1502,8 @@ body.product-open .product-drawer {
   }
 
   .cart-panel {
-    width: 100vw;
+    width: 100%;
+    max-width: 100vw;
   }
 }
 
@@ -1555,7 +1558,7 @@ body.product-open .product-drawer {
 @media(max-width:640px){.qlc-list-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.qlc-horizontal-card{display:flex;min-width:0;min-height:0;flex-direction:column;gap:7px;border-left-width:1px;border-top:5px solid var(--green);padding:7px}.qlc-horizontal-card .product-image-button{width:100%;height:auto;aspect-ratio:1}.qlc-horizontal-card .product-title{font-size:13px;min-height:46px}.qlc-horizontal-card .product-meta{font-size:10px}.qlc-horizontal-card .price-matrix{grid-template-columns:repeat(2,minmax(0,1fr))}.qlc-horizontal-card .matrix-pill{min-height:38px;padding:3px 1px;font-size:10px}.qlc-terms-ribbon{min-height:0;padding-block:16px}.qlc-terms-ribbon h2{font-size:26px}.qlc-terms-ribbon a{width:100%;text-align:center}.guide-hero h1{font-size:46px}}
 @media(max-width:360px){.qlc-list-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}}
 
-.sod-web-chat { position:fixed; right:18px; bottom:18px; z-index:1000; font-family:Arial,sans-serif; color:#17221d; }
+.sod-web-chat { position:fixed; inset:auto 18px 18px auto; z-index:1000; max-width:calc(100vw - 36px); font-family:Arial,sans-serif; color:#17221d; }
 .sod-chat-launcher { float:right; min-height:50px; border:0; border-radius:999px; padding:0 22px; background:#123f2c; color:#fff; box-shadow:0 10px 28px rgba(0,0,0,.25); font-weight:850; }
 .sod-chat-panel { display:grid; grid-template-rows:auto auto minmax(0,1fr) auto; width:min(390px,calc(100vw - 24px)); height:min(650px,calc(100dvh - 90px)); margin-bottom:10px; overflow:hidden; border:1px solid #d6dfda; border-radius:18px; background:#fff; box-shadow:0 20px 48px rgba(0,0,0,.3); }
 .sod-chat-panel > header { display:flex; justify-content:space-between; align-items:center; padding:14px 16px; background:#123f2c; color:#fff; }
@@ -1644,12 +1647,15 @@ body.product-open .product-drawer {
 .sod-chat-notice { margin:0; padding:8px 14px 12px; color:#475467; font-size:11px; }
 @media(max-width:520px){
   body.sod-chat-open { overflow:hidden; }
-  .sod-web-chat.open { inset:0; background:rgba(8,13,10,.5); }
+  .sod-web-chat.open { position:fixed; inset:0; width:100%; max-width:100vw; height:100dvh; overflow:hidden; background:rgba(8,13,10,.5); }
   .sod-web-chat.open .sod-chat-launcher { display:none; }
-  .sod-web-chat:not(.open) { right:8px; bottom:8px; }
-  .sod-chat-panel { position:absolute; inset:0; width:100%; height:100dvh; margin:0; border:0; border-radius:0; }
+  .sod-web-chat:not(.open) { position:fixed; inset:auto max(10px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) auto; width:max-content; max-width:calc(100vw - 20px - env(safe-area-inset-left) - env(safe-area-inset-right)); }
+  .sod-chat-launcher { float:none; max-width:100%; }
+  .sod-chat-panel { position:fixed; inset:0; width:100%; max-width:100vw; height:100dvh; max-height:100dvh; margin:0; overflow:hidden; border:0; border-radius:0; }
   .sod-chat-panel > header { min-height:64px; padding-top:calc(14px + env(safe-area-inset-top)); }
   .sod-chat-panel > header button { min-width:44px; min-height:44px; }
+  .sod-chat-start,.sod-chat-scroll,.sod-chat-composer { min-width:0; }
+  .sod-chat-composer { grid-template-columns:minmax(0,1fr) minmax(64px,70px); }
   .sod-chat-transcript { min-height:130px; }
   .sod-chat-composer textarea { min-height:48px; max-height:72px; resize:none; }
 }
@@ -2096,12 +2102,12 @@ body.product-open .product-drawer {
 }
 
 @keyframes qlc-live-order-pulse {
-  0%,100% { transform:scale(1);background:#b42318;box-shadow:0 10px 28px rgba(180,35,24,.32),0 0 0 0 rgba(217,45,32,.42); }
-  50% { transform:scale(1.06);background:#d92d20;box-shadow:0 14px 36px rgba(180,35,24,.42),0 0 0 11px rgba(217,45,32,0); }
+  0%,100% { background:#b42318;box-shadow:0 10px 28px rgba(180,35,24,.32),0 0 0 0 rgba(217,45,32,.42); }
+  50% { background:#d92d20;box-shadow:0 14px 36px rgba(180,35,24,.42),0 0 0 11px rgba(217,45,32,0); }
 }
 
 @scope (.qlc-delivery-scope) {
-  .sod-chat-launcher { min-height:54px;border:2px solid #b42318;background:#b42318;color:#fff;font-weight:950;letter-spacing:.06em;transform-origin:center; }
+  .sod-chat-launcher { min-height:54px;border:2px solid #b42318;background:#b42318;color:#fff;font-weight:950;letter-spacing:.06em; }
   .sod-chat-launcher[aria-expanded="false"] { animation:qlc-live-order-pulse 1.8s ease-in-out infinite; }
   .sod-chat-launcher[aria-expanded="true"] { background:#fff;color:#8f1d14;box-shadow:0 10px 28px rgba(83,20,16,.2); }
   .sod-chat-launcher::before { content:"";display:inline-block;width:9px;height:9px;margin-right:9px;border-radius:50%;background:currentColor;vertical-align:1px; }
@@ -2114,7 +2120,7 @@ body.product-open .product-drawer {
 }
 
 @media (prefers-reduced-motion:reduce) {
-  @scope (.qlc-delivery-scope) { .sod-chat-launcher[aria-expanded="false"] { animation:none;transform:none; } }
+  @scope (.qlc-delivery-scope) { .sod-chat-launcher[aria-expanded="false"] { animation:none; } }
 }
 
 @media (max-width:640px) {

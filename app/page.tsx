@@ -202,12 +202,6 @@ export default function HomePage() {
       {/* ── NAVBAR ── */}
       <Navbar />
 
-      <section className={styles.deliveryLaunchSection} aria-label="New delivery ordering">
-        <Link href="/delivery" className={styles.deliveryLaunchCta}>
-          NEW DELIVERY — ORDER NOW — MENU AVAILABLE
-        </Link>
-      </section>
-
       {/* ── WELCOME BANNER ── */}
       {hasWelcomeBanner && !welcomeBannerError && (
         <section className={styles.welcomeBannerSection}>
