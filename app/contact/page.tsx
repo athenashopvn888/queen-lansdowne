@@ -6,14 +6,14 @@ import styles from "./contact.module.css";
 export const metadata: Metadata = {
   title: "Contact Us — Queen Lansdowne Cannabis | 1472 Queen St W, Toronto",
   description:
-    "Visit Queen Lansdowne Cannabis at 1472 Queen St W, Toronto, ON M6K 1M4. We are open daily from 10:00 AM to 03:00 AM. Walk-ins welcome.",
+    "Visit Queen Lansdowne Cannabis at 1472 Queen St W, Toronto, ON M6K 1M4. We are open 24 hours daily. Walk-ins welcome.",
   alternates: {
     canonical: "https://www.queenlansdownecannabis.ca/contact",
   },
   openGraph: {
     title: "Contact Queen Lansdowne Cannabis — Toronto Dispensary",
     description:
-      "1472 Queen St W, Toronto. We are open daily from 10:00 AM to 03:00 AM. Premium cannabis, always fire.",
+      "1472 Queen St W, Toronto. We are open 24 hours daily. Premium cannabis, always fire.",
   },
 };
 
@@ -51,17 +51,17 @@ export default function ContactPage() {
               <div className={styles.infoIcon}>🕒</div>
               <h2 className={styles.infoTitle}>Hours</h2>
               <div className={styles.hoursTable}>
-                <div className={styles.hoursRow}><span>Monday</span><span className={styles.hoursTime}>10:00 AM - 03:00 AM</span></div>
-                <div className={styles.hoursRow}><span>Tuesday</span><span className={styles.hoursTime}>10:00 AM - 03:00 AM</span></div>
-                <div className={styles.hoursRow}><span>Wednesday</span><span className={styles.hoursTime}>10:00 AM - 03:00 AM</span></div>
-                <div className={styles.hoursRow}><span>Thursday</span><span className={styles.hoursTime}>10:00 AM - 03:00 AM</span></div>
-                <div className={styles.hoursRow}><span>Friday</span><span className={styles.hoursTime}>10:00 AM - 03:00 AM</span></div>
-                <div className={styles.hoursRow}><span>Saturday</span><span className={styles.hoursTime}>10:00 AM - 03:00 AM</span></div>
-                <div className={styles.hoursRow}><span>Sunday</span><span className={styles.hoursTime}>10:00 AM - 03:00 AM</span></div>
+                <div className={styles.hoursRow}><span>Monday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
+                <div className={styles.hoursRow}><span>Tuesday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
+                <div className={styles.hoursRow}><span>Wednesday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
+                <div className={styles.hoursRow}><span>Thursday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
+                <div className={styles.hoursRow}><span>Friday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
+                <div className={styles.hoursRow}><span>Saturday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
+                <div className={styles.hoursRow}><span>Sunday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
               </div>
               <div className={styles.openBadge}>
                 <div className={styles.openDot} />
-                Open Daily: 10:00 AM - 03:00 AM
+                Open 24 Hours Daily
               </div>
             </div>
 

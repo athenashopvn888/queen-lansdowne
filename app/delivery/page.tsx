@@ -8,20 +8,34 @@ export const metadata: Metadata = {
 };
 
 export default function DeliveryPage() {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: "Queen Lansdowne Cannabis Delivery Menu",
-    mainEntity: {
-      "@type": "ItemList",
-      numberOfItems: menu.products.length,
-      itemListElement: menu.products.map((product, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        name: product.name,
-      })),
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "Queen Lansdowne Cannabis Delivery Menu",
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: menu.products.length,
+        itemListElement: menu.products.map((product, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: product.name,
+        })),
+      },
     },
-  };
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "Queen Lansdowne Cannabis Delivery",
+      serviceType: "Cannabis delivery",
+      hoursAvailable: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "10:00",
+        closes: "22:00",
+      },
+    },
+  ];
 
   return (
     <>

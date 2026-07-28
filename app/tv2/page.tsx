@@ -136,7 +136,7 @@ function ItemCard({ title, accent, items, hiIdx, preset }: {
 const TICKER_SLIDES = [
   "🔥 Queen Lansdowne Cannabis — 1472 Queen St W, Toronto",
   "Browse Current Flower Menu",
-  "Open Daily: 10:00 AM - 03:00 AM",
+  "Open 24 Hours Daily",
   "Pre-Rolls · Edibles · Vapes · Concentrates",
   "ALL SALES ARE FINAL",
 ];
