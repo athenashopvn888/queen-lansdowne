@@ -103,7 +103,7 @@ export default function Catalog() {
       <header className="store-header qlc-store-header">
         <div className="header-main">
           <Link className="brand-lockup" href="/" aria-label="Queen and Lansdowne Cannabis homepage"><span className="brand-mark">QLC</span><span><strong>Queen &amp; Lansdowne</strong><small>Delivery menu</small></span></Link>
-          <nav className="desktop-nav"><a href="#menu">Shop</a><Link href="/how-to-order">How to order</Link></nav>
+          <nav className="desktop-nav"><a href="#menu">Shop</a><a href="#how-to-order">How to order</a></nav>
           <div className="header-actions"><a className="header-guide" href="#menu">Search</a></div>
         </div>
         <div className="category-strip qlc-category-strip" aria-label="Flower tier filters">
@@ -111,7 +111,7 @@ export default function Catalog() {
         </div>
       </header>
 
-      <section className="qlc-terms-ribbon" aria-labelledby="qlc-terms"><div><p>QLC DELIVERY DETAILS</p><h2 id="qlc-terms"><span>$60 PRODUCT MINIMUM</span><span>$10 DELIVERY FEE</span><span>DELIVERY HOURS 10:00 a.m.–10:00 p.m.</span></h2></div><Link href="/how-to-order">Read the ordering steps</Link></section>
+      <section className="qlc-terms-ribbon" aria-labelledby="qlc-terms"><div><p>QLC DELIVERY DETAILS</p><h2 id="qlc-terms"><span>$60 PRODUCT MINIMUM</span><span>$10 DELIVERY FEE</span><span>DELIVERY HOURS 10:00 a.m.–10:00 p.m.</span></h2></div><a href="#how-to-order">Read the ordering steps</a></section>
 
       <main className="delivery-page" id="top">
         <section className="store-hero qlc-editorial-hero">
@@ -156,6 +156,16 @@ export default function Catalog() {
             </div>
           </section>
 
+        </section>
+        <section className="qlc-order-steps" id="how-to-order" tabIndex={-1} aria-labelledby="how-to-order-title">
+          <p className="eyebrow">HOW TO ORDER</p>
+          <h2 id="how-to-order-title">LIVE ORDER connects you with the QLC dispatcher.</h2>
+          <ol>
+            <li>Browse the delivery menu and note the product names and weights.</li>
+            <li>Select LIVE ORDER at the bottom-right and send the dispatcher your choices.</li>
+            <li>New customers complete private selfie-with-ID verification in Web Chat.</li>
+            <li>The dispatcher confirms availability, delivery details, and next steps.</li>
+          </ol>
         </section>
       </main>
       <ProductDetailsDrawer product={selectedProduct} storeName="Queen & Lansdowne" onClose={closeDetails} pricing={selectedProduct ? <ProductPricing product={selectedProduct} /> : null} />

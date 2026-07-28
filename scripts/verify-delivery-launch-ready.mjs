@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
 
-const expectedBranch = "feature/qlc-mobile-live-order-anchor-20260728";
+const expectedBranch = "feature/qlc-home-delivery-banner-20260728";
 const expectedKeys = ["category", "description", "effects", "images", "name", "offers", "priceOptions", "publicProductId", "strain", "thc", "tier"].sort();
 const previewOrigin = "https://qlc-delivery-launch-ready.vercel.app";
 const sodStatus = "https://milestone-1-demo.vercel.app/api/web-chat/status";
@@ -48,10 +48,13 @@ assert(drawer.includes("document.body.style.overflow") && drawer.includes('alt={
 assert(chat.includes('"NEW_CUSTOMER"') && chat.includes('"RETURNING_CUSTOMER"') && chat.includes("preparePhoto") && chat.includes("id-review"));
 assert(chat.includes('"Close chat" : "LIVE ORDER"'));
 assert(catalog.includes('href="/" aria-label="Queen and Lansdowne Cannabis homepage"'));
+assert(catalog.includes('href="#how-to-order"') && catalog.includes('id="how-to-order" tabIndex={-1}') && catalog.includes("LIVE ORDER connects you with the QLC dispatcher"));
+assert(css.includes(".qlc-order-steps") && css.includes("scroll-margin-top: 140px") && css.includes(".qlc-order-steps:focus-visible"));
 assert(page.includes("Cannabis Delivery Menu") && !page.includes("index: false") && !page.includes("Launch Preview"));
 assert(!home.includes("NEW DELIVERY MENU — ORDER NOW"));
 assert(navbar.includes('pathname === "/"') && navbar.includes("NEW DELIVERY MENU — ORDER NOW") && navbar.includes('href="/delivery"'));
 assert(navbarCss.includes("@keyframes deliveryMenuPulse") && navbarCss.includes("background: #c5161d") && navbarCss.includes("@media (prefers-reduced-motion: reduce)"));
+assert(home.includes('href="/delivery"') && home.includes('src="/qlc-home-delivery-banner.webp"') && home.includes("priority"));
 assert(footer.includes('<Link href="/delivery">Delivery Menu</Link>') && !footer.includes("Coming Soon"));
 assert(faq.includes("use LIVE ORDER to start your order") && faq.includes("Delivery ordering is available daily"));
 assert(!faq.includes("sign up for email notifications") && !faq.includes("in-store shopping experience only"));

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./page.module.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -201,6 +202,20 @@ export default function HomePage() {
     <main className={styles.main}>
       {/* ── NAVBAR ── */}
       <Navbar />
+
+      <section className={styles.deliveryBannerSection} aria-label="Queen Lansdowne delivery menu">
+        <Link href="/delivery" className={styles.deliveryBannerLink} aria-label="Open the Queen Lansdowne delivery menu">
+          <Image
+            src="/qlc-home-delivery-banner.webp"
+            alt="Queen Lansdowne Cannabis delivery menu"
+            width={1774}
+            height={887}
+            priority
+            sizes="(max-width: 1248px) calc(100vw - 24px), 1200px"
+            className={styles.deliveryBannerImage}
+          />
+        </Link>
+      </section>
 
       {/* ── WELCOME BANNER ── */}
       {hasWelcomeBanner && !welcomeBannerError && (
