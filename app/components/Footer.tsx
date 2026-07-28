@@ -55,7 +55,7 @@ export default function Footer() {
               <Link href="/resources">Resources</Link>
               <Link href="/careers/budtender">Budtender Application</Link>
               <Link href="/faq">FAQ</Link>
-              <Link href="/delivery">Delivery (Coming Soon)</Link>
+              <Link href="/delivery">Delivery Menu</Link>
               <Link href="/info/york-weed-dispensary">Toronto Dispensary</Link>
               <Link href="/info/cheap-weed-york">Cheap Weed Toronto</Link>
               <Link href="/info/native-cigarettes-york">Native Cigarettes</Link>
