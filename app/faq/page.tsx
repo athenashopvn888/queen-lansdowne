@@ -48,8 +48,8 @@ const FAQ_CATEGORIES = [
     title: "🛒 Shopping & Experience",
     faqs: [
       { q: "Do I need an appointment?", a: "No! Queen Lansdowne Cannabis is walk-in only. Just show up anytime — we are open daily from 10:00 AM to 03:00 AM." },
-      { q: "Can I order online?", a: "Currently, Queen Lansdowne Cannabis is an in-store shopping experience only. You can browse the current menu online before visiting." },
-      { q: "Do you offer delivery?", a: "Delivery is coming soon! Visit our delivery page to sign up for email notifications when we launch our delivery service." },
+      { q: "Can I order online?", a: "Yes. Browse the delivery menu and use LIVE ORDER to start your order with the dispatcher." },
+      { q: "Do you offer delivery?", a: "Yes. Delivery ordering is available daily from 10:00 a.m. to 10:00 p.m. through our delivery menu. The dispatcher confirms order details and eligibility." },
       { q: "What payment methods do you accept?", a: "We accept cash and debit. No credit cards at this time." },
       { q: "Can your staff help me compare flower listings?", a: "Yes. Our staff can help you compare the category, package size, and posted details shown for current flower listings." },
       { q: "Is there a minimum purchase?", a: "No minimum purchase required. You can buy as little as 1 gram." },

@@ -2,11 +2,10 @@ import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
 
-const expectedBranch = "feature/qlc-delivery-launch-ready-20260728";
+const expectedBranch = "feature/qlc-remove-delivery-coming-soon-20260728";
 const expectedKeys = ["category", "description", "effects", "images", "name", "offers", "priceOptions", "publicProductId", "strain", "thc", "tier"].sort();
 const previewOrigin = "https://qlc-delivery-launch-ready.vercel.app";
 const sodStatus = "https://milestone-1-demo.vercel.app/api/web-chat/status";
-const expectProductionLive = process.env.QLC_DELIVERY_EXPECT_LIVE === "1";
 
 const branch = execFileSync("git", ["branch", "--show-current"], { encoding: "utf8" }).trim();
 assert.equal(branch, expectedBranch, "Launch acceptance must run from the staging feature branch");
@@ -28,6 +27,8 @@ const css = await readFile(new URL("../app/delivery/delivery-experience.css", im
 const page = await readFile(new URL("../app/delivery/page.tsx", import.meta.url), "utf8");
 const home = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
 const homeCss = await readFile(new URL("../app/page.module.css", import.meta.url), "utf8");
+const footer = await readFile(new URL("../app/components/Footer.tsx", import.meta.url), "utf8");
+const faq = await readFile(new URL("../app/faq/page.tsx", import.meta.url), "utf8");
 assert(catalog.includes("api/catalog?store=QLC") && catalog.includes("View details"));
 assert(catalog.includes("DELIVERY HOURS 10:00 a.m.–10:00 p.m."));
 assert(!catalog.includes("product.sku") && !catalog.includes("parseTierSku"));
@@ -43,6 +44,9 @@ assert(catalog.includes('href="/" aria-label="Queen and Lansdowne Cannabis homep
 assert(page.includes("Cannabis Delivery Menu") && !page.includes("index: false") && !page.includes("Launch Preview"));
 assert(home.includes("NEW DELIVERY — ORDER NOW — MENU AVAILABLE") && home.includes('href="/delivery"'));
 assert(homeCss.includes("@keyframes deliveryLaunchPulse") && homeCss.includes("background: #c5161d") && homeCss.includes("@media (prefers-reduced-motion: reduce)"));
+assert(footer.includes('<Link href="/delivery">Delivery Menu</Link>') && !footer.includes("Coming Soon"));
+assert(faq.includes("use LIVE ORDER to start your order") && faq.includes("Delivery ordering is available daily"));
+assert(!faq.includes("sign up for email notifications") && !faq.includes("in-store shopping experience only"));
 
 for (const productionUrl of [
   "https://queenlansdownecannabis.ca/delivery",
@@ -51,15 +55,9 @@ for (const productionUrl of [
   const response = await fetch(productionUrl, { redirect: "follow" });
   const html = await response.text();
   assert.equal(response.status, 200);
-  if (expectProductionLive) {
-    assert.match(html, /View details/i);
-    assert.match(html, /LIVE ORDER/);
-    assert.doesNotMatch(html, /Delivery Coming Soon/i);
-    assert.doesNotMatch(html, /noindex/i);
-  } else {
-    assert.match(html, /Delivery Coming Soon/i);
-    assert.doesNotMatch(html, /View details/i);
-  }
+  assert.match(html, /View details/i);
+  assert.match(html, /LIVE ORDER/);
+  assert.doesNotMatch(html, /noindex/i);
 }
 
 for (const origin of [
@@ -86,10 +84,10 @@ if (previewUrl) {
 
 console.log(JSON.stringify({
   branch,
-  mode: expectProductionLive ? "production-live" : "pre-production",
+  mode: "production-live",
   products: products.length,
   descriptions: products.filter((product) => product.description).length,
   images: products.filter((product) => product.images?.length).length,
-  productionLiveChecked: expectProductionLive,
+  productionLiveChecked: true,
   previewChecked: Boolean(previewUrl),
 }, null, 2));
