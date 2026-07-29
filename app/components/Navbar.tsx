@@ -27,6 +27,9 @@ const ALL_LINKS = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const storeMenuLinks = ALL_LINKS.filter((link) => link.href.startsWith("/items/") || ["/exotic", "/premium", "/aaa", "/aa", "/budget"].includes(link.href));
+  const isStoreMenuActive = storeMenuLinks.some((link) => pathname === link.href);
+  const isDeliveryActive = pathname === "/delivery";
   const scrollBarRef = useRef<HTMLDivElement>(null);
   const [canAdvance, setCanAdvance] = useState(false);
   const updateScrollState = useCallback(() => { const scrollBar = scrollBarRef.current; if (!scrollBar) return; setCanAdvance(scrollBar.scrollWidth - scrollBar.clientWidth - scrollBar.scrollLeft > 2); }, []);
@@ -51,11 +54,22 @@ export default function Navbar() {
           </span>
         </Link>
         <div className={styles.topBarRight}>
-          {pathname === "/" && (
-            <Link href="/delivery" className={styles.deliveryMenuCta}>
-              NEW DELIVERY MENU — ORDER NOW
+          <div className={styles.menuChoices} aria-label="Choose a menu">
+            <Link
+              href="/exotic"
+              className={`${styles.menuChoice} ${isStoreMenuActive ? styles.menuChoiceActive : ""}`}
+              aria-current={isStoreMenuActive ? "page" : undefined}
+            >
+              STORE MENU
             </Link>
-          )}
+            <Link
+              href="/delivery"
+              className={`${styles.menuChoice} ${styles.deliveryMenuChoice} ${isDeliveryActive ? styles.menuChoiceActive : ""}`}
+              aria-current={isDeliveryActive ? "page" : undefined}
+            >
+              DELIVERY MENU
+            </Link>
+          </div>
           <Link href="/careers/budtender" className={styles.open} aria-label="Join the Queen Lansdowne Cannabis team">
             <span className={styles.dot}></span>
             Join Team
