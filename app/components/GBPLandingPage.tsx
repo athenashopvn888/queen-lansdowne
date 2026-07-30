@@ -86,14 +86,14 @@ export function GBPLandingPage() {
         <p className={styles.heroTagline}>Serving {gbpLocation.city} & Nearby Neighborhoods</p>
       </header>
 
-      {/* Call to Actions */}
+      <aside className={styles.deliveryNotice} aria-labelledby="landing-delivery-title">
+        <h2 id="landing-delivery-title">NEW DELIVERY AVAILABLE</h2>
+        <p>Browse the Queen Lansdowne Cannabis delivery menu daily from 10 a.m. to 10 p.m. Use LIVE ORDER to connect with the QLC dispatcher after choosing your products and weights.</p>
+      </aside>
+
       <div className={styles.btnRow}>
-        <a href={gbpLocation.menuUrl} className={`${styles.btn} ${styles.btnPrimary}`}>
-          View Menu
-        </a>
-        <a href={`tel:${gbpLocation.phoneIntl}`} className={`${styles.btn} ${styles.btnSecondary}`}>
-          Call Store
-        </a>
+        <Link href="/exotic" className={`${styles.btn} ${styles.btnPrimary}`}>STORE MENU</Link>
+        <Link href="/delivery" className={`${styles.btn} ${styles.btnSecondary}`}>DELIVERY MENU</Link>
       </div>
 
       {/* Intro Section */}
@@ -112,12 +112,8 @@ export function GBPLandingPage() {
           Adult 19+ shoppers can use the category links below to orient themselves before visiting {gbpLocation.storeName}. For store-specific questions, call the store directly or review the menu categories on this site.
         </p>
         <div className={styles.btnRow}>
-          <Link href={gbpLocation.menuUrl} className={`${styles.btn} ${styles.btnPrimary}`}>
-            Review Menu Categories
-          </Link>
-          <a href={`tel:${gbpLocation.phoneIntl}`} className={`${styles.btn} ${styles.btnSecondary}`}>
-            Call Store
-          </a>
+          <Link href="/exotic" className={`${styles.btn} ${styles.btnPrimary}`}>STORE MENU</Link>
+          <Link href="/delivery" className={`${styles.btn} ${styles.btnSecondary}`}>DELIVERY MENU</Link>
         </div>
       </section>
 

@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "verify:home-actions": "node scripts/verify-home-actions.mjs",
     "verify:resources": "node scripts/verify-resources-route.mjs",
     "verify:delivery-launch": "node scripts/verify-delivery-launch-ready.mjs",
     "verify:store-hours": "node scripts/verify-store-hours.mjs",
