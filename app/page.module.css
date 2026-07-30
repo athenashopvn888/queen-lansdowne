@@ -235,6 +235,63 @@
   text-transform: uppercase;
 }
 
+.homeDeliveryNotice {
+  width: min(100%, 620px);
+  margin: 20px auto 12px;
+  padding: 14px 16px;
+  border: 1px solid rgba(251, 191, 36, 0.42);
+  border-radius: 14px;
+  color: #f8fafc;
+  background: rgba(15, 23, 42, 0.76);
+}
+
+.homeDeliveryNotice h2 {
+  margin: 0 0 6px;
+  color: #fbbf24;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+}
+
+.homeDeliveryNotice p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.homeMenuActions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: min(100%, 440px);
+  margin: 0 auto;
+}
+
+.homeMenuCta {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #fbbf24;
+  border-radius: 10px;
+  color: #160d02;
+  background: #fbbf24;
+  font-size: 12px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.homeDeliveryCta {
+  border-color: #ef4444;
+  color: #ffffff;
+  background: #b42318;
+}
+
+.homeMenuCta:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
 /* Bento Mosaic Grid */
 .bentoGrid {
   display: grid;
