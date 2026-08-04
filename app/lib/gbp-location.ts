@@ -8,8 +8,8 @@ export const gbpLocation = {
   address: "1472 Queen St W, Toronto, ON M6K 1M4",
   streetAddress: "1472 Queen St W",
   postalCode: "M6K 1M4",
-  phone: "(647) 553-1472",
-  phoneIntl: "+16475531472",
+  phone: "+1 (437) 293-8580",
+  phoneIntl: "+14372938580",
   neighborhood: "Queen West / Lansdowne / Parkdale",
   nearbyAreas: ["Queen Street West", "Lansdowne", "Parkdale", "Little Portugal", "Roncesvalles", "Brockton Village", "Dundas West", "TTC"],
   products: [
