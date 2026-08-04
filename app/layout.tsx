@@ -77,7 +77,7 @@ const jsonLd = {
   name: "Queen Lansdowne Cannabis",
   description: "Cannabis dispensary at 1472 Queen St W in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 hours daily.",
   url: "https://www.queenlansdownecannabis.ca",
-  telephone: "+16475531472",
+  telephone: "+14372938580",
   image: "https://www.queenlansdownecannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
   priceRange: "$3 - $12/g",
   address: {
