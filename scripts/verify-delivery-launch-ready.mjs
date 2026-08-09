@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
 
-const acceptedBranches = new Set(["feature/qlc-home-delivery-banner-20260728", "feature/qlc-24-hours-daily-20260729", "feature/remove-qlc-lower-home-banner-20260729", "feature/pod1-menu-nav-buttons-20260729", "feature/pod1-menu-nav-buttons-clean-20260729", "feature/home-delivery-cta-pair-20260730", "main"]);
+const acceptedBranches = new Set(["feature/qlc-home-delivery-banner-20260728", "feature/qlc-24-hours-daily-20260729", "feature/remove-qlc-lower-home-banner-20260729", "feature/pod1-menu-nav-buttons-20260729", "feature/pod1-menu-nav-buttons-clean-20260729", "feature/home-delivery-cta-pair-20260730", "feat/athena-delivery-images-20260809", "main"]);
 const expectedKeys = ["category", "description", "effects", "images", "name", "offers", "priceOptions", "publicProductId", "strain", "thc", "tier"].sort();
 const previewOrigin = "https://qlc-delivery-launch-ready.vercel.app";
 const sodStatus = "https://milestone-1-demo.vercel.app/api/web-chat/status";
@@ -30,6 +30,7 @@ const navbar = await readFile(new URL("../app/components/Navbar.tsx", import.met
 const navbarCss = await readFile(new URL("../app/components/Navbar.module.css", import.meta.url), "utf8");
 const footer = await readFile(new URL("../app/components/Footer.tsx", import.meta.url), "utf8");
 const faq = await readFile(new URL("../app/faq/page.tsx", import.meta.url), "utf8");
+const nextConfig = await readFile(new URL("../next.config.ts", import.meta.url), "utf8");
 assert(catalog.includes("api/catalog?store=QLC") && catalog.includes("View details"));
 assert(catalog.includes("DELIVERY HOURS 10:00 a.m.–10:00 p.m."));
 assert(!catalog.includes("product.sku") && !catalog.includes("parseTierSku"));
@@ -45,6 +46,10 @@ const liveOrderKeyframes = css.slice(css.indexOf("@keyframes qlc-live-order-puls
 assert(!liveOrderKeyframes.includes("transform:"));
 assert(drawer.includes('role="dialog"') && drawer.includes('aria-modal="true"') && drawer.includes('event.key==="Escape"') && drawer.includes('event.key!=="Tab"'));
 assert(drawer.includes("document.body.style.overflow") && drawer.includes('alt={product.name}'));
+assert(catalog.includes("unoptimized") && drawer.includes("unoptimized"));
+assert(nextConfig.includes('hostname: "athena-cannabis-images.vercel.app"'));
+assert(nextConfig.includes('pathname: "/products/delivery/v1/**"'));
+assert(!nextConfig.includes("milestone-1-demo.vercel.app"));
 assert(chat.includes('"NEW_CUSTOMER"') && chat.includes('"RETURNING_CUSTOMER"') && chat.includes("preparePhoto") && chat.includes("id-review"));
 assert(chat.includes('"Close chat" : "LIVE ORDER"'));
 assert(catalog.includes('href="/" aria-label="Queen and Lansdowne Cannabis homepage"'));

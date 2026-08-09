@@ -6,7 +6,11 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "queenlansdownecannabis.ca" },
       { protocol: "https", hostname: "kennedyloudcannabis.com" },
       { protocol: "https", hostname: "stclaircannabis.com" },
-      { protocol: "https", hostname: "milestone-1-demo.vercel.app" },
+      {
+        protocol: "https",
+        hostname: "athena-cannabis-images.vercel.app",
+        pathname: "/products/delivery/v1/**",
+      },
     ],
   },
   async redirects() {
