@@ -91,13 +91,14 @@ async function preparePhoto(file: File) {
 }
 
 export default function IdVerificationChat() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(() => typeof window !== "undefined" && new URLSearchParams(window.location.search).get("liveOrder") === "1");
   const [token, setToken] = useState(() => typeof window === "undefined" ? "" : localStorage.getItem(SESSION_KEY) || "");
   const [conversation, setConversation] = useState<Conversation | null>(null);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [intent, setIntent] = useState<CustomerIntent | "">("");
   const [firstMessage, setFirstMessage] = useState("");
+  const [smsConsent, setSmsConsent] = useState(false);
   const [message, setMessage] = useState("");
   const [notice, setNotice] = useState("");
   const [busy, setBusy] = useState(false);
@@ -197,7 +198,7 @@ export default function IdVerificationChat() {
       const data = await payload(await fetch(`${API_BASE}/api/web-chat/session`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ storeId: "QLC", customerName: intent === "NEW_CUSTOMER" ? name : "", phone, intent, message: firstMessage }),
+        body: JSON.stringify({ storeId: "QLC", customerName: intent === "NEW_CUSTOMER" ? name : "", phone, intent, message: firstMessage, workflowVersion: "READY_V1", smsConsent }),
       }));
       localStorage.setItem(SESSION_KEY, data.token);
       setToken(data.token);
@@ -300,6 +301,7 @@ export default function IdVerificationChat() {
           <label>Full name<input required minLength={2} maxLength={80} value={name} onChange={(event) => setName(event.target.value)} autoComplete="name" /></label></>}
           {intent && <><label>Canadian mobile number<input required inputMode="tel" value={phone} onChange={(event) => setPhone(event.target.value)} autoComplete="tel" placeholder="647 555 0123" aria-describedby={intent === "NEW_CUSTOMER" ? "sod-phone-help" : undefined} />{intent === "NEW_CUSTOMER" && <small id="sod-phone-help">Must be able to receive verification texts. This becomes your account number.</small>}</label>
           <label>Order details (optional)<textarea maxLength={1000} value={firstMessage} onChange={(event) => setFirstMessage(event.target.value)} placeholder="What would you like to order today?" /></label>
+          <label className="sod-sms-consent"><input required type="checkbox" checked={smsConsent} onChange={(event) => setSmsConsent(event.target.checked)} /><span>I agree to receive one READY delivery-link text for this order.</span></label>
           <button type="submit" disabled={busy}>{busy ? "Starting…" : "Start order chat"}</button></>}
         </form>) : <>
           <div className="sod-chat-scroll">

@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
 
-const acceptedBranches = new Set(["feature/qlc-home-delivery-banner-20260728", "feature/qlc-24-hours-daily-20260729", "feature/remove-qlc-lower-home-banner-20260729", "feature/pod1-menu-nav-buttons-20260729", "feature/pod1-menu-nav-buttons-clean-20260729", "feature/home-delivery-cta-pair-20260730", "feat/athena-delivery-images-20260809", "main"]);
+const acceptedBranches = new Set(["feature/qlc-home-delivery-banner-20260728", "feature/qlc-24-hours-daily-20260729", "feature/remove-qlc-lower-home-banner-20260729", "feature/pod1-menu-nav-buttons-20260729", "feature/pod1-menu-nav-buttons-clean-20260729", "feature/home-delivery-cta-pair-20260730", "feat/athena-delivery-images-20260809", "feature/ready-workflow-pilot-20260810", "main"]);
 const expectedKeys = ["category", "description", "effects", "images", "name", "offers", "priceOptions", "publicProductId", "strain", "thc", "tier"].sort();
 const previewOrigin = "https://qlc-delivery-launch-ready.vercel.app";
 const sodStatus = "https://milestone-1-demo.vercel.app/api/web-chat/status";
