@@ -8,7 +8,9 @@ const deliverySources = [
   readFileSync(new URL("../app/delivery/page.tsx", import.meta.url), "utf8"),
 ].join("\n");
 
-assert.match(source, /new URLSearchParams\(window\.location\.search\)\.get\("liveOrder"\) === "1"/);
+assert.match(source, /new URLSearchParams\(window\.location\.search\)\.get\("liveOrder"\) !== "1"/);
+assert.match(source, /window\.setTimeout\(\(\) => setOpen\(true\), 0\)/);
+assert.doesNotMatch(source, /useState\(\(\) => typeof window[^\n]+liveOrder/);
 assert.match(source, /workflowVersion: "READY_V1"/);
 assert.match(source, /smsConsent/);
 assert.match(source, /I agree to receive one READY delivery-link text for this order\./);

@@ -91,7 +91,7 @@ async function preparePhoto(file: File) {
 }
 
 export default function IdVerificationChat() {
-  const [open, setOpen] = useState(() => typeof window !== "undefined" && new URLSearchParams(window.location.search).get("liveOrder") === "1");
+  const [open, setOpen] = useState(false);
   const [token, setToken] = useState(() => typeof window === "undefined" ? "" : localStorage.getItem(SESSION_KEY) || "");
   const [conversation, setConversation] = useState<Conversation | null>(null);
   const [name, setName] = useState("");
@@ -117,6 +117,12 @@ export default function IdVerificationChat() {
     document.body.classList.toggle("sod-chat-open", open);
     return () => document.body.classList.remove("sod-chat-open");
   }, [open]);
+
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get("liveOrder") !== "1") return;
+    const timer = window.setTimeout(() => setOpen(true), 0);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   useEffect(() => () => {
     if (previewRef.current) URL.revokeObjectURL(previewRef.current);
