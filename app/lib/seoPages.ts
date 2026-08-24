@@ -1,3 +1,13 @@
+const NATIVE_HERO_DISCLOSURE = "Brand preview only. Selection varies by store; check the current cigarette menu before visiting.";
+const NATIVE_HERO_PRODUCTS = [
+  { name: "BB Lights", image: "/products/1001-BB-LIGHTS-CARTONS.webp" },
+  { name: "BB Full", image: "/products/1003-BB-FULL-CARTON.webp" },
+  { name: "Canadian Lights", image: "/products/1005-CANADIAN-LIGHTS.webp" },
+  { name: "Canadian Full", image: "/products/1006-CANADIAN-FULL.webp" },
+  { name: "Canadian Classics Silver", image: "/products/1015-CANADIAN-CLASSICS-SILVER.webp" },
+  { name: "Canadian Menthol", image: "/products/1013-CANADIAN-MENTHOL.webp" },
+] as const;
+
 export interface SeoPageData {
   slug: string;
   title: string;
@@ -5,6 +15,12 @@ export interface SeoPageData {
   h1: string;
   icon: string;
   heroTagline: string;
+  heroPreview?: {
+    eyebrow: string;
+    intro: string;
+    products: typeof NATIVE_HERO_PRODUCTS;
+    disclosure: typeof NATIVE_HERO_DISCLOSURE;
+  };
   banner?: string;
   sections: { heading: string; body: string }[];
   faqs: { q: string; a: string }[];
@@ -49,6 +65,12 @@ export const SEO_PAGES: SeoPageData[] = [
     h1: "Native Cigarettes Toronto — Discount Tobacco",
     icon: "*",
     heroTagline: `Compare Current Brands and Prices · ${hours}`,
+    heroPreview: {
+      eyebrow: "Queen Lansdowne Cannabis · 1472 Queen St W, Toronto",
+      intro: "Cigarette category and visit information for Queen Street West",
+      products: NATIVE_HERO_PRODUCTS,
+      disclosure: NATIVE_HERO_DISCLOSURE,
+    },
     sections: [
       { heading: "Check the Current Cigarette Category", body: "Compare brand, variety, pack or carton unit, and posted price on the current menu before visiting." },
       { heading: "Confirm the Unit", body: "Pack and carton listings describe different quantities. Read the listed unit beside the price before comparing options." },
