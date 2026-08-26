@@ -76,7 +76,7 @@ export const RESOURCE_ROUTE_LABELS: Record<string, string> = {
   "/items/concentrates": "Concentrates",
   "/items/magic": "Magic Stuff",
   "/items/cigarettes": "Cigarettes",
-  "/info/native-cigarettes-york": "Native cigarettes information",
+  "/info/native-cigarettes-toronto": "Native cigarettes information",
   "/faq": "FAQ",
   "/resources/cannabis-101/how-to-read-a-cannabis-menu": "How to Read a Cannabis Menu Without Getting Lost",
   "/resources/flower-guides/aa-vs-aaa-vs-premium-vs-exotic": "AA vs AAA+ vs Premium vs Exotic: What the Flower Sections Actually Do",
@@ -121,7 +121,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "dateModified": "2026-07-11",
     "heroImage": "/storeFavicon.webp",
     "excerpt": "The Queen Lansdowne Cannabis Resource Centre keeps the useful guides in one place: flower, pre-rolls, edibles, THC vapes, value shopping, native smokes, specialty products, and Queen West visit help.",
-    "body": "The Queen Lansdowne Cannabis Resource Centre keeps the useful guides in one place: flower, pre-rolls, edibles, THC vapes, value shopping, native smokes, specialty products, and Queen West visit help.\n\nThese Queen Lansdowne Cannabis resources keep the useful stuff close: category explainers, local visit help, and current category links when details can change.\n\nThese pages are designed to explain categories and help shoppers use the current menu more confidently. Product names, prices, weights, and selection can change, so each resource points back to the appropriate current category whenever current details matter.\n\n### Start with the topic you need\n\n**Cannabis 101**\nUnderstand the menu, product formats, listing details, and the difference between general guidance and current product information.\n\n**Flower Guides**\nLearn how Budget, AA, AAA+, Premium, and Exotic sections organize the flower menu and how to compare listings without treating a tier name as a fixed promise.\n\n**Pre-Roll Guides**\nCompare pre-rolls with flower and understand the listing details that matter when convenience is part of the decision.\n\n**Edibles Guides**\nRead edible labels and menu information more carefully, including the package timing details of edible cannabis.\n\n**Vape Guides**\nSeparate THC vape questions from flower questions and check format, compatibility, and current product details.\n\n**Value Guides**\nCompare price with weight, format, and current listing information instead of reacting to one number by itself.\n\n**Local Guides**\nFind practical Queen West and Lansdowne store information connected to the store page, current hours, contact details, and category links.\n\n**Native Smokes**\nReview informational guides about native cigarettes, pack and carton terminology, and current store selection.\n\n**Magic Mushroom Guides**\nUnderstand how specialty products may be organized on a menu and which label details should be checked before choosing.\n\n**Store Updates**\nRead official Queen Lansdowne Cannabis announcements about the Resource Centre, hours, services, and other real store changes.\n\n### Current information comes first\n\nResources explain the subject. The current menu provides current product details. The store page provides current visit information. When one fact could change the trip, use the current page or contact the store rather than relying on an older guide.\n\n### Explore Queen Lansdowne Cannabis\n\nQueen Lansdowne Cannabis is located near Queen Street West and Lansdowne in Toronto. Use the main store page for current location, hours, contact details, and visit planning.\n\n**Primary links:**\n- Store page: `/weed-dispensary-toronto`\n- Flower: `/budget`, `/aa`, `/aaa`, `/premium`, `/exotic`\n- Pre-rolls: `/items/prerolls`\n- Edibles: `/items/edibles`\n- THC vapes: `/items/vapes`, `/items/vape-disposables`\n- Concentrates: `/items/concentrates`\n- Magic Stuff: `/items/magic`\n- Native cigarettes: `/info/native-cigarettes-york`\n- FAQ: `/faq`",
+    "body": "The Queen Lansdowne Cannabis Resource Centre keeps the useful guides in one place: flower, pre-rolls, edibles, THC vapes, value shopping, native smokes, specialty products, and Queen West visit help.\n\nThese Queen Lansdowne Cannabis resources keep the useful stuff close: category explainers, local visit help, and current category links when details can change.\n\nThese pages are designed to explain categories and help shoppers use the current menu more confidently. Product names, prices, weights, and selection can change, so each resource points back to the appropriate current category whenever current details matter.\n\n### Start with the topic you need\n\n**Cannabis 101**\nUnderstand the menu, product formats, listing details, and the difference between general guidance and current product information.\n\n**Flower Guides**\nLearn how Budget, AA, AAA+, Premium, and Exotic sections organize the flower menu and how to compare listings without treating a tier name as a fixed promise.\n\n**Pre-Roll Guides**\nCompare pre-rolls with flower and understand the listing details that matter when convenience is part of the decision.\n\n**Edibles Guides**\nRead edible labels and menu information more carefully, including the package timing details of edible cannabis.\n\n**Vape Guides**\nSeparate THC vape questions from flower questions and check format, compatibility, and current product details.\n\n**Value Guides**\nCompare price with weight, format, and current listing information instead of reacting to one number by itself.\n\n**Local Guides**\nFind practical Queen West and Lansdowne store information connected to the store page, current hours, contact details, and category links.\n\n**Native Smokes**\nReview informational guides about native cigarettes, pack and carton terminology, and current store selection.\n\n**Magic Mushroom Guides**\nUnderstand how specialty products may be organized on a menu and which label details should be checked before choosing.\n\n**Store Updates**\nRead official Queen Lansdowne Cannabis announcements about the Resource Centre, hours, services, and other real store changes.\n\n### Current information comes first\n\nResources explain the subject. The current menu provides current product details. The store page provides current visit information. When one fact could change the trip, use the current page or contact the store rather than relying on an older guide.\n\n### Explore Queen Lansdowne Cannabis\n\nQueen Lansdowne Cannabis is located near Queen Street West and Lansdowne in Toronto. Use the main store page for current location, hours, contact details, and visit planning.\n\n**Primary links:**\n- Store page: `/weed-dispensary-toronto`\n- Flower: `/budget`, `/aa`, `/aaa`, `/premium`, `/exotic`\n- Pre-rolls: `/items/prerolls`\n- Edibles: `/items/edibles`\n- THC vapes: `/items/vapes`, `/items/vape-disposables`\n- Concentrates: `/items/concentrates`\n- Magic Stuff: `/items/magic`\n- Native cigarettes: `/info/native-cigarettes-toronto`\n- FAQ: `/faq`",
     "secondTake": null,
     "linkRoutes": [
       "/weed-dispensary-toronto",
@@ -136,7 +136,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "/items/vape-disposables",
       "/items/concentrates",
       "/items/magic",
-      "/info/native-cigarettes-york",
+      "/info/native-cigarettes-toronto",
       "/faq"
     ],
     "childRoutes": [
@@ -226,7 +226,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       },
       {
         "title": "Native cigarettes information",
-        "href": "/info/native-cigarettes-york",
+        "href": "/info/native-cigarettes-toronto",
         "description": "Read the current native-cigarette information page."
       },
       {
@@ -924,7 +924,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "body": "This section helps Queen West shoppers compare Native cigarette brands, pack or carton wording, and current listed prices.\n\nUse the current cigarette category before visiting when one brand or unit matters.\n\n### Guides in this section\n\n**Native Cigarettes in Toronto: What to Check Before Visiting**\nCompare current brand, variety, unit, and price information.\n\n**Cigarette Packs vs Cartons: What the Listing Means**\nA simple explanation of units and packaging.\n\nCurrent menu category: `/items/cigarettes`.",
     "secondTake": null,
     "linkRoutes": [
-      "/info/native-cigarettes-york",
+      "/info/native-cigarettes-toronto",
       "/items/cigarettes"
     ],
     "childRoutes": [
@@ -939,7 +939,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "commercialLinks": [
       {
         "title": "Native cigarettes information",
-        "href": "/info/native-cigarettes-york",
+        "href": "/info/native-cigarettes-toronto",
         "description": "Read the current native-cigarette information page."
       },
       {
@@ -1802,7 +1802,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "body": "Current brand, variety, carton, and $25 price information should still be checked before visiting for a specific cigarette product."
     },
     "linkRoutes": [
-      "/info/native-cigarettes-york",
+      "/info/native-cigarettes-toronto",
       "/items/cigarettes",
       "/weed-dispensary-toronto",
       "/resources/native-smokes"
@@ -1815,7 +1815,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "commercialLinks": [
       {
         "title": "Native cigarettes information",
-        "href": "/info/native-cigarettes-york",
+        "href": "/info/native-cigarettes-toronto",
         "description": "Read the current native-cigarette information page."
       },
       {

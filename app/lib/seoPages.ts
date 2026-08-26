@@ -30,7 +30,7 @@ const hours = "Open 24 Hours Daily";
 
 export const SEO_PAGES: SeoPageData[] = [
   {
-    slug: "york-weed-dispensary",
+    slug: "toronto-weed-dispensary",
     title: `Toronto Weed Dispensary — Queen Lansdowne Cannabis | ${hours} | 1472 Queen St W & Nearby Expressway`,
     metaDescription: "Queen Lansdowne Cannabis is at 1472 Queen St W in Toronto with flower, pre-rolls, edibles, vapes, concentrates, cigarettes, and accessories. We are open 24 hours daily.",
     h1: "Toronto Weed Dispensary — Queen Lansdowne Cannabis",
@@ -46,7 +46,7 @@ export const SEO_PAGES: SeoPageData[] = [
     ],
   },
   {
-    slug: "cheap-weed-york",
+    slug: "cheap-weed-toronto",
     title: "Cheap Weed Toronto — Budget Cannabis Deals From $3/g | Queen Lansdowne Cannabis",
     metaDescription: `Compare Budget, AA, and other flower tiers at Queen Lansdowne Cannabis. We are ${hours} at 1472 Queen St W.`,
     h1: "Cheap Weed Toronto — Budget Cannabis Deals",
@@ -59,7 +59,7 @@ export const SEO_PAGES: SeoPageData[] = [
     faqs: [{ q: "Where should value shoppers begin?", a: "Start with the Budget and AA tier pages, then compare current weights and prices." }],
   },
   {
-    slug: "native-cigarettes-york",
+    slug: "native-cigarettes-toronto",
     title: "Native Cigarettes Toronto — Discount Tobacco | Queen Lansdowne Cannabis",
     metaDescription: `Browse the current Native cigarette category at Queen Lansdowne Cannabis, 1472 Queen St W. We are ${hours}.`,
     h1: "Native Cigarettes Toronto — Discount Tobacco",
@@ -91,7 +91,7 @@ export const SEO_PAGES: SeoPageData[] = [
     faqs: [{ q: "Where can I find current menu details?", a: "Use the current category pages or contact the store before visiting." }],
   },
   {
-    slug: "dispensary-near-me-york",
+    slug: "dispensary-near-me-toronto",
     title: `Cannabis Dispensary Near Me Toronto — Queen Lansdowne Cannabis | ${hours}`,
     metaDescription: `Find Queen Lansdowne Cannabis at 1472 Queen St W in Toronto. We are ${hours}. Walk in anytime, no appointment needed.`,
     h1: "Cannabis Dispensary Near Me — Toronto",
