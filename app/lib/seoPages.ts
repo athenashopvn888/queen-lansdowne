@@ -11,6 +11,7 @@ const NATIVE_HERO_PRODUCTS = [
 export interface SeoPageData {
   slug: string;
   title: string;
+  absoluteTitle?: boolean;
   metaDescription: string;
   h1: string;
   icon: string;
@@ -18,8 +19,17 @@ export interface SeoPageData {
   heroPreview?: {
     eyebrow: string;
     intro: string;
-    products: typeof NATIVE_HERO_PRODUCTS;
-    disclosure: typeof NATIVE_HERO_DISCLOSURE;
+    products: readonly { name: string; image: string }[];
+    disclosure: string;
+    theme?: "nicotine";
+    menuHref?: string;
+    primaryCta?: string;
+    secondaryCta?: string;
+    secondaryHref?: string;
+    identity?: string;
+    featuredHeading?: string;
+    featuredIntro?: string;
+    warning?: string;
   };
   banner?: string;
   sections: { heading: string; body: string }[];
@@ -102,6 +112,48 @@ export const SEO_PAGES: SeoPageData[] = [
       { heading: "Check Details Before Visiting", body: "Use the current menu for product names and posted prices, and the store page for current contact and visit information." },
     ],
     faqs: [{ q: "Do I need an appointment?", a: "No appointment is needed for an in-store visit during listed hours." }],
+  },
+  {
+    slug: "nicotine-vapes-toronto",
+    title: "Nicotine Vapes in Toronto | Queen Lansdowne Cannabis",
+    absoluteTitle: true,
+    metaDescription: "Adults 19+: review six verified nicotine vape product pages from Queen Lansdowne Cannabis in Toronto, then check /items/vapes for the current selection. Nicotine is addictive.",
+    h1: "Nicotine Vapes at Queen Lansdowne Cannabis in Toronto",
+    icon: "*",
+    heroTagline: "Adults 19+ · Nicotine is addictive.",
+    heroPreview: {
+      eyebrow: "QUEEN LANSDOWNE CANNABIS • QUEEN WEST / LANSDOWNE / PARKDALE • ADULTS 19+",
+      intro: "Searching for nicotine vapes near me in Toronto? This Queen Lansdowne Cannabis guide features six verified nicotine vape product pages and directs adults to /items/vapes for the current selection. Product details can change, so open the individual item page before choosing. Nicotine is addictive.",
+      products: [
+        { name: "Geek Promax 5% — 30K Puffs", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/GEEK-PROMAX.jpg" },
+        { name: "Geek Universe — 25K Puffs", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/geek_universe_pulse_x_25k.webp" },
+        { name: "Level X Boost G2 Device Kit", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/1085-Level-X-Boost-G2-device-kit.webp" },
+        { name: "Level X G2 Pod", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/1086-Level-X-G2-pod.webp" },
+        { name: "NEXA PIX — 30K Puffs — Many Flavors", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/nexa_showcase_600x600.webp" },
+        { name: "OVNS 10000 5% — 10K Puffs", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/1081OVNS10000.jpg" },
+      ],
+      disclosure: "The featured cards are verified starting points, not a guarantee of current stock, price or availability. Use /items/vapes for the current Queen Lansdowne Cannabis listing.",
+      theme: "nicotine",
+      menuHref: "/items/vapes",
+      primaryCta: "Browse Nicotine Vapes",
+      secondaryCta: "Compare the Six Featured Items",
+      secondaryHref: "#featured-vapes",
+      identity: "Queen Lansdowne Cannabis | Queen West / Lansdowne / Parkdale | Adults 19+ | Nicotine is addictive.",
+      featuredHeading: "Six Verified Cards, One Current Category",
+      featuredIntro: "The featured set combines Geek and NEXA listings with a Level X device kit, a Level X pod and an OVNS listing. Use each card for its exact supported display details, then rely on /items/vapes for the current nicotine vape selection.",
+      warning: "Adults 19+. Nicotine is addictive.",
+    },
+    sections: [
+      { heading: "Read the Device Kit and Pod Listings Carefully", body: "The verified Level X Boost G2 Device Kit and Level X G2 Pod are distinct listings. Keep those format descriptions attached to their respective products, and do not apply them to another featured item unless its current product page verifies that format." },
+      { heading: "Puff Counts Identify Listings, Not Results", body: "Several verified product names include puff counts. Adults can use those numbers to distinguish listings, but this page does not present them as guarantees of lifespan, performance or superiority. Check the individual product page for its supported details." },
+      { heading: "Keep Nicotine and Cannabis Vape Routes Separate", body: "This Queen Lansdowne Cannabis nicotine vape guide uses products from the VAPE PENS category under /items/vapes. The separate /items/vape-disposables route is for THC or cannabis vape products and is excluded from this nicotine page." },
+      { heading: "Visit Queen Lansdowne Cannabis", body: "Before visiting, confirm the storefront’s current details and browse /items/vapes for the latest nicotine vape listing. This page does not claim unverified prices or guaranteed availability." },
+    ],
+    faqs: [
+      { q: "Where should I check Queen Lansdowne Cannabis’s current nicotine selection?", a: "Use /items/vapes. The six featured cards are verified starting points, while the current category listing should control selection information." },
+      { q: "Does every featured item use the same format?", a: "No. The supplied evidence identifies a Level X device kit and a separate Level X pod. Read each remaining product page for its exact verified format and details." },
+      { q: "Does this page include cannabis vapes?", a: "No. It covers nicotine products from the VAPE PENS category for adults 19+. THC and cannabis vape products under /items/vape-disposables are excluded." },
+    ],
   },
 ];
 
