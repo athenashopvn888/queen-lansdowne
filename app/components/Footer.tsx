@@ -59,6 +59,7 @@ export default function Footer() {
               <Link href="/info/toronto-weed-dispensary">Toronto Dispensary</Link>
               <Link href="/info/cheap-weed-toronto">Cheap Weed Toronto</Link>
               <Link href="/info/native-cigarettes-toronto">Native Cigarettes</Link>
+              <Link href="/info/nicotine-vapes-toronto">Nicotine Vapes Toronto</Link>
               <Link href="/info/weed-store-near-toronto">Weed Store Near Toronto</Link>
               <Link href="/weed-dispensary-toronto/">Queen Lansdowne Cannabis Weed Dispensary in Toronto</Link>
               <Link href="/contact">Contact Us</Link>
