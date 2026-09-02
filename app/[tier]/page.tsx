@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Link from "next/link";
 import fs from "fs";
 import path from "path";
 import Navbar from "../components/Navbar";
@@ -31,8 +32,10 @@ export async function generateMetadata({
   const seo = TIER_SEO[tierInfo.key];
 
   return {
-    title: seo?.seoTitle || `${tierInfo.config.name} Cannabis Flower — ${flowers.length} Strains`,
-    description: seo?.seoIntro || `Shop ${flowers.length} ${tierInfo.config.name.toLowerCase()} cannabis strains at Queen Lansdowne Cannabis.`,
+    title: seo?.seoTitle
+      ? { absolute: seo.seoTitle }
+      : `${tierInfo.config.name} Cannabis Flower — ${flowers.length} Strains`,
+    description: seo?.metaDescription || `Shop ${flowers.length} ${tierInfo.config.name.toLowerCase()} cannabis strains at Queen Lansdowne Cannabis.`,
     alternates: {
       canonical: `https://www.queenlansdownecannabis.ca/${tierSlug}`,
     },
@@ -91,7 +94,7 @@ export default async function TierPage({
             <div className={styles.heroTitleRow}>
               <span className={styles.heroIcon}>{config.icon}</span>
               <h1 className={styles.heroTitle}>
-                <span style={{ color: config.color }}>{config.name}</span>
+                <span style={{ color: config.color }}>{seo?.h1 || config.name}</span>
               </h1>
             </div>
             <p className={styles.heroTagline}>{config.tagline}</p>
@@ -183,8 +186,7 @@ export default async function TierPage({
       {seo && (
         <section className={styles.seoSection}>
           <div className={styles.container}>
-            <h2 className={styles.seoMainTitle}>{seo.seoTitle}</h2>
-            <p className={styles.seoIntro}>{seo.seoIntro}</p>
+            <p className={styles.seoIntro}>{seo.intro}</p>
 
             {seo.sections.map((s, i) => (
               <div key={i} className={styles.seoBlock}>
@@ -192,6 +194,10 @@ export default async function TierPage({
                 <p className={styles.seoBody}>{s.body}</p>
               </div>
             ))}
+
+            <nav className={styles.relatedLinks} aria-label={`${config.name} weed and flower links`}>
+              {seo.relatedLinks.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
+            </nav>
 
             {/* FAQ Accordion */}
             {seo.faqs.length > 0 && (

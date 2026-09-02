@@ -3,8 +3,9 @@ import DeliveryContent from "./DeliveryContent";
 import menu from "./delivery-menu.json";
 
 export const metadata: Metadata = {
-  title: "Cannabis Delivery Menu — Queen Lansdowne Cannabis",
-  description: "Browse the Queen Lansdowne Cannabis delivery menu and start your order with the live dispatcher.",
+  title: { absolute: "Weed Delivery in Toronto | Queen Lansdowne Cannabis" },
+  description: "Explore the Queen Lansdowne Cannabis Weed Delivery page in Toronto and review the existing delivery menu and ordering information.",
+  alternates: { canonical: "https://www.queenlansdownecannabis.ca/delivery" },
 };
 
 export default function DeliveryPage() {

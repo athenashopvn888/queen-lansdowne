@@ -126,6 +126,12 @@ export default function Catalog() {
       <section className="qlc-terms-ribbon" aria-labelledby="qlc-terms"><div><p>QLC DELIVERY DETAILS</p><h2 id="qlc-terms"><span>$60 PRODUCT MINIMUM</span><span>$10 DELIVERY FEE</span><span>DELIVERY HOURS 10:00 a.m.–10:00 p.m.</span></h2></div><a href="#how-to-order">Read the ordering steps</a></section>
 
       <main className="delivery-page" id="top">
+        <section className="delivery-seo-intro" aria-labelledby="delivery-seo-title">
+          <p className="eyebrow">QUEEN LANSDOWNE CANNABIS</p>
+          <h1 id="delivery-seo-title">Weed Delivery in Toronto</h1>
+          <p>Queen Lansdowne Cannabis provides a dedicated Weed Delivery page for its existing delivery menu and ordering workflow. Use this page for delivery-related browsing, while the main Weed Dispensary in Toronto page remains the broader store-level Weed destination.</p>
+          <Link href="/weed-dispensary-toronto/">Explore Queen Lansdowne Weed in Toronto</Link>
+        </section>
         <section className="store-hero qlc-editorial-hero">
           <Image src="/qlc-delivery-menu-banner.webp" alt="Queen and Lansdowne Cannabis delivery banner" width={1774} height={887} priority sizes="(max-width: 1500px) 100vw, 1444px" />
         </section>
