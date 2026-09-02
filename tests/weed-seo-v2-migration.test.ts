@@ -58,7 +58,9 @@ test("post-V2.1 cleanup keeps the broad owner direct and removes unsupported eve
     "app/contact/page.tsx",
     "app/lib/products.ts",
     "app/lib/seoPages.ts",
+    "app/lib/gbp-location.ts",
     "app/components/Footer.tsx",
+    "app/components/GBPLandingPage.tsx",
     "app/delivery/DeliveryCatalog.tsx",
     "app/lib/tierSeoContent.ts",
     "app/resources/resourceData.ts",
@@ -68,7 +70,7 @@ test("post-V2.1 cleanup keeps the broad owner direct and removes unsupported eve
   assert.match(sitemap, /`\$\{BASE}\/(?:weed-dispensary-toronto)`/);
   assert.doesNotMatch(sitemap, /weed-dispensary-toronto\//);
   assert.doesNotMatch(publicCopy, /weed-dispensary-toronto\//);
-  assert.doesNotMatch(publicCopy, /Nearby Expressway|major highways like the 401|just 5 minutes from the highways|widest selections|wide selection of native cigarette brands|competitive prices|over 200 strains|No credit cards|No minimum purchase required/);
+  assert.doesNotMatch(publicCopy, /Nearby Expressway|major highways like the 401|just 5 minutes from the highways|Street parking is available|widest selections|wide selection of native cigarette brands|competitive prices|over 200 strains|No credit cards|No minimum purchase required/);
   assert.match(read("app/components/Footer.tsx"), /href="\/items\/vapes">Nicotine Vape</);
 });
 
@@ -79,3 +81,4 @@ test("Weed Delivery route reuses protected operational implementation", () => {
   assert.match(delivery, /weed-delivery-toronto/);
   assert.match(read("app/delivery/DeliveryCatalog.tsx"), /Weed Delivery in Toronto/);
 });
+
