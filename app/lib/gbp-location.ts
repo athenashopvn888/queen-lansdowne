@@ -33,7 +33,7 @@ export const gbpLocation = {
   localLandmarks: ["Queen Street West", "Lansdowne", "Parkdale"],
   introVariant: "Queen Lansdowne Cannabis is a local weed dispensary in Toronto, located at 1472 Queen St W. We serve adults 19+ looking for quality weed, cannabis flower, pre-rolls, edibles, THC vapes, concentrates, shatter, CBD oils, and accessories. Whether you are searching for a weed dispensary near Queen West / Lansdowne / Parkdale, a cannabis store in Toronto, or a local weed shop close to Lansdowne, our friendly team is here to help you find the right product.",
   neighborhoodDescription: "Located in the vibrant Queen West / Lansdowne / Parkdale district, our cannabis store fits right into this active and historic community, surrounded by local retail shops and convenient transit links.",
-  parkingNote: "Street parking is available along Queen Street West",
   transitNote: "Served by the 501 Queen streetcar and local Lansdowne TTC routes.",
   sectionTitle: "Serving Customers Near Queen West and Lansdowne"
 };
+

@@ -106,7 +106,7 @@ export function GBPLandingPage() {
       <section className={styles.section}>
         <h2 className={styles.h2}>Plan a Visit Near {gbpLocation.neighborhood}</h2>
         <p className={styles.infoText}>
-          Use this local page to confirm the store location, review menu categories, and plan a visit around {landmarkList}. {gbpLocation.transitNote} {gbpLocation.parkingNote}.
+          Use this local page to confirm the store location, review menu categories, and plan a visit around {landmarkList}. {gbpLocation.transitNote}
         </p>
         <p className={styles.infoText}>
           Adult 19+ shoppers can use the category links below to orient themselves before visiting {gbpLocation.storeName}. For store-specific questions, call the store directly or review the menu categories on this site.
@@ -164,11 +164,6 @@ export function GBPLandingPage() {
                 ))}
               </div>
             )}
-            <div className={styles.napItem} style={{ marginTop: "10px" }}>
-              <p className={styles.infoBlock} style={{ fontSize: "0.9rem", fontStyle: "italic", margin: 0 }}>
-                * {gbpLocation.parkingNote}.
-              </p>
-            </div>
           </div>
           <div className={styles.mapWrapper}>
             {gbpLocation.mapEmbedUrl ? (
@@ -265,3 +260,4 @@ export function GBPLandingPage() {
     </div>
   );
 }
+
