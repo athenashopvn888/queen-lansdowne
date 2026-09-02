@@ -396,9 +396,9 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "kind": "hub",
     "pageType": "Category hub",
     "parentRoute": "/resources",
-    "h1": "Flower Guides: Understand the Sections Before Comparing Strains",
-    "seoTitle": "Cannabis Flower Guides | Queen Lansdowne Cannabis",
-    "metaDescription": "Explore Queen Lansdowne Cannabis flower guides covering Budget, AA, AAA+, Premium, Exotic, value comparisons, weights, and current menu listings.",
+    "h1": "Weed & Flower Guides at Queen Lansdowne Cannabis",
+    "seoTitle": "Weed & Flower Guides Toronto | Queen Lansdowne Cannabis",
+    "metaDescription": "Explore Queen Lansdowne Cannabis flower guides for Budget, AA, AAA+, Premium and Exotic. Compare the five sections and find the Weed or flower page you want to browse.",
     "primaryKeyword": "cannabis flower guides for Toronto shoppers",
     "supportingKeywords": [
       "AA vs AAA+ flower",
@@ -413,12 +413,13 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "type": "Person"
     },
     "datePublished": "2026-07-11",
-    "dateModified": "2026-07-11",
+    "dateModified": "2026-09-02",
     "heroImage": "/storeFavicon.webp",
-    "excerpt": "Queen Lansdowne Cannabis organizes flower into Budget, AA, AAA+, Premium, and Exotic sections. Those labels help shoppers decide where to begin, but the current listing still carries the details that complete the compari",
-    "body": "Queen Lansdowne Cannabis organizes flower into Budget, AA, AAA+, Premium, and Exotic sections. Those labels help shoppers decide where to begin, but the current listing still carries the details that complete the comparison: product name, weight, posted price, type, and item details.\n\nThese cannabis flower guides for Toronto shoppers keep the focus on the current menu instead of old strain memories.\n\nThis resource category explains how the flower menu is organized without turning tier names into fixed outcomes. A section is a browsing tool. It is not a substitute for checking the current product page.\n\n### Guides in this section\n\n**AA vs AAA+ vs Premium vs Exotic Flower**\nA clear look at what the section names are doing on the menu and how to compare inside each section.\n\n**Budget vs Premium Flower**\nA shopper-focused comparison between two different starting points: value-first browsing and premium-section browsing.\n\n### Browse current flower sections\n\n- Budget: `/budget`\n- AA: `/aa`\n- AAA+: `/aaa`\n- Premium: `/premium`\n- Exotic: `/exotic`\n\n### Quick note\n\nFlower becomes easier to compare when the section and the item are treated as two separate layers. The section narrows the shelf. The item listing answers the current question.",
+    "excerpt": "Queen Lansdowne Cannabis organizes flower across five dedicated sections: Budget, AA, AAA+, Premium and Exotic. Use this guide to compare the site structure and reach the page you want to explore.",
+    "body": "Queen Lansdowne Cannabis organizes flower across five dedicated sections: Budget, AA, AAA+, Premium and Exotic. This guide brings those sections together so shoppers can understand how the site is organized, compare the available tier pages and move directly to the section they want to explore.\n\nIf you are looking for the broader local Weed section rather than one specific flower tier, start with our [Explore Queen Lansdowne Cannabis — Weed Dispensary in Toronto](/weed-dispensary-toronto/) page.\n\n## Compare the Five Weed & Flower Sections\n\nEach flower tier has its own dedicated page. Use the links below to explore one section directly or move between the five pages before deciding where you want to browse.\n\n**Budget Weed & Flower**\nThe Budget page is the dedicated section for browsing Queen Lansdowne Cannabis flower organized under the Budget tier. [Explore Budget Weed & Flower](/budget).\n\n**AA Weed & Flower**\nUse the AA page to explore the flower section organized under the AA tier and compare it with the other four tier pages. [Explore AA Weed & Flower](/aa).\n\n**AAA+ Weed & Flower**\nThe AAA+ page provides its own dedicated flower section within Queen Lansdowne Cannabis’s five-tier structure. [Explore AAA+ Weed & Flower](/aaa).\n\n**Premium Weed & Flower**\nVisit the Premium page for its dedicated flower section and to move between Premium and the surrounding tier pages. [Explore Premium Weed & Flower](/premium).\n\n**Exotic Weed & Flower**\nThe Exotic page is the dedicated section for flower organized under the Exotic tier. [Explore Exotic Weed & Flower](/exotic).\n\n## How Weed, Cannabis and Flower Fit Together\n\nShoppers may use terms such as **weed, cannabis, bud and flower** when looking through a dispensary website. Queen Lansdowne Cannabis uses those terms naturally while keeping different search and browsing needs organized under clear pages.\n\nThe five tier pages handle tier-specific flower browsing. The established [Browse Queen Lansdowne Cannabis Weed in Toronto](/weed-dispensary-toronto/) page remains the broader local Weed destination.\n\nThis resource page remains a guide between those destinations rather than becoming another Toronto Weed landing page.\n\n## Using the Flower Guides from Queen West\n\nIf you already know which tier you want to explore, use its dedicated link above. If you want to compare the five sections first, this guide provides a single starting point.\n\nFor broader Weed browsing from Queen Lansdowne Cannabis, use the Toronto Weed dispensary page. For a particular flower tier, continue directly to Budget, AA, AAA+, Premium or Exotic.\n\n## Weed & Flower Guide FAQs\n\n**What flower tiers are organized on the Queen Lansdowne Cannabis website?**\nThe website organizes flower into five dedicated sections: **Budget, AA, AAA+, Premium and Exotic**. Each section has its own page.\n\n**Where should I start if I do not have a particular tier in mind?**\nStart with the **Weed Dispensary in Toronto** page for the broader Weed section, then use this guide when you want to compare or enter one of the five flower tiers.\n\n**Are Weed and flower separate topics on the site?**\nThe site uses Weed, cannabis, bud and flower naturally, while different pages handle different browsing intents. The broad Toronto Weed intent stays with the established Weed dispensary page, and each flower tier keeps its own dedicated page.\n\n**Can I move directly between the five flower tiers?**\nYes. This guide provides direct links to Budget, AA, AAA+, Premium and Exotic without creating additional competing Weed URLs.",
     "secondTake": null,
     "linkRoutes": [
+      "/weed-dispensary-toronto",
       "/budget",
       "/aa",
       "/aaa",
@@ -436,29 +437,34 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     "commercialLinks": [
       {
-        "title": "Budget flower",
+        "title": "Explore Queen Lansdowne Cannabis — Weed Dispensary in Toronto",
+        "href": "/weed-dispensary-toronto",
+        "description": "Browse the established broader local Weed page."
+      },
+      {
+        "title": "Explore Budget Weed & Flower",
         "href": "/budget",
-        "description": "Browse the current Budget flower section."
+        "description": "Browse Queen Lansdowne Cannabis flower organized under the Budget tier."
       },
       {
-        "title": "AA flower",
+        "title": "Explore AA Weed & Flower",
         "href": "/aa",
-        "description": "Browse the current AA flower section."
+        "description": "Explore the flower section organized under the AA tier."
       },
       {
-        "title": "AAA+ flower",
+        "title": "Explore AAA+ Weed & Flower",
         "href": "/aaa",
-        "description": "Browse the current AAA+ flower section."
+        "description": "Open the dedicated AAA+ flower section."
       },
       {
-        "title": "Premium flower",
+        "title": "Explore Premium Weed & Flower",
         "href": "/premium",
-        "description": "Browse the current Premium flower section."
+        "description": "Visit the dedicated Premium flower section."
       },
       {
-        "title": "Exotic flower",
+        "title": "Explore Exotic Weed & Flower",
         "href": "/exotic",
-        "description": "Browse the current Exotic flower section."
+        "description": "Visit the dedicated Exotic flower section."
       }
     ],
     "cards": [
