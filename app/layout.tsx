@@ -80,7 +80,6 @@ const jsonLd = {
   url: "https://www.queenlansdownecannabis.ca",
   telephone: "+14372938580",
   image: "https://www.queenlansdownecannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
-  priceRange: "$3 - $12/g",
   address: {
     "@type": "PostalAddress",
     streetAddress: "1472 Queen St W",

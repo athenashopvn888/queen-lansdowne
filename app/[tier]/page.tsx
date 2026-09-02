@@ -41,7 +41,7 @@ export async function generateMetadata({
     },
     openGraph: {
       title: `${tierInfo.config.name} Flower | Queen Lansdowne Cannabis`,
-      description: `Browse the current ${tierInfo.config.name.toLowerCase()} flower menu. Listed prices start from $${tierInfo.config.unitPrice}/g.`,
+      description: `Explore the ${tierInfo.config.name} & Cannabis Flower collection from Queen Lansdowne Cannabis in Toronto.`,
     },
   };
 }

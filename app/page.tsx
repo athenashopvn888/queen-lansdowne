@@ -15,35 +15,35 @@ const BENTO_TIERS = [
   {
     name: "EXOTIC WEED",
     slug: "exotic-weed",
-    price: "$10-$12/g",
+    price: "Explore Collection",
     banner: "/banners/exotics_banner.webp",
     className: styles.bentoExotic,
   },
   {
     name: "PREMIUM WEED",
     slug: "premium-weed",
-    price: "$7-$10/g",
+    price: "Explore Collection",
     banner: "/banners/premium_banner.webp",
     className: styles.bentoPremium,
   },
   {
     name: "AAA+ WEED",
     slug: "aaa-weed",
-    price: "$5-$6/g",
+    price: "Explore Collection",
     banner: "/banners/aaa_plus_banner.webp",
     className: styles.bentoTile,
   },
   {
     name: "AA WEED",
     slug: "aa-weed",
-    price: "$4/g",
+    price: "Explore Collection",
     banner: "/banners/aa_banner.webp",
     className: styles.bentoTile,
   },
   {
     name: "BUDGET WEED",
     slug: "budget-weed",
-    price: "$3/g",
+    price: "Explore Collection",
     banner: "/banners/budget_banner.webp",
     className: styles.bentoTile,
   },
@@ -75,15 +75,15 @@ const LOCAL_FAQS = [
   },
   {
     q: "What cannabis products do you carry?",
-    a: "We carry five flower tiers: Exotic Weed ($10-$12/g), Premium Weed ($7-$10/g), AAA+ Weed ($5-$6/g), AA Weed ($4/g), and Budget Weed ($3/g), plus a wide variety of edibles, prerolls, vapes, and concentrates.",
+    a: "Explore Exotic Weed, Premium Weed, AAA+ Weed, AA Weed and Budget Weed, plus the current edibles, pre-rolls, vape and concentrate categories while you browse.",
   },
   {
     q: "Where is Queen Lansdowne Cannabis located?",
-    a: "We are located at 1472 Queen St W, Toronto, ON M6K 1M4. Visit us in person or call us at +1 (437) 293-8580. Free evening street parking is available.",
+    a: "We are located at 1472 Queen St W, Toronto, ON M6K 1M4. Visit us in person or call us at +1 (437) 293-8580. Check current local parking signs and restrictions before your visit.",
   },
   {
-    q: "What is the cheapest weed at Queen Lansdowne Cannabis?",
-    a: "Our Budget Weed flower starts at just $3/g. We also offer AA Weed daily drivers from $4/g and AAA+ Weed heavy hitters from $5-$6/g. View our Budget Weed menu for our latest deals.",
+    q: "Where can I find current product information?",
+    a: "Use the current menu, flower collections and individual product information while browsing Queen Lansdowne Cannabis.",
   },
 ];
 
@@ -320,15 +320,15 @@ export default function HomePage() {
       <section className={styles.seoSection}>
         <div className={styles.container}>
           <div className={styles.seoPanel}>
-            <h2 className={styles.seoPanelTitle}>1472 Queen St W & Nearby Expressway&apos;s Local Cannabis Dispensary — Open 24 Hours Daily</h2>
+            <h2 className={styles.seoPanelTitle}>Queen Lansdowne Cannabis at 1472 Queen St W — Open 24 Hours Daily</h2>
             <p className={styles.seoPanelText}>
-              Welcome to <strong>Queen Lansdowne Cannabis</strong> at 1472 Queen St W. Browse flower across several price tiers, from Exotic and Premium to everyday Budget options.
+              Welcome to <strong>Queen Lansdowne Cannabis</strong> at 1472 Queen St W. Browse Exotic Weed, Premium Weed, AAA+ Weed, AA Weed and Budget Weed flower collections.
             </p>
             <p className={styles.seoPanelText}>
               We are open 24 hours daily — Queen Lansdowne Cannabis is here to serve you. The current menu brings together flower, pre-rolls, edibles, vapes, and other categories. Our staff can help shoppers compare those categories during listed store hours.
             </p>
             <p className={styles.seoPanelText}>
-              Searching for a cannabis dispensary in Toronto or the surrounding area? Queen Lansdowne Cannabis offers flower, pre-rolls, edibles, vapes, and other menu categories. Clear flower tiers help shoppers compare prices before visiting.
+              Searching for a cannabis dispensary in Toronto or the surrounding area? Queen Lansdowne Cannabis offers flower, pre-rolls, edibles, vapes, and other menu categories. Explore the information presented within each collection while you browse.
             </p>
           </div>
         </div>
@@ -436,7 +436,7 @@ export default function HomePage() {
               <p className={styles.storeCardText}>
                 No appointment needed
                 <br />
-                <span className={styles.storeHighlight}>1472 Queen St W & Nearby Expressway, Toronto</span>
+                <span className={styles.storeHighlight}>Queen Lansdowne Cannabis on Queen Street West</span>
               </p>
             </div>
           </div>

@@ -13,7 +13,7 @@ test("five tier pages use distinct weed copy and preserve the broad owner", () =
     assert.match(tier.h1, /^.+ Weed & Cannabis Flower in Toronto/);
     assert.equal(tier.sections.length, 2);
     assert.equal(tier.faqs.length, 2);
-    assert.ok(tier.relatedLinks.some((link) => link.href === "/weed-dispensary-toronto/"));
+    assert.ok(tier.relatedLinks.some((link) => link.href === "/weed-dispensary-toronto"));
     assert.doesNotMatch(`${tier.metaDescription} ${tier.intro}`, /\$\d|in stock|available now|best weed/i);
   }
 });
@@ -38,7 +38,7 @@ test("delivery SEO uses the Weed canonical and links to the broad owner", () => 
   assert.match(page, /Weed Delivery Toronto/);
   assert.match(page, /queenlansdownecannabis\.ca\/weed-delivery-toronto/);
   assert.match(catalog, /<h1 id="delivery-seo-title">Weed Delivery in Toronto<\/h1>/);
-  assert.match(catalog, /href="\/weed-dispensary-toronto\/"/);
+  assert.match(catalog, /href="\/weed-dispensary-toronto"/);
 });
 
 test("approved module titles bypass the site suffix template", () => {

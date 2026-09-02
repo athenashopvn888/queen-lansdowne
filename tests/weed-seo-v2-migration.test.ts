@@ -49,6 +49,29 @@ test("sitemap and public navigation use only new campaign canonicals", () => {
   for (const canonical of Object.values(routeMap)) assert.match(publicSources, new RegExp(canonical.replaceAll("/", "\\/")));
 });
 
+test("post-V2.1 cleanup keeps the broad owner direct and removes unsupported evergreen claims", () => {
+  const broadOwner = read("app/weed-dispensary-toronto/page.tsx");
+  const sitemap = read("app/sitemap.ts");
+  const publicCopy = [
+    "app/page.tsx",
+    "app/faq/page.tsx",
+    "app/contact/page.tsx",
+    "app/lib/products.ts",
+    "app/lib/seoPages.ts",
+    "app/components/Footer.tsx",
+    "app/delivery/DeliveryCatalog.tsx",
+    "app/lib/tierSeoContent.ts",
+    "app/resources/resourceData.ts",
+  ].map(read).join("\n");
+
+  assert.ok(broadOwner.includes("canonical: `https://${gbpLocation.domain}/${gbpLocation.slug}`"));
+  assert.match(sitemap, /`\$\{BASE}\/(?:weed-dispensary-toronto)`/);
+  assert.doesNotMatch(sitemap, /weed-dispensary-toronto\//);
+  assert.doesNotMatch(publicCopy, /weed-dispensary-toronto\//);
+  assert.doesNotMatch(publicCopy, /Nearby Expressway|major highways like the 401|just 5 minutes from the highways|widest selections|wide selection of native cigarette brands|competitive prices|over 200 strains|No credit cards|No minimum purchase required/);
+  assert.match(read("app/components/Footer.tsx"), /href="\/items\/vapes">Nicotine Vape</);
+});
+
 test("Weed Delivery route reuses protected operational implementation", () => {
   assert.match(read("app/weed-delivery-toronto/page.tsx"), /from "\.\.\/delivery\/page"/);
   const delivery = read("app/delivery/page.tsx");

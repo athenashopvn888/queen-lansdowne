@@ -42,7 +42,7 @@ export default function ContactPage() {
                 <br />
                 Toronto, ON M6K 1M4
                 <br />
-                <span className={styles.infoMuted}>1472 Queen St W & Nearby Expressway</span>
+                <span className={styles.infoMuted}>Queen Lansdowne Cannabis on Queen Street West</span>
               </p>
             </div>
 
