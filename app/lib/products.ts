@@ -171,8 +171,8 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   },
   "VAPE PENS": {
     banner: "/banners/01_Vape_Pens.webp",
-    name: "THC Vape", slug: "vapes", color: "#8b5cf6", icon: "💨",
-    seoTitle: "Vape Pens in Toronto | Queen Lansdowne Cannabis",
+    name: "Nicotine Vape", slug: "vapes", color: "#8b5cf6", icon: "💨",
+    seoTitle: "Nicotine Vapes in Toronto | Queen Lansdowne Cannabis",
     seoIntro: "Browse vape category information at Queen Lansdowne Cannabis in Toronto. Review vape-related menu categories and confirm current menu details before visiting.",
     seoDescription: "Queen Lansdowne Cannabis provides a vape category page for adult shoppers reviewing vape-related menu information in Toronto. The page may include vape-related categories such as cartridges, pods, batteries, or disposable vape items when they are listed on the current menu. Use the website category page to review menu information, then confirm current store details before visiting Queen Lansdowne Cannabis at 1472 Queen St W in Toronto.",
     faqs: [
@@ -182,7 +182,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   },
   "VAPE DISPOSABLE": {
     banner: "/banners/02_Vape_Disposable.webp",
-    name: "Nic Vape", slug: "vape-disposables", color: "#a78bfa", icon: "💨",
+    name: "THC Vape", slug: "vape-disposables", color: "#a78bfa", icon: "💨",
     seoTitle: "Disposable Vapes Toronto — THC Disposable Pens",
     seoIntro: "Browse the current disposable vape category at Queen Lansdowne Cannabis in Toronto.",
     seoDescription: "Compare disposable THC vape listings by format, size, and posted price at Queen Lansdowne Cannabis. Visit the current category before travelling for a specific item.",

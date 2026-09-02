@@ -71,8 +71,8 @@ export const RESOURCE_ROUTE_LABELS: Record<string, string> = {
   "/exotic": "Exotic flower",
   "/items/prerolls": "Pre-rolls",
   "/items/edibles": "Edibles",
-  "/items/vapes": "THC vapes",
-  "/items/vape-disposables": "Disposable vapes",
+  "/items/vapes": "Nicotine vapes",
+  "/items/vape-disposables": "THC vapes",
   "/items/concentrates": "Concentrates",
   "/items/magic": "Magic Stuff",
   "/items/cigarettes": "Cigarettes",
@@ -121,7 +121,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "dateModified": "2026-07-11",
     "heroImage": "/storeFavicon.webp",
     "excerpt": "The Queen Lansdowne Cannabis Resource Centre keeps the useful guides in one place: flower, pre-rolls, edibles, THC vapes, value shopping, native smokes, specialty products, and Queen West visit help.",
-    "body": "The Queen Lansdowne Cannabis Resource Centre keeps the useful guides in one place: flower, pre-rolls, edibles, THC vapes, value shopping, native smokes, specialty products, and Queen West visit help.\n\nThese Queen Lansdowne Cannabis resources keep the useful stuff close: category explainers, local visit help, and current category links when details can change.\n\nThese pages are designed to explain categories and help shoppers use the current menu more confidently. Product names, prices, weights, and selection can change, so each resource points back to the appropriate current category whenever current details matter.\n\n### Start with the topic you need\n\n**Cannabis 101**\nUnderstand the menu, product formats, listing details, and the difference between general guidance and current product information.\n\n**Flower Guides**\nLearn how Budget, AA, AAA+, Premium, and Exotic sections organize the flower menu and how to compare listings without treating a tier name as a fixed promise.\n\n**Pre-Roll Guides**\nCompare pre-rolls with flower and understand the listing details that matter when convenience is part of the decision.\n\n**Edibles Guides**\nRead edible labels and menu information more carefully, including the package timing details of edible cannabis.\n\n**Vape Guides**\nSeparate THC vape questions from flower questions and check format, compatibility, and current product details.\n\n**Value Guides**\nCompare price with weight, format, and current listing information instead of reacting to one number by itself.\n\n**Local Guides**\nFind practical Queen West and Lansdowne store information connected to the store page, current hours, contact details, and category links.\n\n**Native Smokes**\nReview informational guides about native cigarettes, pack and carton terminology, and current store selection.\n\n**Magic Mushroom Guides**\nUnderstand how specialty products may be organized on a menu and which label details should be checked before choosing.\n\n**Store Updates**\nRead official Queen Lansdowne Cannabis announcements about the Resource Centre, hours, services, and other real store changes.\n\n### Current information comes first\n\nResources explain the subject. The current menu provides current product details. The store page provides current visit information. When one fact could change the trip, use the current page or contact the store rather than relying on an older guide.\n\n### Explore Queen Lansdowne Cannabis\n\nQueen Lansdowne Cannabis is located near Queen Street West and Lansdowne in Toronto. Use the main store page for current location, hours, contact details, and visit planning.\n\n**Primary links:**\n- Store page: `/weed-dispensary-toronto`\n- Flower: `/budget`, `/aa`, `/aaa`, `/premium`, `/exotic`\n- Pre-rolls: `/items/prerolls`\n- Edibles: `/items/edibles`\n- THC vapes: `/items/vapes`, `/items/vape-disposables`\n- Concentrates: `/items/concentrates`\n- Magic Stuff: `/items/magic`\n- Native cigarettes: `/info/native-cigarettes-toronto`\n- FAQ: `/faq`",
+    "body": "The Queen Lansdowne Cannabis Resource Centre keeps the useful guides in one place: flower, pre-rolls, edibles, THC vapes, value shopping, native smokes, specialty products, and Queen West visit help.\n\nThese Queen Lansdowne Cannabis resources keep the useful stuff close: category explainers, local visit help, and current category links when details can change.\n\nThese pages are designed to explain categories and help shoppers use the current menu more confidently. Product names, prices, weights, and selection can change, so each resource points back to the appropriate current category whenever current details matter.\n\n### Start with the topic you need\n\n**Cannabis 101**\nUnderstand the menu, product formats, listing details, and the difference between general guidance and current product information.\n\n**Flower Guides**\nLearn how Budget, AA, AAA+, Premium, and Exotic sections organize the flower menu and how to compare listings without treating a tier name as a fixed promise.\n\n**Pre-Roll Guides**\nCompare pre-rolls with flower and understand the listing details that matter when convenience is part of the decision.\n\n**Edibles Guides**\nRead edible labels and menu information more carefully, including the package timing details of edible cannabis.\n\n**Vape Guides**\nSeparate THC vape questions from flower questions and check format, compatibility, and current product details.\n\n**Value Guides**\nCompare price with weight, format, and current listing information instead of reacting to one number by itself.\n\n**Local Guides**\nFind practical Queen West and Lansdowne store information connected to the store page, current hours, contact details, and category links.\n\n**Native Smokes**\nReview informational guides about native cigarettes, pack and carton terminology, and current store selection.\n\n**Magic Mushroom Guides**\nUnderstand how specialty products may be organized on a menu and which label details should be checked before choosing.\n\n**Store Updates**\nRead official Queen Lansdowne Cannabis announcements about the Resource Centre, hours, services, and other real store changes.\n\n### Current information comes first\n\nResources explain the subject. The current menu provides current product details. The store page provides current visit information. When one fact could change the trip, use the current page or contact the store rather than relying on an older guide.\n\n### Explore Queen Lansdowne Cannabis\n\nQueen Lansdowne Cannabis is located near Queen Street West and Lansdowne in Toronto. Use the main store page for current location, hours, contact details, and visit planning.\n\n**Primary links:**\n- Store page: `/weed-dispensary-toronto`\n- Flower: `/budget`, `/aa`, `/aaa`, `/premium`, `/exotic`\n- Pre-rolls: `/items/prerolls`\n- Edibles: `/items/edibles`\n- Nicotine vapes: `/items/vapes`\n- THC vapes: `/items/vape-disposables`\n- Concentrates: `/items/concentrates`\n- Magic Stuff: `/items/magic`\n- Native cigarettes: `/info/native-cigarettes-toronto`\n- FAQ: `/faq`",
     "secondTake": null,
     "linkRoutes": [
       "/weed-dispensary-toronto",
@@ -205,14 +205,14 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         "description": "Browse current edible listings."
       },
       {
-        "title": "THC vapes",
+        "title": "Nicotine vapes",
         "href": "/items/vapes",
-        "description": "Browse current THC vape listings."
+        "description": "Browse current nicotine vape listings."
       },
       {
-        "title": "Disposable vapes",
+        "title": "THC vapes",
         "href": "/items/vape-disposables",
-        "description": "Browse current disposable vape listings."
+        "description": "Browse current THC vape listings."
       },
       {
         "title": "Concentrates",
@@ -642,7 +642,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "dateModified": "2026-07-11",
     "heroImage": "/storeFavicon.webp",
     "excerpt": "THC vapes have their own menu logic. The first question is usually the format: cartridge, disposable, or another listed type. Compatibility may matter for cartridge products, while disposable products are sold as self-co",
-    "body": "THC vapes have their own menu logic. The first question is usually the format: cartridge, disposable, or another listed type. Compatibility may matter for cartridge products, while disposable products are sold as self-contained units.\n\nThis THC vape guide for Toronto shoppers keeps format and compatibility questions separate from flower questions.\n\nThis section keeps THC vape information separate from nicotine vape information and separate from flower comparisons.\n\n### Featured guide\n\n**THC Vapes vs Flower: What Changes With the Format?**\nCompare the shopping details involved in each format without turning the article into a claim about which one is better.\n\n### Current categories\n\n- THC vapes: `/items/vapes`\n- Disposable THC vapes: `/items/vape-disposables`\n\n### Quick note\n\nCurrent product formats and selection can change. Check the current page before planning a visit around a specific vape item.",
+    "body": "THC vapes have their own menu logic. The first question is usually the format: cartridge, disposable, or another listed type. Compatibility may matter for cartridge products, while disposable products are sold as self-contained units.\n\nThis THC vape guide for Toronto shoppers keeps format and compatibility questions separate from flower questions.\n\nThis section keeps THC vape information separate from nicotine vape information and separate from flower comparisons.\n\n### Featured guide\n\n**THC Vapes vs Flower: What Changes With the Format?**\nCompare the shopping details involved in each format without turning the article into a claim about which one is better.\n\n### Current categories\n\n- Nicotine vapes: `/items/vapes`\n- THC vapes: `/items/vape-disposables`\n\n### Quick note\n\nCurrent product formats and selection can change. Check the current page before planning a visit around a specific vape item.",
     "secondTake": null,
     "linkRoutes": [
       "/items/vapes",
@@ -657,14 +657,14 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     "commercialLinks": [
       {
-        "title": "THC vapes",
+        "title": "Nicotine vapes",
         "href": "/items/vapes",
-        "description": "Browse current THC vape listings."
+        "description": "Browse current nicotine vape listings."
       },
       {
-        "title": "Disposable vapes",
+        "title": "THC vapes",
         "href": "/items/vape-disposables",
-        "description": "Browse current disposable vape listings."
+        "description": "Browse current THC vape listings."
       }
     ],
     "cards": [
@@ -1076,7 +1076,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "dateModified": "2026-07-11",
     "heroImage": "/storeFavicon.webp",
     "excerpt": "A large cannabis menu becomes easier when you stop reading it as one giant list. Start by choosing the product format. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, native smokes, and specialty produc",
-    "body": "A large cannabis menu becomes easier when you stop reading it as one giant list. Start by choosing the product format. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, native smokes, and specialty products each answer a different shopping question.\n\nAt Queen Lansdowne Cannabis, the menu is divided into product categories and flower sections. That structure is meant to reduce the first decision, not make every item look comparable.\n\n## Begin with format\n\nSomeone looking for loose flower should begin with the flower sections. Someone looking for a ready-rolled product should open pre-rolls. Edibles, THC vapes, concentrates, and accessories each have their own category paths.\n\nChoosing the format first prevents a common problem: comparing products that do not serve the same purpose.\n\n## Read the complete listing\n\nOnce you are inside the correct category, look for the information the page provides:\n\n- Product name\n- Category or flower section\n- Weight or package size\n- Current posted price\n- Pack count where applicable\n- Format details\n- Item notes\n- Current selection where shown\n\nNo single detail should carry the whole decision. A price without a weight is incomplete. A product name without format information may still leave the important question unanswered.\n\n## Flower sections are navigation tools\n\nBudget, AA, AAA+, Premium, and Exotic are separate flower browsing paths at Queen Lansdowne Cannabis. The section helps the shopper choose a starting point. The current product page supplies the details.\n\nThat distinction matters because a tier label should not be treated as a permanent claim about every item. Listings rotate, and the menu should be read in the present tense.\n\n## Changing details belong to the current menu\n\nEvergreen resources can explain methods, categories, and terminology. They should not lock a changing product, price, or selection claim into an article.\n\nUse the resource to understand the menu. Use the current category to answer the current product question.\n\n## Ask a smaller question\n\nWhen the page leaves something unclear, a specific question is more useful than What is best?\n\nExamples:\n\n- Is this listing a single pre-roll or a pack?\n- Does this cartridge require a separate battery?\n- What size is attached to this flower price?\n- Is this specialty item currently listed at this location?\n\nSmaller questions produce clearer answers.\n\n## Continue browsing\n\n- Store information: `/weed-dispensary-toronto`\n- Flower: `/budget`, `/aa`, `/aaa`, `/premium`, `/exotic`\n- Pre-rolls: `/items/prerolls`\n- Edibles: `/items/edibles`\n- THC vapes: `/items/vapes`\n- Concentrates: `/items/concentrates`\n- Specialty products: `/items/magic`",
+    "body": "A large cannabis menu becomes easier when you stop reading it as one giant list. Start by choosing the product format. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, native smokes, and specialty products each answer a different shopping question.\n\nAt Queen Lansdowne Cannabis, the menu is divided into product categories and flower sections. That structure is meant to reduce the first decision, not make every item look comparable.\n\n## Begin with format\n\nSomeone looking for loose flower should begin with the flower sections. Someone looking for a ready-rolled product should open pre-rolls. Edibles, THC vapes, concentrates, and accessories each have their own category paths.\n\nChoosing the format first prevents a common problem: comparing products that do not serve the same purpose.\n\n## Read the complete listing\n\nOnce you are inside the correct category, look for the information the page provides:\n\n- Product name\n- Category or flower section\n- Weight or package size\n- Current posted price\n- Pack count where applicable\n- Format details\n- Item notes\n- Current selection where shown\n\nNo single detail should carry the whole decision. A price without a weight is incomplete. A product name without format information may still leave the important question unanswered.\n\n## Flower sections are navigation tools\n\nBudget, AA, AAA+, Premium, and Exotic are separate flower browsing paths at Queen Lansdowne Cannabis. The section helps the shopper choose a starting point. The current product page supplies the details.\n\nThat distinction matters because a tier label should not be treated as a permanent claim about every item. Listings rotate, and the menu should be read in the present tense.\n\n## Changing details belong to the current menu\n\nEvergreen resources can explain methods, categories, and terminology. They should not lock a changing product, price, or selection claim into an article.\n\nUse the resource to understand the menu. Use the current category to answer the current product question.\n\n## Ask a smaller question\n\nWhen the page leaves something unclear, a specific question is more useful than What is best?\n\nExamples:\n\n- Is this listing a single pre-roll or a pack?\n- Does this cartridge require a separate battery?\n- What size is attached to this flower price?\n- Is this specialty item currently listed at this location?\n\nSmaller questions produce clearer answers.\n\n## Continue browsing\n\n- Store information: `/weed-dispensary-toronto`\n- Flower: `/budget`, `/aa`, `/aaa`, `/premium`, `/exotic`\n- Pre-rolls: `/items/prerolls`\n- Edibles: `/items/edibles`\n- Nicotine vapes: `/items/vapes`\n- THC vapes: `/items/vape-disposables`\n- Concentrates: `/items/concentrates`\n- Specialty products: `/items/magic`",
     "secondTake": {
       "label": "A Second Take",
       "name": "Queen Lansdowne Cannabis Team",
@@ -1144,9 +1144,9 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         "description": "Browse current edible listings."
       },
       {
-        "title": "THC vapes",
+        "title": "Nicotine vapes",
         "href": "/items/vapes",
-        "description": "Browse current THC vape listings."
+        "description": "Browse current nicotine vape listings."
       },
       {
         "title": "Concentrates",
@@ -1516,7 +1516,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "dateModified": "2026-07-11",
     "heroImage": "/storeFavicon.webp",
     "excerpt": "THC vapes and flower belong to different menu categories because the product format changes the shopping questions.",
-    "body": "THC vapes and flower belong to different menu categories because the product format changes the shopping questions.\n\nFlower is a plant product sold in listed weights and organized into flower sections. THC vapes are extract-based products that may be listed as cartridges, disposables, or other vape formats.\n\n## Flower questions\n\nA flower comparison commonly includes:\n\n- Flower section\n- Product name\n- Weight\n- Current price\n- Type or item details where shown\n\nThe shopper may also consider how the flower will be prepared after purchase.\n\n## THC vape questions\n\nA THC vape comparison often begins with format:\n\n- Cartridge or disposable\n- Device compatibility\n- Listed volume or amount\n- Product details\n- Current price\n- Whether a battery is required\n\nCompatibility is especially important when the item is not a self-contained disposable product.\n\n## Why the categories should stay separate\n\nComparing a vape price directly with a flower price usually does not answer much. The units, formats, and use requirements are different.\n\nThe better approach is:\n\n1. Choose the format.\n2. Open the matching category.\n3. Compare current items within that category.\n4. Ask a compatibility question when the listing does not make it clear.\n\n## Current categories\n\n- THC vapes: `/items/vapes`\n- Disposable THC vapes: `/items/vape-disposables`\n- Flower: `/budget`, `/aa`, `/aaa`, `/premium`, `/exotic`",
+    "body": "THC vapes and flower belong to different menu categories because the product format changes the shopping questions.\n\nFlower is a plant product sold in listed weights and organized into flower sections. THC vapes are extract-based products that may be listed as cartridges, disposables, or other vape formats.\n\n## Flower questions\n\nA flower comparison commonly includes:\n\n- Flower section\n- Product name\n- Weight\n- Current price\n- Type or item details where shown\n\nThe shopper may also consider how the flower will be prepared after purchase.\n\n## THC vape questions\n\nA THC vape comparison often begins with format:\n\n- Cartridge or disposable\n- Device compatibility\n- Listed volume or amount\n- Product details\n- Current price\n- Whether a battery is required\n\nCompatibility is especially important when the item is not a self-contained disposable product.\n\n## Why the categories should stay separate\n\nComparing a vape price directly with a flower price usually does not answer much. The units, formats, and use requirements are different.\n\nThe better approach is:\n\n1. Choose the format.\n2. Open the matching category.\n3. Compare current items within that category.\n4. Ask a compatibility question when the listing does not make it clear.\n\n## Current categories\n\n- Nicotine vapes: `/items/vapes`\n- THC vapes: `/items/vape-disposables`\n- Flower: `/budget`, `/aa`, `/aaa`, `/premium`, `/exotic`",
     "secondTake": {
       "label": "A Second Take",
       "name": "Queen Lansdowne Cannabis Team",
@@ -1540,14 +1540,14 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     "commercialLinks": [
       {
-        "title": "THC vapes",
+        "title": "Nicotine vapes",
         "href": "/items/vapes",
-        "description": "Browse current THC vape listings."
+        "description": "Browse current nicotine vape listings."
       },
       {
-        "title": "Disposable vapes",
+        "title": "THC vapes",
         "href": "/items/vape-disposables",
-        "description": "Browse current disposable vape listings."
+        "description": "Browse current THC vape listings."
       },
       {
         "title": "Budget flower",
@@ -1698,7 +1698,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "dateModified": "2026-07-11",
     "heroImage": "/storeFavicon.webp",
     "excerpt": "Queen Lansdowne Cannabis is located at 1472 Queen St W, near Lansdowne in Toronto. For shoppers searching around Queen West or Parkdale, the most useful first step is the store page, followed by the category that matches",
-    "body": "Queen Lansdowne Cannabis is located at 1472 Queen St W, near Lansdowne in Toronto. For shoppers searching around Queen West or Parkdale, the most useful first step is the store page, followed by the category that matches the product question.\n\n## Start with the exact store\n\nBroad searches can return several similarly named stores and listings. Use the Queen Lansdowne Cannabis store page to confirm the address, current hours, phone number, and visit information.\n\nStore page: `/weed-dispensary-toronto`\n\n## Queen West and nearby area context\n\nQueen Street West and Lansdowne place the store near Parkdale and the west side neighbourhoods that many local shoppers already recognize, including Little Portugal, Roncesvalles, Brockton Village, and Dundas West.\n\nThe neighbourhood names should help orientation. They should not be used as a pasted list in every sentence.\n\n## Move from location to category\n\nAfter confirming the store, use the menu category that matches the visit:\n\n- Flower sections\n- Pre-rolls\n- Edibles\n- THC vapes\n- Concentrates\n- Accessories\n- Native smokes\n- Specialty products\n\nThis keeps local intent connected to a practical next step.\n\n## Check current details before travelling for one item\n\nProduct selection can change. Store information can also change over time. When one item, price, or hour determines the visit, check it on the current page or contact the store.\n\n## Local links\n\n- Store page: `/weed-dispensary-toronto`\n- FAQ: `/faq`\n- Resource Centre: `/resources/`\n- Pre-rolls: `/items/prerolls`\n- Edibles: `/items/edibles`\n- THC vapes: `/items/vapes`",
+    "body": "Queen Lansdowne Cannabis is located at 1472 Queen St W, near Lansdowne in Toronto. For shoppers searching around Queen West or Parkdale, the most useful first step is the store page, followed by the category that matches the product question.\n\n## Start with the exact store\n\nBroad searches can return several similarly named stores and listings. Use the Queen Lansdowne Cannabis store page to confirm the address, current hours, phone number, and visit information.\n\nStore page: `/weed-dispensary-toronto`\n\n## Queen West and nearby area context\n\nQueen Street West and Lansdowne place the store near Parkdale and the west side neighbourhoods that many local shoppers already recognize, including Little Portugal, Roncesvalles, Brockton Village, and Dundas West.\n\nThe neighbourhood names should help orientation. They should not be used as a pasted list in every sentence.\n\n## Move from location to category\n\nAfter confirming the store, use the menu category that matches the visit:\n\n- Flower sections\n- Pre-rolls\n- Edibles\n- THC vapes\n- Concentrates\n- Accessories\n- Native smokes\n- Specialty products\n\nThis keeps local intent connected to a practical next step.\n\n## Check current details before travelling for one item\n\nProduct selection can change. Store information can also change over time. When one item, price, or hour determines the visit, check it on the current page or contact the store.\n\n## Local links\n\n- Store page: `/weed-dispensary-toronto`\n- FAQ: `/faq`\n- Resource Centre: `/resources/`\n- Pre-rolls: `/items/prerolls`\n- Edibles: `/items/edibles`\n- Nicotine vapes: `/items/vapes`\n- THC vapes: `/items/vape-disposables`",
     "secondTake": {
       "label": "A Second Take",
       "name": "Queen Lansdowne Cannabis Team",
@@ -1742,9 +1742,9 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         "description": "Browse current edible listings."
       },
       {
-        "title": "THC vapes",
+        "title": "Nicotine vapes",
         "href": "/items/vapes",
-        "description": "Browse current THC vape listings."
+        "description": "Browse current nicotine vape listings."
       }
     ],
     "cards": [
