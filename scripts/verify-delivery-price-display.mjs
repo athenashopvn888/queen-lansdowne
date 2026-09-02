@@ -60,7 +60,7 @@ const layoutSource = fs.readFileSync(new URL("layout.tsx", appRoot), "utf8");
 const stylesSource = fs.readFileSync(new URL("globals.css", appRoot), "utf8");
 const announcement = "NEW DELIVERY MENU IS HERE — CLICK TO EXPLORE";
 assert.equal(layoutSource.split(announcement).length - 1, 1, "delivery announcement must appear exactly once in the root layout");
-assert(/className="deliveryAnnouncement"\s+href="\/delivery"/.test(layoutSource), "delivery announcement must link to /delivery");
+assert(/className="deliveryAnnouncement"\s+href="\/weed-delivery-toronto"/.test(layoutSource), "Weed Delivery announcement must link to /weed-delivery-toronto");
 assert(stylesSource.includes(".deliveryAnnouncement"), "delivery announcement styles must exist");
 assert(/\.deliveryAnnouncement\s*\{[^}]*display:\s*flex;/s.test(stylesSource), "delivery announcement must render as a visible flex strip");
 assert(/--delivery-announcement-height:\s*42px;/.test(stylesSource), "delivery announcement height must have one shared 42px variable");

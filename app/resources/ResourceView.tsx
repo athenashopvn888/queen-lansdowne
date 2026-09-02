@@ -34,6 +34,14 @@ function routeLabel(href: string) {
   return RESOURCE_ROUTE_LABELS[href] || href;
 }
 
+function currentMenuLinkCopy(link: ResourceLink) {
+  const tierLabel = RESOURCE_ROUTE_LABELS[link.href];
+  if (!tierLabel || !["/budget-weed", "/aa-weed", "/aaa-weed", "/premium-weed", "/exotic-weed"].includes(link.href)) {
+    return link;
+  }
+  return { ...link, title: tierLabel, description: `Browse the current ${tierLabel} section.` };
+}
+
 function renderInline(text: string) {
   const nodes: ReactNode[] = [];
   const pattern = /(\*\*([^*]+)\*\*)|(`([^`]+)`)|\[([^\]]+)\]\((\/[^)\s]+)\)/g;
@@ -205,12 +213,15 @@ function LinkPanel({ links }: { links: ResourceLink[] }) {
     <aside className={styles.linkPanel} aria-label="Current menu and store links">
       <p className={styles.sectionLabel}>Current menu and store links</p>
       <div className={styles.linkGrid}>
-        {links.map((link) => (
-          <Link key={`${link.href}-${link.title}`} href={link.href} className={styles.menuLink}>
-            <span>{link.title}</span>
-            <small>{link.description}</small>
-          </Link>
-        ))}
+        {links.map((link) => {
+          const copy = currentMenuLinkCopy(link);
+          return (
+            <Link key={`${link.href}-${link.title}`} href={link.href} className={styles.menuLink}>
+              <span>{copy.title}</span>
+              <small>{copy.description}</small>
+            </Link>
+          );
+        })}
       </div>
     </aside>
   );

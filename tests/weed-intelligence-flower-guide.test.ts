@@ -3,18 +3,18 @@ import fs from "node:fs";
 import test from "node:test";
 
 const source = fs.readFileSync(new URL("../app/resources/resourceData.ts", import.meta.url), "utf8");
-const start = source.indexOf('"route": "/resources/flower-guides"');
+const start = source.indexOf('"route": "/resources/weed-flower-guide"');
 const end = source.indexOf('"pageNumber": 4', start);
 const guide = source.slice(start, end);
 
 test("flower guide stays a supporting owner with approved Weed and tier links", () => {
   assert.ok(start >= 0 && end > start);
-  assert.match(guide, /Weed & Flower Guides at Queen Lansdowne Cannabis/);
-  assert.match(guide, /Weed & Flower Guides Toronto \| Queen Lansdowne Cannabis/);
-  for (const route of ["/weed-dispensary-toronto", "/budget", "/aa", "/aaa", "/premium", "/exotic"]) {
+  assert.match(guide, /Weed & Cannabis Flower Guide/);
+  assert.match(guide, /Weed & Cannabis Flower Guide Toronto \| Queen Lansdowne Cannabis/);
+  for (const route of ["/weed-dispensary-toronto", "/budget-weed", "/aa-weed", "/aaa-weed", "/premium-weed", "/exotic-weed"]) {
     assert.match(guide, new RegExp(`"${route}"`));
   }
-  assert.match(guide, /supporting|remains a guide/);
+  assert.match(guide, /five Weed flower collections/);
 });
 
 test("flower guide avoids volatile and protected business claims", () => {

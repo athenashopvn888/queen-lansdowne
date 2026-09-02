@@ -19,7 +19,7 @@ function openingHoursFor(document, type) {
 }
 
 const homeHtml = await readFile(path.join(root, ".next/server/app/index.html"), "utf8");
-const deliveryHtml = await readFile(path.join(root, ".next/server/app/delivery.html"), "utf8");
+const deliveryHtml = await readFile(path.join(root, ".next/server/app/weed-delivery-toronto.html"), "utf8");
 const faqHtml = await readFile(path.join(root, ".next/server/app/faq.html"), "utf8");
 const contactHtml = await readFile(path.join(root, ".next/server/app/contact.html"), "utf8");
 

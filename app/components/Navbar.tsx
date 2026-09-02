@@ -6,11 +6,11 @@ import Link from "next/link";
 import styles from "./Navbar.module.css";
 
 const ALL_LINKS = [
-  { href: "/exotic", label: "Exotic" },
-  { href: "/premium", label: "Premium" },
-  { href: "/aaa", label: "AAA+" },
-  { href: "/aa", label: "AA" },
-  { href: "/budget", label: "Budget" },
+  { href: "/exotic-weed", label: "Exotic Weed" },
+  { href: "/premium-weed", label: "Premium Weed" },
+  { href: "/aaa-weed", label: "AAA+ Weed" },
+  { href: "/aa-weed", label: "AA Weed" },
+  { href: "/budget-weed", label: "Budget Weed" },
   { href: "/items/edibles", label: "Edibles" },
   { href: "/items/prerolls", label: "Pre-Rolls" },
   { href: "/items/vapes", label: "Nicotine Vape" },
@@ -19,7 +19,7 @@ const ALL_LINKS = [
   { href: "/items/magic", label: "Magic Stuff" },
   { href: "/items/cigarettes", label: "Cigarettes" },
   { href: "/items/add-ons", label: "Accessories" },
-  { href: "/delivery", label: "🚗 Delivery" },
+  { href: "/weed-delivery-toronto", label: "🚗 Weed Delivery" },
   { href: "/careers/budtender", label: "Hiring" },
   { href: "/resources", label: "Resources" },
   { href: "/faq", label: "FAQ" },
@@ -27,9 +27,9 @@ const ALL_LINKS = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const storeMenuLinks = ALL_LINKS.filter((link) => link.href.startsWith("/items/") || ["/exotic", "/premium", "/aaa", "/aa", "/budget"].includes(link.href));
+  const storeMenuLinks = ALL_LINKS.filter((link) => link.href.startsWith("/items/") || ["/exotic-weed", "/premium-weed", "/aaa-weed", "/aa-weed", "/budget-weed"].includes(link.href));
   const isStoreMenuActive = storeMenuLinks.some((link) => pathname === link.href);
-  const isDeliveryActive = pathname === "/delivery";
+  const isDeliveryActive = pathname === "/weed-delivery-toronto";
   const scrollBarRef = useRef<HTMLDivElement>(null);
   const [canAdvance, setCanAdvance] = useState(false);
   const updateScrollState = useCallback(() => { const scrollBar = scrollBarRef.current; if (!scrollBar) return; setCanAdvance(scrollBar.scrollWidth - scrollBar.clientWidth - scrollBar.scrollLeft > 2); }, []);
@@ -56,18 +56,18 @@ export default function Navbar() {
         <div className={styles.topBarRight}>
           <div className={styles.menuChoices} aria-label="Choose a menu">
             <Link
-              href="/exotic"
+              href="/exotic-weed"
               className={`${styles.menuChoice} ${isStoreMenuActive ? styles.menuChoiceActive : ""}`}
               aria-current={isStoreMenuActive ? "page" : undefined}
             >
               STORE MENU
             </Link>
             <Link
-              href="/delivery"
+              href="/weed-delivery-toronto"
               className={`${styles.menuChoice} ${styles.deliveryMenuChoice} ${isDeliveryActive ? styles.menuChoiceActive : ""}`}
               aria-current={isDeliveryActive ? "page" : undefined}
             >
-              DELIVERY MENU
+              WEED DELIVERY
             </Link>
           </div>
           <Link href="/careers/budtender" className={styles.open} aria-label="Join the Queen Lansdowne Cannabis team">

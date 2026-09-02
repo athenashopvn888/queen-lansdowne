@@ -54,7 +54,7 @@ export const RESOURCE_ROUTE_LABELS: Record<string, string> = {
   "/": "Home",
   "/resources": "Resource Centre",
   "/resources/cannabis-101": "Cannabis 101",
-  "/resources/flower-guides": "Flower Guides",
+  "/resources/weed-flower-guide": "Weed Flower Guide",
   "/resources/pre-roll-guides": "Pre-Roll Guides",
   "/resources/edibles-guides": "Edibles Guides",
   "/resources/vape-guides": "Vape Guides",
@@ -64,11 +64,11 @@ export const RESOURCE_ROUTE_LABELS: Record<string, string> = {
   "/resources/native-smokes": "Native Smokes",
   "/resources/magic-mushroom-guides": "Magic Mushroom Guides",
   "/weed-dispensary-toronto": "Queen Lansdowne Cannabis store page",
-  "/budget": "Budget flower",
-  "/aa": "AA flower",
-  "/aaa": "AAA+ flower",
-  "/premium": "Premium flower",
-  "/exotic": "Exotic flower",
+  "/budget-weed": "Budget Weed flower",
+  "/aa-weed": "AA Weed flower",
+  "/aaa-weed": "AAA+ Weed flower",
+  "/premium-weed": "Premium Weed flower",
+  "/exotic-weed": "Exotic Weed flower",
   "/items/prerolls": "Pre-rolls",
   "/items/edibles": "Edibles",
   "/items/vapes": "Nicotine vapes",
@@ -121,15 +121,15 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "dateModified": "2026-07-11",
     "heroImage": "/storeFavicon.webp",
     "excerpt": "The Queen Lansdowne Cannabis Resource Centre keeps the useful guides in one place: flower, pre-rolls, edibles, THC vapes, value shopping, native smokes, specialty products, and Queen West visit help.",
-    "body": "The Queen Lansdowne Cannabis Resource Centre keeps the useful guides in one place: flower, pre-rolls, edibles, THC vapes, value shopping, native smokes, specialty products, and Queen West visit help.\n\nThese Queen Lansdowne Cannabis resources keep the useful stuff close: category explainers, local visit help, and current category links when details can change.\n\nThese pages are designed to explain categories and help shoppers use the current menu more confidently. Product names, prices, weights, and selection can change, so each resource points back to the appropriate current category whenever current details matter.\n\n### Start with the topic you need\n\n**Cannabis 101**\nUnderstand the menu, product formats, listing details, and the difference between general guidance and current product information.\n\n**Flower Guides**\nLearn how Budget, AA, AAA+, Premium, and Exotic sections organize the flower menu and how to compare listings without treating a tier name as a fixed promise.\n\n**Pre-Roll Guides**\nCompare pre-rolls with flower and understand the listing details that matter when convenience is part of the decision.\n\n**Edibles Guides**\nRead edible labels and menu information more carefully, including the package timing details of edible cannabis.\n\n**Vape Guides**\nSeparate THC vape questions from flower questions and check format, compatibility, and current product details.\n\n**Value Guides**\nCompare price with weight, format, and current listing information instead of reacting to one number by itself.\n\n**Local Guides**\nFind practical Queen West and Lansdowne store information connected to the store page, current hours, contact details, and category links.\n\n**Native Smokes**\nReview informational guides about native cigarettes, pack and carton terminology, and current store selection.\n\n**Magic Mushroom Guides**\nUnderstand how specialty products may be organized on a menu and which label details should be checked before choosing.\n\n**Store Updates**\nRead official Queen Lansdowne Cannabis announcements about the Resource Centre, hours, services, and other real store changes.\n\n### Current information comes first\n\nResources explain the subject. The current menu provides current product details. The store page provides current visit information. When one fact could change the trip, use the current page or contact the store rather than relying on an older guide.\n\n### Explore Queen Lansdowne Cannabis\n\nQueen Lansdowne Cannabis is located near Queen Street West and Lansdowne in Toronto. Use the main store page for current location, hours, contact details, and visit planning.\n\n**Primary links:**\n- Store page: `/weed-dispensary-toronto`\n- Flower: `/budget`, `/aa`, `/aaa`, `/premium`, `/exotic`\n- Pre-rolls: `/items/prerolls`\n- Edibles: `/items/edibles`\n- Nicotine vapes: `/items/vapes`\n- THC vapes: `/items/vape-disposables`\n- Concentrates: `/items/concentrates`\n- Magic Stuff: `/items/magic`\n- Native cigarettes: `/info/native-cigarettes-toronto`\n- FAQ: `/faq`",
+    "body": "The Queen Lansdowne Cannabis Resource Centre keeps the useful guides in one place: flower, pre-rolls, edibles, THC vapes, value shopping, native smokes, specialty products, and Queen West visit help.\n\nThese Queen Lansdowne Cannabis resources keep the useful stuff close: category explainers, local visit help, and current category links when details can change.\n\nThese pages are designed to explain categories and help shoppers use the current menu more confidently. Product names, prices, weights, and selection can change, so each resource points back to the appropriate current category whenever current details matter.\n\n### Start with the topic you need\n\n**Cannabis 101**\nUnderstand the menu, product formats, listing details, and the difference between general guidance and current product information.\n\n**Flower Guides**\nLearn how Budget, AA, AAA+, Premium, and Exotic sections organize the flower menu and how to compare listings without treating a tier name as a fixed promise.\n\n**Pre-Roll Guides**\nCompare pre-rolls with flower and understand the listing details that matter when convenience is part of the decision.\n\n**Edibles Guides**\nRead edible labels and menu information more carefully, including the package timing details of edible cannabis.\n\n**Vape Guides**\nSeparate THC vape questions from flower questions and check format, compatibility, and current product details.\n\n**Value Guides**\nCompare price with weight, format, and current listing information instead of reacting to one number by itself.\n\n**Local Guides**\nFind practical Queen West and Lansdowne store information connected to the store page, current hours, contact details, and category links.\n\n**Native Smokes**\nReview informational guides about native cigarettes, pack and carton terminology, and current store selection.\n\n**Magic Mushroom Guides**\nUnderstand how specialty products may be organized on a menu and which label details should be checked before choosing.\n\n**Store Updates**\nRead official Queen Lansdowne Cannabis announcements about the Resource Centre, hours, services, and other real store changes.\n\n### Current information comes first\n\nResources explain the subject. The current menu provides current product details. The store page provides current visit information. When one fact could change the trip, use the current page or contact the store rather than relying on an older guide.\n\n### Explore Queen Lansdowne Cannabis\n\nQueen Lansdowne Cannabis is located near Queen Street West and Lansdowne in Toronto. Use the main store page for current location, hours, contact details, and visit planning.\n\n**Primary links:**\n- Store page: `/weed-dispensary-toronto`\n- Flower: `/budget-weed`, `/aa-weed`, `/aaa-weed`, `/premium-weed`, `/exotic-weed`\n- Pre-rolls: `/items/prerolls`\n- Edibles: `/items/edibles`\n- Nicotine vapes: `/items/vapes`\n- THC vapes: `/items/vape-disposables`\n- Concentrates: `/items/concentrates`\n- Magic Stuff: `/items/magic`\n- Native cigarettes: `/info/native-cigarettes-toronto`\n- FAQ: `/faq`",
     "secondTake": null,
     "linkRoutes": [
       "/weed-dispensary-toronto",
-      "/budget",
-      "/aa",
-      "/aaa",
-      "/premium",
-      "/exotic",
+      "/budget-weed",
+      "/aa-weed",
+      "/aaa-weed",
+      "/premium-weed",
+      "/exotic-weed",
       "/items/prerolls",
       "/items/edibles",
       "/items/vapes",
@@ -141,7 +141,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     "childRoutes": [
       "/resources/cannabis-101",
-      "/resources/flower-guides",
+      "/resources/weed-flower-guide",
       "/resources/pre-roll-guides",
       "/resources/edibles-guides",
       "/resources/vape-guides",
@@ -153,7 +153,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     "relatedRoutes": [
       "/resources/cannabis-101",
-      "/resources/flower-guides",
+      "/resources/weed-flower-guide",
       "/resources/pre-roll-guides",
       "/resources/edibles-guides",
       "/resources/vape-guides",
@@ -171,27 +171,27 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       },
       {
         "title": "Budget flower",
-        "href": "/budget",
+        "href": "/budget-weed",
         "description": "Browse the current Budget flower section."
       },
       {
         "title": "AA flower",
-        "href": "/aa",
+        "href": "/aa-weed",
         "description": "Browse the current AA flower section."
       },
       {
         "title": "AAA+ flower",
-        "href": "/aaa",
+        "href": "/aaa-weed",
         "description": "Browse the current AAA+ flower section."
       },
       {
         "title": "Premium flower",
-        "href": "/premium",
+        "href": "/premium-weed",
         "description": "Browse the current Premium flower section."
       },
       {
         "title": "Exotic flower",
-        "href": "/exotic",
+        "href": "/exotic-weed",
         "description": "Browse the current Exotic flower section."
       },
       {
@@ -246,7 +246,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       },
       {
         "title": "Flower Guides: Understand the Sections Before Comparing Strains",
-        "href": "/resources/flower-guides",
+        "href": "/resources/weed-flower-guide",
         "description": "Queen Lansdowne Cannabis organizes flower into Budget, AA, AAA+, Premium, and Exotic sections. Those labels help shoppers decide where to begin, but the current listing still carries the details that complete the compari",
         "category": "Menu guide",
         "author": "Lana Queen",
@@ -323,7 +323,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "sourceHeading": "CANNABIS 101 HUB",
     "route": "/resources/cannabis-101",
     "kind": "hub",
-    "pageType": "Category hub",
+    "pageType": "Queen Lansdowne Cannabis · Queen West",
     "parentRoute": "/resources",
     "h1": "Cannabis 101: Start With the Menu, Not the Noise",
     "seoTitle": "Cannabis 101 Guides | Queen Lansdowne Cannabis",
@@ -392,13 +392,13 @@ export const RESOURCE_PAGES: ResourcePage[] = [
   {
     "pageNumber": 3,
     "sourceHeading": "FLOWER GUIDES HUB",
-    "route": "/resources/flower-guides",
+    "route": "/resources/weed-flower-guide",
     "kind": "hub",
     "pageType": "Category hub",
     "parentRoute": "/resources",
-    "h1": "Weed & Flower Guides at Queen Lansdowne Cannabis",
-    "seoTitle": "Weed & Flower Guides Toronto | Queen Lansdowne Cannabis",
-    "metaDescription": "Explore Queen Lansdowne Cannabis flower guides for Budget, AA, AAA+, Premium and Exotic. Compare the five sections and find the Weed or flower page you want to browse.",
+    "h1": "Weed & Cannabis Flower Guide",
+    "seoTitle": "Weed & Cannabis Flower Guide Toronto | Queen Lansdowne Cannabis",
+    "metaDescription": "Explore Exotic Weed, Premium Weed, AAA+ Weed, AA Weed and Budget Weed at Queen Lansdowne Cannabis, with a simple guide to the five flower collections.",
     "primaryKeyword": "cannabis flower guides for Toronto shoppers",
     "supportingKeywords": [
       "AA vs AAA+ flower",
@@ -415,16 +415,16 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "datePublished": "2026-07-11",
     "dateModified": "2026-09-02",
     "heroImage": "/storeFavicon.webp",
-    "excerpt": "Queen Lansdowne Cannabis organizes flower across five dedicated sections: Budget, AA, AAA+, Premium and Exotic. Use this guide to compare the site structure and reach the page you want to explore.",
-    "body": "Queen Lansdowne Cannabis organizes flower across five dedicated sections: Budget, AA, AAA+, Premium and Exotic. This guide brings those sections together so shoppers can understand how the site is organized, compare the available tier pages and move directly to the section they want to explore.\n\nIf you are looking for the broader local Weed section rather than one specific flower tier, start with our [Explore Queen Lansdowne Cannabis — Weed Dispensary in Toronto](/weed-dispensary-toronto/) page.\n\n## Compare the Five Weed & Flower Sections\n\nEach flower tier has its own dedicated page. Use the links below to explore one section directly or move between the five pages before deciding where you want to browse.\n\n**Budget Weed & Flower**\nThe Budget page is the dedicated section for browsing Queen Lansdowne Cannabis flower organized under the Budget tier. [Explore Budget Weed & Flower](/budget).\n\n**AA Weed & Flower**\nUse the AA page to explore the flower section organized under the AA tier and compare it with the other four tier pages. [Explore AA Weed & Flower](/aa).\n\n**AAA+ Weed & Flower**\nThe AAA+ page provides its own dedicated flower section within Queen Lansdowne Cannabis’s five-tier structure. [Explore AAA+ Weed & Flower](/aaa).\n\n**Premium Weed & Flower**\nVisit the Premium page for its dedicated flower section and to move between Premium and the surrounding tier pages. [Explore Premium Weed & Flower](/premium).\n\n**Exotic Weed & Flower**\nThe Exotic page is the dedicated section for flower organized under the Exotic tier. [Explore Exotic Weed & Flower](/exotic).\n\n## How Weed, Cannabis and Flower Fit Together\n\nShoppers may use terms such as **weed, cannabis, bud and flower** when looking through a dispensary website. Queen Lansdowne Cannabis uses those terms naturally while keeping different search and browsing needs organized under clear pages.\n\nThe five tier pages handle tier-specific flower browsing. The established [Browse Queen Lansdowne Cannabis Weed in Toronto](/weed-dispensary-toronto/) page remains the broader local Weed destination.\n\nThis resource page remains a guide between those destinations rather than becoming another Toronto Weed landing page.\n\n## Using the Flower Guides from Queen West\n\nIf you already know which tier you want to explore, use its dedicated link above. If you want to compare the five sections first, this guide provides a single starting point.\n\nFor broader Weed browsing from Queen Lansdowne Cannabis, use the Toronto Weed dispensary page. For a particular flower tier, continue directly to Budget, AA, AAA+, Premium or Exotic.\n\n## Weed & Flower Guide FAQs\n\n**What flower tiers are organized on the Queen Lansdowne Cannabis website?**\nThe website organizes flower into five dedicated sections: **Budget, AA, AAA+, Premium and Exotic**. Each section has its own page.\n\n**Where should I start if I do not have a particular tier in mind?**\nStart with the **Weed Dispensary in Toronto** page for the broader Weed section, then use this guide when you want to compare or enter one of the five flower tiers.\n\n**Are Weed and flower separate topics on the site?**\nThe site uses Weed, cannabis, bud and flower naturally, while different pages handle different browsing intents. The broad Toronto Weed intent stays with the established Weed dispensary page, and each flower tier keeps its own dedicated page.\n\n**Can I move directly between the five flower tiers?**\nYes. This guide provides direct links to Budget, AA, AAA+, Premium and Exotic without creating additional competing Weed URLs.",
+    "excerpt": "Queen Lansdowne Cannabis brings five Weed flower collections together for shoppers who want to compare different sections before choosing what to explore.",
+    "body": "Queen Lansdowne Cannabis brings five Weed flower collections together for shoppers who want to compare different sections before choosing what to explore. Browse Exotic Weed, Premium Weed, AAA+ Weed, AA Weed and Budget Weed, then continue directly to the collection that interests you.\n\nFor broader Weed browsing from Queen Lansdowne Cannabis, explore our established [Explore Queen Lansdowne Cannabis Weed in Toronto](/weed-dispensary-toronto/) section.\n\n## Explore Five Weed Flower Collections\n\nEach collection gives you a different section of Queen Lansdowne Cannabis flower to explore. Start anywhere that catches your interest, or compare several collections before narrowing your browsing.\n\n**Exotic Weed**\nExplore the dedicated Exotic Weed flower collection from Queen Lansdowne Cannabis. [Explore Exotic Weed](/exotic-weed).\n\n**Premium Weed**\nBrowse the Premium Weed collection and explore the flower presented within this dedicated section. [Explore Premium Weed](/premium-weed).\n\n**AAA+ Weed**\nExplore Queen Lansdowne Cannabis AAA+ Weed through its dedicated flower collection. [Explore AAA+ Weed](/aaa-weed).\n\n**AA Weed**\nBrowse the dedicated AA Weed flower collection. [Explore AA Weed](/aa-weed).\n\n**Budget Weed**\nExplore Budget Weed through its dedicated Queen Lansdowne Cannabis flower collection. [Explore Budget Weed](/budget-weed).\n\n## Weed, Cannabis and Flower at Queen Lansdowne Cannabis\n\nWeed, cannabis, bud and flower are common terms shoppers use when exploring dispensary selections. Queen Lansdowne Cannabis uses those terms naturally while giving each flower collection a clear identity.\n\nFor broader local Weed browsing rather than one specific flower collection, [Browse Queen Lansdowne Cannabis Weed in Toronto](/weed-dispensary-toronto/).\n\n## Find the Flower Collection That Interests You\n\nYou can start with any of the five Weed flower collections and compare others as you browse. Exotic Weed, Premium Weed, AAA+ Weed, AA Weed and Budget Weed each have their own dedicated collection, while the broader Toronto Weed section gives you a wider starting point.\n\n- [Exotic Weed](/exotic-weed)\n- [Premium Weed](/premium-weed)\n- [AAA+ Weed](/aaa-weed)\n- [AA Weed](/aa-weed)\n- [Budget Weed](/budget-weed)\n\n## Weed & Flower FAQs\n\n**What Weed flower collections can I explore at Queen Lansdowne Cannabis?**\nQueen Lansdowne Cannabis organizes flower browsing across five collections: **Exotic Weed, Premium Weed, AAA+ Weed, AA Weed and Budget Weed**.\n\n**Where can I start if I am not looking for a particular flower collection?**\nUse the **Queen Lansdowne Cannabis Weed in Toronto** section for broader Weed browsing, then move into one of the five flower collections when something interests you.\n\n**Can I compare more than one Weed flower collection?**\nYes. You can move between Exotic Weed, Premium Weed, AAA+ Weed, AA Weed and Budget Weed and explore the information presented within each collection.\n\n**Where can I find the broader Queen Lansdowne Cannabis Weed selection?**\nVisit the established **Weed Dispensary in Toronto** section for broader local Weed browsing.",
     "secondTake": null,
     "linkRoutes": [
       "/weed-dispensary-toronto",
-      "/budget",
-      "/aa",
-      "/aaa",
-      "/premium",
-      "/exotic"
+      "/budget-weed",
+      "/aa-weed",
+      "/aaa-weed",
+      "/premium-weed",
+      "/exotic-weed"
     ],
     "childRoutes": [
       "/resources/flower-guides/aa-vs-aaa-vs-premium-vs-exotic",
@@ -437,34 +437,34 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     "commercialLinks": [
       {
-        "title": "Explore Queen Lansdowne Cannabis — Weed Dispensary in Toronto",
+        "title": "Explore Queen Lansdowne Cannabis Weed in Toronto",
         "href": "/weed-dispensary-toronto",
         "description": "Browse the established broader local Weed page."
       },
       {
-        "title": "Explore Budget Weed & Flower",
-        "href": "/budget",
-        "description": "Browse Queen Lansdowne Cannabis flower organized under the Budget tier."
+        "title": "Explore Budget Weed",
+        "href": "/budget-weed",
+        "description": "Explore the dedicated Budget Weed flower collection."
       },
       {
-        "title": "Explore AA Weed & Flower",
-        "href": "/aa",
-        "description": "Explore the flower section organized under the AA tier."
+        "title": "Explore AA Weed",
+        "href": "/aa-weed",
+        "description": "Browse the dedicated AA Weed flower collection."
       },
       {
-        "title": "Explore AAA+ Weed & Flower",
-        "href": "/aaa",
-        "description": "Open the dedicated AAA+ flower section."
+        "title": "Explore AAA+ Weed",
+        "href": "/aaa-weed",
+        "description": "Explore the dedicated AAA+ Weed flower collection."
       },
       {
-        "title": "Explore Premium Weed & Flower",
-        "href": "/premium",
-        "description": "Visit the dedicated Premium flower section."
+        "title": "Explore Premium Weed",
+        "href": "/premium-weed",
+        "description": "Browse the dedicated Premium Weed flower collection."
       },
       {
-        "title": "Explore Exotic Weed & Flower",
-        "href": "/exotic",
-        "description": "Visit the dedicated Exotic flower section."
+        "title": "Explore Exotic Weed",
+        "href": "/exotic-weed",
+        "description": "Explore the dedicated Exotic Weed flower collection."
       }
     ],
     "cards": [
@@ -719,14 +719,14 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "dateModified": "2026-07-11",
     "heroImage": "/storeFavicon.webp",
     "excerpt": "Value shopping is not simply finding the lowest number on the page. A useful comparison includes the listed weight, product section, current price, and item details. A lower price attached to a different size is not the ",
-    "body": "Value shopping is not simply finding the lowest number on the page. A useful comparison includes the listed weight, product section, current price, and item details. A lower price attached to a different size is not the same comparison.\n\nIf you are comparing cheap weed in Queen West, this section keeps price, weight, and current listing details in the same conversation.\n\nThis section is built for shoppers using phrases such as cheap weed, affordable weed, Budget flower, and flower deals. The language is direct because those are common shopper wording, but the advice stays grounded in current menu information.\n\n### Featured guide\n\n**How to Compare Flower Prices Without Ignoring Weight**\nA practical guide to reading price and quantity together before comparing current flower listings.\n\n### Useful category links\n\n- Budget: `/budget`\n- AA: `/aa`\n- AAA+: `/aaa`\n- Premium: `/premium`\n- Exotic: `/exotic`\n\n### Quinn's note\n\nValue shoppers do not need a lecture. They need the full line: section, product, size, and current price.",
+    "body": "Value shopping is not simply finding the lowest number on the page. A useful comparison includes the listed weight, product section, current price, and item details. A lower price attached to a different size is not the same comparison.\n\nIf you are comparing cheap weed in Queen West, this section keeps price, weight, and current listing details in the same conversation.\n\nThis section is built for shoppers using phrases such as cheap weed, affordable weed, Budget flower, and flower deals. The language is direct because those are common shopper wording, but the advice stays grounded in current menu information.\n\n### Featured guide\n\n**How to Compare Flower Prices Without Ignoring Weight**\nA practical guide to reading price and quantity together before comparing current flower listings.\n\n### Useful category links\n\n- Budget: `/budget-weed`\n- AA: `/aa-weed`\n- AAA+: `/aaa-weed`\n- Premium: `/premium-weed`\n- Exotic: `/exotic-weed`\n\n### Quinn's note\n\nValue shoppers do not need a lecture. They need the full line: section, product, size, and current price.",
     "secondTake": null,
     "linkRoutes": [
-      "/budget",
-      "/aa",
-      "/aaa",
-      "/premium",
-      "/exotic"
+      "/budget-weed",
+      "/aa-weed",
+      "/aaa-weed",
+      "/premium-weed",
+      "/exotic-weed"
     ],
     "childRoutes": [
       "/resources/value-guides/how-to-compare-flower-prices"
@@ -738,27 +738,27 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "commercialLinks": [
       {
         "title": "Budget flower",
-        "href": "/budget",
+        "href": "/budget-weed",
         "description": "Browse the current Budget flower section."
       },
       {
         "title": "AA flower",
-        "href": "/aa",
+        "href": "/aa-weed",
         "description": "Browse the current AA flower section."
       },
       {
         "title": "AAA+ flower",
-        "href": "/aaa",
+        "href": "/aaa-weed",
         "description": "Browse the current AAA+ flower section."
       },
       {
         "title": "Premium flower",
-        "href": "/premium",
+        "href": "/premium-weed",
         "description": "Browse the current Premium flower section."
       },
       {
         "title": "Exotic flower",
-        "href": "/exotic",
+        "href": "/exotic-weed",
         "description": "Browse the current Exotic flower section."
       }
     ],
@@ -1082,7 +1082,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "dateModified": "2026-07-11",
     "heroImage": "/storeFavicon.webp",
     "excerpt": "A large cannabis menu becomes easier when you stop reading it as one giant list. Start by choosing the product format. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, native smokes, and specialty produc",
-    "body": "A large cannabis menu becomes easier when you stop reading it as one giant list. Start by choosing the product format. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, native smokes, and specialty products each answer a different shopping question.\n\nAt Queen Lansdowne Cannabis, the menu is divided into product categories and flower sections. That structure is meant to reduce the first decision, not make every item look comparable.\n\n## Begin with format\n\nSomeone looking for loose flower should begin with the flower sections. Someone looking for a ready-rolled product should open pre-rolls. Edibles, THC vapes, concentrates, and accessories each have their own category paths.\n\nChoosing the format first prevents a common problem: comparing products that do not serve the same purpose.\n\n## Read the complete listing\n\nOnce you are inside the correct category, look for the information the page provides:\n\n- Product name\n- Category or flower section\n- Weight or package size\n- Current posted price\n- Pack count where applicable\n- Format details\n- Item notes\n- Current selection where shown\n\nNo single detail should carry the whole decision. A price without a weight is incomplete. A product name without format information may still leave the important question unanswered.\n\n## Flower sections are navigation tools\n\nBudget, AA, AAA+, Premium, and Exotic are separate flower browsing paths at Queen Lansdowne Cannabis. The section helps the shopper choose a starting point. The current product page supplies the details.\n\nThat distinction matters because a tier label should not be treated as a permanent claim about every item. Listings rotate, and the menu should be read in the present tense.\n\n## Changing details belong to the current menu\n\nEvergreen resources can explain methods, categories, and terminology. They should not lock a changing product, price, or selection claim into an article.\n\nUse the resource to understand the menu. Use the current category to answer the current product question.\n\n## Ask a smaller question\n\nWhen the page leaves something unclear, a specific question is more useful than What is best?\n\nExamples:\n\n- Is this listing a single pre-roll or a pack?\n- Does this cartridge require a separate battery?\n- What size is attached to this flower price?\n- Is this specialty item currently listed at this location?\n\nSmaller questions produce clearer answers.\n\n## Continue browsing\n\n- Store information: `/weed-dispensary-toronto`\n- Flower: `/budget`, `/aa`, `/aaa`, `/premium`, `/exotic`\n- Pre-rolls: `/items/prerolls`\n- Edibles: `/items/edibles`\n- Nicotine vapes: `/items/vapes`\n- THC vapes: `/items/vape-disposables`\n- Concentrates: `/items/concentrates`\n- Specialty products: `/items/magic`",
+    "body": "A large cannabis menu becomes easier when you stop reading it as one giant list. Start by choosing the product format. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, native smokes, and specialty products each answer a different shopping question.\n\nAt Queen Lansdowne Cannabis, the menu is divided into product categories and flower sections. That structure is meant to reduce the first decision, not make every item look comparable.\n\n## Begin with format\n\nSomeone looking for loose flower should begin with the flower sections. Someone looking for a ready-rolled product should open pre-rolls. Edibles, THC vapes, concentrates, and accessories each have their own category paths.\n\nChoosing the format first prevents a common problem: comparing products that do not serve the same purpose.\n\n## Read the complete listing\n\nOnce you are inside the correct category, look for the information the page provides:\n\n- Product name\n- Category or flower section\n- Weight or package size\n- Current posted price\n- Pack count where applicable\n- Format details\n- Item notes\n- Current selection where shown\n\nNo single detail should carry the whole decision. A price without a weight is incomplete. A product name without format information may still leave the important question unanswered.\n\n## Flower sections are navigation tools\n\nBudget, AA, AAA+, Premium, and Exotic are separate flower browsing paths at Queen Lansdowne Cannabis. The section helps the shopper choose a starting point. The current product page supplies the details.\n\nThat distinction matters because a tier label should not be treated as a permanent claim about every item. Listings rotate, and the menu should be read in the present tense.\n\n## Changing details belong to the current menu\n\nEvergreen resources can explain methods, categories, and terminology. They should not lock a changing product, price, or selection claim into an article.\n\nUse the resource to understand the menu. Use the current category to answer the current product question.\n\n## Ask a smaller question\n\nWhen the page leaves something unclear, a specific question is more useful than What is best?\n\nExamples:\n\n- Is this listing a single pre-roll or a pack?\n- Does this cartridge require a separate battery?\n- What size is attached to this flower price?\n- Is this specialty item currently listed at this location?\n\nSmaller questions produce clearer answers.\n\n## Continue browsing\n\n- Store information: `/weed-dispensary-toronto`\n- Flower: `/budget-weed`, `/aa-weed`, `/aaa-weed`, `/premium-weed`, `/exotic-weed`\n- Pre-rolls: `/items/prerolls`\n- Edibles: `/items/edibles`\n- Nicotine vapes: `/items/vapes`\n- THC vapes: `/items/vape-disposables`\n- Concentrates: `/items/concentrates`\n- Specialty products: `/items/magic`",
     "secondTake": {
       "label": "A Second Take",
       "name": "Queen Lansdowne Cannabis Team",
@@ -1093,11 +1093,11 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     },
     "linkRoutes": [
       "/weed-dispensary-toronto",
-      "/budget",
-      "/aa",
-      "/aaa",
-      "/premium",
-      "/exotic",
+      "/budget-weed",
+      "/aa-weed",
+      "/aaa-weed",
+      "/premium-weed",
+      "/exotic-weed",
       "/items/prerolls",
       "/items/edibles",
       "/items/vapes",
@@ -1116,27 +1116,27 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       },
       {
         "title": "Budget flower",
-        "href": "/budget",
+        "href": "/budget-weed",
         "description": "Browse the current Budget flower section."
       },
       {
         "title": "AA flower",
-        "href": "/aa",
+        "href": "/aa-weed",
         "description": "Browse the current AA flower section."
       },
       {
         "title": "AAA+ flower",
-        "href": "/aaa",
+        "href": "/aaa-weed",
         "description": "Browse the current AAA+ flower section."
       },
       {
         "title": "Premium flower",
-        "href": "/premium",
+        "href": "/premium-weed",
         "description": "Browse the current Premium flower section."
       },
       {
         "title": "Exotic flower",
-        "href": "/exotic",
+        "href": "/exotic-weed",
         "description": "Browse the current Exotic flower section."
       },
       {
@@ -1182,7 +1182,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "route": "/resources/flower-guides/aa-vs-aaa-vs-premium-vs-exotic",
     "kind": "article",
     "pageType": "Evergreen flower guide",
-    "parentRoute": "/resources/flower-guides",
+    "parentRoute": "/resources/weed-flower-guide",
     "h1": "AA vs AAA+ vs Premium vs Exotic: What the Flower Sections Actually Do",
     "seoTitle": "AA vs AAA+ vs Premium vs Exotic Flower | Queen Lansdowne",
     "metaDescription": "Compare AA, AAA+, Premium, and Exotic flower as menu sections, then use current product names, weights, prices, and notes to complete the comparison.",
@@ -1214,48 +1214,48 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "body": "Section names organize the flower menu. Current product pages provide the changing information, including listed sizes, prices, and selection."
     },
     "linkRoutes": [
-      "/budget",
-      "/aa",
-      "/aaa",
-      "/premium",
-      "/exotic"
+      "/budget-weed",
+      "/aa-weed",
+      "/aaa-weed",
+      "/premium-weed",
+      "/exotic-weed"
     ],
     "childRoutes": [],
     "relatedRoutes": [
-      "/resources/flower-guides",
+      "/resources/weed-flower-guide",
       "/resources/flower-guides/budget-vs-premium-flower"
     ],
     "commercialLinks": [
       {
         "title": "Budget flower",
-        "href": "/budget",
+        "href": "/budget-weed",
         "description": "Browse the current Budget flower section."
       },
       {
         "title": "AA flower",
-        "href": "/aa",
+        "href": "/aa-weed",
         "description": "Browse the current AA flower section."
       },
       {
         "title": "AAA+ flower",
-        "href": "/aaa",
+        "href": "/aaa-weed",
         "description": "Browse the current AAA+ flower section."
       },
       {
         "title": "Premium flower",
-        "href": "/premium",
+        "href": "/premium-weed",
         "description": "Browse the current Premium flower section."
       },
       {
         "title": "Exotic flower",
-        "href": "/exotic",
+        "href": "/exotic-weed",
         "description": "Browse the current Exotic flower section."
       }
     ],
     "cards": [
       {
         "title": "Flower Guides: Understand the Sections Before Comparing Strains",
-        "href": "/resources/flower-guides",
+        "href": "/resources/weed-flower-guide",
         "description": "Queen Lansdowne Cannabis organizes flower into Budget, AA, AAA+, Premium, and Exotic sections. Those labels help shoppers decide where to begin, but the current listing still carries the details that complete the compari",
         "category": "Menu guide",
         "author": "Lana Queen",
@@ -1277,7 +1277,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "route": "/resources/flower-guides/budget-vs-premium-flower",
     "kind": "article",
     "pageType": "Evergreen comparison guide",
-    "parentRoute": "/resources/flower-guides",
+    "parentRoute": "/resources/weed-flower-guide",
     "h1": "Budget vs Premium Flower: Two Different Starting Points",
     "seoTitle": "Budget vs Premium Flower | Queen Lansdowne Cannabis",
     "metaDescription": "Budget and Premium flower are different menu starting points. Compare current listings by weight, price, product details, and the reason for the visit.",
@@ -1297,7 +1297,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "dateModified": "2026-07-11",
     "heroImage": "/storeFavicon.webp",
     "excerpt": "Budget and Premium flower do not need a winner. They serve different browsing priorities.",
-    "body": "Budget and Premium flower do not need a winner. They serve different browsing priorities.\n\nAt Queen Lansdowne Cannabis, Budget is the obvious place to begin when spending and quantity are leading the decision. Premium is a separate flower section for shoppers who want to review that part of the menu. The useful comparison begins after the section is chosen.\n\n## When Budget makes sense as the first click\n\nBudget is built for value-focused browsing. That does not mean every current Budget listing is identical or that the lowest visible number tells the whole story.\n\nCheck:\n\n- Listed weight\n- Current price\n- Product name\n- Item notes\n- Whether the comparison uses the same quantity\n\nBudget shopping becomes clearer when the entire listing is read instead of isolating one number.\n\n## When Premium becomes the better starting point\n\nPremium is useful when the shopper specifically wants to see the current Premium flower section. It narrows the menu without asking the shopper to inspect every tier first.\n\nThe label does not need exaggerated copy around it. Open the section and compare the products actually listed there.\n\n## Cross-section comparisons\n\nA Budget item and a Premium item may use different weights or pricing structures. Before comparing them, make sure the numbers describe comparable quantities.\n\nA practical comparison might ask:\n\n- Are these the same weight?\n- Are both prices current?\n- Do the item details add relevant context?\n- Is the shopper comparing value, section preference, or both?\n\n## Queen West value searches\n\nPeople commonly use direct phrases such as cheap weed, affordable weed, Budget flower, and weed deals. Those searches should lead to information that respects the shoppers intent.\n\nThe answer is not generic hype. It is a clear path into the current Budget page, followed by an honest comparison.\n\n## Browse the sections\n\n- Budget: `/budget`\n- Premium: `/premium`",
+    "body": "Budget and Premium flower do not need a winner. They serve different browsing priorities.\n\nAt Queen Lansdowne Cannabis, Budget is the obvious place to begin when spending and quantity are leading the decision. Premium is a separate flower section for shoppers who want to review that part of the menu. The useful comparison begins after the section is chosen.\n\n## When Budget makes sense as the first click\n\nBudget is built for value-focused browsing. That does not mean every current Budget listing is identical or that the lowest visible number tells the whole story.\n\nCheck:\n\n- Listed weight\n- Current price\n- Product name\n- Item notes\n- Whether the comparison uses the same quantity\n\nBudget shopping becomes clearer when the entire listing is read instead of isolating one number.\n\n## When Premium becomes the better starting point\n\nPremium is useful when the shopper specifically wants to see the current Premium flower section. It narrows the menu without asking the shopper to inspect every tier first.\n\nThe label does not need exaggerated copy around it. Open the section and compare the products actually listed there.\n\n## Cross-section comparisons\n\nA Budget item and a Premium item may use different weights or pricing structures. Before comparing them, make sure the numbers describe comparable quantities.\n\nA practical comparison might ask:\n\n- Are these the same weight?\n- Are both prices current?\n- Do the item details add relevant context?\n- Is the shopper comparing value, section preference, or both?\n\n## Queen West value searches\n\nPeople commonly use direct phrases such as cheap weed, affordable weed, Budget flower, and weed deals. Those searches should lead to information that respects the shoppers intent.\n\nThe answer is not generic hype. It is a clear path into the current Budget page, followed by an honest comparison.\n\n## Browse the sections\n\n- Budget: `/budget-weed`\n- Premium: `/premium-weed`",
     "secondTake": {
       "label": "A Second Take",
       "name": "Queen Lansdowne Cannabis Team",
@@ -1307,30 +1307,30 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "body": "A well-designed menu lets Budget and Premium keep their own identities. The comparison becomes useful when the reader knows which priority brought them to the page."
     },
     "linkRoutes": [
-      "/budget",
-      "/premium"
+      "/budget-weed",
+      "/premium-weed"
     ],
     "childRoutes": [],
     "relatedRoutes": [
-      "/resources/flower-guides",
+      "/resources/weed-flower-guide",
       "/resources/flower-guides/aa-vs-aaa-vs-premium-vs-exotic"
     ],
     "commercialLinks": [
       {
         "title": "Budget flower",
-        "href": "/budget",
+        "href": "/budget-weed",
         "description": "Browse the current Budget flower section."
       },
       {
         "title": "Premium flower",
-        "href": "/premium",
+        "href": "/premium-weed",
         "description": "Browse the current Premium flower section."
       }
     ],
     "cards": [
       {
         "title": "Flower Guides: Understand the Sections Before Comparing Strains",
-        "href": "/resources/flower-guides",
+        "href": "/resources/weed-flower-guide",
         "description": "Queen Lansdowne Cannabis organizes flower into Budget, AA, AAA+, Premium, and Exotic sections. Those labels help shoppers decide where to begin, but the current listing still carries the details that complete the compari",
         "category": "Menu guide",
         "author": "Lana Queen",
@@ -1372,7 +1372,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "dateModified": "2026-07-11",
     "heroImage": "/storeFavicon.webp",
     "excerpt": "Pre-rolls and flower can contain the same broad type of cannabis product, but they create different shopping experiences.",
-    "body": "Pre-rolls and flower can contain the same broad type of cannabis product, but they create different shopping experiences.\n\nFlower gives the shopper more control over quantity and preparation. Pre-rolls arrive in a ready-rolled format. The better choice depends on what the shopper wants from the format, not on a universal rule.\n\n## Flower offers more control\n\nLoose flower lets shoppers compare different weights, flower sections, and individual listings. It suits someone who wants to choose the flower first and handle preparation separately.\n\nAt Queen Lansdowne Cannabis, flower also includes Budget, AA, AAA+, Premium, and Exotic sections. That gives the flower shopper more category links to explore.\n\n## Pre-rolls prioritize convenience\n\nPre-rolls reduce the preparation step. The important listing details may include:\n\n- Single item or pack\n- Pack count\n- Size\n- Standard or infused format where shown\n- Current price\n- Item notes\n\nA pre-roll page should be read as a pre-roll page, not as a shortcut to the flower menu.\n\n## Do not mix the comparison too early\n\nA shopper who already knows the preferred format can save time by going directly to that category.\n\nA shopper who is undecided should first ask what matters more:\n\n- Control over quantity and preparation\n- A ready-rolled format\n- Pack convenience\n- A specific current product listing\n\nOnce that question is answered, the menu becomes much smaller.\n\n## Current categories\n\n- Pre-rolls: `/items/prerolls`\n- Flower sections: `/budget`, `/aa`, `/aaa`, `/premium`, `/exotic`",
+    "body": "Pre-rolls and flower can contain the same broad type of cannabis product, but they create different shopping experiences.\n\nFlower gives the shopper more control over quantity and preparation. Pre-rolls arrive in a ready-rolled format. The better choice depends on what the shopper wants from the format, not on a universal rule.\n\n## Flower offers more control\n\nLoose flower lets shoppers compare different weights, flower sections, and individual listings. It suits someone who wants to choose the flower first and handle preparation separately.\n\nAt Queen Lansdowne Cannabis, flower also includes Budget, AA, AAA+, Premium, and Exotic sections. That gives the flower shopper more category links to explore.\n\n## Pre-rolls prioritize convenience\n\nPre-rolls reduce the preparation step. The important listing details may include:\n\n- Single item or pack\n- Pack count\n- Size\n- Standard or infused format where shown\n- Current price\n- Item notes\n\nA pre-roll page should be read as a pre-roll page, not as a shortcut to the flower menu.\n\n## Do not mix the comparison too early\n\nA shopper who already knows the preferred format can save time by going directly to that category.\n\nA shopper who is undecided should first ask what matters more:\n\n- Control over quantity and preparation\n- A ready-rolled format\n- Pack convenience\n- A specific current product listing\n\nOnce that question is answered, the menu becomes much smaller.\n\n## Current categories\n\n- Pre-rolls: `/items/prerolls`\n- Flower sections: `/budget-weed`, `/aa-weed`, `/aaa-weed`, `/premium-weed`, `/exotic-weed`",
     "secondTake": {
       "label": "A Second Take",
       "name": "Queen Lansdowne Cannabis Team",
@@ -1383,11 +1383,11 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     },
     "linkRoutes": [
       "/items/prerolls",
-      "/budget",
-      "/aa",
-      "/aaa",
-      "/premium",
-      "/exotic"
+      "/budget-weed",
+      "/aa-weed",
+      "/aaa-weed",
+      "/premium-weed",
+      "/exotic-weed"
     ],
     "childRoutes": [],
     "relatedRoutes": [
@@ -1401,27 +1401,27 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       },
       {
         "title": "Budget flower",
-        "href": "/budget",
+        "href": "/budget-weed",
         "description": "Browse the current Budget flower section."
       },
       {
         "title": "AA flower",
-        "href": "/aa",
+        "href": "/aa-weed",
         "description": "Browse the current AA flower section."
       },
       {
         "title": "AAA+ flower",
-        "href": "/aaa",
+        "href": "/aaa-weed",
         "description": "Browse the current AAA+ flower section."
       },
       {
         "title": "Premium flower",
-        "href": "/premium",
+        "href": "/premium-weed",
         "description": "Browse the current Premium flower section."
       },
       {
         "title": "Exotic flower",
-        "href": "/exotic",
+        "href": "/exotic-weed",
         "description": "Browse the current Exotic flower section."
       }
     ],
@@ -1522,7 +1522,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "dateModified": "2026-07-11",
     "heroImage": "/storeFavicon.webp",
     "excerpt": "THC vapes and flower belong to different menu categories because the product format changes the shopping questions.",
-    "body": "THC vapes and flower belong to different menu categories because the product format changes the shopping questions.\n\nFlower is a plant product sold in listed weights and organized into flower sections. THC vapes are extract-based products that may be listed as cartridges, disposables, or other vape formats.\n\n## Flower questions\n\nA flower comparison commonly includes:\n\n- Flower section\n- Product name\n- Weight\n- Current price\n- Type or item details where shown\n\nThe shopper may also consider how the flower will be prepared after purchase.\n\n## THC vape questions\n\nA THC vape comparison often begins with format:\n\n- Cartridge or disposable\n- Device compatibility\n- Listed volume or amount\n- Product details\n- Current price\n- Whether a battery is required\n\nCompatibility is especially important when the item is not a self-contained disposable product.\n\n## Why the categories should stay separate\n\nComparing a vape price directly with a flower price usually does not answer much. The units, formats, and use requirements are different.\n\nThe better approach is:\n\n1. Choose the format.\n2. Open the matching category.\n3. Compare current items within that category.\n4. Ask a compatibility question when the listing does not make it clear.\n\n## Current categories\n\n- Nicotine vapes: `/items/vapes`\n- THC vapes: `/items/vape-disposables`\n- Flower: `/budget`, `/aa`, `/aaa`, `/premium`, `/exotic`",
+    "body": "THC vapes and flower belong to different menu categories because the product format changes the shopping questions.\n\nFlower is a plant product sold in listed weights and organized into flower sections. THC vapes are extract-based products that may be listed as cartridges, disposables, or other vape formats.\n\n## Flower questions\n\nA flower comparison commonly includes:\n\n- Flower section\n- Product name\n- Weight\n- Current price\n- Type or item details where shown\n\nThe shopper may also consider how the flower will be prepared after purchase.\n\n## THC vape questions\n\nA THC vape comparison often begins with format:\n\n- Cartridge or disposable\n- Device compatibility\n- Listed volume or amount\n- Product details\n- Current price\n- Whether a battery is required\n\nCompatibility is especially important when the item is not a self-contained disposable product.\n\n## Why the categories should stay separate\n\nComparing a vape price directly with a flower price usually does not answer much. The units, formats, and use requirements are different.\n\nThe better approach is:\n\n1. Choose the format.\n2. Open the matching category.\n3. Compare current items within that category.\n4. Ask a compatibility question when the listing does not make it clear.\n\n## Current categories\n\n- Nicotine vapes: `/items/vapes`\n- THC vapes: `/items/vape-disposables`\n- Flower: `/budget-weed`, `/aa-weed`, `/aaa-weed`, `/premium-weed`, `/exotic-weed`",
     "secondTake": {
       "label": "A Second Take",
       "name": "Queen Lansdowne Cannabis Team",
@@ -1534,11 +1534,11 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "linkRoutes": [
       "/items/vapes",
       "/items/vape-disposables",
-      "/budget",
-      "/aa",
-      "/aaa",
-      "/premium",
-      "/exotic"
+      "/budget-weed",
+      "/aa-weed",
+      "/aaa-weed",
+      "/premium-weed",
+      "/exotic-weed"
     ],
     "childRoutes": [],
     "relatedRoutes": [
@@ -1557,27 +1557,27 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       },
       {
         "title": "Budget flower",
-        "href": "/budget",
+        "href": "/budget-weed",
         "description": "Browse the current Budget flower section."
       },
       {
         "title": "AA flower",
-        "href": "/aa",
+        "href": "/aa-weed",
         "description": "Browse the current AA flower section."
       },
       {
         "title": "AAA+ flower",
-        "href": "/aaa",
+        "href": "/aaa-weed",
         "description": "Browse the current AAA+ flower section."
       },
       {
         "title": "Premium flower",
-        "href": "/premium",
+        "href": "/premium-weed",
         "description": "Browse the current Premium flower section."
       },
       {
         "title": "Exotic flower",
-        "href": "/exotic",
+        "href": "/exotic-weed",
         "description": "Browse the current Exotic flower section."
       }
     ],
@@ -1619,7 +1619,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "dateModified": "2026-07-11",
     "heroImage": "/storeFavicon.webp",
     "excerpt": "A flower price only makes sense beside the amount attached to it.",
-    "body": "A flower price only makes sense beside the amount attached to it.\n\nTwo listings can show different prices because they represent different weights, different sections, or different current offers. The useful comparison begins by reading the full line.\n\n## Keep price and weight together\n\nBefore deciding which listing offers stronger value, confirm:\n\n- The weight of each listing\n- The current posted price\n- Whether both listings use the same quantity\n- The flower section\n- Any current item details\n\nComparing a smaller quantity with a larger quantity as if they were equal creates a false result.\n\n## Use price per gram carefully\n\nPrice per gram can make different quantities easier to compare. It is a calculation tool, not the only measure of value.\n\nA clear listing may already show a per-gram figure. When it does not, divide the total price by the listed number of grams.\n\nEven then, current product details still matter. The lowest calculated number does not automatically answer every shoppers priorities.\n\n## Compare within a section first\n\nBudget listings are easiest to compare against other current Budget listings. The same principle applies to AA, AAA+, Premium, and Exotic.\n\nCross-section comparisons can still be useful, but the shopper should understand that the section itself is part of the browsing decision.\n\n## Shopper language can stay direct\n\nCheap weed, affordable weed, Budget flower, and weed deals are normal shopper phrases. A page targeting those terms should answer the value question directly instead of hiding behind vague language.\n\nThe practical answer is current price, current weight, and the correct category page.\n\n## Browse current flower sections\n\n- `/budget`\n- `/aa`\n- `/aaa`\n- `/premium`\n- `/exotic`",
+    "body": "A flower price only makes sense beside the amount attached to it.\n\nTwo listings can show different prices because they represent different weights, different sections, or different current offers. The useful comparison begins by reading the full line.\n\n## Keep price and weight together\n\nBefore deciding which listing offers stronger value, confirm:\n\n- The weight of each listing\n- The current posted price\n- Whether both listings use the same quantity\n- The flower section\n- Any current item details\n\nComparing a smaller quantity with a larger quantity as if they were equal creates a false result.\n\n## Use price per gram carefully\n\nPrice per gram can make different quantities easier to compare. It is a calculation tool, not the only measure of value.\n\nA clear listing may already show a per-gram figure. When it does not, divide the total price by the listed number of grams.\n\nEven then, current product details still matter. The lowest calculated number does not automatically answer every shoppers priorities.\n\n## Compare within a section first\n\nBudget listings are easiest to compare against other current Budget listings. The same principle applies to AA, AAA+, Premium, and Exotic.\n\nCross-section comparisons can still be useful, but the shopper should understand that the section itself is part of the browsing decision.\n\n## Shopper language can stay direct\n\nCheap weed, affordable weed, Budget flower, and weed deals are normal shopper phrases. A page targeting those terms should answer the value question directly instead of hiding behind vague language.\n\nThe practical answer is current price, current weight, and the correct category page.\n\n## Browse current flower sections\n\n- `/budget-weed`\n- `/aa-weed`\n- `/aaa-weed`\n- `/premium-weed`\n- `/exotic-weed`",
     "secondTake": {
       "label": "A Second Take",
       "name": "Queen Lansdowne Cannabis Team",
@@ -1629,11 +1629,11 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "body": "Price comparison is a layout problem as much as a math problem. When weight, section, and current price are visible together, the decision becomes much easier to read."
     },
     "linkRoutes": [
-      "/budget",
-      "/aa",
-      "/aaa",
-      "/premium",
-      "/exotic"
+      "/budget-weed",
+      "/aa-weed",
+      "/aaa-weed",
+      "/premium-weed",
+      "/exotic-weed"
     ],
     "childRoutes": [],
     "relatedRoutes": [
@@ -1642,27 +1642,27 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "commercialLinks": [
       {
         "title": "Budget flower",
-        "href": "/budget",
+        "href": "/budget-weed",
         "description": "Browse the current Budget flower section."
       },
       {
         "title": "AA flower",
-        "href": "/aa",
+        "href": "/aa-weed",
         "description": "Browse the current AA flower section."
       },
       {
         "title": "AAA+ flower",
-        "href": "/aaa",
+        "href": "/aaa-weed",
         "description": "Browse the current AAA+ flower section."
       },
       {
         "title": "Premium flower",
-        "href": "/premium",
+        "href": "/premium-weed",
         "description": "Browse the current Premium flower section."
       },
       {
         "title": "Exotic flower",
-        "href": "/exotic",
+        "href": "/exotic-weed",
         "description": "Browse the current Exotic flower section."
       }
     ],

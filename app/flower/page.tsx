@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 export const metadata: Metadata = {
   title: "Cannabis Flower | Queen Lansdowne Cannabis Toronto",
   description:
-    "Browse Queen Lansdowne Cannabis flower category pages in Toronto. Use this overview to choose Exotic, Premium, AAA+, AA, or Budget flower tiers and review store details before visiting.",
+    "Browse Queen Lansdowne Cannabis flower category pages in Toronto. Use this overview to choose Exotic Weed, Premium Weed, AAA+ Weed, AA Weed, or Budget Weed flower tiers and review store details before visiting.",
   alternates: {
     canonical: "https://www.queenlansdownecannabis.ca/flower",
   },
@@ -17,7 +17,7 @@ const faqs = [
   {
     question: "How is cannabis flower organized on this website?",
     answer:
-      "Queen Lansdowne Cannabis organizes flower into tier pages, including Exotic, Premium, AAA+, AA, and Budget. Use this overview to choose the flower category page you want to review.",
+      "Queen Lansdowne Cannabis organizes flower into tier pages, including Exotic Weed, Premium Weed, AAA+ Weed, AA Weed, and Budget Weed. Use this overview to choose the flower category page you want to review.",
   },
   {
     question: "Does this page show every current flower product?",
@@ -41,8 +41,8 @@ export default function FlowerOverviewPage() {
           <p style={styles.eyebrow}>Queen Lansdowne Cannabis</p>
           <h1 style={styles.title}>Cannabis Flower Categories</h1>
           <p style={styles.lede}>
-            Browse Queen Lansdowne Cannabis flower tier pages, including Exotic,
-            Premium, AAA+, AA, and Budget. Use the linked category pages to
+            Browse Queen Lansdowne Cannabis flower tier pages, including Exotic Weed,
+            Premium Weed, AAA+ Weed, AA Weed, and Budget Weed. Use the linked category pages to
             review flower information and confirm current store details before
             visiting.
           </p>
@@ -61,25 +61,25 @@ export default function FlowerOverviewPage() {
           </div>
 
           <div style={styles.grid}>
-            <Link href="/exotic" style={{ ...styles.card, borderColor: "#f59e0b" }}>
-              <span style={styles.cardLabel}>Exotic Flower</span>
-              <span style={styles.cardText}>Browse the Exotic flower tier page.</span>
+            <Link href="/exotic-weed" style={{ ...styles.card, borderColor: "#f59e0b" }}>
+              <span style={styles.cardLabel}>Exotic Weed Flower</span>
+              <span style={styles.cardText}>Browse the Exotic Weed flower tier.</span>
             </Link>
-            <Link href="/premium" style={{ ...styles.card, borderColor: "#a78bfa" }}>
-              <span style={styles.cardLabel}>Premium Flower</span>
-              <span style={styles.cardText}>Browse the Premium flower tier page.</span>
+            <Link href="/premium-weed" style={{ ...styles.card, borderColor: "#a78bfa" }}>
+              <span style={styles.cardLabel}>Premium Weed Flower</span>
+              <span style={styles.cardText}>Browse the Premium Weed flower tier.</span>
             </Link>
-            <Link href="/aaa" style={{ ...styles.card, borderColor: "#22d3ee" }}>
-              <span style={styles.cardLabel}>AAA+ Flower</span>
-              <span style={styles.cardText}>Browse the AAA+ flower tier page.</span>
+            <Link href="/aaa-weed" style={{ ...styles.card, borderColor: "#22d3ee" }}>
+              <span style={styles.cardLabel}>AAA+ Weed Flower</span>
+              <span style={styles.cardText}>Browse the AAA+ Weed flower tier.</span>
             </Link>
-            <Link href="/aa" style={{ ...styles.card, borderColor: "#34d399" }}>
-              <span style={styles.cardLabel}>AA Flower</span>
-              <span style={styles.cardText}>Browse the AA flower tier page.</span>
+            <Link href="/aa-weed" style={{ ...styles.card, borderColor: "#34d399" }}>
+              <span style={styles.cardLabel}>AA Weed Flower</span>
+              <span style={styles.cardText}>Browse the AA Weed flower tier.</span>
             </Link>
-            <Link href="/budget" style={{ ...styles.card, borderColor: "#94a3b8" }}>
-              <span style={styles.cardLabel}>Budget Flower</span>
-              <span style={styles.cardText}>Browse the Budget flower tier page.</span>
+            <Link href="/budget-weed" style={{ ...styles.card, borderColor: "#94a3b8" }}>
+              <span style={styles.cardLabel}>Budget Weed Flower</span>
+              <span style={styles.cardText}>Browse the Budget Weed flower tier.</span>
             </Link>
           </div>
         </div>
