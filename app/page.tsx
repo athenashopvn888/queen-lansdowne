@@ -13,36 +13,36 @@ import Papa from "papaparse";
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
   {
-    name: "EXOTICS",
-    slug: "exotic",
+    name: "EXOTIC WEED",
+    slug: "exotic-weed",
     price: "$10-$12/g",
     banner: "/banners/exotics_banner.webp",
     className: styles.bentoExotic,
   },
   {
-    name: "PREMIUM",
-    slug: "premium",
+    name: "PREMIUM WEED",
+    slug: "premium-weed",
     price: "$7-$10/g",
     banner: "/banners/premium_banner.webp",
     className: styles.bentoPremium,
   },
   {
-    name: "AAA+",
-    slug: "aaa",
+    name: "AAA+ WEED",
+    slug: "aaa-weed",
     price: "$5-$6/g",
     banner: "/banners/aaa_plus_banner.webp",
     className: styles.bentoTile,
   },
   {
-    name: "AA",
-    slug: "aa",
+    name: "AA WEED",
+    slug: "aa-weed",
     price: "$4/g",
     banner: "/banners/aa_banner.webp",
     className: styles.bentoTile,
   },
   {
-    name: "BUDGET",
-    slug: "budget",
+    name: "BUDGET WEED",
+    slug: "budget-weed",
     price: "$3/g",
     banner: "/banners/budget_banner.webp",
     className: styles.bentoTile,
@@ -75,7 +75,7 @@ const LOCAL_FAQS = [
   },
   {
     q: "What cannabis products do you carry?",
-    a: "We carry five tiers of premium flower: Exotic ($10-$12/g), Premium ($7-$10/g), AAA+ ($5-$6/g), AA ($4/g), and Budget ($3/g), plus a wide variety of edibles, prerolls, vapes, and concentrates.",
+    a: "We carry five flower tiers: Exotic Weed ($10-$12/g), Premium Weed ($7-$10/g), AAA+ Weed ($5-$6/g), AA Weed ($4/g), and Budget Weed ($3/g), plus a wide variety of edibles, prerolls, vapes, and concentrates.",
   },
   {
     q: "Where is Queen Lansdowne Cannabis located?",
@@ -83,7 +83,7 @@ const LOCAL_FAQS = [
   },
   {
     q: "What is the cheapest weed at Queen Lansdowne Cannabis?",
-    a: "Our budget flower starts at just $3/g. We also offer AA daily drivers from $4/g and AAA+ heavy hitters from $5-$6/g. View our budget menu for our latest deals.",
+    a: "Our Budget Weed flower starts at just $3/g. We also offer AA Weed daily drivers from $4/g and AAA+ Weed heavy hitters from $5-$6/g. View our Budget Weed menu for our latest deals.",
   },
 ];
 
@@ -188,11 +188,11 @@ export default function HomePage() {
       {/* ── NAVBAR ── */}
       <Navbar />
 
-      <section className={styles.deliveryBannerSection} aria-label="Queen Lansdowne delivery menu">
-        <Link href="/delivery" className={styles.deliveryBannerLink} aria-label="Open the Queen Lansdowne delivery menu">
+      <section className={styles.deliveryBannerSection} aria-label="Queen Lansdowne Weed Delivery">
+        <Link href="/weed-delivery-toronto" className={styles.deliveryBannerLink} aria-label="Open Queen Lansdowne Weed Delivery">
           <Image
             src="/qlc-home-delivery-banner.webp"
-            alt="Queen Lansdowne Cannabis delivery menu"
+            alt="Queen Lansdowne Cannabis Weed Delivery"
             width={1774}
             height={887}
             priority
@@ -231,12 +231,12 @@ export default function HomePage() {
             <p className={styles.brandSub}>Premium Cannabis Dispensary</p>
             <div className={styles.brandBadge}>Open 24 Hours Daily</div>
             <aside className={styles.homeDeliveryNotice} aria-labelledby="home-delivery-title">
-              <h2 id="home-delivery-title">NEW DELIVERY AVAILABLE</h2>
-              <p>Browse the Queen Lansdowne Cannabis delivery menu daily from 10 a.m. to 10 p.m. Use LIVE ORDER to connect with the QLC dispatcher after choosing your products and weights.</p>
+              <h2 id="home-delivery-title">NEW WEED DELIVERY AVAILABLE</h2>
+              <p>Browse the Queen Lansdowne Cannabis Weed Delivery menu daily from 10 a.m. to 10 p.m. Use LIVE ORDER to connect with the QLC dispatcher after choosing your products and weights.</p>
             </aside>
             <div className={styles.homeMenuActions} aria-label="Choose a Queen Lansdowne menu">
-              <Link href="/exotic" className={styles.homeMenuCta}>STORE MENU</Link>
-              <Link href="/delivery" className={`${styles.homeMenuCta} ${styles.homeDeliveryCta}`}>DELIVERY MENU</Link>
+              <Link href="/exotic-weed" className={styles.homeMenuCta}>STORE MENU</Link>
+              <Link href="/weed-delivery-toronto" className={`${styles.homeMenuCta} ${styles.homeDeliveryCta}`}>WEED DELIVERY</Link>
             </div>
           </div>
 

@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
 
-const acceptedBranches = new Set(["feature/qlc-home-delivery-banner-20260728", "feature/qlc-24-hours-daily-20260729", "feature/remove-qlc-lower-home-banner-20260729", "feature/pod1-menu-nav-buttons-20260729", "feature/pod1-menu-nav-buttons-clean-20260729", "feature/home-delivery-cta-pair-20260730", "feat/athena-delivery-images-20260809", "feature/ready-workflow-pilot-20260810", "main"]);
+const acceptedBranches = new Set(["feature/qlc-home-delivery-banner-20260728", "feature/qlc-24-hours-daily-20260729", "feature/remove-qlc-lower-home-banner-20260729", "feature/pod1-menu-nav-buttons-20260729", "feature/pod1-menu-nav-buttons-clean-20260729", "feature/home-delivery-cta-pair-20260730", "feat/athena-delivery-images-20260809", "feature/ready-workflow-pilot-20260810", "codex/qlc01-weed-intelligence-20260902", "main"]);
 const expectedKeys = ["category", "description", "effects", "images", "name", "offers", "priceOptions", "publicProductId", "strain", "thc", "tier"].sort();
 const previewOrigin = "https://qlc-delivery-launch-ready.vercel.app";
 const sodStatus = "https://milestone-1-demo.vercel.app/api/web-chat/status";
@@ -57,20 +57,20 @@ assert(catalog.includes('href="#how-to-order"') && catalog.includes('id="how-to-
 assert(css.includes(".qlc-order-steps") && css.includes("scroll-margin-top: 140px") && css.includes(".qlc-order-steps:focus-visible"));
 assert(page.includes("Cannabis Delivery Menu") && !page.includes("index: false") && !page.includes("Launch Preview"));
 assert(!home.includes("NEW DELIVERY MENU — ORDER NOW"));
-assert(navbar.includes("STORE MENU") && navbar.includes("DELIVERY MENU") && navbar.includes('href="/exotic"') && navbar.includes('href="/delivery"'));
+assert(navbar.includes("STORE MENU") && navbar.includes("WEED DELIVERY") && navbar.includes('href="/exotic-weed"') && navbar.includes('href="/weed-delivery-toronto"'));
 assert(navbar.includes('aria-label="Choose a menu"') && navbar.includes("aria-current") && navbar.includes("isStoreMenuActive") && navbar.includes("isDeliveryActive"));
 assert(navbarCss.includes(".menuChoices") && navbarCss.includes(".deliveryMenuChoice") && navbarCss.includes(".menuChoice:focus-visible"));
 assert(navbarCss.includes("min-height: 44px") && navbarCss.includes("@media (max-width: 486px)") && navbarCss.includes("@media (prefers-reduced-motion: reduce)"));
-assert(home.includes('href="/delivery"') && home.includes('src="/qlc-home-delivery-banner.webp"') && home.includes("priority"));
+assert(home.includes('href="/weed-delivery-toronto"') && home.includes('src="/qlc-home-delivery-banner.webp"') && home.includes("priority"));
 assert.equal((home.match(/qlc-home-delivery-banner\.webp/g) || []).length, 1);
 assert(!home.includes("welcome_banner.webp") && !home.includes("welcomeBanner"));
-assert(footer.includes('<Link href="/delivery">Delivery Menu</Link>') && !footer.includes("Coming Soon"));
+assert(footer.includes('<Link href="/weed-delivery-toronto">Weed Delivery</Link>') && !footer.includes("Coming Soon"));
 assert(faq.includes("use LIVE ORDER to start your order") && faq.includes("Delivery ordering is available daily"));
 assert(!faq.includes("sign up for email notifications") && !faq.includes("in-store shopping experience only"));
 
 for (const productionUrl of [
-  "https://queenlansdownecannabis.ca/delivery",
-  "https://www.queenlansdownecannabis.ca/delivery",
+  "https://queenlansdownecannabis.ca/weed-delivery-toronto",
+  "https://www.queenlansdownecannabis.ca/weed-delivery-toronto",
 ]) {
   const response = await fetch(productionUrl, { redirect: "follow" });
   const html = await response.text();
@@ -95,7 +95,7 @@ assert.equal(unrelated.headers.get("access-control-allow-origin"), null);
 
 const previewUrl = String(process.env.QLC_DELIVERY_PREVIEW_URL || "").replace(/\/$/, "");
 if (previewUrl) {
-  const response = await fetch(`${previewUrl}/delivery`);
+  const response = await fetch(`${previewUrl}/weed-delivery-toronto`);
   const html = await response.text();
   assert.equal(response.status, 200);
   assert.match(html, /View details/);

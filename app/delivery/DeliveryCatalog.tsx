@@ -119,7 +119,7 @@ export default function Catalog() {
           <div className="header-actions"><a className="header-guide" href="#menu">Search</a></div>
         </div>
         <div className="category-strip qlc-category-strip" aria-label="Flower tier filters">
-          {tierFilters.map((item) => <button className={activeTier === item ? "active" : ""} key={item} onClick={() => setActiveTier(item)} type="button">{item === "ALL" ? "ALL" : item.toUpperCase()}</button>)}
+          {tierFilters.map((item) => <button className={activeTier === item ? "active" : ""} key={item} onClick={() => setActiveTier(item)} type="button">{item === "ALL" ? "ALL" : `${item.toUpperCase()} WEED`}</button>)}
         </div>
       </header>
 
@@ -129,7 +129,7 @@ export default function Catalog() {
         <section className="delivery-seo-intro" aria-labelledby="delivery-seo-title">
           <p className="eyebrow">QUEEN LANSDOWNE CANNABIS</p>
           <h1 id="delivery-seo-title">Weed Delivery in Toronto</h1>
-          <p>Queen Lansdowne Cannabis provides a dedicated Weed Delivery page for its existing delivery menu and ordering workflow. Use this page for delivery-related browsing, while the main Weed Dispensary in Toronto page remains the broader store-level Weed destination.</p>
+          <p>Browse Queen Lansdowne Cannabis Weed Delivery in Toronto, review the existing delivery menu, and use the established ordering options. For broader store browsing beyond delivery, explore Weed Dispensary in Toronto.</p>
           <Link href="/weed-dispensary-toronto/">Explore Queen Lansdowne Weed in Toronto</Link>
         </section>
         <section className="store-hero qlc-editorial-hero">
