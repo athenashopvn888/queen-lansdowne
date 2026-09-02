@@ -237,9 +237,9 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     name: "Cigarettes", slug: "cigarettes", color: "#78716c", icon: "🏷️",
     seoTitle: "Native Cigarettes Toronto — Discount Tobacco at Queen Lansdowne Cannabis",
     seoIntro: "Browse current Native cigarette brands and listed prices at Queen Lansdowne Cannabis in Toronto.",
-    seoDescription: "Queen Lansdowne Cannabis is your go-to source for affordable native cigarettes in Toronto. We carry a wide selection of premium and value tobacco brands at competitive prices. Located at 1472 Queen St W in the heart of 1472 Queen St W & Nearby Expressway, we're open 24 hours daily.",
+    seoDescription: "Explore native cigarettes and other available categories from Queen Lansdowne Cannabis on Queen Street West in Toronto.",
     faqs: [
-      { q: "Do you sell cigarettes at Queen Lansdowne Cannabis?", a: "Yes! We carry a wide selection of native cigarette brands at competitive prices." },
+      { q: "Where can I browse Native Smokes?", a: "Explore the Native Smokes section at Queen Lansdowne Cannabis." },
       { q: "What cigarette brands may be listed?", a: "Check the current cigarette category for listed brands and prices." },
       { q: "Where can I check cigarette prices?", a: "Use the current cigarette category for listed prices or ask store staff." },
     ],

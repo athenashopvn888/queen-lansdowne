@@ -130,7 +130,7 @@ export default function Catalog() {
           <p className="eyebrow">QUEEN LANSDOWNE CANNABIS</p>
           <h1 id="delivery-seo-title">Weed Delivery in Toronto</h1>
           <p>Browse Queen Lansdowne Cannabis Weed Delivery in Toronto, review the existing delivery menu, and use the established ordering options. For broader store browsing beyond delivery, explore Weed Dispensary in Toronto.</p>
-          <Link href="/weed-dispensary-toronto/">Explore Queen Lansdowne Weed in Toronto</Link>
+          <Link href="/weed-dispensary-toronto">Explore Queen Lansdowne Weed in Toronto</Link>
         </section>
         <section className="store-hero qlc-editorial-hero">
           <Image src="/qlc-delivery-menu-banner.webp" alt="Queen and Lansdowne Cannabis delivery banner" width={1774} height={887} priority sizes="(max-width: 1500px) 100vw, 1444px" />

@@ -23,7 +23,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       { q: "How can I compare Exotic Weed with another collection?", a: "Review the product information presented in Exotic Weed, then use the collection links to compare Premium Weed, AAA+ Weed, AA Weed or Budget Weed." },
     ],
     relatedLinks: [
-      { label: "Premium Weed & Flower", href: "/premium-weed" }, { label: "AAA+ Weed & Flower", href: "/aaa-weed" }, { label: "AA Weed & Flower", href: "/aa-weed" }, { label: "Budget Weed & Flower", href: "/budget-weed" }, { label: "Explore Queen Lansdowne Weed in Toronto", href: "/weed-dispensary-toronto/" },
+      { label: "Premium Weed & Flower", href: "/premium-weed" }, { label: "AAA+ Weed & Flower", href: "/aaa-weed" }, { label: "AA Weed & Flower", href: "/aa-weed" }, { label: "Budget Weed & Flower", href: "/budget-weed" }, { label: "Explore Queen Lansdowne Weed in Toronto", href: "/weed-dispensary-toronto" },
     ],
   },
   PREMIUM: {
@@ -40,7 +40,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       { q: "Can I compare Premium Weed with the other flower collections?", a: "Yes. Use the collection links to continue to Exotic Weed, AAA+ Weed, AA Weed or Budget Weed." },
     ],
     relatedLinks: [
-      { label: "Exotic Weed & Flower", href: "/exotic-weed" }, { label: "AAA+ Weed & Flower", href: "/aaa-weed" }, { label: "AA Weed & Flower", href: "/aa-weed" }, { label: "Budget Weed & Flower", href: "/budget-weed" }, { label: "Queen Lansdowne Weed Dispensary in Toronto", href: "/weed-dispensary-toronto/" },
+      { label: "Exotic Weed & Flower", href: "/exotic-weed" }, { label: "AAA+ Weed & Flower", href: "/aaa-weed" }, { label: "AA Weed & Flower", href: "/aa-weed" }, { label: "Budget Weed & Flower", href: "/budget-weed" }, { label: "Queen Lansdowne Weed Dispensary in Toronto", href: "/weed-dispensary-toronto" },
     ],
   },
   "AAA+": {
@@ -57,7 +57,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       { q: "What can I compare with AAA+ Weed?", a: "Use the collection links to compare AAA+ Weed with Exotic Weed, Premium Weed, AA Weed and Budget Weed." },
     ],
     relatedLinks: [
-      { label: "Exotic Weed & Flower", href: "/exotic-weed" }, { label: "Premium Weed & Flower", href: "/premium-weed" }, { label: "AA Weed & Flower", href: "/aa-weed" }, { label: "Budget Weed & Flower", href: "/budget-weed" }, { label: "See the broader Toronto Weed guide", href: "/weed-dispensary-toronto/" },
+      { label: "Exotic Weed & Flower", href: "/exotic-weed" }, { label: "Premium Weed & Flower", href: "/premium-weed" }, { label: "AA Weed & Flower", href: "/aa-weed" }, { label: "Budget Weed & Flower", href: "/budget-weed" }, { label: "See the broader Toronto Weed guide", href: "/weed-dispensary-toronto" },
     ],
   },
   AA: {
@@ -74,7 +74,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       { q: "Can I compare AA Weed with another collection?", a: "Yes. Use the collection links to compare AA Weed with Exotic Weed, Premium Weed, AAA+ Weed or Budget Weed." },
     ],
     relatedLinks: [
-      { label: "Exotic Weed & Flower", href: "/exotic-weed" }, { label: "Premium Weed & Flower", href: "/premium-weed" }, { label: "AAA+ Weed & Flower", href: "/aaa-weed" }, { label: "Budget Weed & Flower", href: "/budget-weed" }, { label: "Explore Weed at Queen Lansdowne Cannabis", href: "/weed-dispensary-toronto/" },
+      { label: "Exotic Weed & Flower", href: "/exotic-weed" }, { label: "Premium Weed & Flower", href: "/premium-weed" }, { label: "AAA+ Weed & Flower", href: "/aaa-weed" }, { label: "Budget Weed & Flower", href: "/budget-weed" }, { label: "Explore Weed at Queen Lansdowne Cannabis", href: "/weed-dispensary-toronto" },
     ],
   },
   BUDGET: {
@@ -91,7 +91,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       { q: "Does Budget Weed confirm a current price or deal?", a: "No. The collection name does not establish a current price, promotion or availability claim." },
     ],
     relatedLinks: [
-      { label: "Exotic Weed & Flower", href: "/exotic-weed" }, { label: "Premium Weed & Flower", href: "/premium-weed" }, { label: "AAA+ Weed & Flower", href: "/aaa-weed" }, { label: "AA Weed & Flower", href: "/aa-weed" }, { label: "Queen Lansdowne Weed Dispensary in Toronto", href: "/weed-dispensary-toronto/" },
+      { label: "Exotic Weed & Flower", href: "/exotic-weed" }, { label: "Premium Weed & Flower", href: "/premium-weed" }, { label: "AAA+ Weed & Flower", href: "/aaa-weed" }, { label: "AA Weed & Flower", href: "/aa-weed" }, { label: "Queen Lansdowne Weed Dispensary in Toronto", href: "/weed-dispensary-toronto" },
     ],
   },
 };

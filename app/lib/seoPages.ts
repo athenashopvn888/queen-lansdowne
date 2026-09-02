@@ -41,11 +41,11 @@ const hours = "Open 24 Hours Daily";
 export const SEO_PAGES: SeoPageData[] = [
   {
     slug: "toronto-weed-dispensary",
-    title: `Toronto Weed Dispensary — Queen Lansdowne Cannabis | ${hours} | 1472 Queen St W & Nearby Expressway`,
+    title: `Toronto Weed Dispensary — Queen Lansdowne Cannabis | ${hours} | 1472 Queen St W`,
     metaDescription: "Queen Lansdowne Cannabis is at 1472 Queen St W in Toronto with flower, pre-rolls, edibles, vapes, concentrates, cigarettes, and accessories. We are open 24 hours daily.",
     h1: "Toronto Weed Dispensary — Queen Lansdowne Cannabis",
     icon: "*",
-    heroTagline: `Cannabis on 1472 Queen St W & Nearby Expressway · ${hours} · Walk-In Welcome`,
+    heroTagline: `Cannabis at 1472 Queen St W · ${hours} · Walk-In Welcome`,
     sections: [
       { heading: "Plan a Queen Street West Visit", body: `Queen Lansdowne Cannabis is located at 1472 Queen St W. Use the store page for address and contact details, then browse the current menu by category. We are ${hours}.` },
       { heading: "Browse Menu Categories", body: "The menu includes flower tiers, pre-rolls, edibles, vapes, concentrates, cigarettes, and accessories. Listings and prices can change, so check the current category before visiting." },
@@ -57,16 +57,16 @@ export const SEO_PAGES: SeoPageData[] = [
   },
   {
     slug: "cheap-weed-toronto",
-    title: "Cheap Weed Toronto — Budget Cannabis Deals From $3/g | Queen Lansdowne Cannabis",
-    metaDescription: `Compare Budget, AA, and other flower tiers at Queen Lansdowne Cannabis. We are ${hours} at 1472 Queen St W.`,
-    h1: "Cheap Weed Toronto — Budget Cannabis Deals",
+    title: "Cheap Weed Toronto — Budget Weed Guide | Queen Lansdowne Cannabis",
+    metaDescription: `Compare Budget Weed, AA Weed and other flower collections at Queen Lansdowne Cannabis. We are ${hours} at 1472 Queen St W.`,
+    h1: "Cheap Weed Toronto — Budget Weed Guide",
     icon: "$",
-    heroTagline: `Budget Flower From $3/g · Ounces From $40 · ${hours}`,
+    heroTagline: `Explore Budget Weed and AA Weed · ${hours}`,
     sections: [
-      { heading: "Start With the Budget Tier", body: "Value-focused shoppers can begin with Budget and AA, then compare the current product name, weight, and listed price." },
+      { heading: "Start With Budget Weed", body: "Value-focused shoppers can begin with Budget Weed and AA Weed, then compare the current product name, weight and listed information." },
       { heading: "Compare the Same Package Size", body: "Use the current menu to compare like-for-like weights and posted prices. Tier names organize the menu; they do not promise a particular result." },
     ],
-    faqs: [{ q: "Where should value shoppers begin?", a: "Start with the Budget and AA tier pages, then compare current weights and prices." }],
+    faqs: [{ q: "Where should value shoppers begin?", a: "Start with the Budget Weed and AA Weed collections, then compare the information presented with each item." }],
   },
   {
     slug: "native-cigarettes-toronto",
