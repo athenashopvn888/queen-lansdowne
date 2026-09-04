@@ -54,6 +54,7 @@ export const RESOURCE_ROUTE_LABELS: Record<string, string> = {
   "/": "Home",
   "/resources": "Resource Centre",
   "/resources/cannabis-101": "Cannabis 101",
+  "/resources/cannabis-dispensary-vs-weed-dispensary": "Cannabis Dispensary vs. Weed Dispensary",
   "/resources/weed-flower-guide": "Weed Flower Guide",
   "/resources/pre-roll-guides": "Pre-Roll Guides",
   "/resources/edibles-guides": "Edibles Guides",
@@ -344,7 +345,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "dateModified": "2026-07-11",
     "heroImage": "/storeFavicon.webp",
     "excerpt": "Cannabis terminology can become complicated long before it becomes useful. This section keeps the starting point simple: understand the product format, read the current listing, and know which details belong to the menu,",
-    "body": "Cannabis terminology can become complicated long before it becomes useful. This section keeps the starting point simple: understand the product format, read the current listing, and know which details belong to the menu, the package, or a staff question.\n\nA flower listing, a pre-roll pack, an edible, a THC vape, and a concentrate should not be compared in exactly the same way. Each format has its own practical details. The guides in this section explain those differences without assuming the reader already knows every term.\n\n### Featured guide\n\n**How to Read a Cannabis Menu Without Getting Lost**\nLearn where to begin, what listing details commonly matter, and how category pages make a large menu easier to understand.\n\n### Continue to product-specific guides\n\n- Flower Guides\n- Pre-Roll Guides\n- Edibles Guides\n- Vape Guides\n- Value Guides\n\n### Quick note\n\nA useful beginner resource should make the reader more comfortable, not make the subject sound exclusive. The best first step is often identifying the product format before comparing individual names.",
+    "body": "Cannabis terminology can become complicated long before it becomes useful. This section keeps the starting point simple: understand the product format, read the current listing, and know which details belong to the menu, the package, or a staff question.\n\nA flower listing, a pre-roll pack, an edible, a THC vape, and a concentrate should not be compared in exactly the same way. Each format has its own practical details. The guides in this section explain those differences without assuming the reader already knows every term.\n\n[Learn how cannabis dispensary, weed dispensary and dispensary near me wording connect](/resources/cannabis-dispensary-vs-weed-dispensary).\n\n### Featured guide\n\n**How to Read a Cannabis Menu Without Getting Lost**\nLearn where to begin, what listing details commonly matter, and how category pages make a large menu easier to understand.\n\n### Continue to product-specific guides\n\n- Flower Guides\n- Pre-Roll Guides\n- Edibles Guides\n- Vape Guides\n- Value Guides\n\n### Quick note\n\nA useful beginner resource should make the reader more comfortable, not make the subject sound exclusive. The best first step is often identifying the product format before comparing individual names.",
     "secondTake": null,
     "linkRoutes": [
       "/resources/cannabis-101/how-to-read-a-cannabis-menu",
@@ -2125,6 +2126,46 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         "updated": "2026-07-11"
       }
     ]
+  },
+  {
+    "pageNumber": 25,
+    "sourceHeading": "CANNABIS DISPENSARY VS WEED DISPENSARY AUTHORITY GUIDE",
+    "route": "/resources/cannabis-dispensary-vs-weed-dispensary",
+    "kind": "article",
+    "pageType": "Cannabis terminology guide",
+    "parentRoute": "/resources/cannabis-101",
+    "h1": "Weed Dispensary vs. Cannabis Dispensary: Same Goal, Different Words",
+    "seoTitle": "Weed vs Cannabis Dispensary | Queen Lansdowne Cannabis Toronto",
+    "metaDescription": "Weed dispensary, cannabis dispensary or dispensary near me? Learn how these local-search terms connect at Queen Lansdowne Cannabis in Toronto.",
+    "primaryKeyword": "cannabis dispensary vs weed dispensary",
+    "supportingKeywords": [
+      "weed dispensary near me",
+      "cannabis dispensary near me",
+      "dispensary near me",
+      "cannabis store Toronto"
+    ],
+    "author": {
+      "name": "Queen Lansdowne Cannabis Team",
+      "handle": "@QueenLansdowneTeam",
+      "role": "Official Store Team",
+      "type": "Organization"
+    },
+    "datePublished": "2026-09-04",
+    "dateModified": "2026-09-04",
+    "heroImage": "/storeFavicon.webp",
+    "excerpt": "Weed dispensary, cannabis dispensary or dispensary near me? Learn how these local-search terms connect at Queen Lansdowne Cannabis in Toronto.",
+    "body": "Local cannabis searches are full of vocabulary changes. Some customers use the formal word cannabis, some use the everyday word weed, and others simply search for a dispensary. Those differences matter for search language, but they do not automatically describe different kinds of businesses.\n\n## Why “Dispensary Near Me” Matters\n\nThe phrase “near me” signals that location matters. The searcher is not only learning about cannabis terminology; they are trying to identify a nearby place.\n\nLonger versions such as “cannabis dispensary near me” and “weed dispensary near me” make the cannabis context explicit. The shorter “dispensary near me” removes the modifier but keeps strong local intent.\n\n## Why the Local Page Still Leads\n\nThe purpose of this article is educational. It explains the relationship among dispensary, cannabis dispensary, weed dispensary and cannabis store.\n\nFor real visit intent in Toronto, Queen Lansdowne Cannabis should continue directing users to the [existing canonical local/store page](/weed-dispensary-toronto), where the business’s verified location information belongs.\n\n## Frequently Asked Questions\n\n**Why do people search “weed dispensary near me”?**\nBecause weed is common everyday language and “near me” signals that the searcher wants a nearby business.\n\n**Why do others use “cannabis dispensary near me”?**\nCannabis is the more formal term, so some people naturally use it when searching for the same kind of local business.\n\n**Is “dispensary near me” the same exact keyword?**\nNo. It is a distinct query, but it can express closely related local intent.\n\n**What should matter after a local result is found?**\nCorrect business identity, location information, current store details and a reliable page for planning a visit.",
+    "secondTake": null,
+    "linkRoutes": [
+      "/weed-dispensary-toronto",
+      "/resources/cannabis-101"
+    ],
+    "childRoutes": [],
+    "relatedRoutes": [
+      "/resources/cannabis-101"
+    ],
+    "commercialLinks": [],
+    "cards": []
   }
 ];
 
@@ -2159,3 +2200,4 @@ export function getResourceChildren(page: ResourcePage) {
 export function resourceCanonical(page: ResourcePage) {
   return `${SITE_URL}${page.route}`;
 }
+
