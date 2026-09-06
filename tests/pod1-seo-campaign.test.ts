@@ -11,7 +11,7 @@ test("five tier pages use distinct weed copy and preserve the broad owner", () =
   for (const tier of Object.values(TIER_SEO)) {
     assert.match(tier.seoTitle, /^.+ Weed & Cannabis Flower Toronto/);
     assert.match(tier.h1, /^.+ Weed & Cannabis Flower in Toronto/);
-    assert.equal(tier.sections.length, 2);
+    assert.equal(tier.sections.length, 3);
     assert.equal(tier.faqs.length, 2);
     assert.ok(tier.relatedLinks.some((link) => link.href === "/weed-dispensary-toronto"));
     assert.doesNotMatch(`${tier.metaDescription} ${tier.intro}`, /\$\d|in stock|available now|best weed/i);
