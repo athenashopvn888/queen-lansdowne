@@ -95,3 +95,112 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     ],
   },
 };
+
+const PINKY_TIER_ADDITIONS: Record<string, { section: { heading: string; body: string }; links: { label: string; href: string }[] }> = {
+  "EXOTIC": {
+    "section": {
+      "heading": "What “Exotic Weed” Means on This Menu",
+      "body": "Exotic is one of cannabis culture's broadest quality words. It can point to unusual genetics, distinctive aroma, rarity, visual presentation or simply a retailer's highest-positioned flower section.\n\nIt is not a government cannabis grade and it does not guarantee one THC range.\n\nAt Queen Lansdowne Cannabis, Exotic Weed is a named browsing owner. The useful way to read the page is to treat Exotic as this store's category label, then compare the actual products shown in the current listing.\n\nWhen adults talk about exotic flower, they may be reacting to traits such as:\n\nuncommon or memorable cultivar names;\n\npronounced aroma;\n\nvisible trichomes;\n\nbud structure;\n\ntrim;\n\nfreshness;\n\noverall bag appeal.\n\nThose traits should still be evaluated from the real product information. A dramatic name or high THC number alone does not prove that every quality characteristic is better.\n\nFor a deeper explanation of how Exotic, Premium, AAA+, AA and Budget relate as browsing language, use the Flower Quality & Tiers guide."
+    },
+    "links": [
+      {
+        "label": "Flower Quality & Tiers",
+        "href": "/resources/flower-guides/aa-vs-aaa-vs-premium-vs-exotic"
+      },
+      {
+        "label": "What Does Good Weed Mean?",
+        "href": "/resources/flower-guides/what-does-good-weed-mean"
+      },
+      {
+        "label": "Terpenes, Gas & Loud",
+        "href": "/resources/flower-guides/terpenes-gas-loud-aroma"
+      }
+    ]
+  },
+  "PREMIUM": {
+    "section": {
+      "heading": "Premium Weed Is a Positioning Term, Not One Formula",
+      "body": "Premium usually means a product or category is positioned above a standard or value starting point.\n\nIn cannabis, that positioning may reflect a combination of genetics, appearance, aroma, trim, cure, freshness, producer reputation or batch characteristics.\n\nThere is no universal rule saying Premium Weed must have one exact THC percentage or one exact bud size.\n\nQueen Lansdowne's Premium Weed route should therefore stay focused on the store's current Premium category while the resource centre explains the broader quality language.\n\nWhen comparing products within the category, read the legal label and the current listing rather than assuming the word Premium answers every question."
+    },
+    "links": [
+      {
+        "label": "Flower Quality & Tiers",
+        "href": "/resources/flower-guides/aa-vs-aaa-vs-premium-vs-exotic"
+      },
+      {
+        "label": "THC vs Weed Quality",
+        "href": "/resources/flower-guides/thc-vs-weed-quality"
+      },
+      {
+        "label": "Drying, Curing & Freshness",
+        "href": "/resources/flower-guides/drying-curing-freshness"
+      }
+    ]
+  },
+  "AAA+": {
+    "section": {
+      "heading": "What AAA+ Weed Means as a Store Tier",
+      "body": "AAA and AAA+ are common Canadian cannabis quality shorthand.\n\nThey are not one regulated national grading system.\n\nThe plus sign usually communicates positioning above a basic AAA label, but retailers do not all use an identical scoring formula.\n\nAt Queen Lansdowne Cannabis, AAA+ Weed is the established owner for this tier. That route should stay intact.\n\nUse the tier to narrow the menu, then compare actual product information such as cultivar, THC/CBD, producer, aroma description and current package details."
+    },
+    "links": [
+      {
+        "label": "Top Shelf, Mids & Quads",
+        "href": "/resources/flower-guides/top-shelf-mids-quads"
+      },
+      {
+        "label": "Flower Quality & Tiers",
+        "href": "/resources/flower-guides/aa-vs-aaa-vs-premium-vs-exotic"
+      },
+      {
+        "label": "Bag Appeal",
+        "href": "/resources/flower-guides/bag-appeal"
+      }
+    ]
+  },
+  "AA": {
+    "section": {
+      "heading": "AA Weed as a Browsing Category",
+      "body": "AA is familiar cannabis grade shorthand, but it is not a government-defined laboratory category.\n\nAt Queen Lansdowne Cannabis, AA Weed is a protected commercial owner used to organize the flower menu.\n\nThe section name helps narrow the browse. It should not be treated as a promise about one exact THC range, aroma, bud size or cultivation method.\n\nIf a shopper wants to understand why cannabis gets described with letter grades, top shelf, mids or quads, the educational guides explain the vocabulary without changing the AA Weed owner."
+    },
+    "links": [
+      {
+        "label": "Top Shelf, Mids & Quads",
+        "href": "/resources/flower-guides/top-shelf-mids-quads"
+      },
+      {
+        "label": "Flower Quality & Tiers",
+        "href": "/resources/flower-guides/aa-vs-aaa-vs-premium-vs-exotic"
+      },
+      {
+        "label": "What Does Good Weed Mean?",
+        "href": "/resources/flower-guides/what-does-good-weed-mean"
+      }
+    ]
+  },
+  "BUDGET": {
+    "section": {
+      "heading": "Budget Weed Means Value Positioning, Not a Safety or Potency Verdict",
+      "body": "Budget is a value-oriented browsing term.\n\nIt should not be used as shorthand for unsafe, unusable or automatically low-THC flower.\n\nQueen Lansdowne's Budget Weed route is the established owner for shoppers who want to begin with value.\n\nThe actual products within that section still have their own cultivar, producer, legal label, cannabinoid information and current listing details.\n\nPrice position and quality characteristics overlap imperfectly. A useful comparison looks at the whole product rather than assuming the word Budget settles every question."
+    },
+    "links": [
+      {
+        "label": "Budget vs Premium Flower",
+        "href": "/resources/flower-guides/budget-vs-premium-flower"
+      },
+      {
+        "label": "Flower Quality & Tiers",
+        "href": "/resources/flower-guides/aa-vs-aaa-vs-premium-vs-exotic"
+      },
+      {
+        "label": "THC vs Weed Quality",
+        "href": "/resources/flower-guides/thc-vs-weed-quality"
+      }
+    ]
+  }
+};
+for (const [key, addition] of Object.entries(PINKY_TIER_ADDITIONS)) {
+  const target = TIER_SEO[key];
+  if (!target) continue;
+  target.sections = [...target.sections, addition.section];
+  target.relatedLinks = [...target.relatedLinks, ...addition.links.filter((link) => !target.relatedLinks.some((current) => current.href === link.href))];
+}
