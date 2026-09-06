@@ -186,7 +186,17 @@ function resourceJsonLd(page: ResourcePage) {
           author,
           publisher,
         };
-  return { "@context": "https://schema.org", "@graph": [pageSchema, breadcrumbSchema] };
+  const faqSchema = page.faqs?.length
+    ? {
+        "@type": "FAQPage",
+        mainEntity: page.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: { "@type": "Answer", text: faq.answer },
+        })),
+      }
+    : null;
+  return { "@context": "https://schema.org", "@graph": [pageSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])] };
 }
 
 function CardGrid({ cards }: { cards: ResourceCard[] }) {
