@@ -9,6 +9,7 @@
   justify-content: center;
   padding: 20px;
   animation: fadeIn 0.4s ease;
+  box-sizing: border-box;
 }
 
 .modal {
@@ -24,6 +25,27 @@
   position: relative;
   overflow: hidden;
   animation: scaleUp 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  box-sizing: border-box;
+}
+
+@media (max-width: 520px) {
+  .overlay {
+    padding: 16px;
+  }
+
+  .modal {
+    max-width: 100%;
+    padding: 28px 20px;
+  }
+
+  .btnRow {
+    flex-direction: column;
+  }
+
+  .yesBtn,
+  .noBtn {
+    min-height: 48px;
+  }
 }
 
 .modal::before {
