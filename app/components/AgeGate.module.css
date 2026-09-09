@@ -20,6 +20,7 @@
   border-radius: 24px;
   width: 100%;
   max-width: 440px;
+  min-width: 0;
   padding: 40px 32px;
   text-align: center;
   position: relative;
@@ -44,7 +45,14 @@
 
   .yesBtn,
   .noBtn {
+    width: 100%;
     min-height: 48px;
+    box-sizing: border-box;
+  }
+
+  .text,
+  .disclaimer {
+    overflow-wrap: anywhere;
   }
 }
 
