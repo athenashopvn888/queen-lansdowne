@@ -15,71 +15,12 @@ const categoryLinks: { [key: string]: string } = {
 };
 
 
-type StoreSchemaMarkup = {
-  "@context": "https://schema.org";
-  "@type": "Store";
-  name: string;
-  url: string;
-  telephone: string;
-  address: {
-    "@type": "PostalAddress";
-    streetAddress: string;
-    addressLocality: string;
-    addressRegion: string;
-    postalCode: string;
-    addressCountry: string;
-  };
-  priceRange: string;
-  openingHours?: string[];
-  geo?: {
-    "@type": "GeoCoordinates";
-    latitude: number;
-    longitude: number;
-  };
-};
 export function GBPLandingPage() {
   const landmarkList = gbpLocation.localLandmarks.join(", ");
   const nearbyAreaList = gbpLocation.nearbyAreas.slice(0, 5).join(", ");
 
-  // Generate schema.org markup dynamically
-  const schemaMarkup: StoreSchemaMarkup = {
-    "@context": "https://schema.org",
-    "@type": "Store",
-    "name": gbpLocation.storeName,
-    "url": `https://${gbpLocation.domain}/${gbpLocation.slug}/`,
-    "telephone": gbpLocation.phone,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": gbpLocation.streetAddress,
-      "addressLocality": gbpLocation.city,
-      "addressRegion": gbpLocation.province,
-      "postalCode": gbpLocation.postalCode,
-      "addressCountry": gbpLocation.country
-    },
-    "priceRange": "$$"
-  };
-
-  // Inject real opening hours and coordinates if they exist
-  if (gbpLocation.hours && gbpLocation.hours.length > 0) {
-    schemaMarkup.openingHours = gbpLocation.hours;
-  }
-
-  if (gbpLocation.latitude && gbpLocation.longitude) {
-    schemaMarkup.geo = {
-      "@type": "GeoCoordinates",
-      "latitude": Number(gbpLocation.latitude),
-      "longitude": Number(gbpLocation.longitude)
-    };
-  }
-
   return (
     <div className={styles.container}>
-      {/* Schema Injection */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
-      />
-
       {/* Hero Header */}
       <header className={styles.hero}>
         <h1 className={styles.h1}>{gbpLocation.storeName} — Weed Dispensary in {gbpLocation.city}</h1>
@@ -205,7 +146,7 @@ export function GBPLandingPage() {
           {gbpLocation.storeName} serves adult 19+ shoppers near {nearbyAreaList}. Before heading over, review the address, store hours shown on this page, and the category links that match the type of visit you are planning.
         </p>
         <p className={styles.infoText}>
-          This local page is meant to help shoppers connect the store location with nearby transit, parking, and menu-category information without changing any business name, address, phone, or hour details.
+          Queen Lansdowne Cannabis serves customers on Queen Street West in Toronto with store information, directions, hours, and helpful cannabis resources.
         </p>
       </section>
 

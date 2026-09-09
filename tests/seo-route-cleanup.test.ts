@@ -11,13 +11,19 @@ test("aliases redirect to existing Toronto canonicals", () => {
   for (const { source, destination } of SEO_ROUTE_REDIRECTS) {
     assert.equal(slugs.has(source.replace("/info/", "")), false);
     assert.equal(LEGACY_SEO_SLUGS.has(source.replace("/info/", "")), true);
-    assert.equal(slugs.has(destination.replace("/info/", "")), true);
+    if (destination.startsWith("/info/")) {
+      assert.equal(slugs.has(destination.replace("/info/", "")), true);
+    }
     assert.doesNotMatch(footer, new RegExp(`href=["']${source}["']`));
   }
 });
 
 test("footer uses Toronto canonical routes", () => {
-  for (const href of ["/info/toronto-weed-dispensary", "/info/cheap-weed-toronto", "/info/native-cigarettes-toronto", "/info/weed-store-near-toronto"]) {
+  for (const href of ["/weed-dispensary-toronto", "/info/cheap-weed-toronto", "/info/native-cigarettes-toronto"]) {
     assert.match(footer, new RegExp(`href=["']${href}["']`));
+  }
+
+  for (const retiredHref of ["/info/toronto-weed-dispensary", "/info/dispensary-near-me-toronto", "/info/weed-store-near-toronto"]) {
+    assert.doesNotMatch(footer, new RegExp(`href=["']${retiredHref}["']`));
   }
 });
