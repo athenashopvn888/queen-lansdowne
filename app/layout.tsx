@@ -11,22 +11,6 @@ export const metadata: Metadata = {
   },
   description:
     "Queen Lansdowne Cannabis is a Toronto dispensary on Queen St W near Lansdowne and Parkdale, open 24 hours daily, with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info.",
-  keywords: [
-    "cannabis dispensary Toronto",
-    "weed store Toronto",
-    "exotic flower Toronto",
-    "premium cannabis",
-    "Queen Lansdowne Cannabis",
-    "cheap weed Toronto",
-    "dispensary near me",
-    "THC flower",
-    "indica sativa hybrid",
-    "edibles Toronto",
-    "vapes",
-    "pre-rolls",
-    "native cigarettes Toronto",
-    "weed store Mississauga",
-  ],
   openGraph: {
     type: "website",
     locale: "en_CA",
@@ -72,9 +56,9 @@ export const metadata: Metadata = {
 /* ── JSON-LD Structured Data ── */
 const jsonLd = {
   "@context": "https://schema.org",
+  "@graph": [{
   "@type": "Store",
-  additionalType: "https://schema.org/Store",
-  "@id": "https://www.queenlansdownecannabis.ca",
+  "@id": "https://www.queenlansdownecannabis.ca/#store",
   name: "Queen Lansdowne Cannabis",
   description: "Cannabis dispensary at 1472 Queen St W in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 hours daily.",
   url: "https://www.queenlansdownecannabis.ca",
@@ -110,14 +94,19 @@ const jsonLd = {
   }
 ],
   sameAs: [
-    "https://www.queenlansdownecannabis.ca/",
-    "https://www.queenlansdownecannabis.ca/",
+    "https://www.google.com/maps/place/Queen+Lansdowne+Cannabis/data=!4m2!3m1!1s0x0:0xb87def5c642e3b9c",
   ],
-  hasMap: "https://www.queenlansdownecannabis.ca/",
+  hasMap: "https://www.google.com/maps/place/Queen+Lansdowne+Cannabis/data=!4m2!3m1!1s0x0:0xb87def5c642e3b9c",
   areaServed: {
     "@type": "City",
     name: "Toronto",
   },
+  }, {
+    "@type": "WebSite",
+    "@id": "https://www.queenlansdownecannabis.ca/#website",
+    url: "https://www.queenlansdownecannabis.ca/",
+    name: "Queen Lansdowne Cannabis",
+  }],
 };
 
 export default function RootLayout({
