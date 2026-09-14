@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.css";
+import FleetAnnouncementBanner from "./components/FleetAnnouncementBanner";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FlowerCard from "./components/FlowerCard";
@@ -185,6 +186,7 @@ export default function HomePage() {
 
   return (
     <main className={styles.main}>
+      <FleetAnnouncementBanner />
       {/* ── NAVBAR ── */}
       <Navbar />
 
