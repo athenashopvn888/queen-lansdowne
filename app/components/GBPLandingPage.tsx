@@ -2,67 +2,44 @@ import Link from "next/link";
 import styles from "./GBPLandingPage.module.css";
 import { gbpLocation } from "../lib/gbp-location";
 
-// Dictionary mapping category names to their respective paths
 const categoryLinks: { [key: string]: string } = {
-  "Flower": "/",
+  Flower: "/",
   "Pre-rolls": "/items/prerolls",
-  "Edibles": "/items/edibles",
+  Edibles: "/items/edibles",
   "THC vapes": "/items/vape-disposables",
-  "Concentrates": "/items/concentrates",
-  "Shatter": "/items/concentrates",
+  Concentrates: "/items/concentrates",
+  Shatter: "/items/concentrates",
   "CBD oils": "/items/concentrates",
-  "Accessories": "/items/add-ons"
+  Accessories: "/items/add-ons",
 };
 
-
 export function GBPLandingPage() {
-  const landmarkList = gbpLocation.localLandmarks.join(", ");
-  const nearbyAreaList = gbpLocation.nearbyAreas.slice(0, 5).join(", ");
-
   return (
     <div className={styles.container}>
-      {/* Hero Header */}
       <header className={styles.hero}>
-        <h1 className={styles.h1}>{gbpLocation.storeName} — Weed Dispensary in {gbpLocation.city}</h1>
-        <p className={styles.heroTagline}>Serving {gbpLocation.city} & Nearby Neighborhoods</p>
+        <h1 className={styles.h1}>Queen Lansdowne Cannabis on Queen West</h1>
+        <p className={styles.heroTagline}>1472 Queen St W · Parkdale edge · walk-in 19+</p>
       </header>
 
-      <aside className={styles.deliveryNotice} aria-labelledby="landing-delivery-title">
-        <h2 id="landing-delivery-title">NEW WEED DELIVERY AVAILABLE</h2>
-        <p>Browse the Queen Lansdowne Cannabis Weed Delivery menu daily from 10 a.m. to 10 p.m. Use LIVE ORDER to connect with the QLC dispatcher after choosing your products and weights.</p>
-      </aside>
-
-      <div className={styles.btnRow}>
-        <Link href="/exotic-weed" className={`${styles.btn} ${styles.btnPrimary}`}>STORE MENU</Link>
-        <Link href="/weed-delivery-toronto" className={`${styles.btn} ${styles.btnSecondary}`}>WEED DELIVERY</Link>
-      </div>
-
-      {/* Intro Section */}
       <section className={styles.section}>
-        <h2 className={styles.h2}>A Local Weed Dispensary</h2>
+        <h2 className={styles.h2}>This city URL points back to the Queen West store</h2>
         <p className={styles.introText}>{gbpLocation.introVariant}</p>
-      </section>
-
-      {/* Local Visit Planning Section */}
-      <section className={styles.section}>
-        <h2 className={styles.h2}>Plan a Visit Near {gbpLocation.neighborhood}</h2>
         <p className={styles.infoText}>
-          Use this local page to confirm the store location, review menu categories, and plan a visit around {landmarkList}. {gbpLocation.transitNote}
-        </p>
-        <p className={styles.infoText}>
-          Adult 19+ shoppers can use the category links below to orient themselves before visiting {gbpLocation.storeName}. For store-specific questions, call the store directly or review the menu categories on this site.
+          Broad “weed dispensary Toronto” searches land on many similar pages. Queen Lansdowne Cannabis
+          is one storefront on Queen Street West at 1472, near Lansdowne, not a city-wide shop. Use the
+          homepage for name, address, phone, and hours. Use the visit guide for the 501 Queen stop,
+          curb parking, and the south-side door.
         </p>
         <div className={styles.btnRow}>
-          <Link href="/exotic-weed" className={`${styles.btn} ${styles.btnPrimary}`}>STORE MENU</Link>
-          <Link href="/weed-delivery-toronto" className={`${styles.btn} ${styles.btnSecondary}`}>WEED DELIVERY</Link>
+          <Link href="/" className={`${styles.btn} ${styles.btnPrimary}`}>Homepage visit hub</Link>
+          <Link href="/visit" className={`${styles.btn} ${styles.btnSecondary}`}>Queen West visit guide</Link>
         </div>
       </section>
 
-      {/* Product Section */}
       <section className={styles.section}>
-        <h2 className={styles.h2}>Weed and Cannabis Menu Categories</h2>
+        <h2 className={styles.h2}>Menu categories before you walk in</h2>
         <p className={styles.infoText}>
-          At {gbpLocation.storeName}, the menu is organized into adult-use cannabis categories for 19+ shoppers in {gbpLocation.city}. Use the links below to browse category pages before you visit:
+          Adults 19+ can browse current category pages, then confirm details in store. Listings can change.
         </p>
         <div className={styles.productGrid}>
           {gbpLocation.products.map((p) => {
@@ -76,9 +53,8 @@ export function GBPLandingPage() {
         </div>
       </section>
 
-      {/* Location & NAP Section */}
       <section className={styles.section}>
-        <h2 className={styles.h2}>Visit {gbpLocation.storeName} in {gbpLocation.city}</h2>
+        <h2 className={styles.h2}>NAP — same as the homepage</h2>
         <div className={styles.napGrid}>
           <div className={styles.napDetails}>
             <div className={styles.napItem}>
@@ -97,108 +73,22 @@ export function GBPLandingPage() {
               <span className={styles.napLabel}>Website</span>
               <span><a href={`https://${gbpLocation.domain}/`} style={{ color: "inherit" }}>https://{gbpLocation.domain}/</a></span>
             </div>
-            {gbpLocation.hours && gbpLocation.hours.length > 0 && (
-              <div className={styles.napItem}>
-                <span className={styles.napLabel}>Store Hours</span>
-                {gbpLocation.hours.map((line) => (
-                  <span key={line} style={{ fontSize: "0.95rem" }}>{line}</span>
-                ))}
-              </div>
-            )}
+            <div className={styles.napItem}>
+              <span className={styles.napLabel}>Store Hours</span>
+              <span style={{ fontSize: "0.95rem" }}>{gbpLocation.hoursLabel}</span>
+            </div>
           </div>
           <div className={styles.mapWrapper}>
-            {gbpLocation.mapEmbedUrl ? (
-              <iframe
-                title={`Map of ${gbpLocation.storeName}`}
-                src={gbpLocation.mapEmbedUrl}
-                className={styles.mapIframe}
-                allowFullScreen={true}
-                loading="lazy"
-              />
-            ) : (
-              <div style={{ padding: "40px", textAlign: "center", color: "var(--text-muted)" }}>
-                Map preview not available.
-              </div>
-            )}
+            <iframe
+              title={`Map of ${gbpLocation.storeName}`}
+              src={gbpLocation.mapEmbedUrl}
+              className={styles.mapIframe}
+              allowFullScreen={true}
+              loading="lazy"
+            />
           </div>
-        </div>
-      </section>
-
-      {/* Nearby Areas Section */}
-      <section className={styles.section}>
-        <h2 className={styles.h2}>{gbpLocation.sectionTitle}</h2>
-        <p className={styles.infoText}>
-          {gbpLocation.neighborhoodDescription} {gbpLocation.transitNote}. We proudly welcome customers from:
-        </p>
-        <div className={styles.areaList}>
-          {gbpLocation.nearbyAreas.map((area) => (
-            <span key={area} className={styles.areaTag}>
-              {area}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      {/* Store-Specific Guidance Section */}
-      <section className={styles.section}>
-        <h2 className={styles.h2}>Helpful Local Shopper Notes</h2>
-        <p className={styles.infoText}>
-          {gbpLocation.storeName} serves adult 19+ shoppers near {nearbyAreaList}. Before heading over, review the address, store hours shown on this page, and the category links that match the type of visit you are planning.
-        </p>
-        <p className={styles.infoText}>
-          Queen Lansdowne Cannabis serves customers on Queen Street West in Toronto with store information, directions, hours, and helpful cannabis resources.
-        </p>
-      </section>
-
-      {/* FAQ Section */}
-      <section id="faq" className={styles.section}>
-        <h2 className={styles.h2}>Frequently Asked Questions</h2>
-        <div className={styles.faqList}>
-          <div className={styles.faqItem}>
-            <h3 className={styles.faqQuestion}>Where is {gbpLocation.storeName} located?</h3>
-            <p className={styles.faqAnswer}>{gbpLocation.storeName} is located at {gbpLocation.address}.</p>
-          </div>
-          <div className={styles.faqItem}>
-            <h3 className={styles.faqQuestion}>Is {gbpLocation.storeName} a weed dispensary in {gbpLocation.city}?</h3>
-            <p className={styles.faqAnswer}>
-              Yes, {gbpLocation.storeName} is a fully licensed local weed dispensary in {gbpLocation.city} serving cannabis customers aged 19 and older with valid identification.
-            </p>
-          </div>
-          <div className={styles.faqItem}>
-            <h3 className={styles.faqQuestion}>What products does {gbpLocation.storeName} carry?</h3>
-            <p className={styles.faqAnswer}>
-              We carry a complete line of weed products including premium flower, pre-rolls, THC edibles, concentrates, shatter, THC vape cartridges, CBD oils, and accessories.
-            </p>
-          </div>
-          <div className={styles.faqItem}>
-            <h3 className={styles.faqQuestion}>Do I need to be 19+ to shop at {gbpLocation.storeName}?</h3>
-            <p className={styles.faqAnswer}>
-              Yes, to visit our cannabis store or order from our menu, you must be at least 19 years of age. Valid government-issued photo ID is required for verification.
-            </p>
-          </div>
-          <div className={styles.faqItem}>
-            <h3 className={styles.faqQuestion}>What should I check before visiting {gbpLocation.storeName}?</h3>
-            <p className={styles.faqAnswer}>
-              Review the address, store hours shown on this page, and the menu category links before you visit. If you have a store-specific question, call {gbpLocation.storeName} directly.
-            </p>
-          </div>
-          <div className={styles.faqItem}>
-            <h3 className={styles.faqQuestion}>Can I browse category pages before visiting?</h3>
-            <p className={styles.faqAnswer}>
-              Yes. Use the category links on this page to browse flower, pre-rolls, edibles, THC vapes, concentrates, shatter, CBD oils, and accessories before planning your visit.
-            </p>
-          </div>
-          {gbpLocation.neighborhood && (
-            <div className={styles.faqItem}>
-              <h3 className={styles.faqQuestion}>Is {gbpLocation.storeName} near {gbpLocation.neighborhood}?</h3>
-              <p className={styles.faqAnswer}>
-                Yes, {gbpLocation.storeName} is located near {gbpLocation.neighborhood} and serves customers from nearby landmarks like {gbpLocation.localLandmarks.join(", ")}.
-              </p>
-            </div>
-          )}
         </div>
       </section>
     </div>
   );
 }
-

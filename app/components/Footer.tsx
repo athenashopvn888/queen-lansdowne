@@ -12,9 +12,8 @@ export default function Footer() {
               QUEEN LANSDOWNE CANNABIS
             </div>
             <p className={styles.desc}>
-              Your Local Cannabis Dispensary At 1472 Queen St W, Toronto. Visit
-              Queen Lansdowne Cannabis For Premium Flower, Edibles, Vapes &amp; More.
-              Open: 24 Hours Daily.
+              Queen Lansdowne Cannabis is a walk-in shop at 1472 Queen St W on
+              Queen West at the Parkdale edge. Open 24 hours daily. Adults 19+.
             </p>
             <div className={styles.buttons}>
             </div>
@@ -55,6 +54,7 @@ export default function Footer() {
               <Link href="/resources">Resources</Link>
               <Link href="/careers/budtender">Budtender Application</Link>
               <Link href="/faq">FAQ</Link>
+              <Link href="/visit">Visit Queen West</Link>
               <Link href="/weed-delivery-toronto">Weed Delivery</Link>
               <Link href="/weed-dispensary-toronto">Toronto Dispensary</Link>
               <Link href="/info/cheap-weed-toronto">Cheap Weed Toronto</Link>

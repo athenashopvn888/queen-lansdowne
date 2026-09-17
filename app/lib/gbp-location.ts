@@ -1,3 +1,11 @@
+export const STORE_ORIGIN = "https://www.queenlansdownecannabis.ca";
+export const STORE_ID = `${STORE_ORIGIN}/#store`;
+export const GBP_MAPS_URL =
+  "https://www.google.com/maps/place/Queen+Lansdowne+Cannabis/data=!4m2!3m1!1s0x0:0xb87def5c642e3b9c";
+export const STOREFRONT_IMAGE = `${STORE_ORIGIN}/wp-content/uploads/2026/04/7Clmh.jpg`;
+
+export type StoreFaq = { q: string; a: string };
+
 export const gbpLocation = {
   storeName: "Queen Lansdowne Cannabis",
   domain: "www.queenlansdownecannabis.ca",
@@ -10,8 +18,8 @@ export const gbpLocation = {
   postalCode: "M6K 1M4",
   phone: "+1 (437) 293-8580",
   phoneIntl: "+14372938580",
-  neighborhood: "Queen West / Lansdowne / Parkdale",
-  nearbyAreas: ["Queen Street West", "Lansdowne", "Parkdale", "Little Portugal", "Roncesvalles", "Brockton Village", "Dundas West", "TTC"],
+  neighborhood: "Queen West / Parkdale",
+  nearbyAreas: ["Queen Street West", "Lansdowne", "Parkdale", "Dufferin", "Roncesvalles"],
   products: [
     "Flower",
     "Pre-rolls",
@@ -20,20 +28,164 @@ export const gbpLocation = {
     "Concentrates",
     "Shatter",
     "CBD oils",
-    "Accessories"
+    "Accessories",
   ],
   menuUrl: "/",
-  directionsUrl: "",
-  mapEmbedUrl: "",
+  visitUrl: "/visit",
+  directionsUrl:
+    "https://www.google.com/maps/dir/?api=1&destination=1472+Queen+St+W,+Toronto,+ON+M6K+1M4",
+  mapEmbedUrl:
+    "https://www.google.com/maps?q=1472+Queen+St+W,+Toronto,+ON+M6K+1M4&z=16&output=embed",
   latitude: "43.6406611",
   longitude: "-79.4370110",
   hours: ["Open 24 Hours Daily"],
-  seoTitle: "Queen Lansdowne Cannabis | Weed Dispensary in Toronto",
-  metaDescription: "Queen Lansdowne Cannabis is a local weed dispensary in Toronto offering flower, pre-rolls, edibles, vapes, concentrates, CBD, and service for adults 19+.",
-  localLandmarks: ["Queen Street West", "Lansdowne", "Parkdale"],
-  introVariant: "Queen Lansdowne Cannabis is a local weed dispensary in Toronto, located at 1472 Queen St W. We serve adults 19+ looking for quality weed, cannabis flower, pre-rolls, edibles, THC vapes, concentrates, shatter, CBD oils, and accessories. Whether you are searching for a weed dispensary near Queen West / Lansdowne / Parkdale, a cannabis store in Toronto, or a local weed shop close to Lansdowne, our friendly team is here to help you find the right product.",
-  neighborhoodDescription: "Located in the vibrant Queen West / Lansdowne / Parkdale district, our cannabis store fits right into this active and historic community, surrounded by local retail shops and convenient transit links.",
-  transitNote: "Served by the 501 Queen streetcar and local Lansdowne TTC routes.",
-  sectionTitle: "Serving Customers Near Queen West and Lansdowne"
+  hoursLabel: "Open 24 Hours Daily",
+  seoTitle: "Queen Lansdowne Cannabis | Queen West / Parkdale Dispensary",
+  metaDescription:
+    "Queen Lansdowne Cannabis is a walk-in dispensary at 1472 Queen St W on Queen West at the Parkdale edge. Open 24 hours daily. Adults 19+. Call +1 (437) 293-8580.",
+  localLandmarks: ["Queen Street West", "Lansdowne Avenue", "Parkdale"],
+  introVariant:
+    "Queen Lansdowne Cannabis is a walk-in shop at 1472 Queen St W, on Queen Street West where the Queen West strip meets Parkdale. Use the homepage for the name, address, phone and hours, and the visit guide for streetcar, parking and the door.",
+  neighborhoodDescription:
+    "The storefront faces Queen Street West at the Parkdale edge, near Lansdowne Avenue, with Dufferin the next major north-south crossing to the east.",
+  transitNote:
+    "The 501 Queen streetcar stops at Queen Street West at Lansdowne Avenue. Overnight, the 301 Queen Blue Night runs the same street.",
+  sectionTitle: "Queen West at the Parkdale edge",
 };
 
+/** Homepage corridor copy around the menu. Unique to 1472 Queen St W. */
+export const HOME_CORRIDOR_COPY = [
+  "Queen Lansdowne Cannabis sits at 1472 Queen St W, a street-level shop on Queen Street West where the Queen West strip meets Parkdale. The useful local search is this block — between Dufferin and Lansdowne — not a generic Toronto dispensary listing. Adults 19+ walk in at the Queen Street door; no appointment is required.",
+  "The 501 Queen streetcar stops at Queen Street West at Lansdowne Avenue, a short walk from 1472. Overnight, the 301 Queen Blue Night covers the same street. Shoppers coming from the east often pass Dufferin first. From the west, the 501 continues toward Roncesvalles. Use a current TTC trip planner for live times.",
+  "Look for the Queen Lansdowne Cannabis sign on the south side of Queen St W. The entrance is the retail bay at 1472. Bring government-issued photo ID. The store is open 24 hours daily. On-street parking on Queen Street West is posted and changes by time of day — read the curb signs before you leave the car. A public Green P surface lot, Carpark 158, is several blocks east at 1325 Queen Street West. That lot is city parking, not a private store lot, and spaces are not guaranteed.",
+  "Use this homepage as the visit hub: the same name, address, phone, and hours appear here, in the footer, and on the Queen West visit guide. Flower is grouped as Exotic, Premium, AAA+, AA, and Budget Weed, with separate pages for pre-rolls, edibles, vapes, concentrates, and accessories. Listings can change, so treat the menu as current information rather than a promise of stock. Call +1 (437) 293-8580, or open the visit guide for streetcar, parking, and door-finding detail.",
+];
+
+export const HOME_FAQS: StoreFaq[] = [
+  {
+    q: "What are the hours for Queen Lansdowne Cannabis?",
+    a: "Queen Lansdowne Cannabis at 1472 Queen St W, Toronto is open 24 hours daily. Walk in anytime — no appointment needed.",
+  },
+  {
+    q: "Where is the Queen West / Parkdale storefront?",
+    a: "The shop is at 1472 Queen St W, Toronto, ON M6K 1M4, on Queen Street West at the Parkdale edge near Lansdowne. Call +1 (437) 293-8580. Check current curb parking signs before you visit.",
+  },
+  {
+    q: "Do I need ID to walk in on Queen Street West?",
+    a: "Yes. Adults 19+ must show valid government-issued photo ID at the door. Queen Lansdowne Cannabis is walk-in only during listed hours.",
+  },
+  {
+    q: "How do I reach 1472 Queen St W on transit?",
+    a: "Take the 501 Queen streetcar to Queen Street West at Lansdowne Avenue, then stay on Queen Street and look for the Queen Lansdowne Cannabis sign on the south side. Overnight, the 301 Queen Blue Night covers the same corridor.",
+  },
+];
+
+export const VISIT_FAQS: StoreFaq[] = [
+  {
+    q: "Which streetcar stop is closest to Queen Lansdowne Cannabis?",
+    a: "The closest stop is Queen Street West at Lansdowne Avenue on the 501 Queen. Overnight service uses the 301 Queen Blue Night on the same street. Confirm live arrivals in a current TTC trip planner.",
+  },
+  {
+    q: "Where should I park near 1472 Queen St W?",
+    a: "Street parking on Queen Street West is posted and changes by block and time of day. Read the signs at the curb in front of 1472. A public Green P surface lot, Carpark 158, is several blocks east at 1325 Queen Street West; it is city parking, not a private store lot, and availability is not guaranteed.",
+  },
+  {
+    q: "How do I recognize the entrance on Queen Street West?",
+    a: "The store is a street-level retail bay at 1472 Queen St W on the south side of Queen Street West, at the Parkdale edge near Lansdowne. Look for the Queen Lansdowne Cannabis sign facing the sidewalk. There is no appointment desk — walk in during listed hours.",
+  },
+  {
+    q: "What should adults bring to visit?",
+    a: "Bring government-issued photo ID. The store serves adults 19+ only. Debit and cash are accepted in store. Menu listings on the website can change, so use the current category pages as information rather than a stock promise.",
+  },
+  {
+    q: "Can I order delivery from this Queen West store?",
+    a: "Yes. Queen Lansdowne Cannabis offers delivery ordering daily from 10:00 a.m. to 10:00 p.m. through the delivery menu. The dispatcher confirms order details and eligibility. Do not assume a city-wide radius from this page.",
+  },
+];
+
+export const THIN_CITY_INFO_SLUGS = new Set([
+  "toronto-weed-dispensary",
+  "weed-store-near-toronto",
+  "dispensary-near-me-toronto",
+]);
+
+export function faqPageJsonLd(faqs: StoreFaq[], pageUrl: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${pageUrl}#faq`,
+    url: pageUrl,
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+}
+
+export function cannabisStoreJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CannabisStore",
+        "@id": STORE_ID,
+        name: gbpLocation.storeName,
+        description:
+          "Walk-in cannabis store at 1472 Queen St W on Queen West at the Parkdale edge in Toronto. Open 24 hours daily. Adults 19+.",
+        url: `${STORE_ORIGIN}/`,
+        telephone: gbpLocation.phoneIntl,
+        image: STOREFRONT_IMAGE,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: gbpLocation.streetAddress,
+          addressLocality: gbpLocation.city,
+          addressRegion: gbpLocation.province,
+          postalCode: gbpLocation.postalCode,
+          addressCountry: gbpLocation.country,
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: Number(gbpLocation.latitude),
+          longitude: Number(gbpLocation.longitude),
+        },
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday",
+            ],
+            opens: "00:00",
+            closes: "23:59",
+          },
+        ],
+        sameAs: [GBP_MAPS_URL],
+        hasMap: GBP_MAPS_URL,
+        areaServed: [
+          { "@type": "Neighborhood", name: "Queen West" },
+          { "@type": "Neighborhood", name: "Parkdale" },
+          { "@type": "City", name: "Toronto" },
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${STORE_ORIGIN}/#website`,
+        url: `${STORE_ORIGIN}/`,
+        name: gbpLocation.storeName,
+      },
+    ],
+  };
+}
+
+export function jsonLdScript(data: unknown) {
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}

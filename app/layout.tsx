@@ -2,36 +2,35 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 import AgeGate from "./components/AgeGate";
+import { cannabisStoreJsonLd, gbpLocation, jsonLdScript } from "./lib/gbp-location";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.queenlansdownecannabis.ca"),
   title: {
-    default: "Queen Lansdowne Cannabis | Queen West Dispensary",
+    default: "Queen Lansdowne Cannabis | Queen West / Parkdale Dispensary",
     template: "%s | Queen Lansdowne Cannabis",
   },
-  description:
-    "Queen Lansdowne Cannabis is a Toronto dispensary on Queen St W near Lansdowne and Parkdale, open 24 hours daily, with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info.",
+  description: gbpLocation.metaDescription,
   openGraph: {
     type: "website",
     locale: "en_CA",
     url: "https://www.queenlansdownecannabis.ca",
     siteName: "Queen Lansdowne Cannabis",
-    title: "Queen Lansdowne Cannabis | Queen West Dispensary",
-    description:
-      "Queen Lansdowne Cannabis is a Toronto dispensary on Queen St W near Lansdowne and Parkdale, open 24 hours daily, with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info.",
+    title: "Queen Lansdowne Cannabis | Queen West / Parkdale Dispensary",
+    description: gbpLocation.metaDescription,
     images: [
       {
         url: "https://www.queenlansdownecannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
         width: 1200,
         height: 630,
-        alt: "Queen Lansdowne Cannabis — Premium Cannabis Dispensary Toronto",
+        alt: "Queen Lansdowne Cannabis — Queen West dispensary at 1472 Queen St W",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Queen Lansdowne Cannabis | Queen West Dispensary",
-    description: "Queen Lansdowne Cannabis is a Toronto dispensary on Queen St W near Lansdowne and Parkdale, open 24 hours daily, with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info.",
+    title: "Queen Lansdowne Cannabis | Queen West / Parkdale Dispensary",
+    description: gbpLocation.metaDescription,
     images: ["https://www.queenlansdownecannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg"],
   },
   robots: {
@@ -53,61 +52,7 @@ export const metadata: Metadata = {
   },
 };
 
-/* ── JSON-LD Structured Data ── */
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [{
-  "@type": "Store",
-  "@id": "https://www.queenlansdownecannabis.ca/#store",
-  name: "Queen Lansdowne Cannabis",
-  description: "Cannabis dispensary at 1472 Queen St W in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 hours daily.",
-  url: "https://www.queenlansdownecannabis.ca",
-  telephone: "+14372938580",
-  image: "https://www.queenlansdownecannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "1472 Queen St W",
-    addressLocality: "Toronto",
-    addressRegion: "ON",
-    postalCode: "M6K 1M4",
-    addressCountry: "CA",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 43.6406611,
-    longitude: -79.4370110,
-  },
-  openingHoursSpecification: [
-  {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    ],
-    "opens": "00:00",
-    "closes": "23:59"
-  }
-],
-  sameAs: [
-    "https://www.google.com/maps/place/Queen+Lansdowne+Cannabis/data=!4m2!3m1!1s0x0:0xb87def5c642e3b9c",
-  ],
-  hasMap: "https://www.google.com/maps/place/Queen+Lansdowne+Cannabis/data=!4m2!3m1!1s0x0:0xb87def5c642e3b9c",
-  areaServed: {
-    "@type": "City",
-    name: "Toronto",
-  },
-  }, {
-    "@type": "WebSite",
-    "@id": "https://www.queenlansdownecannabis.ca/#website",
-    url: "https://www.queenlansdownecannabis.ca/",
-    name: "Queen Lansdowne Cannabis",
-  }],
-};
+const jsonLd = cannabisStoreJsonLd();
 
 export default function RootLayout({
   children,
@@ -118,7 +63,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="geo.region" content="CA-ON" />
-        <meta name="geo.placename" content="Toronto" />
+        <meta name="geo.placename" content="Queen West, Parkdale, Toronto" />
         <meta name="geo.position" content="43.6406611;-79.4370110" />
         <meta name="ICBM" content="43.6406611, -79.4370110" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -129,7 +74,7 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonLdScript(jsonLd) }}
         />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-FHSXN74T4Y"></script>
         <script
