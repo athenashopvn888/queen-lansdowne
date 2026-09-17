@@ -55,7 +55,7 @@ test("homepage FAQPage matches visible Queen West FAQs", () => {
 });
 
 test("/visit is a unique Queen West arrival page, not a city clone", () => {
-  const visit = read("app/visit/page.tsx");
+  const visit = `${read("app/visit/page.tsx")}\n${read("app/lib/gbp-location.ts")}`;
   assert.match(visit, /canonical: `\$\{STORE_ORIGIN\}\/visit`/);
   assert.match(visit, /1472 Queen St W/);
   assert.match(visit, /501 Queen/);
