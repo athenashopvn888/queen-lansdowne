@@ -33,7 +33,7 @@ test("tier canonicals stay tier-first and customer-facing names use Tier Name pl
     assert.match(seo, new RegExp(`seoTitle: "${tier} Weed & Cannabis Flower Toronto`));
     assert.match(seo, new RegExp(`h1: "${tier} Weed & Cannabis Flower in Toronto`));
   }
-  const publicTierCopy = ["app/lib/products.ts", "app/lib/tierSeoContent.ts", "app/components/Navbar.tsx", "app/components/Footer.tsx", "app/page.tsx", "app/flower/page.tsx", "app/resources/resourceData.ts", "app/delivery/DeliveryCatalog.tsx"].map(read).join("\n");
+  const publicTierCopy = ["app/lib/products.ts", "app/lib/tierSeoContent.ts", "app/components/Navbar.tsx", "app/components/Footer.tsx", "app/page.tsx", "app/HomePage.tsx", "app/flower/page.tsx", "app/resources/resourceData.ts", "app/delivery/DeliveryCatalog.tsx"].map(read).join("\n");
   assert.doesNotMatch(publicTierCopy, /Weed (?:Exotic|Premium|AAA\+|AAA|AA|Budget)|WEED (?:EXOTIC|PREMIUM|AAA\+|AAA|AA|BUDGET)/);
   for (const legacy of ["/exotic", "/premium", "/aaa", "/aa", "/budget"]) {
     assert.doesNotMatch(seo, new RegExp(`href: "${legacy}"`));
@@ -41,7 +41,7 @@ test("tier canonicals stay tier-first and customer-facing names use Tier Name pl
 });
 
 test("sitemap and public navigation use only new campaign canonicals", () => {
-  const publicSources = ["app/sitemap.ts", "app/components/Navbar.tsx", "app/components/Footer.tsx", "app/page.tsx", "app/flower/page.tsx", "app/resources/resourceData.ts"].map(read).join("\n");
+  const publicSources = ["app/sitemap.ts", "app/components/Navbar.tsx", "app/components/Footer.tsx", "app/page.tsx", "app/HomePage.tsx", "app/flower/page.tsx", "app/resources/resourceData.ts"].map(read).join("\n");
   for (const legacy of Object.keys(routeMap)) {
     const exactHref = new RegExp(`href=["']${legacy.replaceAll("/", "\\/")}["']`);
     assert.doesNotMatch(publicSources, exactHref);
@@ -66,7 +66,8 @@ test("post-V2.1 cleanup keeps the broad owner direct and removes unsupported eve
     "app/resources/resourceData.ts",
   ].map(read).join("\n");
 
-  assert.ok(broadOwner.includes("canonical: `https://${gbpLocation.domain}/${gbpLocation.slug}`"));
+  assert.match(broadOwner, /canonical:\s*STORE_ORIGIN/);
+  assert.match(broadOwner, /index:\s*false/);
   assert.match(sitemap, /`\$\{BASE}\/(?:weed-dispensary-toronto)`/);
   assert.doesNotMatch(sitemap, /weed-dispensary-toronto\//);
   assert.doesNotMatch(publicCopy, /weed-dispensary-toronto\//);

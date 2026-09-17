@@ -20,6 +20,7 @@ const ALL_LINKS = [
   { href: "/items/cigarettes", label: "Cigarettes" },
   { href: "/items/add-ons", label: "Accessories" },
   { href: "/weed-delivery-toronto", label: "🚗 Weed Delivery" },
+  { href: "/visit", label: "Visit Queen West" },
   { href: "/careers/budtender", label: "Hiring" },
   { href: "/resources", label: "Resources" },
   { href: "/faq", label: "FAQ" },

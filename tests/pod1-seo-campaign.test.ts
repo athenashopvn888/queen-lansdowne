@@ -20,7 +20,7 @@ test("five tier pages use distinct weed copy and preserve the broad owner", () =
 
 test("nicotine and THC labels stay on their verified routes", () => {
   const navbar = read("app/components/Navbar.tsx");
-  const homepage = read("app/page.tsx");
+  const homepage = read("app/HomePage.tsx");
   assert.match(navbar, /href: "\/items\/vapes", label: "Nicotine Vape"/);
   assert.match(navbar, /href: "\/items\/vape-disposables", label: "THC Vape"/);
   assert.match(homepage, /name: "Nicotine Vapes", slug: "items\/vapes"/);

@@ -24,9 +24,9 @@ const faqHtml = await readFile(path.join(root, ".next/server/app/faq.html"), "ut
 const contactHtml = await readFile(path.join(root, ".next/server/app/contact.html"), "utf8");
 
 const homeSchemas = jsonLdFrom(homeHtml);
-const storeHours = homeSchemas.flatMap((schema) => openingHoursFor(schema, "Store"));
-assert(storeHours.length > 0, "Built homepage must contain Store opening hours");
-assert(storeHours.every((hours) => hours.opens === "00:00" && hours.closes === "23:59"), "Built homepage Store schema must be open 00:00–23:59 daily");
+const storeHours = homeSchemas.flatMap((schema) => openingHoursFor(schema, "CannabisStore"));
+assert(storeHours.length > 0, "Built homepage must contain CannabisStore opening hours");
+assert.equal(storeHours.every((hours) => hours.opens === "00:00" && hours.closes === "23:59"), true, "Built homepage CannabisStore schema must be open 00:00–23:59 daily");
 assert(homeHtml.includes("Open 24 Hours Daily"), "Built homepage must show 24-hour store copy");
 assert(faqHtml.includes("open 24 hours daily"), "Built FAQ must show 24-hour store copy");
 assert(contactHtml.includes("Open 24 Hours"), "Built Contact page must show daily 24-hour rows");

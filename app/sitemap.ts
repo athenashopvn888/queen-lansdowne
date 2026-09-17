@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { TIER_CONFIG, CATEGORY_CONFIG, allFlowers, allItems } from "./lib/products";
 import { SEO_PAGES } from "./lib/seoPages";
+import { THIN_CITY_INFO_SLUGS } from "./lib/gbp-location";
 import { RESOURCE_PATHS } from "./resources/resourceData";
 
 const BASE = "https://www.queenlansdownecannabis.ca";
@@ -11,7 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE, lastModified: now, changeFrequency: "daily", priority: 1 },
     { url: `${BASE}/flower`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
-    { url: `${BASE}/weed-dispensary-toronto`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/visit`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/weed-dispensary-toronto`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/resources`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
     { url: `${BASE}/careers/budtender`, lastModified: now, changeFrequency: "monthly", priority: 0.65 },
@@ -61,7 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   /* SEO landing pages */
-  const seoPages: MetadataRoute.Sitemap = SEO_PAGES.map((p) => ({
+  const seoPages: MetadataRoute.Sitemap = SEO_PAGES.filter((p) => !THIN_CITY_INFO_SLUGS.has(p.slug)).map((p) => ({
     url: `${BASE}/info/${p.slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,

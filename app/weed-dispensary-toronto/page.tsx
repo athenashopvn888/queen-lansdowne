@@ -1,20 +1,27 @@
 import { Metadata } from "next";
+import Navbar from "@/app/components/Navbar";
+import Footer from "@/app/components/Footer";
 import { GBPLandingPage } from "@/app/components/GBPLandingPage";
-import { DeliveryCoverage } from "@/app/components/DeliveryCoverage";
-import { gbpLocation } from "@/app/lib/gbp-location";
+import { gbpLocation, STORE_ORIGIN } from "@/app/lib/gbp-location";
 
 export const metadata: Metadata = {
-  title: gbpLocation.seoTitle,
+  title: { absolute: gbpLocation.seoTitle },
   description: gbpLocation.metaDescription,
   alternates: {
-    canonical: `https://${gbpLocation.domain}/${gbpLocation.slug}`,
+    canonical: STORE_ORIGIN,
   },
   robots: {
-    index: true,
+    index: false,
     follow: true,
   },
 };
 
 export default function Page() {
-  return <><GBPLandingPage /><DeliveryCoverage /></>;
+  return (
+    <>
+      <Navbar />
+      <GBPLandingPage />
+      <Footer />
+    </>
+  );
 }
