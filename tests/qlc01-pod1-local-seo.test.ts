@@ -21,6 +21,7 @@ const PUBLIC_PAGES = [
   "app/components/Navbar.tsx",
   "app/components/GBPLandingPage.tsx",
   "app/weed-dispensary-toronto/page.tsx",
+  "app/24-hour-queen-west-dispensary/page.tsx",
   "app/lib/gbp-location.ts",
 ];
 

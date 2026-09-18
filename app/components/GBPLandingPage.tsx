@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./GBPLandingPage.module.css";
 import { gbpLocation } from "../lib/gbp-location";
+import { StoreMeshNav } from "./StoreMeshNav";
 
 const categoryLinks: { [key: string]: string } = {
   Flower: "/",
@@ -28,11 +29,13 @@ export function GBPLandingPage() {
           Broad “weed dispensary Toronto” searches land on many similar pages. Queen Lansdowne Cannabis
           is one storefront on Queen Street West at 1472, near Lansdowne, not a city-wide shop. Use the
           homepage for name, address, phone, and hours. Use the visit guide for the 501 Queen stop,
-          curb parking, and the south-side door.
+          curb parking, and the south-side door. Use the 24-hour Queen West page when the question is
+          open now, open late, or open all night.
         </p>
         <div className={styles.btnRow}>
           <Link href="/" className={`${styles.btn} ${styles.btnPrimary}`}>Homepage visit hub</Link>
           <Link href="/visit" className={`${styles.btn} ${styles.btnSecondary}`}>Queen West visit guide</Link>
+          <Link href="/24-hour-queen-west-dispensary" className={`${styles.btn} ${styles.btnSecondary}`}>24-hour Queen West hours</Link>
         </div>
       </section>
 
@@ -88,6 +91,7 @@ export function GBPLandingPage() {
             />
           </div>
         </div>
+        <StoreMeshNav />
       </section>
     </div>
   );

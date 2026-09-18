@@ -29,9 +29,19 @@ test("tier canonicals stay tier-first and customer-facing names use Tier Name pl
   for (const name of ["Exotic Weed", "Premium Weed", "AAA+ Weed", "AA Weed", "Budget Weed"]) {
     assert.match(products, new RegExp(`name: "${name.replace("+", "\\+")}"`));
   }
-  for (const tier of ["Exotic", "Premium", "AAA\\+", "AA", "Budget"]) {
-    assert.match(seo, new RegExp(`seoTitle: "${tier} Weed & Cannabis Flower Toronto`));
-    assert.match(seo, new RegExp(`h1: "${tier} Weed & Cannabis Flower in Toronto`));
+  const titles = ["Exotic Weed on Queen West", "Premium Weed at 1472 Queen St W", "AAA\\+ Weed near Lansdowne", "AA Weed Queen West / Parkdale", "Budget Weed on Queen St W"];
+  const headings = [
+    "Exotic Weed at Queen Lansdowne Cannabis on Queen West",
+    "Premium Weed flower at 1472 Queen St W",
+    "AAA\\+ Weed near Lansdowne on Queen Street West",
+    "AA Weed at the Parkdale edge of Queen West",
+    "Budget Weed at Queen Lansdowne Cannabis on Queen St W",
+  ];
+  for (const title of titles) {
+    assert.match(seo, new RegExp(`seoTitle: "${title}`));
+  }
+  for (const heading of headings) {
+    assert.match(seo, new RegExp(`h1: "${heading}`));
   }
   const publicTierCopy = ["app/lib/products.ts", "app/lib/tierSeoContent.ts", "app/components/Navbar.tsx", "app/components/Footer.tsx", "app/page.tsx", "app/HomePage.tsx", "app/flower/page.tsx", "app/resources/resourceData.ts", "app/delivery/DeliveryCatalog.tsx"].map(read).join("\n");
   assert.doesNotMatch(publicTierCopy, /Weed (?:Exotic|Premium|AAA\+|AAA|AA|Budget)|WEED (?:EXOTIC|PREMIUM|AAA\+|AAA|AA|BUDGET)/);

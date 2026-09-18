@@ -12,6 +12,8 @@ import {
   TIER_CONFIG,
 } from "../lib/products";
 import { TIER_SEO } from "../lib/tierSeoContent";
+import { JsonLd } from "../lib/jsonLd";
+import { STORE_ORIGIN, faqPageJsonLd } from "../lib/gbp-location";
 import styles from "./tier.module.css";
 
 /* -- Generate all tier pages at build -- */
@@ -37,7 +39,7 @@ export async function generateMetadata({
       : `${tierInfo.config.name} Cannabis Flower — ${flowers.length} Strains`,
     description: seo?.metaDescription || `Shop ${flowers.length} ${tierInfo.config.name.toLowerCase()} cannabis strains at Queen Lansdowne Cannabis.`,
     alternates: {
-      canonical: `https://www.queenlansdownecannabis.ca/${tierSlug}`,
+      canonical: `${STORE_ORIGIN}/${tierSlug}`,
     },
     openGraph: {
       title: `${tierInfo.config.name} Flower | Queen Lansdowne Cannabis`,
@@ -69,8 +71,11 @@ export default async function TierPage({
     ? fs.existsSync(path.join(process.cwd(), "public", config.banner))
     : false;
 
+  const pageUrl = `${STORE_ORIGIN}/${tierSlug}`;
+
   return (
     <main className={styles.main}>
+      {seo?.faqs?.length ? <JsonLd data={faqPageJsonLd(seo.faqs, pageUrl)} /> : null}
       <Navbar />
 
       {/* ── Banner Image (standalone, no overlay text) ── */}

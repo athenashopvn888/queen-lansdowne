@@ -32,6 +32,7 @@ export const gbpLocation = {
   ],
   menuUrl: "/",
   visitUrl: "/visit",
+  hoursLpUrl: "/24-hour-queen-west-dispensary",
   directionsUrl:
     "https://www.google.com/maps/dir/?api=1&destination=1472+Queen+St+W,+Toronto,+ON+M6K+1M4",
   mapEmbedUrl:
@@ -77,6 +78,45 @@ export const HOME_FAQS: StoreFaq[] = [
   {
     q: "How do I reach 1472 Queen St W on transit?",
     a: "Take the 501 Queen streetcar to Queen Street West at Lansdowne Avenue, then stay on Queen Street and look for the Queen Lansdowne Cannabis sign on the south side. Overnight, the 301 Queen Blue Night covers the same corridor.",
+  },
+];
+
+export const HOURS_LP_PATH = "/24-hour-queen-west-dispensary";
+
+export const MESH_HUB_LINKS = [
+  { label: "Homepage visit hub", href: "/" },
+  { label: "Queen West visit guide", href: "/visit" },
+  { label: "24-hour Queen West dispensary", href: HOURS_LP_PATH },
+] as const;
+
+export const TIER_MESH_LINKS = [
+  { label: "Exotic Weed", href: "/exotic-weed" },
+  { label: "Premium Weed", href: "/premium-weed" },
+  { label: "AAA+ Weed", href: "/aaa-weed" },
+  { label: "AA Weed", href: "/aa-weed" },
+  { label: "Budget Weed", href: "/budget-weed" },
+] as const;
+
+export const HOURS_LP_FAQS: StoreFaq[] = [
+  {
+    q: "Is Queen Lansdowne Cannabis a 24-hour dispensary on Queen West?",
+    a: "Yes. Queen Lansdowne Cannabis at 1472 Queen St W is open 24 hours daily. Adults 19+ can walk in any hour — there is no appointment window. The homepage remains the name, address, phone, and hours hub.",
+  },
+  {
+    q: "Can I walk in after midnight at 1472 Queen St W?",
+    a: "Yes. The Queen Street door stays open overnight. Bring government-issued photo ID. Staff can help you compare the current in-store menu. Listings can change, so treat the website as information rather than a stock promise.",
+  },
+  {
+    q: "Does overnight TTC still run on Queen Street West?",
+    a: "Overnight, the 301 Queen Blue Night follows the same Queen Street corridor when the daytime 501 Queen streetcar is not running. The closest stop remains Queen Street West at Lansdowne Avenue. Use a current TTC trip planner for live times.",
+  },
+  {
+    q: "Do late-night visits still require photo ID?",
+    a: "Yes. The store serves adults 19+ at every hour, including overnight. Government-issued photo ID is required before purchase, the same as during the day.",
+  },
+  {
+    q: "Is cannabis delivery from this store also 24 hours?",
+    a: "No. Walk-in retail at 1472 Queen St W is open 24 hours daily. Delivery ordering from this store runs daily from 10:00 a.m. to 10:00 p.m. through the delivery menu, with details confirmed by the dispatcher.",
   },
 ];
 

@@ -5,15 +5,19 @@ import { TIER_SEO } from "../app/lib/tierSeoContent.ts";
 
 const read = (path: string) => fs.readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
 
-test("five tier pages use distinct weed copy and preserve the broad owner", () => {
+test("five tier pages use distinct Queen West copy and mesh to hub pages", () => {
   assert.deepEqual(Object.keys(TIER_SEO), ["EXOTIC", "PREMIUM", "AAA+", "AA", "BUDGET"]);
   assert.equal(new Set(Object.values(TIER_SEO).map((tier) => tier.intro)).size, 5);
+  assert.equal(new Set(Object.values(TIER_SEO).map((tier) => tier.h1)).size, 5);
+  assert.equal(new Set(Object.values(TIER_SEO).map((tier) => tier.seoTitle)).size, 5);
+  const faqQuestions = Object.values(TIER_SEO).flatMap((tier) => tier.faqs.map((faq) => faq.q));
+  assert.equal(new Set(faqQuestions).size, faqQuestions.length);
   for (const tier of Object.values(TIER_SEO)) {
-    assert.match(tier.seoTitle, /^.+ Weed & Cannabis Flower Toronto/);
-    assert.match(tier.h1, /^.+ Weed & Cannabis Flower in Toronto/);
-    assert.equal(tier.sections.length, 3);
-    assert.equal(tier.faqs.length, 2);
-    assert.ok(tier.relatedLinks.some((link) => link.href === "/weed-dispensary-toronto"));
+    assert.match(tier.h1, /Queen (West|St W|Street West)|Lansdowne|Parkdale|1472/);
+    assert.ok(tier.faqs.length >= 3);
+    assert.ok(tier.relatedLinks.some((link) => link.href === "/"));
+    assert.ok(tier.relatedLinks.some((link) => link.href === "/visit"));
+    assert.ok(tier.relatedLinks.some((link) => link.href === "/24-hour-queen-west-dispensary"));
     assert.doesNotMatch(`${tier.metaDescription} ${tier.intro}`, /\$\d|in stock|available now|best weed/i);
   }
 });
