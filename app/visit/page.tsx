@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { StoreMeshNav } from "../components/StoreMeshNav";
 import { JsonLd } from "../lib/jsonLd";
 import {
   STORE_ORIGIN,
@@ -109,9 +110,11 @@ export default function VisitPage() {
             <p>
               The shop is a street-level retail bay, not a plaza unit or a rear alley entrance. Use
               1472 Queen St W as the pin. The door opens to the Queen Street sidewalk. There is no
-              appointment window — walk in during listed hours, which are 24 hours daily. Staff can
-              help you compare the current in-store menu. Adults 19+ must show government-issued
-              photo ID before purchase.
+              appointment window — walk in during listed hours, which are 24 hours daily. For
+              overnight / open-now questions, use the{" "}
+              <Link href="/24-hour-queen-west-dispensary">24-hour Queen West dispensary</Link> page.
+              Staff can help you compare the current in-store menu. Adults 19+ must show
+              government-issued photo ID before purchase.
             </p>
             <p>
               If you are using a rideshare, the drop-off is on Queen Street West at the civic number
@@ -155,6 +158,8 @@ export default function VisitPage() {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
+
+          <StoreMeshNav currentPath="/visit" />
 
           <section>
             <h2 className={styles.sectionTitle}>Queen West visit questions</h2>

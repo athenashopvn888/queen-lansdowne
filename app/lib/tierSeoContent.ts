@@ -8,91 +8,190 @@ export interface TierSeoData {
   relatedLinks: { label: string; href: string }[];
 }
 
+const SIBLING_LINKS = [
+  { label: "Exotic Weed", href: "/exotic-weed" },
+  { label: "Premium Weed", href: "/premium-weed" },
+  { label: "AAA+ Weed", href: "/aaa-weed" },
+  { label: "AA Weed", href: "/aa-weed" },
+  { label: "Budget Weed", href: "/budget-weed" },
+] as const;
+
+const HUB_LINKS = [
+  { label: "Homepage visit hub", href: "/" },
+  { label: "Queen West visit guide", href: "/visit" },
+  { label: "24-hour Queen West dispensary", href: "/24-hour-queen-west-dispensary" },
+] as const;
+
+function meshLinks(currentHref: string): { label: string; href: string }[] {
+  const siblings = SIBLING_LINKS.filter((link) => link.href !== currentHref);
+  return [...siblings, ...HUB_LINKS];
+}
+
 export const TIER_SEO: Record<string, TierSeoData> = {
   EXOTIC: {
-    seoTitle: "Exotic Weed & Cannabis Flower Toronto | Queen Lansdowne Cannabis",
-    metaDescription: "Explore Exotic Weed and cannabis flower at Queen Lansdowne Cannabis in Toronto, then compare the store’s five dedicated Weed flower collections.",
-    h1: "Exotic Weed & Cannabis Flower in Toronto",
-    intro: "Explore the Exotic Weed flower collection at Queen Lansdowne Cannabis. Review the names, weights and product details presented for this collection, then compare another Weed flower collection when it helps narrow your browsing.",
+    seoTitle: "Exotic Weed on Queen West | Queen Lansdowne Cannabis",
+    metaDescription:
+      "Browse Exotic Weed at Queen Lansdowne Cannabis, 1472 Queen St W on Queen West at the Parkdale edge. Open 24 hours daily. Compare Premium, AAA+, AA, and Budget Weed.",
+    h1: "Exotic Weed at Queen Lansdowne Cannabis on Queen West",
+    intro:
+      "Exotic Weed is the highest-positioned flower collection at Queen Lansdowne Cannabis, the walk-in shop at 1472 Queen St W. Use this page to compare the names, weights, and product details shown for Exotic listings, then continue to another collection or the Queen West visit hub when you are ready to walk in.",
     sections: [
-      { heading: "Browse Exotic Weed Flower", body: "Start with the flower presented in Exotic Weed, then open an individual product listing for the details attached to that item." },
-      { heading: "Compare Queen Lansdowne Weed Collections", body: "Exotic Weed can be compared with Premium Weed, AAA+ Weed, AA Weed and Budget Weed without treating one collection name as a promise about every item." },
+      {
+        heading: "Exotic Weed at the Queen Street door",
+        body: "This collection sits on the Queen West / Parkdale-edge menu, not a city-wide catalogue. Open an individual Exotic listing for the details attached to that item. Adults 19+ can walk in any hour — the store is open 24 hours daily — and staff can help you compare aroma, cultivar name, and package information in person.",
+      },
+      {
+        heading: "Compare Exotic with the other Queen West collections",
+        body: "Exotic Weed is a store browsing label, not a government grade. When you want a different starting point on the same Queen Street West menu, move to Premium Weed, AAA+ Weed, AA Weed, or Budget Weed. Arrival notes live on the visit guide; overnight hours live on the 24-hour Queen West page.",
+      },
     ],
     faqs: [
-      { q: "What is Exotic Weed at Queen Lansdowne Cannabis?", a: "Exotic Weed is one of Queen Lansdowne Cannabis’s five dedicated cannabis flower collections." },
-      { q: "How can I compare Exotic Weed with another collection?", a: "Review the product information presented in Exotic Weed, then use the collection links to compare Premium Weed, AAA+ Weed, AA Weed or Budget Weed." },
+      {
+        q: "What does Exotic Weed mean at this Queen West shop?",
+        a: "At Queen Lansdowne Cannabis, Exotic Weed is the named top collection on the flower menu at 1472 Queen St W. It is a browsing owner, not a regulated laboratory grade, and it does not guarantee one THC range. Compare the actual product information shown for each listing.",
+      },
+      {
+        q: "Can I walk in after midnight for Exotic Weed at 1472 Queen St W?",
+        a: "Yes. In-store retail is open 24 hours daily. Bring government-issued photo ID. Menu listings can change, so treat this page as a collection guide rather than a stock promise.",
+      },
+      {
+        q: "How is Exotic Weed different from Premium Weed on this menu?",
+        a: "Exotic is this store’s highest-positioned flower section. Premium Weed is a separate collection one step down the same Queen West menu. Use the product details on each listing, then ask staff in store if you want a side-by-side comparison.",
+      },
     ],
-    relatedLinks: [
-      { label: "Premium Weed & Flower", href: "/premium-weed" }, { label: "AAA+ Weed & Flower", href: "/aaa-weed" }, { label: "AA Weed & Flower", href: "/aa-weed" }, { label: "Budget Weed & Flower", href: "/budget-weed" }, { label: "Explore Queen Lansdowne Weed in Toronto", href: "/weed-dispensary-toronto" },
-    ],
+    relatedLinks: meshLinks("/exotic-weed"),
   },
   PREMIUM: {
-    seoTitle: "Premium Weed & Cannabis Flower Toronto | Queen Lansdowne Cannabis",
-    metaDescription: "Explore Premium Weed and cannabis flower at Queen Lansdowne Cannabis in Toronto, with direct paths to the store’s other Weed flower collections.",
-    h1: "Premium Weed & Cannabis Flower in Toronto",
-    intro: "Browse the Premium Weed flower collection from Queen Lansdowne Cannabis. Use the product details shown with each item, then compare another Weed flower collection when you want a different starting point.",
+    seoTitle: "Premium Weed at 1472 Queen St W | Queen Lansdowne Cannabis",
+    metaDescription:
+      "Browse Premium Weed flower at Queen Lansdowne Cannabis, 1472 Queen St W. Open 24 hours daily on Queen West. Compare Exotic, AAA+, AA, and Budget Weed before you visit.",
+    h1: "Premium Weed flower at 1472 Queen St W",
+    intro:
+      "Premium Weed is the Queen Lansdowne Cannabis collection for shoppers who want a step below Exotic without starting in the value rows. Review the product details shown with each Premium listing, then walk in at 1472 Queen St W — the Queen Street door is open 24 hours daily.",
     sections: [
-      { heading: "Browse Premium Weed Flower", body: "Explore the flower grouped within Premium Weed and open individual listings for the product information presented for each item." },
-      { heading: "Compare More Weed Flower Collections", body: "Move between Premium Weed, Exotic Weed, AAA+ Weed, AA Weed and Budget Weed when comparing more than one Queen Lansdowne flower collection." },
+      {
+        heading: "Premium Weed as a Queen West starting point",
+        body: "Use this page to scan the current Premium Weed flower grouped for this storefront. Open individual listings for cultivar, weight, and other details attached to that item. The collection name describes menu position. It does not lock in one formula for THC, bud size, or aroma.",
+      },
+      {
+        heading: "From Premium Weed to the rest of the shop",
+        body: "Exotic Weed sits above Premium on this menu. AAA+ Weed, AA Weed, and Budget Weed sit beside or below it. Plan the door with the Queen West visit guide. If the question is whether the shop is open now, use the 24-hour Queen West dispensary page. The homepage keeps the name, address, phone, hours, and map together.",
+      },
     ],
     faqs: [
-      { q: "What is Premium Weed at Queen Lansdowne Cannabis?", a: "Premium Weed is one of Queen Lansdowne Cannabis’s five dedicated cannabis flower collections." },
-      { q: "Can I compare Premium Weed with the other flower collections?", a: "Yes. Use the collection links to continue to Exotic Weed, AAA+ Weed, AA Weed or Budget Weed." },
+      {
+        q: "Where is Premium Weed listed at Queen Lansdowne Cannabis?",
+        a: "Premium Weed is a dedicated flower collection on this site and on the in-store menu at 1472 Queen St W, Queen West at the Parkdale edge. Check the current listings on this page before travelling for one item.",
+      },
+      {
+        q: "Do I need an appointment to browse Premium Weed on Queen Street West?",
+        a: "No. Queen Lansdowne Cannabis is walk-in only during listed hours, which are 24 hours daily. Adults 19+ must show government-issued photo ID.",
+      },
+      {
+        q: "Should I compare Premium Weed with AAA+ before I visit?",
+        a: "Yes, if you want a different menu starting point. Premium and AAA+ are separate collections on the same Queen West flower menu. Compare names, weights, and posted details, then ask staff in store for help reading the current jars.",
+      },
     ],
-    relatedLinks: [
-      { label: "Exotic Weed & Flower", href: "/exotic-weed" }, { label: "AAA+ Weed & Flower", href: "/aaa-weed" }, { label: "AA Weed & Flower", href: "/aa-weed" }, { label: "Budget Weed & Flower", href: "/budget-weed" }, { label: "Queen Lansdowne Weed Dispensary in Toronto", href: "/weed-dispensary-toronto" },
-    ],
+    relatedLinks: meshLinks("/premium-weed"),
   },
   "AAA+": {
-    seoTitle: "AAA+ Weed & Cannabis Flower Toronto | Queen Lansdowne Cannabis",
-    metaDescription: "Explore AAA+ Weed and cannabis flower at Queen Lansdowne Cannabis in Toronto, then compare the other dedicated Weed flower collections.",
-    h1: "AAA+ Weed & Cannabis Flower in Toronto",
-    intro: "Explore Queen Lansdowne Cannabis AAA+ Weed as its own flower collection. Review the information presented with individual products, or compare AAA+ Weed with another Weed flower collection.",
+    seoTitle: "AAA+ Weed near Lansdowne | Queen Lansdowne Cannabis",
+    metaDescription:
+      "Browse AAA+ Weed near Lansdowne at Queen Lansdowne Cannabis, 1472 Queen St W. Open 24 hours daily. Compare Exotic, Premium, AA, and Budget Weed on Queen West.",
+    h1: "AAA+ Weed near Lansdowne on Queen Street West",
+    intro:
+      "AAA+ Weed is the mid-to-upper flower collection at Queen Lansdowne Cannabis, a short walk from the Queen Street West at Lansdowne streetcar stop. Treat AAA+ as this store’s browsing label, then compare the actual product information shown for each listing.",
     sections: [
-      { heading: "Explore AAA+ Weed Flower", body: "Start with the flower presented in AAA+ Weed and open the individual listings that interest you for their product details." },
-      { heading: "Compare AAA+ Weed with Other Collections", body: "Exotic Weed, Premium Weed, AA Weed and Budget Weed offer four additional Queen Lansdowne flower collections to compare." },
+      {
+        heading: "AAA+ Weed beside the Lansdowne stop",
+        body: "After you step off the 501 Queen at Queen Street West at Lansdowne Avenue, stay on Queen Street and look for the south-side sign at 1472. AAA+ Weed is one of five flower collections inside. Overnight, the 301 Queen Blue Night uses the same corridor. Live times belong in a TTC planner, not on this collection page.",
+      },
+      {
+        heading: "Read AAA+ as menu language, then compare siblings",
+        body: "AAA and AAA+ are common Canadian cannabis shorthand. They are not one national grading system. On this Queen West menu, AAA+ Weed sits between Premium Weed and AA Weed. Continue to Exotic Weed or Budget Weed when you want the top or value starting points. The homepage remains the NAP hub; the 24-hour page owns overnight hours.",
+      },
     ],
     faqs: [
-      { q: "What is AAA+ Weed at Queen Lansdowne Cannabis?", a: "AAA+ Weed is one of Queen Lansdowne Cannabis’s five dedicated cannabis flower collections." },
-      { q: "What can I compare with AAA+ Weed?", a: "Use the collection links to compare AAA+ Weed with Exotic Weed, Premium Weed, AA Weed and Budget Weed." },
+      {
+        q: "Is AAA+ a regulated grade at Queen Lansdowne Cannabis?",
+        a: "No. AAA+ Weed is this store’s named collection for the tier. It is not a government laboratory category. Compare cultivar, THC/CBD where listed, producer, and package details on each product.",
+      },
+      {
+        q: "How do I reach the AAA+ collection from the 501 Queen stop?",
+        a: "Ride the 501 Queen to Queen Street West at Lansdowne Avenue, then stay on Queen Street and enter the street-level shop at 1472 Queen St W. Staff can point you to the AAA+ Weed section inside.",
+      },
+      {
+        q: "What should I compare besides the AAA+ label?",
+        a: "Use the listing details on this page — name, weight, and any posted cannabinoid information — then compare Exotic Weed, Premium Weed, AA Weed, or Budget Weed if you want a different Queen West starting point.",
+      },
     ],
-    relatedLinks: [
-      { label: "Exotic Weed & Flower", href: "/exotic-weed" }, { label: "Premium Weed & Flower", href: "/premium-weed" }, { label: "AA Weed & Flower", href: "/aa-weed" }, { label: "Budget Weed & Flower", href: "/budget-weed" }, { label: "See the broader Toronto Weed guide", href: "/weed-dispensary-toronto" },
-    ],
+    relatedLinks: meshLinks("/aaa-weed"),
   },
   AA: {
-    seoTitle: "AA Weed & Cannabis Flower Toronto | Queen Lansdowne Cannabis",
-    metaDescription: "Explore AA Weed and cannabis flower at Queen Lansdowne Cannabis in Toronto, then compare the store’s other Weed flower collections.",
-    h1: "AA Weed & Cannabis Flower in Toronto",
-    intro: "Browse Queen Lansdowne Cannabis AA Weed as a dedicated flower collection. Review individual product details or continue to another Weed flower collection for a broader comparison.",
+    seoTitle: "AA Weed Queen West / Parkdale | Queen Lansdowne Cannabis",
+    metaDescription:
+      "Browse AA Weed at Queen Lansdowne Cannabis on Queen West at the Parkdale edge, 1472 Queen St W. Open 24 hours daily. Compare Exotic, Premium, AAA+, and Budget Weed.",
+    h1: "AA Weed at the Parkdale edge of Queen West",
+    intro:
+      "AA Weed is the everyday flower collection at Queen Lansdowne Cannabis, the Parkdale-edge shop at 1472 Queen St W. The section name helps narrow the browse. It is not a promise about one THC range, aroma, or cultivation method.",
     sections: [
-      { heading: "Browse AA Weed Flower", body: "Explore the flower presented in AA Weed and use each individual listing for the product information attached to that item." },
-      { heading: "Compare AA Weed with Other Collections", body: "Continue to Exotic Weed, Premium Weed, AAA+ Weed or Budget Weed when you want to compare another Queen Lansdowne flower collection." },
+      {
+        heading: "AA Weed on the Parkdale-edge menu",
+        body: "This collection is for shoppers who want a middle Queen West starting point — above Budget Weed, below AAA+ Weed. Open each AA listing for the product information attached to that item. Walk-ins are welcome 24 hours daily with photo ID for adults 19+.",
+      },
+      {
+        heading: "AA Weed beside the other four collections",
+        body: "Continue to Budget Weed when you want the value row, or to AAA+ Weed and Premium Weed when you want a higher-positioned starting point. Exotic Weed is the top collection. Use the visit guide for the south-side door and curb parking, and the 24-hour Queen West page when the question is open-now.",
+      },
     ],
     faqs: [
-      { q: "What is AA Weed at Queen Lansdowne Cannabis?", a: "AA Weed is one of Queen Lansdowne Cannabis’s five dedicated cannabis flower collections." },
-      { q: "Can I compare AA Weed with another collection?", a: "Yes. Use the collection links to compare AA Weed with Exotic Weed, Premium Weed, AAA+ Weed or Budget Weed." },
+      {
+        q: "What is AA Weed used for on this Queen West menu?",
+        a: "AA Weed is a protected commercial owner that organizes part of the flower menu at 1472 Queen St W. Use it to narrow the browse, then read each listing rather than treating the letters as a laboratory result.",
+      },
+      {
+        q: "Is AA Weed the same as Budget Weed at 1472 Queen St W?",
+        a: "No. AA Weed and Budget Weed are separate collections on the same Queen Lansdowne Cannabis menu. Budget is the value-oriented starting point; AA sits above it as a distinct browsing row.",
+      },
+      {
+        q: "Can staff help me compare AA listings in store?",
+        a: "Yes. Walk in during listed hours — 24 hours daily — with government-issued photo ID. Staff can help you compare category, package size, and posted details on current AA Weed jars.",
+      },
     ],
-    relatedLinks: [
-      { label: "Exotic Weed & Flower", href: "/exotic-weed" }, { label: "Premium Weed & Flower", href: "/premium-weed" }, { label: "AAA+ Weed & Flower", href: "/aaa-weed" }, { label: "Budget Weed & Flower", href: "/budget-weed" }, { label: "Explore Weed at Queen Lansdowne Cannabis", href: "/weed-dispensary-toronto" },
-    ],
+    relatedLinks: meshLinks("/aa-weed"),
   },
   BUDGET: {
-    seoTitle: "Budget Weed & Cannabis Flower Toronto | Queen Lansdowne Cannabis",
-    metaDescription: "Explore Budget Weed and cannabis flower at Queen Lansdowne Cannabis in Toronto without implying a current price, promotion or availability.",
-    h1: "Budget Weed & Cannabis Flower in Toronto",
-    intro: "Explore the Budget Weed flower collection at Queen Lansdowne Cannabis. The collection name identifies a place to browse flower and does not establish a current price, promotion, stock or availability claim.",
+    seoTitle: "Budget Weed on Queen St W | Queen Lansdowne Cannabis",
+    metaDescription:
+      "Browse Budget Weed at Queen Lansdowne Cannabis on Queen St W, 1472 Queen Street West. Open 24 hours daily. The collection name does not lock in a current price or deal.",
+    h1: "Budget Weed at Queen Lansdowne Cannabis on Queen St W",
+    intro:
+      "Budget Weed is the value-oriented flower collection at Queen Lansdowne Cannabis, 1472 Queen St W. The collection name identifies a place to start browsing. It does not establish a current price, promotion, stock, or availability claim.",
     sections: [
-      { heading: "Explore Budget Weed Flower", body: "Browse the flower presented in Budget Weed and use each individual listing for the product information attached to that item." },
-      { heading: "Compare Budget Weed with Other Collections", body: "Continue to Exotic Weed, Premium Weed, AAA+ Weed or AA Weed when you want to compare another Queen Lansdowne flower collection." },
+      {
+        heading: "Budget Weed as a value starting point on Queen St W",
+        body: "Browse the flower presented in Budget Weed and open each listing for the product information attached to that item. Price position and quality characteristics overlap imperfectly. A useful comparison looks at weight, cultivar, and posted details rather than assuming the word Budget settles every question.",
+      },
+      {
+        heading: "Value row, then the rest of Queen West",
+        body: "If you want a step up from Budget Weed, AA Weed is the next collection on this menu, followed by AAA+ Weed, Premium Weed, and Exotic Weed. Confirm the Queen Street door on the visit guide. Overnight walk-ins use the same 24-hour retail hours as every other hour. Delivery from this store is separately 10:00 a.m. to 10:00 p.m.",
+      },
     ],
     faqs: [
-      { q: "What is Budget Weed at Queen Lansdowne Cannabis?", a: "Budget Weed is one of Queen Lansdowne Cannabis’s five dedicated cannabis flower collections." },
-      { q: "Does Budget Weed confirm a current price or deal?", a: "No. The collection name does not establish a current price, promotion or availability claim." },
+      {
+        q: "Does Budget Weed mean a locked-in price on Queen West?",
+        a: "No. The collection name does not establish a current price, promotion, or availability claim. Compare the posted information on each listing, and confirm details in store at 1472 Queen St W.",
+      },
+      {
+        q: "When can I walk in for Budget Weed at this Parkdale-edge shop?",
+        a: "Queen Lansdowne Cannabis is open 24 hours daily. Adults 19+ walk in with government-issued photo ID. No appointment is required.",
+      },
+      {
+        q: "Where should value shoppers start besides this collection?",
+        a: "AA Weed is the next Queen West flower collection above Budget. Cheap-weed browsing notes also live under the existing cheap-weed information page. The homepage remains the NAP and map hub.",
+      },
     ],
-    relatedLinks: [
-      { label: "Exotic Weed & Flower", href: "/exotic-weed" }, { label: "Premium Weed & Flower", href: "/premium-weed" }, { label: "AAA+ Weed & Flower", href: "/aaa-weed" }, { label: "AA Weed & Flower", href: "/aa-weed" }, { label: "Queen Lansdowne Weed Dispensary in Toronto", href: "/weed-dispensary-toronto" },
-    ],
+    relatedLinks: meshLinks("/budget-weed"),
   },
 };
 

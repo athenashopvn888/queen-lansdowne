@@ -299,6 +299,8 @@ export default function HomePage() {
             <p className={styles.seoPanelText}>
               <Link href="/visit" className={styles.storeLink}>Read the Queen West visit guide</Link>
               {" · "}
+              <Link href="/24-hour-queen-west-dispensary" className={styles.storeLink}>24-hour Queen West dispensary</Link>
+              {" · "}
               <a href={`tel:${gbpLocation.phoneIntl}`} className={styles.storeLink}>{gbpLocation.phone}</a>
             </p>
           </div>
@@ -448,6 +450,7 @@ export default function HomePage() {
 
           <div className={styles.storeActions}>
             <Link href="/visit" className={styles.visitCta}>Queen West visit guide</Link>
+            <Link href="/24-hour-queen-west-dispensary" className={styles.visitCtaSecondary}>24-hour Queen West hours</Link>
             <a
               href={gbpLocation.directionsUrl}
               className={styles.visitCtaSecondary}
