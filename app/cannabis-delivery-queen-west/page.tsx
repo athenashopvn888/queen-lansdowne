@@ -81,7 +81,7 @@ export default function CannabisDeliveryQueenWestPage() {
                 Homepage visit hub
               </Link>
               <Link className={styles.secondary} href="/24-hour-queen-west-dispensary">
-                24-hour Queen West hours
+                Open now · 24-hour Queen West
               </Link>
             </div>
           </section>

@@ -35,7 +35,7 @@ export function GBPLandingPage() {
         <div className={styles.btnRow}>
           <Link href="/" className={`${styles.btn} ${styles.btnPrimary}`}>Homepage visit hub</Link>
           <Link href="/visit" className={`${styles.btn} ${styles.btnSecondary}`}>Queen West visit guide</Link>
-          <Link href="/24-hour-queen-west-dispensary" className={`${styles.btn} ${styles.btnSecondary}`}>24-hour Queen West hours</Link>
+          <Link href="/24-hour-queen-west-dispensary" className={`${styles.btn} ${styles.btnSecondary}`}>Open now · 24-hour Queen West</Link>
           <Link href="/cannabis-delivery-queen-west" className={`${styles.btn} ${styles.btnSecondary}`}>Cannabis delivery Queen West</Link>
           <Link href="/native-cigarettes-queen-west" className={`${styles.btn} ${styles.btnSecondary}`}>Native cigarettes Queen West</Link>
           <Link href="/nicotine-vape-queen-west" className={`${styles.btn} ${styles.btnSecondary}`}>Nicotine vape Queen West</Link>
