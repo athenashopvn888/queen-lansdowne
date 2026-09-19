@@ -31,7 +31,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const storeMenuLinks = ALL_LINKS.filter((link) => link.href.startsWith("/items/") || ["/exotic-weed", "/premium-weed", "/aaa-weed", "/aa-weed", "/budget-weed"].includes(link.href));
   const isStoreMenuActive = storeMenuLinks.some((link) => pathname === link.href);
-  const isDeliveryActive = pathname === "/weed-delivery-toronto";
+  const isDeliveryActive = pathname === "/weed-delivery-toronto" || pathname === "/cannabis-delivery-queen-west";
   const scrollBarRef = useRef<HTMLDivElement>(null);
   const [canAdvance, setCanAdvance] = useState(false);
   const updateScrollState = useCallback(() => { const scrollBar = scrollBarRef.current; if (!scrollBar) return; setCanAdvance(scrollBar.scrollWidth - scrollBar.clientWidth - scrollBar.scrollLeft > 2); }, []);

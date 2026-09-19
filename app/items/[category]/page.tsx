@@ -5,6 +5,7 @@ import path from "path";
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import { StoreMeshNav } from "../../components/StoreMeshNav";
 import SafeImage from "../../components/SafeImage";
 import { getItemPriceDisplay } from "../../lib/itemPricing";
 import {
@@ -79,7 +80,7 @@ export default async function ItemsCategoryPage({
               alt={config.name}
               style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
             />
-            {["vapes", "vape-disposables"].includes(catSlug) && (
+            {["vapes", "vape-disposables", "cigarettes"].includes(catSlug) && (
               <div className={styles.verifiedCategoryHeading}>
                 <h1>{config.name}</h1>
               </div>
@@ -140,7 +141,18 @@ export default async function ItemsCategoryPage({
             <p className={styles.visitText}>
               1472 Queen St W, Toronto, ON M6K 1M4 · Open 24 Hours Daily
             </p>
+            {catSlug === "cigarettes" && (
+              <p className={styles.visitText}>
+                Neighbourhood guide: <Link href="/native-cigarettes-queen-west">Native cigarettes Queen West</Link>
+              </p>
+            )}
+            {catSlug === "vapes" && (
+              <p className={styles.visitText}>
+                Neighbourhood guide: <Link href="/nicotine-vape-queen-west">Nicotine vape Queen West</Link>
+              </p>
+            )}
           </div>
+          {(catSlug === "cigarettes" || catSlug === "vapes") && <StoreMeshNav currentPath={`/items/${catSlug}`} />}
         </div>
       </section>
 

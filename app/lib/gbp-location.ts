@@ -82,11 +82,20 @@ export const HOME_FAQS: StoreFaq[] = [
 ];
 
 export const HOURS_LP_PATH = "/24-hour-queen-west-dispensary";
+export const DELIVERY_LP_PATH = "/cannabis-delivery-queen-west";
+export const CIGARETTES_LP_PATH = "/native-cigarettes-queen-west";
+export const VAPE_LP_PATH = "/nicotine-vape-queen-west";
 
 export const MESH_HUB_LINKS = [
   { label: "Homepage visit hub", href: "/" },
   { label: "Queen West visit guide", href: "/visit" },
   { label: "24-hour Queen West dispensary", href: HOURS_LP_PATH },
+] as const;
+
+export const VERTICAL_MESH_LINKS = [
+  { label: "Cannabis delivery Queen West", href: DELIVERY_LP_PATH },
+  { label: "Native cigarettes Queen West", href: CIGARETTES_LP_PATH },
+  { label: "Nicotine vape Queen West", href: VAPE_LP_PATH },
 ] as const;
 
 export const TIER_MESH_LINKS = [
@@ -117,6 +126,83 @@ export const HOURS_LP_FAQS: StoreFaq[] = [
   {
     q: "Is cannabis delivery from this store also 24 hours?",
     a: "No. Walk-in retail at 1472 Queen St W is open 24 hours daily. Delivery ordering from this store runs daily from 10:00 a.m. to 10:00 p.m. through the delivery menu, with details confirmed by the dispatcher.",
+  },
+  {
+    q: "Is Queen Lansdowne Cannabis open now near Queen West and Parkdale?",
+    a: "Yes, if you mean this walk-in shop. Queen Lansdowne Cannabis at 1472 Queen St W stays open 24 hours daily on Queen West at the Parkdale edge. Use this page for open-now and overnight questions. The homepage remains the name, address, phone, and map hub.",
+  },
+  {
+    q: "Is there a 24-hour dispensary near me on the Lansdowne corridor?",
+    a: "This storefront is the 24-hour walk-in shop at 1472 Queen St W, near the Queen Street West at Lansdowne Avenue streetcar stop. It is one Queen West door, not a city-wide hours listing. Bring government-issued photo ID. Adults 19+ only.",
+  },
+];
+
+export const DELIVERY_LP_FAQS: StoreFaq[] = [
+  {
+    q: "Does Queen Lansdowne Cannabis deliver from the Queen West storefront?",
+    a: "Yes. Delivery ordering is coordinated from Queen Lansdowne Cannabis at 1472 Queen St W. The dispatcher confirms whether your address is eligible. This page does not publish a city-wide zone map.",
+  },
+  {
+    q: "What are cannabis delivery hours from 1472 Queen St W?",
+    a: "Delivery ordering from this store runs daily from 10:00 a.m. to 10:00 p.m. Walk-in retail at the same Queen West door is open 24 hours daily and is a separate path.",
+  },
+  {
+    q: "How do I start a delivery order on Queen West?",
+    a: "Open the delivery menu, note product names and weights, then use LIVE ORDER to reach the dispatcher. New customers complete private selfie-with-ID verification in Web Chat. Adults 19+ only.",
+  },
+  {
+    q: "Is there a delivery minimum or fee from this Queen West store?",
+    a: "The live delivery menu states a $60 product minimum and a $10 delivery fee. The dispatcher confirms current order details before checkout.",
+  },
+  {
+    q: "Can I assume delivery covers every Toronto neighbourhood?",
+    a: "No. Eligibility is confirmed when you place the order. Use this Queen West page for storefront context, then the delivery menu to start an order. Do not treat a city URL as a guaranteed radius.",
+  },
+];
+
+export const CIGARETTES_LP_FAQS: StoreFaq[] = [
+  {
+    q: "Does the Queen West shop sell Native cigarettes?",
+    a: "Yes. Queen Lansdowne Cannabis lists Native cigarettes in the in-store cigarette category at 1472 Queen St W. Use the current cigarette menu for brand, variety, pack or carton unit, and posted price. Selection can change.",
+  },
+  {
+    q: "Where do I check current cigarette brands at 1472 Queen St W?",
+    a: "Open the cigarette category for the listed selection. This Queen West page explains the storefront. It does not replace the current menu or lock in a brand, pack count, or price.",
+  },
+  {
+    q: "What should I compare on a pack versus a carton listing?",
+    a: "A pack and a carton are different sales units. Read the listed unit beside the posted price, then compare the same unit, brand, and variety. Ask staff in store if the unit is unclear.",
+  },
+  {
+    q: "Do I need ID to buy cigarettes on Queen Street West?",
+    a: "Yes. The store serves adults 19+ only. Government-issued photo ID is required before purchase, including overnight walk-ins.",
+  },
+  {
+    q: "Can I buy Native cigarettes after midnight at this Parkdale-edge shop?",
+    a: "Walk-in retail is open 24 hours daily. Bring photo ID. Treat the website category as current information rather than a promise that one brand will still be on the shelf when you arrive.",
+  },
+];
+
+export const VAPE_LP_FAQS: StoreFaq[] = [
+  {
+    q: "Where is the current nicotine vape menu for Queen Lansdowne Cannabis?",
+    a: "Use the nicotine vape category at /items/vapes. This Queen West page is neighbourhood context. It does not list SKUs or prices, and it does not promise that a named device is in stock.",
+  },
+  {
+    q: "Are nicotine vapes the same as THC vapes at this Queen West shop?",
+    a: "No. Nicotine vapes are listed under /items/vapes. THC or cannabis vapes are a separate category under /items/vape-disposables. Read the category label before you travel for one format.",
+  },
+  {
+    q: "Does this Queen West page publish nicotine vape prices?",
+    a: "No. Open the current nicotine vape category, then the individual item page for posted details. Confirm the listing in store. Nicotine is addictive.",
+  },
+  {
+    q: "Who can buy a nicotine vape at 1472 Queen St W?",
+    a: "Adults 19+ with government-issued photo ID. The walk-in shop is open 24 hours daily. Delivery ordering, when used, is a separate 10:00 a.m. to 10:00 p.m. path.",
+  },
+  {
+    q: "Should I treat puff counts on a listing as a performance promise?",
+    a: "No. When a product name includes a puff count, use it only to tell listings apart. This page does not present puff counts as lifespan, strength, or superiority claims.",
   },
 ];
 

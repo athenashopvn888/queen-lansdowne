@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { MESH_HUB_LINKS, TIER_MESH_LINKS } from "../lib/gbp-location";
+import { MESH_HUB_LINKS, TIER_MESH_LINKS, VERTICAL_MESH_LINKS } from "../lib/gbp-location";
 import styles from "./StoreMeshNav.module.css";
 
 export function StoreMeshNav({ currentPath }: { currentPath?: string }) {
   const hubs = MESH_HUB_LINKS.filter((link) => link.href !== currentPath);
+  const verticals = VERTICAL_MESH_LINKS.filter((link) => link.href !== currentPath);
   const tiers = TIER_MESH_LINKS.filter((link) => link.href !== currentPath);
 
   return (
@@ -11,6 +12,13 @@ export function StoreMeshNav({ currentPath }: { currentPath?: string }) {
       <p className={styles.label}>Queen West pages on this store</p>
       <div className={styles.row}>
         {hubs.map((link) => (
+          <Link key={link.href} href={link.href}>
+            {link.label}
+          </Link>
+        ))}
+      </div>
+      <div className={styles.row}>
+        {verticals.map((link) => (
           <Link key={link.href} href={link.href}>
             {link.label}
           </Link>

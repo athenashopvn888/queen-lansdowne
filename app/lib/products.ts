@@ -172,12 +172,13 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   "VAPE PENS": {
     banner: "/banners/01_Vape_Pens.webp",
     name: "Nicotine Vape", slug: "vapes", color: "#8b5cf6", icon: "💨",
-    seoTitle: "Nicotine Vapes in Toronto | Queen Lansdowne Cannabis",
-    seoIntro: "Browse vape category information at Queen Lansdowne Cannabis in Toronto. Review vape-related menu categories and confirm current menu details before visiting.",
-    seoDescription: "Queen Lansdowne Cannabis provides a vape category page for adult shoppers reviewing vape-related menu information in Toronto. The page may include vape-related categories such as cartridges, pods, batteries, or disposable vape items when they are listed on the current menu. Use the website category page to review menu information, then confirm current store details before visiting Queen Lansdowne Cannabis at 1472 Queen St W in Toronto.",
+    seoTitle: "Nicotine Vapes on Queen West | Queen Lansdowne Cannabis",
+    seoIntro: "Browse the current nicotine vape category at Queen Lansdowne Cannabis, 1472 Queen St W on Queen West at the Parkdale edge.",
+    seoDescription: "This is the current nicotine vape category for Queen Lansdowne Cannabis at 1472 Queen St W. Open individual listings for posted details. The Queen West neighbourhood page explains the storefront. THC or cannabis vapes are listed separately. Adults 19+. Nicotine is addictive. Listings can change.",
     faqs: [
-      { q: "What vape-related items are listed on the menu?", a: "The vape category may include cartridges, pods, disposable vape items, and compatible batteries when they are listed on the current menu." },
-      { q: "Can customers check vape batteries on the menu?", a: "When batteries or pod systems are listed, customers can review them on the current menu before visiting." },
+      { q: "Is this the nicotine vape category or the THC vape category?", a: "This page is the nicotine vape category. THC or cannabis vapes are listed separately under the THC vape category." },
+      { q: "Where is the Queen West nicotine vape guide?", a: "Use the nicotine vape Queen West page for neighbourhood context. This category remains the current listed selection. Nicotine is addictive." },
+      { q: "Do these listings guarantee a price or flavour?", a: "No. Open the individual item page for posted details, then confirm in store at 1472 Queen St W. Adults 19+ only." },
     ],
   },
   "VAPE DISPOSABLE": {
@@ -235,13 +236,13 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   CIGARETTES: {
     banner: "/banners/native-cigarette-offer-20260822.webp",
     name: "Cigarettes", slug: "cigarettes", color: "#78716c", icon: "🏷️",
-    seoTitle: "Native Cigarettes Toronto — Discount Tobacco at Queen Lansdowne Cannabis",
-    seoIntro: "Browse current Native cigarette brands and listed prices at Queen Lansdowne Cannabis in Toronto.",
-    seoDescription: "Explore native cigarettes and other available categories from Queen Lansdowne Cannabis on Queen Street West in Toronto.",
+    seoTitle: "Native Cigarettes on Queen West | Queen Lansdowne Cannabis",
+    seoIntro: "Browse current Native cigarette listings at Queen Lansdowne Cannabis, 1472 Queen St W on Queen West at the Parkdale edge.",
+    seoDescription: "This is the current cigarette category for Queen Lansdowne Cannabis at 1472 Queen St W. Compare brand, variety, pack or carton unit, and posted price. The Queen West neighbourhood page explains the storefront. This menu does not lock in a brand list or price. Adults 19+.",
     faqs: [
-      { q: "Where can I browse Native Smokes?", a: "Explore the Native Smokes section at Queen Lansdowne Cannabis." },
-      { q: "What cigarette brands may be listed?", a: "Check the current cigarette category for listed brands and prices." },
-      { q: "Where can I check cigarette prices?", a: "Use the current cigarette category for listed prices or ask store staff." },
+      { q: "How do I read the cigarette listings at this Queen West shop?", a: "Compare brand, variety, pack or carton unit, and the current posted price. Listings can change — use this category as information rather than a stock promise." },
+      { q: "Is there a Queen West guide besides this cigarette menu?", a: "Yes. The Native cigarettes Queen West page explains the storefront. This category remains the current listed selection." },
+      { q: "Who can buy cigarettes at 1472 Queen St W?", a: "Adults 19+ with government-issued photo ID. The walk-in shop is open 24 hours daily." },
     ],
   },
 };
