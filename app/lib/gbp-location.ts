@@ -89,7 +89,7 @@ export const VAPE_LP_PATH = "/nicotine-vape-queen-west";
 export const MESH_HUB_LINKS = [
   { label: "Homepage visit hub", href: "/" },
   { label: "Queen West visit guide", href: "/visit" },
-  { label: "24-hour Queen West dispensary", href: HOURS_LP_PATH },
+  { label: "Open now · 24-hour Queen West", href: HOURS_LP_PATH },
 ] as const;
 
 export const VERTICAL_MESH_LINKS = [

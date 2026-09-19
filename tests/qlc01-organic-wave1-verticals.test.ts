@@ -109,7 +109,11 @@ test("cigarette and nicotine vape LPs point at live categories, not invented SKU
 test("24h LP stays the open-now owner and does not add a second city 24h page", () => {
   const hours = read("app/24-hour-queen-west-dispensary/page.tsx");
   const loc = read("app/lib/gbp-location.ts");
+  assert.match(hours, /24-hour dispensary on Queen West at 1472 Queen St W — open now/);
+  assert.match(hours, /24-Hour Dispensary Open Now on Queen West/);
+  assert.match(hours, /24-hour dispensary near me/);
   assert.match(hours, /open now near Queen Street West, Parkdale, or\s+Lansdowne/);
+  assert.match(hours, /first-class overnight/);
   assert.match(loc, /Is Queen Lansdowne Cannabis open now near Queen West and Parkdale\?/);
   assert.match(loc, /Is there a 24-hour dispensary near me on the Lansdowne corridor\?/);
   assert.doesNotMatch(read("app/sitemap.ts"), /24-hour-toronto-dispensary|24-hour-parkdale-dispensary/);
