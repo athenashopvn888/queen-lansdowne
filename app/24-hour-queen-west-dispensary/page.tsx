@@ -16,16 +16,16 @@ import styles from "../visit/visit.module.css";
 const PAGE_URL = `${STORE_ORIGIN}${HOURS_LP_PATH}`;
 
 export const metadata: Metadata = {
-  title: { absolute: "24-Hour Queen West Dispensary | Queen Lansdowne Cannabis" },
+  title: { absolute: "24-Hour Dispensary Open Now on Queen West | Queen Lansdowne Cannabis" },
   description:
-    "Queen Lansdowne Cannabis at 1472 Queen St W is open 24 hours daily on Queen West at the Parkdale edge. Walk in overnight. Adults 19+. Phone +1 (437) 293-8580.",
+    "Open now: Queen Lansdowne Cannabis at 1472 Queen St W is a 24-hour dispensary on Queen West at the Parkdale edge, near Lansdowne. Walk in any hour. Adults 19+. Phone +1 (437) 293-8580.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "24-Hour Queen West Dispensary | Queen Lansdowne Cannabis",
+    title: "24-Hour Dispensary Open Now on Queen West | Queen Lansdowne Cannabis",
     description:
-      "Walk-in cannabis at 1472 Queen St W stays open 24 hours daily. Overnight TTC uses the 301 Queen Blue Night on the same street.",
+      "24-hour / open-now walk-in cannabis at 1472 Queen St W on Queen West. Overnight TTC uses the 301 Queen Blue Night on the same street.",
     url: PAGE_URL,
   },
 };
@@ -37,13 +37,15 @@ export default function TwentyFourHourQueenWestPage() {
       <main className={styles.main}>
         <Navbar />
         <article className={styles.content}>
-          <p className={styles.kicker}>Queen West · Open 24 hours daily</p>
-          <h1 className={styles.pageTitle}>24-hour dispensary on Queen West at 1472 Queen St W</h1>
+          <p className={styles.kicker}>Open now · 24 hours daily · Queen West / Lansdowne</p>
+          <h1 className={styles.pageTitle}>24-hour dispensary on Queen West at 1472 Queen St W — open now</h1>
           <p className={styles.lede}>
-            Queen Lansdowne Cannabis is a walk-in shop on Queen Street West at the Parkdale edge,
-            and the door stays open around the clock. This page is the overnight / open-now owner
-            for this storefront. The homepage remains the name, address, phone, hours, and map hub.
-            Use the visit guide for streetcar stop, curb parking, and the south-side entrance.
+            Searching for a 24-hour dispensary near me on Queen West, the Parkdale edge, or the
+            Lansdowne corridor? Queen Lansdowne Cannabis at 1472 Queen St W is open now — the door
+            stays open around the clock, every day. This page is the first-class overnight /
+            open-now owner for this storefront, not a side note beside delivery or tobacco pages.
+            The homepage remains the name, address, phone, hours, and map hub. Use the visit guide
+            for streetcar stop, curb parking, and the south-side entrance.
           </p>
 
           <section className={styles.nap} aria-labelledby="hours-nap-title">

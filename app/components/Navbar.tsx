@@ -21,7 +21,7 @@ const ALL_LINKS = [
   { href: "/items/add-ons", label: "Accessories" },
   { href: "/weed-delivery-toronto", label: "🚗 Weed Delivery" },
   { href: "/visit", label: "Visit Queen West" },
-  { href: "/24-hour-queen-west-dispensary", label: "Open 24 Hours" },
+  { href: "/24-hour-queen-west-dispensary", label: "Open Now · 24 Hours" },
   { href: "/careers/budtender", label: "Hiring" },
   { href: "/resources", label: "Resources" },
   { href: "/faq", label: "FAQ" },
