@@ -29,8 +29,8 @@ const FAQ_CATEGORIES = [
       { q: "Do you have a current menu?", a: "Yes. The online menu at queenlansdownecannabis.ca lists current menu items and prices. Check it before visiting because listings can change." },
       { q: "What are your flower tiers?", a: "Queen Lansdowne Cannabis organizes flower into Exotic Weed, Premium Weed, AAA+ Weed, AA Weed and Budget Weed collections." },
       { q: "Do you sell edibles?", a: "The menu includes an edibles category with gummies, chocolates, baked goods, and other formats when listed. Check the current menu before visiting." },
-      { q: "Do you sell vapes?", a: "The menu includes categories for disposable vapes, refillable vape pens, nicotine vapes, and THC vapes. Check the current listings before visiting." },
-      { q: "Where can I browse Native Smokes?", a: "Explore the Native Smokes section at Queen Lansdowne Cannabis." },
+      { q: "Do you sell vapes?", a: "The menu includes categories for disposable vapes, refillable vape pens, nicotine vapes, and THC vapes. Check the current listings before visiting. The Queen West nicotine vape page is /nicotine-vape-queen-west." },
+      { q: "Where can I browse Native Smokes?", a: "Explore the cigarette category at Queen Lansdowne Cannabis, then the Native cigarettes Queen West page for neighbourhood context." },
     ],
   },
   {
@@ -45,7 +45,7 @@ const FAQ_CATEGORIES = [
     faqs: [
       { q: "Do I need an appointment?", a: "No! Queen Lansdowne Cannabis is walk-in only. Just show up anytime — we are open 24 hours daily." },
       { q: "Can I order online?", a: "Yes. Browse the delivery menu and use LIVE ORDER to start your order with the dispatcher." },
-      { q: "Do you offer delivery?", a: "Yes. Delivery ordering is available daily from 10:00 a.m. to 10:00 p.m. through our delivery menu. The dispatcher confirms order details and eligibility." },
+      { q: "Do you offer delivery?", a: "Yes. Delivery ordering is available daily from 10:00 a.m. to 10:00 p.m. through our delivery menu. The dispatcher confirms order details and eligibility. The Queen West neighbourhood page for delivery context is /cannabis-delivery-queen-west." },
       { q: "What payment methods can I use?", a: "Check the current checkout or in-store information for available payment options." },
       { q: "Can your staff help me compare flower listings?", a: "Yes. Our staff can help you compare the category, package size, and posted details shown for current flower listings." },
       { q: "Is there a minimum purchase?", a: "Refer to the current menu or in-store information for any purchase requirements that apply." },

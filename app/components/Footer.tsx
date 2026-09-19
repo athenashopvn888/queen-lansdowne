@@ -50,12 +50,15 @@ export default function Footer() {
               <Link href="/budget-weed">Budget Weed Flower</Link>
               <Link href="/items/edibles">Edibles</Link>
               <Link href="/items/cigarettes">Cigarettes</Link>
+              <Link href="/native-cigarettes-queen-west">Native Cigarettes Queen West</Link>
               <Link href="/items/vapes">Nicotine Vape</Link>
+              <Link href="/nicotine-vape-queen-west">Nicotine Vape Queen West</Link>
               <Link href="/resources">Resources</Link>
               <Link href="/careers/budtender">Budtender Application</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/visit">Visit Queen West</Link>
               <Link href="/24-hour-queen-west-dispensary">24-Hour Queen West</Link>
+              <Link href="/cannabis-delivery-queen-west">Cannabis Delivery Queen West</Link>
               <Link href="/weed-delivery-toronto">Weed Delivery</Link>
               <Link href="/weed-dispensary-toronto">Toronto Dispensary</Link>
               <Link href="/info/cheap-weed-toronto">Cheap Weed Toronto</Link>

@@ -150,6 +150,18 @@ export default function VisitPage() {
             </p>
           </section>
 
+          <section>
+            <h2 className={styles.sectionTitle}>Delivery, cigarettes, and nicotine vapes from this block</h2>
+            <p>
+              Neighbourhood owners for those categories live beside this visit guide:{" "}
+              <Link href="/cannabis-delivery-queen-west">cannabis delivery Queen West</Link>,{" "}
+              <Link href="/native-cigarettes-queen-west">Native cigarettes Queen West</Link>, and{" "}
+              <Link href="/nicotine-vape-queen-west">nicotine vape Queen West</Link>. Current
+              cigarette and nicotine vape listings stay on their category pages. The 24-hour Queen
+              West page still owns open-now and overnight walk-in questions.
+            </p>
+          </section>
+
           <div className={styles.mapWrap}>
             <iframe
               title="Map of Queen Lansdowne Cannabis at 1472 Queen St W"

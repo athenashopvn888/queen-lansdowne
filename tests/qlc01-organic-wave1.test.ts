@@ -7,8 +7,12 @@ import {
   VISIT_FAQS,
   HOURS_LP_FAQS,
   HOURS_LP_PATH,
+  DELIVERY_LP_PATH,
+  CIGARETTES_LP_PATH,
+  VAPE_LP_PATH,
   MESH_HUB_LINKS,
   TIER_MESH_LINKS,
+  VERTICAL_MESH_LINKS,
   faqPageJsonLd,
 } from "../app/lib/gbp-location.ts";
 
@@ -19,6 +23,9 @@ const PUBLIC_COPY_FILES = [
   "app/HomePage.tsx",
   "app/visit/page.tsx",
   "app/24-hour-queen-west-dispensary/page.tsx",
+  "app/cannabis-delivery-queen-west/page.tsx",
+  "app/native-cigarettes-queen-west/page.tsx",
+  "app/nicotine-vape-queen-west/page.tsx",
   "app/lib/gbp-location.ts",
   "app/lib/tierSeoContent.ts",
   "app/components/Footer.tsx",
@@ -68,19 +75,31 @@ test("internal mesh links homepage, visit, 24h LP, and five tiers", () => {
 
   assert.match(home, /href="\/visit"/);
   assert.match(home, /href="\/24-hour-queen-west-dispensary"/);
+  assert.match(home, /href="\/cannabis-delivery-queen-west"/);
+  assert.match(home, /href="\/native-cigarettes-queen-west"/);
+  assert.match(home, /href="\/nicotine-vape-queen-west"/);
   assert.match(home, /Homepage NAP hub/);
   assert.match(visit, /href="\/24-hour-queen-west-dispensary"/);
+  assert.match(visit, /href="\/cannabis-delivery-queen-west"/);
   assert.match(visit, /StoreMeshNav currentPath="\/visit"/);
   assert.match(hours, /StoreMeshNav currentPath=\{HOURS_LP_PATH\}/);
   assert.match(hours, /href="\/"/);
   assert.match(hours, /href="\/visit"/);
+  assert.match(hours, /href="\/cannabis-delivery-queen-west"/);
   assert.match(footer, /href="\/24-hour-queen-west-dispensary"/);
   assert.match(nav, /href: "\/24-hour-queen-west-dispensary"/);
   assert.match(sitemap, /\$\{BASE\}\/24-hour-queen-west-dispensary/);
+  assert.match(sitemap, /\$\{BASE\}\/cannabis-delivery-queen-west/);
+  assert.match(sitemap, /\$\{BASE\}\/native-cigarettes-queen-west/);
+  assert.match(sitemap, /\$\{BASE\}\/nicotine-vape-queen-west/);
 
   assert.deepEqual(
     MESH_HUB_LINKS.map((link) => link.href),
     ["/", "/visit", HOURS_LP_PATH],
+  );
+  assert.deepEqual(
+    VERTICAL_MESH_LINKS.map((link) => link.href),
+    [DELIVERY_LP_PATH, CIGARETTES_LP_PATH, VAPE_LP_PATH],
   );
   assert.deepEqual(
     TIER_MESH_LINKS.map((link) => link.href),
@@ -88,7 +107,7 @@ test("internal mesh links homepage, visit, 24h LP, and five tiers", () => {
   );
 
   for (const tier of Object.values(TIER_SEO)) {
-    for (const href of ["/", "/visit", HOURS_LP_PATH]) {
+    for (const href of ["/", "/visit", HOURS_LP_PATH, DELIVERY_LP_PATH, CIGARETTES_LP_PATH, VAPE_LP_PATH]) {
       assert.ok(tier.relatedLinks.some((link) => link.href === href), `missing ${href}`);
     }
     const siblingCount = TIER_MESH_LINKS.filter((link) =>
@@ -98,15 +117,16 @@ test("internal mesh links homepage, visit, 24h LP, and five tiers", () => {
   }
 });
 
-test("existing cigarettes category stays; no new smoke SEO landing pages", () => {
+test("cigarettes category and /cigarettes redirect stay; no pouches or grabba LPs", () => {
   const footer = read("app/components/Footer.tsx");
   const nav = read("app/components/Navbar.tsx");
   const redirects = read("next.config.ts");
   const seoPages = read("app/lib/seoPages.ts");
   assert.match(nav, /href: "\/items\/cigarettes"/);
   assert.match(footer, /href="\/items\/cigarettes"/);
+  assert.match(footer, /href="\/native-cigarettes-queen-west"/);
   assert.match(redirects, /source: "\/cigarettes", destination: "\/items\/cigarettes"/);
-  assert.doesNotMatch(seoPages, /native-cigarettes-queen|nicotine-pouches-queen|grabba-queen/i);
+  assert.doesNotMatch(seoPages, /nicotine-pouches-queen|grabba-queen/i);
   assert.doesNotMatch(read("app/sitemap.ts"), /24-hour-toronto-dispensary/);
 });
 

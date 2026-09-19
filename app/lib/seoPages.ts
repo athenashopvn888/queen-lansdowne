@@ -84,6 +84,7 @@ export const SEO_PAGES: SeoPageData[] = [
     sections: [
       { heading: "Check the Current Cigarette Category", body: "Compare brand, variety, pack or carton unit, and posted price on the current menu before visiting." },
       { heading: "Confirm the Unit", body: "Pack and carton listings describe different quantities. Read the listed unit beside the price before comparing options." },
+      { heading: "Queen West neighbourhood owner", body: "This city information page points to Queen Lansdowne Cannabis at 1472 Queen St W. The neighbourhood owner for Native cigarettes on Queen West is the Native cigarettes Queen West page. Use the cigarette category for the current listed brands and units." },
     ],
     faqs: [{ q: "How should I compare cigarette listings?", a: "Compare the same unit, brand, variety, and current posted price." }],
   },
@@ -148,6 +149,7 @@ export const SEO_PAGES: SeoPageData[] = [
       { heading: "Puff Counts Identify Listings, Not Results", body: "Several verified product names include puff counts. Adults can use those numbers to distinguish listings, but this page does not present them as guarantees of lifespan, performance or superiority. Check the individual product page for its supported details." },
       { heading: "Keep Nicotine and Cannabis Vape Routes Separate", body: "This Queen Lansdowne Cannabis nicotine vape guide uses products from the VAPE PENS category under /items/vapes. The separate /items/vape-disposables route is for THC or cannabis vape products and is excluded from this nicotine page." },
       { heading: "Visit Queen Lansdowne Cannabis", body: "Before visiting, confirm the storefront’s current details and browse /items/vapes for the latest nicotine vape listing. This page does not claim unverified prices or guaranteed availability." },
+      { heading: "Queen West neighbourhood owner", body: "The neighbourhood owner for nicotine vapes at this Queen West shop is the nicotine vape Queen West page. Keep using /items/vapes for the current category listing." },
     ],
     faqs: [
       { q: "Where should I check Queen Lansdowne Cannabis’s current nicotine selection?", a: "Use /items/vapes. The six featured cards are verified starting points, while the current category listing should control selection information." },

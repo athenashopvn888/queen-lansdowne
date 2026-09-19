@@ -121,6 +121,23 @@ export default function TwentyFourHourQueenWestPage() {
           </section>
 
           <section>
+            <h2 className={styles.sectionTitle}>Open now on Queen West, Parkdale-edge, and the Lansdowne corridor</h2>
+            <p>
+              If you are searching for a dispensary open now near Queen Street West, Parkdale, or
+              Lansdowne, this storefront at 1472 Queen St W is the walk-in answer for this block.
+              The door stays open 24 hours daily. This is not a second city-wide hours page — it is
+              the same Queen West shop, written for overnight and open-now questions.
+            </p>
+            <p>
+              Delivery from this store is a separate schedule: daily 10:00 a.m. to 10:00 p.m. Use
+              the{" "}
+              <Link href="/cannabis-delivery-queen-west">Queen West cannabis delivery</Link> page
+              for ordering context, then the delivery menu to start LIVE ORDER. Native cigarettes
+              and nicotine vapes are sold in store on this same corridor.
+            </p>
+          </section>
+
+          <section>
             <h2 className={styles.sectionTitle}>What this page owns — and what it does not</h2>
             <p>
               Use this URL when the question is whether the Queen West shop is open now, open late,

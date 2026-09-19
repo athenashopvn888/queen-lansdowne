@@ -7,6 +7,7 @@ import styles from "./page.module.css";
 import FleetAnnouncementBanner from "./components/FleetAnnouncementBanner";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { StoreMeshNav } from "./components/StoreMeshNav";
 import FlowerCard from "./components/FlowerCard";
 import { allFlowers } from "./lib/products";
 import {
@@ -301,6 +302,12 @@ export default function HomePage() {
               {" · "}
               <Link href="/24-hour-queen-west-dispensary" className={styles.storeLink}>24-hour Queen West dispensary</Link>
               {" · "}
+              <Link href="/cannabis-delivery-queen-west" className={styles.storeLink}>Cannabis delivery Queen West</Link>
+              {" · "}
+              <Link href="/native-cigarettes-queen-west" className={styles.storeLink}>Native cigarettes Queen West</Link>
+              {" · "}
+              <Link href="/nicotine-vape-queen-west" className={styles.storeLink}>Nicotine vape Queen West</Link>
+              {" · "}
               <a href={`tel:${gbpLocation.phoneIntl}`} className={styles.storeLink}>{gbpLocation.phone}</a>
             </p>
           </div>
@@ -451,6 +458,9 @@ export default function HomePage() {
           <div className={styles.storeActions}>
             <Link href="/visit" className={styles.visitCta}>Queen West visit guide</Link>
             <Link href="/24-hour-queen-west-dispensary" className={styles.visitCtaSecondary}>24-hour Queen West hours</Link>
+            <Link href="/cannabis-delivery-queen-west" className={styles.visitCtaSecondary}>Cannabis delivery Queen West</Link>
+            <Link href="/native-cigarettes-queen-west" className={styles.visitCtaSecondary}>Native cigarettes Queen West</Link>
+            <Link href="/nicotine-vape-queen-west" className={styles.visitCtaSecondary}>Nicotine vape Queen West</Link>
             <a
               href={gbpLocation.directionsUrl}
               className={styles.visitCtaSecondary}
@@ -460,6 +470,7 @@ export default function HomePage() {
               Directions to 1472 Queen St W
             </a>
           </div>
+          <StoreMeshNav currentPath="/" />
 
           <div className={styles.mapWrap}>
             <iframe
