@@ -57,6 +57,7 @@ export default function Footer() {
               <Link href="/careers/budtender">Budtender Application</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/visit">Visit Queen West</Link>
+              <Link href="/weed-dispensary-queen-west">Weed Dispensary Queen West</Link>
               <Link href="/24-hour-queen-west-dispensary">Open Now · 24-Hour Queen West</Link>
               <Link href="/cannabis-delivery-queen-west">Cannabis Delivery Queen West</Link>
               <Link href="/weed-delivery-toronto">Weed Delivery</Link>

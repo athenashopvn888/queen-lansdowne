@@ -134,8 +134,10 @@ export default function TwentyFourHourQueenWestPage() {
               Delivery from this store is a separate schedule: daily 10:00 a.m. to 10:00 p.m. Use
               the{" "}
               <Link href="/cannabis-delivery-queen-west">Queen West cannabis delivery</Link> page
-              for ordering context, then the delivery menu to start LIVE ORDER. Native cigarettes
-              and nicotine vapes are sold in store on this same corridor.
+              for ordering context, then the delivery menu to start LIVE ORDER. The{" "}
+              <Link href="/weed-dispensary-queen-west">Queen West weed dispensary</Link> page
+              owns storefront / weed-store questions for this same corridor. Native cigarettes
+              and nicotine vapes are sold in store here as well.
             </p>
           </section>
 

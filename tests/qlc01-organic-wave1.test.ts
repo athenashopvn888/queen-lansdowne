@@ -10,6 +10,7 @@ import {
   DELIVERY_LP_PATH,
   CIGARETTES_LP_PATH,
   VAPE_LP_PATH,
+  WEED_LP_PATH,
   MESH_HUB_LINKS,
   TIER_MESH_LINKS,
   VERTICAL_MESH_LINKS,
@@ -26,6 +27,7 @@ const PUBLIC_COPY_FILES = [
   "app/cannabis-delivery-queen-west/page.tsx",
   "app/native-cigarettes-queen-west/page.tsx",
   "app/nicotine-vape-queen-west/page.tsx",
+  "app/weed-dispensary-queen-west/page.tsx",
   "app/lib/gbp-location.ts",
   "app/lib/tierSeoContent.ts",
   "app/components/Footer.tsx",
@@ -78,9 +80,11 @@ test("internal mesh links homepage, visit, 24h LP, and five tiers", () => {
   assert.match(home, /href="\/cannabis-delivery-queen-west"/);
   assert.match(home, /href="\/native-cigarettes-queen-west"/);
   assert.match(home, /href="\/nicotine-vape-queen-west"/);
+  assert.match(home, /href="\/weed-dispensary-queen-west"/);
   assert.match(home, /Homepage NAP hub/);
   assert.match(visit, /href="\/24-hour-queen-west-dispensary"/);
   assert.match(visit, /href="\/cannabis-delivery-queen-west"/);
+  assert.match(visit, /href="\/weed-dispensary-queen-west"/);
   assert.match(visit, /StoreMeshNav currentPath="\/visit"/);
   assert.match(hours, /StoreMeshNav currentPath=\{HOURS_LP_PATH\}/);
   assert.match(hours, /href="\/"/);
@@ -92,6 +96,7 @@ test("internal mesh links homepage, visit, 24h LP, and five tiers", () => {
   assert.match(sitemap, /\$\{BASE\}\/cannabis-delivery-queen-west/);
   assert.match(sitemap, /\$\{BASE\}\/native-cigarettes-queen-west/);
   assert.match(sitemap, /\$\{BASE\}\/nicotine-vape-queen-west/);
+  assert.match(sitemap, /\$\{BASE\}\/weed-dispensary-queen-west/);
 
   assert.deepEqual(
     MESH_HUB_LINKS.map((link) => link.href),
@@ -99,7 +104,7 @@ test("internal mesh links homepage, visit, 24h LP, and five tiers", () => {
   );
   assert.deepEqual(
     VERTICAL_MESH_LINKS.map((link) => link.href),
-    [DELIVERY_LP_PATH, CIGARETTES_LP_PATH, VAPE_LP_PATH],
+    [WEED_LP_PATH, DELIVERY_LP_PATH, CIGARETTES_LP_PATH, VAPE_LP_PATH],
   );
   assert.deepEqual(
     TIER_MESH_LINKS.map((link) => link.href),
@@ -107,7 +112,7 @@ test("internal mesh links homepage, visit, 24h LP, and five tiers", () => {
   );
 
   for (const tier of Object.values(TIER_SEO)) {
-    for (const href of ["/", "/visit", HOURS_LP_PATH, DELIVERY_LP_PATH, CIGARETTES_LP_PATH, VAPE_LP_PATH]) {
+    for (const href of ["/", "/visit", HOURS_LP_PATH, WEED_LP_PATH, DELIVERY_LP_PATH, CIGARETTES_LP_PATH, VAPE_LP_PATH]) {
       assert.ok(tier.relatedLinks.some((link) => link.href === href), `missing ${href}`);
     }
     const siblingCount = TIER_MESH_LINKS.filter((link) =>

@@ -112,7 +112,9 @@ export default function NativeCigarettesQueenWestPage() {
               parking, and the south-side entrance — live on the{" "}
               <Link href="/visit">visit guide</Link>. Open-now questions live on the{" "}
               <Link href="/24-hour-queen-west-dispensary">24-hour Queen West dispensary</Link>{" "}
-              page. Nicotine vapes are a separate category.
+              page. Storefront / weed-store questions live on the{" "}
+              <Link href="/weed-dispensary-queen-west">Queen West weed dispensary</Link> page.
+              Nicotine vapes are a separate category.
             </p>
           </section>
 

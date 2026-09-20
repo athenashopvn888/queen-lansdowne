@@ -8,9 +8,11 @@ import {
   DELIVERY_LP_FAQS,
   CIGARETTES_LP_FAQS,
   VAPE_LP_FAQS,
+  WEED_LP_FAQS,
   DELIVERY_LP_PATH,
   CIGARETTES_LP_PATH,
   VAPE_LP_PATH,
+  WEED_LP_PATH,
   faqPageJsonLd,
 } from "../app/lib/gbp-location.ts";
 
@@ -37,6 +39,13 @@ const VERTICAL_PAGES = [
     h1: "Nicotine vapes at the Parkdale edge of Queen West",
     title: "Nicotine Vape Queen West | Queen Lansdowne Cannabis",
     faqs: VAPE_LP_FAQS,
+  },
+  {
+    path: "app/weed-dispensary-queen-west/page.tsx",
+    href: WEED_LP_PATH,
+    h1: "Weed dispensary on Queen West at the Parkdale–Lansdowne edge",
+    title: "Weed Dispensary Queen West | Queen Lansdowne Cannabis",
+    faqs: WEED_LP_FAQS,
   },
 ] as const;
 
@@ -126,6 +135,7 @@ test("Wave 1 verticals stay 19+ retail voice and skip the menu swimlane", () => 
     "app/native-cigarettes-queen-west/page.tsx",
     "app/nicotine-vape-queen-west/page.tsx",
     "app/24-hour-queen-west-dispensary/page.tsx",
+    "app/weed-dispensary-queen-west/page.tsx",
     "app/lib/gbp-location.ts",
     "app/lib/tierSeoContent.ts",
     "app/lib/products.ts",
