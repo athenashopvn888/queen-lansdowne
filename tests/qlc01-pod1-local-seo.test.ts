@@ -21,6 +21,7 @@ const PUBLIC_PAGES = [
   "app/components/Navbar.tsx",
   "app/components/GBPLandingPage.tsx",
   "app/weed-dispensary-toronto/page.tsx",
+  "app/weed-dispensary-queen-west/page.tsx",
   "app/24-hour-queen-west-dispensary/page.tsx",
   "app/lib/gbp-location.ts",
 ];
@@ -88,7 +89,7 @@ test("thin city pages are demoted; redirected info slugs leave the sitemap", () 
   const city = read("app/weed-dispensary-toronto/page.tsx");
   const sitemap = read("app/sitemap.ts");
   assert.match(city, /index:\s*false/);
-  assert.match(city, /canonical:\s*STORE_ORIGIN/);
+  assert.match(city, /canonical:\s*`\$\{STORE_ORIGIN\}\$\{WEED_LP_PATH\}`/);
   assert.doesNotMatch(city, /DeliveryCoverage/);
   assert.match(sitemap, /\$\{BASE\}\/visit/);
   assert.match(sitemap, /priority: 0.2/);

@@ -27,13 +27,15 @@ export function GBPLandingPage() {
         <p className={styles.introText}>{gbpLocation.introVariant}</p>
         <p className={styles.infoText}>
           Broad “weed dispensary Toronto” searches land on many similar pages. Queen Lansdowne Cannabis
-          is one storefront on Queen Street West at 1472, near Lansdowne, not a city-wide shop. Use the
-          homepage for name, address, phone, and hours. Use the visit guide for the 501 Queen stop,
-          curb parking, and the south-side door. Use the 24-hour Queen West page when the question is
-          open now, open late, or open all night.
+          is one storefront on Queen Street West at 1472, near Lansdowne, not a city-wide shop. The
+          Queen West weed dispensary page is the corridor owner. Use the homepage for name, address,
+          phone, and hours. Use the visit guide for the 501 Queen stop, curb parking, and the
+          south-side door. Use the 24-hour Queen West page when the question is open now, open late,
+          or open all night.
         </p>
         <div className={styles.btnRow}>
-          <Link href="/" className={`${styles.btn} ${styles.btnPrimary}`}>Homepage visit hub</Link>
+          <Link href="/weed-dispensary-queen-west" className={`${styles.btn} ${styles.btnPrimary}`}>Weed dispensary Queen West</Link>
+          <Link href="/" className={`${styles.btn} ${styles.btnSecondary}`}>Homepage visit hub</Link>
           <Link href="/visit" className={`${styles.btn} ${styles.btnSecondary}`}>Queen West visit guide</Link>
           <Link href="/24-hour-queen-west-dispensary" className={`${styles.btn} ${styles.btnSecondary}`}>Open now · 24-hour Queen West</Link>
           <Link href="/cannabis-delivery-queen-west" className={`${styles.btn} ${styles.btnSecondary}`}>Cannabis delivery Queen West</Link>

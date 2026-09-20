@@ -106,6 +106,8 @@ export default function CannabisDeliveryQueenWestPage() {
             <p>
               The street-level door at 1472 Queen St W stays open 24 hours daily for walk-in
               retail. Delivery is a separate schedule. Use the{" "}
+              <Link href="/weed-dispensary-queen-west">Queen West weed dispensary</Link> page
+              when the question is the walk-in storefront. Use the{" "}
               <Link href="/24-hour-queen-west-dispensary">24-hour Queen West dispensary</Link> page
               when the question is open now or overnight. Use the{" "}
               <Link href="/visit">Queen West visit guide</Link> for the 501 Queen stop, curb

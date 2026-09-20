@@ -106,7 +106,8 @@ export default function NicotineVapeQueenWestPage() {
               store. For streetcar, parking, and the south-side entrance, use the{" "}
               <Link href="/visit">Queen West visit guide</Link>. For open-now questions, use the{" "}
               <Link href="/24-hour-queen-west-dispensary">24-hour Queen West dispensary</Link>{" "}
-              page.
+              page. For the walk-in storefront itself, use the{" "}
+              <Link href="/weed-dispensary-queen-west">Queen West weed dispensary</Link> page.
             </p>
             <p>
               Delivery ordering from this store is a separate path, daily from 10:00 a.m. to

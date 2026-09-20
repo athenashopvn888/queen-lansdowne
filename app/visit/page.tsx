@@ -151,9 +151,12 @@ export default function VisitPage() {
           </section>
 
           <section>
-            <h2 className={styles.sectionTitle}>Delivery, cigarettes, and nicotine vapes from this block</h2>
+            <h2 className={styles.sectionTitle}>Weed dispensary, delivery, cigarettes, and nicotine vapes from this block</h2>
             <p>
-              Neighbourhood owners for those categories live beside this visit guide:{" "}
+              The neighbourhood owner for a weed dispensary on Queen West, the Parkdale edge, or
+              Lansdowne is the{" "}
+              <Link href="/weed-dispensary-queen-west">weed dispensary Queen West</Link> page.
+              Other category owners live beside this visit guide:{" "}
               <Link href="/cannabis-delivery-queen-west">cannabis delivery Queen West</Link>,{" "}
               <Link href="/native-cigarettes-queen-west">Native cigarettes Queen West</Link>, and{" "}
               <Link href="/nicotine-vape-queen-west">nicotine vape Queen West</Link>. Current

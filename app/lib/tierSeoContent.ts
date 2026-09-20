@@ -20,6 +20,7 @@ const HUB_LINKS = [
   { label: "Homepage visit hub", href: "/" },
   { label: "Queen West visit guide", href: "/visit" },
   { label: "Open now · 24-hour Queen West", href: "/24-hour-queen-west-dispensary" },
+  { label: "Weed dispensary Queen West", href: "/weed-dispensary-queen-west" },
   { label: "Cannabis delivery Queen West", href: "/cannabis-delivery-queen-west" },
   { label: "Native cigarettes Queen West", href: "/native-cigarettes-queen-west" },
   { label: "Nicotine vape Queen West", href: "/nicotine-vape-queen-west" },

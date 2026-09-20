@@ -132,6 +132,8 @@ export default function Catalog() {
           <p>Browse Queen Lansdowne Cannabis Weed Delivery in Toronto, review the existing delivery menu, and use the established ordering options. The Queen West neighbourhood owner for delivery context is the cannabis delivery Queen West page. For broader store browsing beyond delivery, explore Weed Dispensary in Toronto.</p>
           <Link href="/cannabis-delivery-queen-west">Cannabis delivery from Queen West</Link>
           {" · "}
+          <Link href="/weed-dispensary-queen-west">Weed dispensary Queen West</Link>
+          {" · "}
           <Link href="/weed-dispensary-toronto">Explore Queen Lansdowne Weed in Toronto</Link>
         </section>
         <section className="store-hero qlc-editorial-hero">

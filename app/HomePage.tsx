@@ -302,6 +302,8 @@ export default function HomePage() {
               {" · "}
               <Link href="/24-hour-queen-west-dispensary" className={styles.storeLink}>Open now · 24-hour Queen West</Link>
               {" · "}
+              <Link href="/weed-dispensary-queen-west" className={styles.storeLink}>Weed dispensary Queen West</Link>
+              {" · "}
               <Link href="/cannabis-delivery-queen-west" className={styles.storeLink}>Cannabis delivery Queen West</Link>
               {" · "}
               <Link href="/native-cigarettes-queen-west" className={styles.storeLink}>Native cigarettes Queen West</Link>
@@ -458,6 +460,7 @@ export default function HomePage() {
           <div className={styles.storeActions}>
             <Link href="/visit" className={styles.visitCta}>Queen West visit guide</Link>
             <Link href="/24-hour-queen-west-dispensary" className={styles.visitCta}>Open now · 24-hour Queen West</Link>
+            <Link href="/weed-dispensary-queen-west" className={styles.visitCta}>Weed dispensary Queen West</Link>
             <Link href="/cannabis-delivery-queen-west" className={styles.visitCtaSecondary}>Cannabis delivery Queen West</Link>
             <Link href="/native-cigarettes-queen-west" className={styles.visitCtaSecondary}>Native cigarettes Queen West</Link>
             <Link href="/nicotine-vape-queen-west" className={styles.visitCtaSecondary}>Nicotine vape Queen West</Link>

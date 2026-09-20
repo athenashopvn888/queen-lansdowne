@@ -2,13 +2,13 @@ import { Metadata } from "next";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import { GBPLandingPage } from "@/app/components/GBPLandingPage";
-import { gbpLocation, STORE_ORIGIN } from "@/app/lib/gbp-location";
+import { gbpLocation, STORE_ORIGIN, WEED_LP_PATH } from "@/app/lib/gbp-location";
 
 export const metadata: Metadata = {
   title: { absolute: gbpLocation.seoTitle },
   description: gbpLocation.metaDescription,
   alternates: {
-    canonical: STORE_ORIGIN,
+    canonical: `${STORE_ORIGIN}${WEED_LP_PATH}`,
   },
   robots: {
     index: false,

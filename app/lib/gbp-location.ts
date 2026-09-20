@@ -85,6 +85,7 @@ export const HOURS_LP_PATH = "/24-hour-queen-west-dispensary";
 export const DELIVERY_LP_PATH = "/cannabis-delivery-queen-west";
 export const CIGARETTES_LP_PATH = "/native-cigarettes-queen-west";
 export const VAPE_LP_PATH = "/nicotine-vape-queen-west";
+export const WEED_LP_PATH = "/weed-dispensary-queen-west";
 
 export const MESH_HUB_LINKS = [
   { label: "Homepage visit hub", href: "/" },
@@ -93,6 +94,7 @@ export const MESH_HUB_LINKS = [
 ] as const;
 
 export const VERTICAL_MESH_LINKS = [
+  { label: "Weed dispensary Queen West", href: WEED_LP_PATH },
   { label: "Cannabis delivery Queen West", href: DELIVERY_LP_PATH },
   { label: "Native cigarettes Queen West", href: CIGARETTES_LP_PATH },
   { label: "Nicotine vape Queen West", href: VAPE_LP_PATH },
@@ -203,6 +205,29 @@ export const VAPE_LP_FAQS: StoreFaq[] = [
   {
     q: "Should I treat puff counts on a listing as a performance promise?",
     a: "No. When a product name includes a puff count, use it only to tell listings apart. This page does not present puff counts as lifespan, strength, or superiority claims.",
+  },
+];
+
+export const WEED_LP_FAQS: StoreFaq[] = [
+  {
+    q: "Is Queen Lansdowne Cannabis a weed dispensary on Queen West?",
+    a: "Yes. Queen Lansdowne Cannabis at 1472 Queen St W is a walk-in weed dispensary on Queen Street West at the Parkdale edge near Lansdowne. This page is the neighbourhood owner for that storefront. The homepage remains the name, address, phone, and hours hub. Adults 19+ only.",
+  },
+  {
+    q: "What does this Queen West weed dispensary page own versus the Toronto URL?",
+    a: "This Queen West URL is the corridor owner for weed-dispensary searches around Queen West, the Parkdale edge, and Lansdowne. The Toronto URL is a thin city pointer to the same shop. It is not a second store.",
+  },
+  {
+    q: "Which stretch of Queen Street West does this weed dispensary page describe?",
+    a: "It describes the walk-in shop at 1472 Queen St W, on Queen Street West where the Queen West strip meets Parkdale, near the Queen Street West at Lansdowne Avenue streetcar stop. Nearby names help orientation. They do not mean extra locations.",
+  },
+  {
+    q: "Where should I go next from this Queen West weed dispensary page?",
+    a: "Use the Queen West visit guide for the door, streetcar, and parking notes. Use the 24-hour Queen West page for open-now and overnight walk-in questions. Flower is grouped as Exotic, Premium, AAA+, AA, and Budget Weed. Delivery, Native cigarettes, and nicotine vapes have their own Queen West pages.",
+  },
+  {
+    q: "Is this Queen West weed dispensary a medical cannabis clinic?",
+    a: "No. Queen Lansdowne Cannabis is an adult-use walk-in shop. Adults 19+ must show government-issued photo ID. This page does not offer medical advice, prescriptions, or clinic services.",
   },
 ];
 

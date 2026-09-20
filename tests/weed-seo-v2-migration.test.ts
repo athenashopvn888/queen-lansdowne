@@ -76,7 +76,7 @@ test("post-V2.1 cleanup keeps the broad owner direct and removes unsupported eve
     "app/resources/resourceData.ts",
   ].map(read).join("\n");
 
-  assert.match(broadOwner, /canonical:\s*STORE_ORIGIN/);
+  assert.match(broadOwner, /canonical:\s*`\$\{STORE_ORIGIN\}\$\{WEED_LP_PATH\}`/);
   assert.match(broadOwner, /index:\s*false/);
   assert.match(sitemap, /`\$\{BASE}\/(?:weed-dispensary-toronto)`/);
   assert.doesNotMatch(sitemap, /weed-dispensary-toronto\//);
