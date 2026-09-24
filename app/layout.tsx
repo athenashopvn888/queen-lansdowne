@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.queenlansdownecannabis.ca"),
   title: {
     default: "Queen Lansdowne Cannabis | Queen West / Parkdale Dispensary",
+    // Child titles that already include the brand must use resolveDocumentTitle()
+    // so this template does not append "Queen Lansdowne Cannabis" a second time.
     template: "%s | Queen Lansdowne Cannabis",
   },
   description: gbpLocation.metaDescription,

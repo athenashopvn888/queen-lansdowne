@@ -1,5 +1,39 @@
 export const STORE_ORIGIN = "https://www.queenlansdownecannabis.ca";
 export const STORE_ID = `${STORE_ORIGIN}/#store`;
+export const DOCUMENT_TITLE_BRAND = "Queen Lansdowne Cannabis";
+const DOCUMENT_TITLE_SUFFIX = ` | ${DOCUMENT_TITLE_BRAND}`;
+
+/**
+ * Root layout title template is `%s | Queen Lansdowne Cannabis`.
+ * A child title that already names the brand must be absolute, or the
+ * template appends the brand a second time (`Brand | Brand`).
+ */
+export function resolveDocumentTitle(
+  title: string,
+  options?: { absolute?: boolean },
+): string | { absolute: string } {
+  let normalized = title.replace(/\s+/g, " ").trim();
+  while (
+    normalized.endsWith(DOCUMENT_TITLE_SUFFIX) &&
+    normalized.slice(0, -DOCUMENT_TITLE_SUFFIX.length).includes(DOCUMENT_TITLE_BRAND)
+  ) {
+    normalized = normalized.slice(0, -DOCUMENT_TITLE_SUFFIX.length).trim();
+  }
+  if (options?.absolute || normalized.includes(DOCUMENT_TITLE_BRAND)) {
+    return { absolute: normalized };
+  }
+  return normalized;
+}
+
+/** Title text after the root template is applied. Brand appears at most once. */
+export function renderedDocumentTitle(
+  title: string,
+  options?: { absolute?: boolean },
+): string {
+  const resolved = resolveDocumentTitle(title, options);
+  if (typeof resolved === "string") return `${resolved}${DOCUMENT_TITLE_SUFFIX}`;
+  return resolved.absolute;
+}
 export const GBP_MAPS_URL =
   "https://www.google.com/maps/place/Queen+Lansdowne+Cannabis/data=!4m2!3m1!1s0x0:0xb87def5c642e3b9c";
 export const STOREFRONT_IMAGE = `${STORE_ORIGIN}/wp-content/uploads/2026/04/7Clmh.jpg`;
@@ -275,6 +309,18 @@ export function faqPageJsonLd(faqs: StoreFaq[], pageUrl: string) {
       },
     })),
   };
+}
+
+/** True only when the site's own hours label and schema both say 24 hours. */
+export function storeClaimsOpen24Hours() {
+  const store = cannabisStoreJsonLd()["@graph"][0] as {
+    openingHoursSpecification: { opens: string; closes: string }[];
+  };
+  const spec = store.openingHoursSpecification[0];
+  const labelIs24 = /open 24 hours daily/i.test(gbpLocation.hoursLabel);
+  const linesAre24 = gbpLocation.hours.every((line) => /open 24 hours/i.test(line));
+  const schemaIs24 = spec?.opens === "00:00" && spec?.closes === "23:59";
+  return labelIs24 && linesAre24 && schemaIs24;
 }
 
 export function cannabisStoreJsonLd() {

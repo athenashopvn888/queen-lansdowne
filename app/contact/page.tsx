@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { resolveDocumentTitle } from "../lib/gbp-location";
 import styles from "./contact.module.css";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Queen Lansdowne Cannabis | 1472 Queen St W, Toronto",
+  title: resolveDocumentTitle("Contact Us — Queen Lansdowne Cannabis | 1472 Queen St W, Toronto"),
   description:
     "Visit Queen Lansdowne Cannabis at 1472 Queen St W, Toronto, ON M6K 1M4. We are open 24 hours daily. Walk-ins welcome.",
   alternates: {

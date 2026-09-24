@@ -8,6 +8,7 @@ import Footer from "../../components/Footer";
 import { StoreMeshNav } from "../../components/StoreMeshNav";
 import SafeImage from "../../components/SafeImage";
 import { getItemPriceDisplay } from "../../lib/itemPricing";
+import { resolveDocumentTitle } from "../../lib/gbp-location";
 import {
   getItemsByCategory,
   getCategoryFromSlug,
@@ -34,8 +35,10 @@ export async function generateMetadata({
 
   return {
     title: ["vapes", "vape-disposables"].includes(catSlug)
-      ? { absolute: catInfo.config.seoTitle }
-      : catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products`,
+      ? resolveDocumentTitle(catInfo.config.seoTitle, { absolute: true })
+      : resolveDocumentTitle(
+          catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products`,
+        ),
     description: catInfo.config.seoIntro || `Shop ${items.length} ${catInfo.config.name.toLowerCase()} at Queen Lansdowne Cannabis.`,
     alternates: {
       canonical: `https://www.queenlansdownecannabis.ca/items/${catSlug}`,

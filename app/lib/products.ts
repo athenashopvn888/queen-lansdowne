@@ -229,7 +229,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     seoIntro: "Browse the current specialty-products category and compare the listing details shown for this location.",
     seoDescription: "Current specialty items are shown in their store category with product, package, and price details where provided. Check the current menu before visiting for one item.",
     faqs: [
-      { q: "What specialty items are available?", a: "Selection varies by store and by day. Check the current menu for available specialty products." },
+      { q: "What specialty items are available?", a: "Selection changes. Check the current menu at this Queen West shop for the specialty items listed today." },
       { q: "Where can I check specialty items for this location?", a: "Use the current specialty-products category for Queen Lansdowne Cannabis before visiting for one item." },
     ],
   },

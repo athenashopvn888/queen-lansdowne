@@ -13,7 +13,7 @@ import {
 } from "../lib/products";
 import { TIER_SEO } from "../lib/tierSeoContent";
 import { JsonLd } from "../lib/jsonLd";
-import { STORE_ORIGIN, faqPageJsonLd } from "../lib/gbp-location";
+import { STORE_ORIGIN, STORE_ID, faqPageJsonLd } from "../lib/gbp-location";
 import styles from "./tier.module.css";
 
 /* -- Generate all tier pages at build -- */
@@ -72,9 +72,30 @@ export default async function TierPage({
     : false;
 
   const pageUrl = `${STORE_ORIGIN}/${tierSlug}`;
+  const collectionJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: seo?.h1 || config.name,
+    description: seo?.metaDescription || `${config.name} flower at Queen Lansdowne Cannabis on Queen West.`,
+    isPartOf: { "@type": "WebSite", "@id": `${STORE_ORIGIN}/#website` },
+    about: { "@id": STORE_ID },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: flowers.length,
+      itemListElement: flowers.map((flower, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: flower.name,
+        url: `${STORE_ORIGIN}/flower/${flower.slug}`,
+      })),
+    },
+  };
 
   return (
     <main className={styles.main}>
+      <JsonLd data={collectionJsonLd} />
       {seo?.faqs?.length ? <JsonLd data={faqPageJsonLd(seo.faqs, pageUrl)} /> : null}
       <Navbar />
 

@@ -94,7 +94,7 @@ export default function BudtenderCareersPage() {
               <span className={styles.eyebrow}>Apply Now</span>
               <h2>Tell Us About You</h2>
               <p>
-                This form sends your response to the shared Athena Store Applications sheet under QLC01. Future stores can use the same response setup with their own store key.
+                This form sends your application to Queen Lansdowne Cannabis for this Queen West shop.
               </p>
               <p className={styles.onlineOnlyInline}>
                 Online applications only. Please do not call the store about hiring.
