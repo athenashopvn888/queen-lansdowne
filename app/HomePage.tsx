@@ -14,6 +14,7 @@ import {
   gbpLocation,
   HOME_CORRIDOR_COPY,
   HOME_FAQS,
+  storeClaimsOpen24Hours,
 } from "./lib/gbp-location";
 import Papa from "papaparse";
 
@@ -75,6 +76,46 @@ const EXPLORE_CATEGORIES = [
 ];
 
 const LOCAL_FAQS = HOME_FAQS;
+
+const NEIGHBOURHOOD_HUB_CARDS = [
+  {
+    href: "/weed-dispensary-queen-west",
+    kicker: "Neighbourhood",
+    title: "Weed dispensary Queen West",
+    text: "Corridor page for the walk-in at 1472 Queen St W, where Queen West meets the Parkdale edge.",
+  },
+  {
+    href: "/24-hour-queen-west-dispensary",
+    kicker: "Hours",
+    title: "Open 24 hours",
+    text: "Walk-in retail at this Queen Street door is open 24 hours daily. Delivery hours stay separate.",
+    onlyWhen24h: true,
+  },
+  {
+    href: "/cannabis-delivery-queen-west",
+    kicker: "Delivery",
+    title: "Cannabis delivery Queen West",
+    text: "Ordering from this storefront runs 10:00 a.m. to 10:00 p.m. The dispatcher confirms the address.",
+  },
+  {
+    href: "/native-cigarettes-queen-west",
+    kicker: "Cigarettes",
+    title: "Native cigarettes",
+    text: "Retail cigarette category at the Lansdowne stop. Current packs and cartons stay on the cigarette menu.",
+  },
+  {
+    href: "/nicotine-vape-queen-west",
+    kicker: "Nicotine",
+    title: "Nicotine vape",
+    text: "Neighbourhood page for nicotine vapes on Queen West. Nicotine is addictive. Adults 19+.",
+  },
+  {
+    href: "/visit",
+    kicker: "Arrival",
+    title: "Visit",
+    text: "501 Queen at Lansdowne, overnight 301, curb parking, and the south-side door at 1472.",
+  },
+] as const;
 
 interface Review {
   name: string;
@@ -248,6 +289,26 @@ export default function HomePage() {
                   <span className={styles.bentoLabel}>{tier.name}</span>
                   <span className={styles.bentoPrice}>{tier.price}</span>
                 </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.hubSection} aria-label="Queen West neighbourhood guides">
+        <div className={styles.container}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Queen West guides</h2>
+            <p className={styles.sectionSubtitle}>
+              Neighbourhood pages for this one shop at 1472 Queen St W. Adults 19+.
+            </p>
+          </div>
+          <div className={styles.hubGrid}>
+            {NEIGHBOURHOOD_HUB_CARDS.filter((card) => !("onlyWhen24h" in card) || storeClaimsOpen24Hours()).map((card) => (
+              <Link key={card.href} href={card.href} className={styles.hubCard}>
+                <span className={styles.hubKicker}>{card.kicker}</span>
+                <strong className={styles.hubTitle}>{card.title}</strong>
+                <span className={styles.hubText}>{card.text}</span>
               </Link>
             ))}
           </div>

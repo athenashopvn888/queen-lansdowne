@@ -3,9 +3,10 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { resolveDocumentTitle } from "../lib/gbp-location";
 
 export const metadata: Metadata = {
-  title: "Cannabis Flower | Queen Lansdowne Cannabis Toronto",
+  title: resolveDocumentTitle("Cannabis Flower | Queen Lansdowne Cannabis Toronto"),
   description:
     "Browse Queen Lansdowne Cannabis flower category pages in Toronto. Use this overview to choose Exotic Weed, Premium Weed, AAA+ Weed, AA Weed, or Budget Weed flower tiers and review store details before visiting.",
   alternates: {

@@ -1,4 +1,4 @@
-const NATIVE_HERO_DISCLOSURE = "Brand preview only. Selection varies by store; check the current cigarette menu before visiting.";
+const NATIVE_HERO_DISCLOSURE = "These carton names are a Queen West browsing guide for 1472 Queen St W. Check the current cigarette menu before you visit.";
 const NATIVE_HERO_PRODUCTS = [
   { name: "BB Lights", image: "/products/1001-BB-LIGHTS-CARTONS.webp" },
   { name: "BB Full", image: "/products/1003-BB-FULL-CARTON.webp" },

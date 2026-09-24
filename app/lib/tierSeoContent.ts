@@ -66,10 +66,10 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     relatedLinks: meshLinks("/exotic-weed"),
   },
   PREMIUM: {
-    seoTitle: "Premium Weed at 1472 Queen St W | Queen Lansdowne Cannabis",
+    seoTitle: "Premium Weed on Queen West near Lansdowne | Queen Lansdowne Cannabis",
     metaDescription:
       "Browse Premium Weed flower at Queen Lansdowne Cannabis, 1472 Queen St W. Open 24 hours daily on Queen West. Compare Exotic, AAA+, AA, and Budget Weed before you visit.",
-    h1: "Premium Weed flower at 1472 Queen St W",
+    h1: "Premium Weed on Queen West near Lansdowne",
     intro:
       "Premium Weed is the Queen Lansdowne Cannabis collection for shoppers who want a step below Exotic without starting in the value rows. Review the product details shown with each Premium listing, then walk in at 1472 Queen St W — the Queen Street door is open 24 hours daily.",
     sections: [
@@ -165,10 +165,10 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     relatedLinks: meshLinks("/aa-weed"),
   },
   BUDGET: {
-    seoTitle: "Budget Weed on Queen St W | Queen Lansdowne Cannabis",
+    seoTitle: "Budget Weed at the Parkdale edge of Queen West | Queen Lansdowne Cannabis",
     metaDescription:
       "Browse Budget Weed at Queen Lansdowne Cannabis on Queen St W, 1472 Queen Street West. Open 24 hours daily. The collection name does not lock in a current price or deal.",
-    h1: "Budget Weed at Queen Lansdowne Cannabis on Queen St W",
+    h1: "Budget Weed at the Parkdale edge of Queen West",
     intro:
       "Budget Weed is the value-oriented flower collection at Queen Lansdowne Cannabis, 1472 Queen St W. The collection name identifies a place to start browsing. It does not establish a current price, promotion, stock, or availability claim.",
     sections: [

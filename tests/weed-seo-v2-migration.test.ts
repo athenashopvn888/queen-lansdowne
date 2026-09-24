@@ -29,13 +29,13 @@ test("tier canonicals stay tier-first and customer-facing names use Tier Name pl
   for (const name of ["Exotic Weed", "Premium Weed", "AAA+ Weed", "AA Weed", "Budget Weed"]) {
     assert.match(products, new RegExp(`name: "${name.replace("+", "\\+")}"`));
   }
-  const titles = ["Exotic Weed on Queen West", "Premium Weed at 1472 Queen St W", "AAA\\+ Weed near Lansdowne", "AA Weed Queen West / Parkdale", "Budget Weed on Queen St W"];
+  const titles = ["Exotic Weed on Queen West", "Premium Weed on Queen West near Lansdowne", "AAA\\+ Weed near Lansdowne", "AA Weed Queen West / Parkdale", "Budget Weed at the Parkdale edge of Queen West"];
   const headings = [
     "Exotic Weed at Queen Lansdowne Cannabis on Queen West",
-    "Premium Weed flower at 1472 Queen St W",
+    "Premium Weed on Queen West near Lansdowne",
     "AAA\\+ Weed near Lansdowne on Queen Street West",
     "AA Weed at the Parkdale edge of Queen West",
-    "Budget Weed at Queen Lansdowne Cannabis on Queen St W",
+    "Budget Weed at the Parkdale edge of Queen West",
   ];
   for (const title of titles) {
     assert.match(seo, new RegExp(`seoTitle: "${title}`));

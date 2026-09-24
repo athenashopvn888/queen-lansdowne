@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { resolveDocumentTitle } from "../lib/gbp-location";
 import styles from "./faq.module.css";
 
 export const metadata: Metadata = {
-  title: "FAQ — Queen Lansdowne Cannabis | Toronto Dispensary Questions",
+  title: resolveDocumentTitle("FAQ — Queen Lansdowne Cannabis | Toronto Dispensary Questions"),
   description:
     "Frequently asked questions about Queen Lansdowne Cannabis in Toronto, including location, store information, menu categories and visit planning.",
   alternates: {

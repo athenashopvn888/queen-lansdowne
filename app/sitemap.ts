@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { TIER_CONFIG, CATEGORY_CONFIG, allFlowers, allItems } from "./lib/products";
 import { SEO_PAGES } from "./lib/seoPages";
-import { THIN_CITY_INFO_SLUGS } from "./lib/gbp-location";
+import { THIN_CITY_INFO_SLUGS, storeClaimsOpen24Hours } from "./lib/gbp-location";
 import { RESOURCE_PATHS } from "./resources/resourceData";
 
 const BASE = "https://www.queenlansdownecannabis.ca";
@@ -13,7 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE, lastModified: now, changeFrequency: "daily", priority: 1 },
     { url: `${BASE}/flower`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
     { url: `${BASE}/visit`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${BASE}/24-hour-queen-west-dispensary`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    ...(storeClaimsOpen24Hours()
+      ? [{ url: `${BASE}/24-hour-queen-west-dispensary`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.8 }]
+      : []),
     { url: `${BASE}/cannabis-delivery-queen-west`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/native-cigarettes-queen-west`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/nicotine-vape-queen-west`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },

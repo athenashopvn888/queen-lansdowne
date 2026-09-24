@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -10,6 +11,7 @@ import {
   HOURS_LP_FAQS,
   faqPageJsonLd,
   gbpLocation,
+  storeClaimsOpen24Hours,
 } from "../lib/gbp-location";
 import styles from "../visit/visit.module.css";
 
@@ -31,6 +33,8 @@ export const metadata: Metadata = {
 };
 
 export default function TwentyFourHourQueenWestPage() {
+  if (!storeClaimsOpen24Hours()) notFound();
+
   return (
     <>
       <JsonLd data={faqPageJsonLd(HOURS_LP_FAQS, PAGE_URL)} />
