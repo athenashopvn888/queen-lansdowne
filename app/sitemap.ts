@@ -3,6 +3,7 @@ import { TIER_CONFIG, CATEGORY_CONFIG, allFlowers, allItems } from "./lib/produc
 import { SEO_PAGES } from "./lib/seoPages";
 import { THIN_CITY_INFO_SLUGS, storeClaimsOpen24Hours } from "./lib/gbp-location";
 import { RESOURCE_PATHS } from "./resources/resourceData";
+import { GUIDE_REGISTRY } from "./lib/guideRegistry";
 
 const BASE = "https://www.queenlansdownecannabis.ca";
 
@@ -77,5 +78,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...resourcePages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...seoPages];
+  const guidePages: MetadataRoute.Sitemap = GUIDE_REGISTRY.map((guide) => ({
+    url: `${BASE}/guides/${guide.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...resourcePages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...seoPages, ...guidePages];
 }

@@ -14,6 +14,7 @@ import {
 import { TIER_SEO } from "../lib/tierSeoContent";
 import { JsonLd } from "../lib/jsonLd";
 import { STORE_ORIGIN, STORE_ID, faqPageJsonLd } from "../lib/gbp-location";
+import { getTierGuideLinks } from "../lib/guideRegistry";
 import styles from "./tier.module.css";
 
 /* -- Generate all tier pages at build -- */
@@ -61,6 +62,7 @@ export default async function TierPage({
   const flowers = getFlowersByTier(tierInfo.key);
   const { config } = tierInfo;
   const seo = TIER_SEO[tierInfo.key];
+  const guideLinks = getTierGuideLinks(`/${tierSlug}`);
 
   const saleFlowers = flowers.filter((f) => f.isSale);
   const regularFlowers = flowers.filter((f) => !f.isSale);
@@ -170,6 +172,15 @@ export default async function TierPage({
           </div>
         </div>
       </section>
+
+      {guideLinks.length > 0 && (
+        <nav className={styles.guideStrip} aria-label={`Popular ${config.name} strain guides`}>
+          <h2>Popular strain guides</h2>
+          <div className={styles.guideLinks}>
+            {guideLinks.map((guide) => <Link key={guide.slug} href={`/guides/${guide.slug}`}>{guide.name}</Link>)}
+          </div>
+        </nav>
+      )}
 
       {/* ── Product grid ── */}
       <section className={styles.products}>
