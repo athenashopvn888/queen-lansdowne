@@ -9,6 +9,7 @@ import { StoreMeshNav } from "../../components/StoreMeshNav";
 import SafeImage from "../../components/SafeImage";
 import { getItemPriceDisplay } from "../../lib/itemPricing";
 import { resolveDocumentTitle } from "../../lib/gbp-location";
+import { getCategoryGuideGroups } from "../../lib/guideRegistry";
 import {
   getItemsByCategory,
   getCategoryFromSlug,
@@ -64,6 +65,7 @@ export default async function ItemsCategoryPage({
     items = [...items, ...uniqueAccessories];
   }
   const { config } = catInfo;
+  const guideGroups = getCategoryGuideGroups(`/items/${catSlug}`);
 
   // Check if banner file exists in the public folder
   const bannerExists = config.banner
@@ -118,6 +120,17 @@ export default async function ItemsCategoryPage({
           )}
         </div>
       </section>
+
+      {guideGroups.length > 0 && (
+        <nav className={styles.guideStrip} aria-label={`${config.name} guides`}>
+          {guideGroups.map((group) => (
+            <section className={styles.guideGroup} key={group.label}>
+              <h2>{group.label}</h2>
+              <div>{group.guides.map((guide) => <Link key={guide.slug} href={`/guides/${guide.slug}`}>{guide.name}</Link>)}</div>
+            </section>
+          ))}
+        </nav>
+      )}
 
       {/* SEO Content */}
       <section className={styles.seoSection}>
