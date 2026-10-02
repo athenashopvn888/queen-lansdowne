@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { HOURS_LP_PATH, storeClaimsOpen24Hours } from "../lib/gbp-location";
 import styles from "./Navbar.module.css";
+import FlowerBogoStrip from "./FlowerBogoStrip";
 
 const ALL_LINKS = [
   { href: "/exotic-weed", label: "Exotic Weed" },
@@ -124,6 +125,7 @@ export default function Navbar() {
         ))}
       </div>
       <CohortDeliveryActions />
+      {pathname !== "/" ? <FlowerBogoStrip /> : null}
     </nav>
   );
 }
