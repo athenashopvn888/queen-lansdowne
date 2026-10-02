@@ -55,6 +55,7 @@ export default function Footer() {
               <Link href="/items/vapes">Nicotine Vape</Link>
               <Link href="/nicotine-vape-queen-west">Nicotine Vape Queen West</Link>
               <Link href="/resources">Resources</Link>
+              <Link href="/guides">Guides</Link>
               <Link href="/careers/budtender">Budtender Application</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/visit">Visit Queen West</Link>

@@ -27,6 +27,7 @@ const ALL_LINKS = [
   { href: "/24-hour-queen-west-dispensary", label: "Open Now · 24 Hours" },
   { href: "/careers/budtender", label: "Hiring" },
   { href: "/resources", label: "Resources" },
+  { href: "/guides", label: "Guides" },
   { href: "/faq", label: "FAQ" },
 ];
 
