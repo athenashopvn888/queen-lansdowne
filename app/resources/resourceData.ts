@@ -3342,6 +3342,21 @@ export const RESOURCE_PAGES: ResourcePage[] = [
   ...PINKY_RESOURCE_ADDITIONS,
 ];
 
+const resourceHome = RESOURCE_PAGES.find((page) => page.route === "/resources");
+if (resourceHome) {
+  resourceHome.cards = [
+    {
+      title: "Name Guides",
+      href: "/guides",
+      description: "Browse every Queen Lansdowne Cannabis strain, Native Cigarettes, Nicotine Vape, and THC Vape guide.",
+      category: "Guide directory",
+      author: "Queen Lansdowne Cannabis Team",
+      updated: "2026-10-02",
+    },
+    ...resourceHome.cards.filter((card) => card.href !== "/guides"),
+  ];
+}
+
 export const RESOURCE_PATHS = RESOURCE_PAGES.map((page) => page.route);
 
 export function normalizeResourceRoute(route: string) {

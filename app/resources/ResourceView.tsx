@@ -253,16 +253,17 @@ function SecondTake({ page }: { page: ResourcePage }) {
 
 export default function ResourceView({ page }: { page: ResourcePage }) {
   const childPages = getResourceChildren(page);
+  const guideCards = page.cards.filter((card) => card.href === "/guides");
   const displayCards =
     page.kind === "main"
-      ? childPages.map((child) => ({
+      ? [...guideCards, ...childPages.map((child) => ({
           title: child.h1,
           href: child.route,
           description: child.excerpt || child.metaDescription,
           category: "Menu guide",
           author: child.author.name,
           updated: child.dateModified,
-        }))
+        }))]
       : page.cards;
 
   return (
