@@ -4,14 +4,19 @@ import test from "node:test";
 import { HOME_DELIVERY_CARDS, HOME_DELIVERY_FAQS, HOME_DELIVERY_HREF, HOME_MENU_HREF, HOME_TITLE } from "../app/lib/homeDelivery.ts";
 
 const home = fs.readFileSync("app/HomePage.tsx", "utf8");
+const page = fs.readFileSync("app/page.tsx", "utf8");
+const location = fs.readFileSync("app/lib/gbp-location.ts", "utf8");
 const navbar = fs.readFileSync("app/components/Navbar.tsx", "utf8");
 const navbarCss = fs.readFileSync("app/components/Navbar.module.css", "utf8");
 
 test("locked Cohort B title and paths", () => {
-  assert.equal(HOME_TITLE, "Queen Lansdowne Cannabis Dispensary - Weed Delivery in Queen West");
+  assert.equal(HOME_TITLE, "Queen Lansdowne Cannabis Dispensary Weed Delivery");
   assert.equal(HOME_TITLE.match(/Dispensary/g)?.length, 1);
-  assert.match(HOME_TITLE, / - Weed Delivery in /);
-  assert.doesNotMatch(HOME_TITLE, /Cannabis Delivery/);
+  assert.match(home, /alt="Queen Lansdowne Cannabis Dispensary Weed Delivery"/);
+  assert.match(page, /title: \{ absolute: HOME_TITLE \}/);
+  assert.match(page, /openGraph: \{[\s\S]*title: HOME_TITLE/);
+  assert.match(page, /twitter: \{ card: "summary_large_image", title: HOME_TITLE \}/);
+  assert.match(location, /"@type": "CannabisStore"[\s\S]*name: "Queen Lansdowne Cannabis Dispensary Weed Delivery"/);
   assert.equal(HOME_MENU_HREF, "/exotic-weed");
   assert.equal(HOME_DELIVERY_HREF, "/delivery");
   assert.match(home, /\{HOME_TITLE\}/);

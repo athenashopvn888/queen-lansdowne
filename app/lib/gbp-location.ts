@@ -330,7 +330,7 @@ export function cannabisStoreJsonLd() {
       {
         "@type": "CannabisStore",
         "@id": STORE_ID,
-        name: gbpLocation.storeName,
+        name: "Queen Lansdowne Cannabis Dispensary Weed Delivery",
         description:
           "Walk-in cannabis store at 1472 Queen St W on Queen West at the Parkdale edge in Toronto. Open 24 hours daily. Adults 19+.",
         url: `${STORE_ORIGIN}/`,
@@ -377,7 +377,7 @@ export function cannabisStoreJsonLd() {
         "@type": "WebSite",
         "@id": `${STORE_ORIGIN}/#website`,
         url: `${STORE_ORIGIN}/`,
-        name: gbpLocation.storeName,
+        name: "Queen Lansdowne Cannabis Dispensary Weed Delivery",
       },
     ],
   };
