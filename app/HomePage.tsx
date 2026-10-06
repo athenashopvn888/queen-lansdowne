@@ -229,7 +229,7 @@ export default function HomePage() {
         <Link href="/weed-delivery-toronto" className={styles.deliveryBannerLink} aria-label="Open Queen Lansdowne Weed Delivery">
           <Image
             src="/qlc-home-delivery-banner.webp"
-            alt="Queen Lansdowne Cannabis Weed Delivery"
+            alt="Queen Lansdowne Cannabis Dispensary Weed Delivery"
             width={1774}
             height={887}
             priority
