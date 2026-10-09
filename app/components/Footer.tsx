@@ -58,6 +58,7 @@ export default function Footer() {
               <Link href="/guides">Guides</Link>
               <Link href="/careers/budtender">Budtender Application</Link>
               <Link href="/faq">FAQ</Link>
+              <Link href="/hours">Store Hours</Link>
               <Link href="/visit">Visit Queen West</Link>
               <Link href="/weed-dispensary-queen-west">Weed Dispensary Queen West</Link>
               {storeClaimsOpen24Hours() ? (
