@@ -12,6 +12,7 @@ import {
   gbpLocation,
 } from "../lib/gbp-location";
 import styles from "../visit/visit.module.css";
+import VapeActionPanel from "../components/VapeActionPanel";
 
 const PAGE_URL = `${STORE_ORIGIN}${VAPE_LP_PATH}`;
 
@@ -46,6 +47,8 @@ export default function NicotineVapeQueenWestPage() {
             <Link href="/items/vapes">/items/vapes</Link>. This page does not invent SKUs or
             prices. Nicotine is addictive.
           </p>
+
+          <VapeActionPanel compact />
 
           <section className={styles.nap} aria-labelledby="vape-nap-title">
             <h2 id="vape-nap-title" className={styles.sectionTitle}>Same NAP as the homepage hub</h2>

@@ -10,6 +10,7 @@ import SafeImage from "../../components/SafeImage";
 import { getItemPriceDisplay } from "../../lib/itemPricing";
 import { resolveDocumentTitle } from "../../lib/gbp-location";
 import { getCategoryGuideGroups } from "../../lib/guideRegistry";
+import VapeActionPanel from "../../components/VapeActionPanel";
 import {
   fetchLiveProducts,
   getCategoryFromSlug,
@@ -106,6 +107,8 @@ export default async function ItemsCategoryPage({
           </div>
         )}
       </section>
+
+      {(catSlug === "vapes" || catSlug === "vape-disposables") && <VapeActionPanel compact />}
 
       {/* Product Grid */}
       <section className={styles.products}>

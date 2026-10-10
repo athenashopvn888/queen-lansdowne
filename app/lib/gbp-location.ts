@@ -132,6 +132,7 @@ export const VERTICAL_MESH_LINKS = [
   { label: "Cannabis delivery Queen West", href: DELIVERY_LP_PATH },
   { label: "Native cigarettes Queen West", href: CIGARETTES_LP_PATH },
   { label: "Nicotine vape Queen West", href: VAPE_LP_PATH },
+  { label: "Current Queen West vape listings", href: "/vape-shop-queen-west" },
 ] as const;
 
 export const TIER_MESH_LINKS = [
