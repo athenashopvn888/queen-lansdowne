@@ -16,6 +16,7 @@ import { JsonLd } from "../lib/jsonLd";
 import { STORE_ORIGIN, STORE_ID, faqPageJsonLd } from "../lib/gbp-location";
 import { getTierGuideLinks } from "../lib/guideRegistry";
 import { formatAsLowAsAfterPromos, formatPerGram, isBogoDeal, type BoardDeal } from "../lib/flowerDeals";
+import { storeTierRange, tierRangeText } from "../lib/tierPriceRanges";
 import styles from "./tier.module.css";
 
 // Read the live menu feed on every request (never a build-time snapshot).
@@ -69,6 +70,7 @@ export default async function TierPage({
   const { config } = tierInfo;
   const seo = TIER_SEO[tierInfo.key];
   const guideLinks = getTierGuideLinks(`/${tierSlug}`);
+  const rangeLine = tierRangeText(storeTierRange(flowers, tierInfo.key));
 
   const saleFlowers = flowers.filter((f) => f.isSale);
   const regularFlowers = flowers.filter((f) => !f.isSale);
@@ -132,6 +134,8 @@ export default async function TierPage({
               </h1>
             </div>
             <p className={styles.heroTagline}>{config.tagline}</p>
+            {rangeLine ? <p className="tier-range-line"><strong className="price-scope-label">In-store price</strong>{rangeLine}</p> : null}
+            <p className="price-rule-notice"><strong>IN-STORE PRICES ONLY.</strong> These prices do not apply to delivery orders. Delivery has its own prices. Why? <Link href="/faq#delivery-price-rule">See the FAQ</Link></p>
             <div className={styles.heroStats}>
               <span className={styles.stat}>
                 <strong>{flowers.length}</strong> strains
@@ -150,11 +154,11 @@ export default async function TierPage({
           </div>
 
           <div className={styles.heroRight}>
-            {isBogoDeal(config.deal6g) ? <><p className={styles.asLowAsBanner}>{formatAsLowAsAfterPromos(config.deal6g.price, config.deal6g.grams)}</p><p className={styles.listAnchor}>List ${config.unitPrice}/g</p></> : <div className={styles.unitPriceBox}><span className={styles.unitPriceLabel}>Starting at</span><span className={styles.unitPriceValue}>${config.unitPrice}/g</span></div>}
+            {isBogoDeal(config.deal6g) ? <><p className={styles.asLowAsBanner}><span className="price-scope-label">In-store price</span>{formatAsLowAsAfterPromos(config.deal6g.price, config.deal6g.grams)}</p><p className={styles.listAnchor}>In-store price · List ${config.unitPrice}/g</p></> : <div className={styles.unitPriceBox}><span className={styles.unitPriceLabel}>In-store price · Starting at</span><span className={styles.unitPriceValue}>${config.unitPrice}/g</span></div>}
 
             {(config.deal3g || config.deal6g) && (
             <div className={styles.dealRow}>
-              {[config.deal3g, config.deal6g].filter((deal): deal is BoardDeal => deal !== null).map((deal) => <div className={styles.dealBox} key={deal.total}><div className={styles.dealLabel}>{isBogoDeal(deal) ? deal.label : `🎁 ${deal.label}`}</div><div className={styles.dealPrice}>{isBogoDeal(deal) ? <>Pay <strong>${deal.price}</strong> = {deal.grams}g</> : <>= <strong>${deal.price}</strong> / {deal.total}</>}</div>{isBogoDeal(deal) ? <div className={styles.dealMeta}>{formatPerGram(deal.price, deal.grams)} · {deal.equals}</div> : null}</div>)}
+              {[config.deal3g, config.deal6g].filter((deal): deal is BoardDeal => deal !== null).map((deal) => <div className={styles.dealBox} key={deal.total}><div className={styles.dealLabel}>In-store price · {isBogoDeal(deal) ? deal.label : `🎁 ${deal.label}`}</div><div className={styles.dealPrice}>{isBogoDeal(deal) ? <>Pay <strong>${deal.price}</strong> = {deal.grams}g</> : <>= <strong>${deal.price}</strong> / {deal.total}</>}</div>{isBogoDeal(deal) ? <div className={styles.dealMeta}>{formatPerGram(deal.price, deal.grams)} · {deal.equals}</div> : null}</div>)}
             </div>
             )}
           </div>

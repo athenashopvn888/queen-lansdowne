@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import menu from "./delivery-menu.json";
 import ProductDetailsDrawer from "./ProductDetailsDrawer";
+import { deliveryTierRanges, tierRangeText } from "../lib/tierPriceRanges";
 
 type Option = { key: string; label: string; price: number };
 type Offer = { kind: "prime_time" | "multi_ounce"; title?: string; quantity?: number; price?: number; weight?: string; bonus?: string; perUnitPrice?: number; totalPrice?: number; label: string };
@@ -69,6 +70,7 @@ function ProductPricing({ product }: { product: Product }) {
     : product.offers?.filter((offer) => offer.kind === "multi_ounce") || [];
   return (
     <div className="product-pricing">
+      <strong className="price-scope-label">Delivery price</strong>
       {compact.length > 0 && <div className="compact-price-section"><div className="compact-price-grid">{compact.map((option) => <div key={option.key} className="compact-price"><span>{option.label}</span><strong>{formatCurrency(option.price)}</strong></div>)}</div></div>}
       {(regular28 || member || bundles.length > 0) && <div className="decision-prices">
         {loyaltyPrice !== null && <div className="decision-tile member-28"><span>MEMBER LOYALTY 28g</span><strong>{formatCurrency(loyaltyPrice)}</strong><small>Member price</small><p>{member?.bonus ? `${member.bonus} applies on a later order when eligible.` : "Coupon or add-on eligibility is confirmed separately."}</p></div>}
@@ -109,6 +111,7 @@ export default function Catalog() {
     const needle = search.trim().toLowerCase();
     return !needle || `${product.name} ${product.category} ${product.strain}`.toLowerCase().includes(needle);
   }).sort(compareProducts), [activeTier, search, products]);
+  const tierRanges = useMemo(() => deliveryTierRanges(products).map(({ tier, range }) => ({ tier, line: tierRangeText(range) })).filter((item): item is { tier: string; line: string } => Boolean(item.line)), [products]);
 
   return (
     <div className="qlc-original-shell">
@@ -139,6 +142,9 @@ export default function Catalog() {
         <section className="store-hero qlc-editorial-hero">
           <Image src="/qlc-delivery-menu-banner.webp" alt="Queen and Lansdowne Cannabis delivery banner" width={1774} height={887} priority sizes="(max-width: 1500px) 100vw, 1444px" />
         </section>
+
+        <p className="price-rule-notice delivery-price-rule"><strong>DELIVERY PRICES ONLY.</strong> Delivery orders are charged these prices, not in-store prices. <Link href="/faq#delivery-price-rule">See the FAQ</Link></p>
+        {tierRanges.length > 0 ? <section className="tier-range-list" aria-label="Delivery prices per gram by flower tier"><h2>Delivery prices per gram</h2><ul>{tierRanges.map(({ tier, line }) => <li key={tier}><strong>{tier}</strong><span><b className="price-scope-label">Delivery price</b>{line}</span></li>)}</ul></section> : null}
 
         <section className="member-loyalty" aria-labelledby="member-loyalty-title">
           <div className="member-loyalty-heading">
