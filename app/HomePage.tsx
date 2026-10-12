@@ -228,8 +228,8 @@ export default function HomePage({ initialFlowers }: { initialFlowers: Parameter
   return (
     <main className={styles.main}>
       <Navbar />
-      <HomepageTopNotices />
       <FleetAnnouncementBanner />
+      <HomepageTopNotices />
       {/* ── NAVBAR ── */}
 
 
