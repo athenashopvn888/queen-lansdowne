@@ -9,6 +9,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.css";
 import FleetAnnouncementBanner from "./components/FleetAnnouncementBanner";
+import HomeTitleBlock from "./components/HomeTitleBlock";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { StoreMeshNav } from "./components/StoreMeshNav";
@@ -228,6 +229,7 @@ export default function HomePage({ initialFlowers }: { initialFlowers: Parameter
   return (
     <main className={styles.main}>
       <Navbar />
+      <HomeTitleBlock />
       <FleetAnnouncementBanner />
       <HomepageTopNotices />
       {/* ── NAVBAR ── */}
@@ -272,7 +274,7 @@ export default function HomePage({ initialFlowers }: { initialFlowers: Parameter
           {/* Brand branding */}
           <div className={styles.brandBlock}>
             <img src="/storeFavicon.webp" alt="Queen Lansdowne Cannabis Icon" style={{ height: "60px", width: "60px", objectFit: "contain", borderRadius: "8px", marginBottom: "8px" }} />
-            <h1 className={styles.brandTitle}>{HOME_TITLE}</h1>
+            <p className={styles.brandTitle}>{HOME_TITLE}</p>
             <CohortDeliveryActions variant="hero" />
             <p className={styles.brandSub}>Queen West dispensary at the Parkdale edge — 1472 Queen St W</p>
             <div className={styles.brandBadge}>Open 24 Hours Daily</div>
