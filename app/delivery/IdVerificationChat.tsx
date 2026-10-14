@@ -123,8 +123,17 @@ export default function IdVerificationChat() {
   }, [open]);
 
   useEffect(() => {
-    if (new URLSearchParams(window.location.search).get("liveOrder") !== "1") return;
-    const timer = window.setTimeout(() => setOpen(true), 0);
+    const resumeToken = new URLSearchParams(window.location.hash.slice(1)).get("sod");
+    if (resumeToken && /^[A-Za-z0-9_-]{43}$/.test(resumeToken)) {
+      localStorage.setItem(SESSION_KEY, resumeToken);
+      window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+    }
+    const shouldOpen = new URLSearchParams(window.location.search).get("liveOrder") === "1";
+    if (!resumeToken && !shouldOpen) return;
+    const timer = window.setTimeout(() => {
+      if (resumeToken) setToken(resumeToken);
+      if (shouldOpen) setOpen(true);
+    }, 0);
     return () => window.clearTimeout(timer);
   }, []);
 
@@ -202,13 +211,18 @@ export default function IdVerificationChat() {
       setNotice(availability?.message || "Delivery status is temporarily unavailable. Please check back soon.");
       return;
     }
+    const orderDetails = firstMessage.trim();
+    if (!orderDetails) {
+      setNotice("Enter your order details before starting Web Chat.");
+      return;
+    }
     setBusy(true);
     setNotice("");
     try {
       const data = await payload(await fetch(`${API_BASE}/api/web-chat/session`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ storeId: "QLC", customerName: intent === "NEW_CUSTOMER" ? name : "", phone, intent, message: firstMessage, workflowVersion: "READY_V1", smsConsent }),
+        body: JSON.stringify({ storeId: "QLC", customerName: intent === "NEW_CUSTOMER" ? name : "", phone, intent, message: orderDetails, workflowVersion: "READY_V1", smsConsent }),
       }));
       localStorage.setItem(SESSION_KEY, data.token);
       setToken(data.token);
@@ -345,9 +359,9 @@ export default function IdVerificationChat() {
           {intent === "NEW_CUSTOMER" && <><div className="sod-chat-welcome"><h2>Welcome!</h2><p><strong>DELIVERY PRICES ONLY.</strong> Delivery orders are charged these prices, not in-store prices. <Link href="/faq#delivery-price-rule">See the FAQ</Link></p><p>Have a valid government-issued photo ID and a Canadian mobile number ready. Your mobile number will be used as your account number.</p><p>Use a mobile number that can receive verification texts.</p></div>
           <label>Full name<input required minLength={2} maxLength={80} value={name} onChange={(event) => setName(event.target.value)} autoComplete="name" /></label></>}
           {intent && <><label>Canadian mobile number<input required inputMode="tel" value={phone} onChange={(event) => setPhone(event.target.value)} autoComplete="tel" placeholder="647 555 0123" aria-describedby={intent === "NEW_CUSTOMER" ? "sod-phone-help" : undefined} />{intent === "NEW_CUSTOMER" && <small id="sod-phone-help">Must be able to receive verification texts. This becomes your account number.</small>}</label>
-          <label>Order details (optional)<textarea maxLength={1000} value={firstMessage} onChange={(event) => setFirstMessage(event.target.value)} placeholder="What would you like to order today?" /></label>
+          <label>Order details<textarea required minLength={2} maxLength={1000} value={firstMessage} onChange={(event) => setFirstMessage(event.target.value)} placeholder="What would you like to order today?" /></label>
           <label className="sod-sms-consent"><input required type="checkbox" checked={smsConsent} onChange={(event) => setSmsConsent(event.target.checked)} /><span>I agree to receive one READY delivery-link text for this order.</span></label>
-          <button type="submit" disabled={busy}>{busy ? "Starting…" : "Start order chat"}</button></>}
+          <button type="submit" disabled={busy || !smsConsent || !firstMessage.trim()}>{busy ? "Starting…" : "Start and send order"}</button></>}
         </form>) : <>
           <div className="sod-chat-scroll">
             <section className="sod-chat-account" aria-label="Order account">
