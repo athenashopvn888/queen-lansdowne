@@ -113,6 +113,10 @@ export const HOME_FAQS: StoreFaq[] = [
     q: "How do I reach 1472 Queen St W on transit?",
     a: "Take the 501 Queen streetcar to Queen Street West at Lansdowne Avenue, then stay on Queen Street and look for the Queen Lansdowne Cannabis sign on the south side. Overnight, the 301 Queen Blue Night covers the same corridor.",
   },
+  {
+    q: "Is there a weed dispensary near me in Parkdale?",
+    a: "Queen Lansdowne Cannabis is at 1472 Queen St W, Toronto, right at Queen and Lansdowne in Parkdale. We're open 24 hours daily, adults 19+ with valid photo ID.",
+  },
 ];
 
 export const HOURS_LP_PATH = "/24-hour-queen-west-dispensary";
