@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import DeliveryContent from "./DeliveryContent";
 import menu from "./delivery-menu.json";
+import NearMeFaq from "../components/NearMeFaq";
+import nearMeFaq from "../lib/nearMeFaq.json";
 
 export const metadata: Metadata = {
   title: { absolute: "Weed Delivery Toronto | Queen Lansdowne Cannabis" },
@@ -47,6 +49,7 @@ export default function DeliveryPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
       />
       <DeliveryContent />
+      <NearMeFaq id="delivery-near-me" q={nearMeFaq.delivery!.q} a={nearMeFaq.delivery!.a} />
     </>
   );
 }
