@@ -1,3 +1,4 @@
+import CigaretteSeasonalNotice from "../components/CigaretteSeasonalNotice";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
@@ -36,6 +37,7 @@ export default function NativeCigarettesQueenWestPage() {
       <JsonLd data={faqPageJsonLd(CIGARETTES_LP_FAQS, PAGE_URL)} />
       <main className={styles.main}>
         <Navbar />
+        <CigaretteSeasonalNotice sticky />
         <article className={styles.content}>
           <p className={styles.kicker}>Queen West · Retail cigarettes · Adults 19+</p>
           <h1 className={styles.pageTitle}>Native cigarettes at Queen Lansdowne Cannabis on Queen West</h1>
