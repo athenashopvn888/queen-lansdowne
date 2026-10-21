@@ -1,5 +1,6 @@
 import guideCopy from "./guideCopy.json";
 import { allFlowers, allItems, type FlowerProduct, type ItemProduct } from "./products";
+import { SHOW_CIGARETTES, isHiddenCigaretteGuideSlug } from "./showCigarettes";
 
 export type GuideLane = "strain" | "native_cig" | "nic_vape" | "thc_vape";
 export type GuideFaq = { question: string; answer: string };
@@ -81,8 +82,8 @@ const GUIDE_LANES: { lane: GuideLane; label: string }[] = [
 export function getGuidesByLane() {
   return GUIDE_LANES.map(({ lane, label }) => ({
     lane,
-    label,
-    guides: GUIDE_REGISTRY.filter((guide) => guide.lane === lane),
+    label: lane === "native_cig" && !SHOW_CIGARETTES ? "Backwoods" : label,
+    guides: GUIDE_REGISTRY.filter((guide) => guide.lane === lane && !isHiddenCigaretteGuideSlug(guide.slug)),
   })).filter((group) => group.guides.length > 0);
 }
 

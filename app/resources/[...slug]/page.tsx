@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ResourceView from "../ResourceView";
 import { getResourcePageBySlugParts, getResourceStaticParams, resourceCanonical } from "../resourceData";
+import { stripCigarettePhrases } from "../../lib/showCigarettes";
 
 type ResourceRouteProps = {
   params: Promise<{ slug: string[] }>;
@@ -16,12 +17,12 @@ export async function generateMetadata({ params }: ResourceRouteProps): Promise<
   const page = getResourcePageBySlugParts(slug);
   if (!page) return {};
   return {
-    title: { absolute: page.seoTitle },
-    description: page.metaDescription,
+    title: { absolute: stripCigarettePhrases(page.seoTitle) },
+    description: stripCigarettePhrases(page.metaDescription),
     alternates: { canonical: resourceCanonical(page) },
     openGraph: {
-      title: page.seoTitle,
-      description: page.metaDescription,
+      title: stripCigarettePhrases(page.seoTitle),
+      description: stripCigarettePhrases(page.metaDescription),
       url: resourceCanonical(page),
       type: page.kind === "article" || page.kind === "update" ? "article" : "website",
     },

@@ -18,6 +18,7 @@ import { STORE_ORIGIN, STORE_ID, faqPageJsonLd } from "../lib/gbp-location";
 import { getTierGuideLinks } from "../lib/guideRegistry";
 import { formatAsLowAsAfterPromos, formatPerGram, isBogoDeal, type BoardDeal } from "../lib/flowerDeals";
 import { storeTierRange, tierRangeText } from "../lib/tierPriceRanges";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 import styles from "./tier.module.css";
 import nearMeFaq from "../lib/nearMeFaq.json";
 
@@ -230,7 +231,7 @@ export default async function TierPage({
             ))}
 
             <nav className={styles.relatedLinks} aria-label={`${config.name} weed and flower links`}>
-              {seo.relatedLinks.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
+              {seo.relatedLinks.filter((link) => SHOW_CIGARETTES || link.href !== "/native-cigarettes-queen-west").map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
             </nav>
 
             {/* FAQ Accordion */}

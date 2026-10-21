@@ -1,5 +1,11 @@
 import type { NextConfig } from "next";
+import type { Redirect } from "next/dist/lib/load-custom-routes";
 import { SEO_ROUTE_REDIRECTS } from "./app/lib/seoRouteAliases";
+import {
+  SHOW_CIGARETTES,
+  cigaretteHideRedirects,
+  suppressPermanentCigaretteRedirect,
+} from "./app/lib/showCigarettes";
 
 const nextConfig: NextConfig = {
   images: {
@@ -15,8 +21,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async redirects() {
-    return [
+  async redirects(): Promise<Redirect[]> {
+    const redirects: Redirect[] = [
       {
         source: "/:path*",
         has: [{ type: "host", value: "queenlansdownecannabis.ca" }],
@@ -51,6 +57,13 @@ const nextConfig: NextConfig = {
         ...redirect,
         permanent: true,
       })),
+    ];
+    if (SHOW_CIGARETTES) return redirects;
+    const [hostRedirect, ...rest] = redirects;
+    return [
+      hostRedirect,
+      ...cigaretteHideRedirects(),
+      ...rest.filter((redirect) => !suppressPermanentCigaretteRedirect(redirect.source)),
     ];
   },
 };

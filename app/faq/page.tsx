@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { resolveDocumentTitle } from "../lib/gbp-location";
+import { SHOW_CIGARETTES, stripCigarettePhrases } from "../lib/showCigarettes";
 import styles from "./faq.module.css";
 
 export const metadata: Metadata = {
@@ -61,11 +62,19 @@ const FAQ_CATEGORIES = [
 ];
 
 export default function FAQPage() {
+  const visibleCategories = FAQ_CATEGORIES.map((cat) => ({
+    ...cat,
+    faqs: cat.faqs.flatMap((faq) => {
+      if (SHOW_CIGARETTES) return [faq];
+      if (/native smokes|cigarette/i.test(faq.q)) return [];
+      return [{ ...faq, a: stripCigarettePhrases(faq.a) }];
+    }),
+  }));
   // JSON-LD for FAQ page
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: FAQ_CATEGORIES.flatMap((cat) =>
+    mainEntity: visibleCategories.flatMap((cat) =>
       cat.faqs.map((faq) => ({
         "@type": "Question",
         name: faq.q,
@@ -101,7 +110,7 @@ export default function FAQPage() {
             Everything you need to know about Queen Lansdowne Cannabis — Toronto&apos;s premium dispensary at 1472 Queen St W in Toronto.
           </p>
 
-          {FAQ_CATEGORIES.map((cat) => (
+          {visibleCategories.map((cat) => (
             <div key={cat.title} className={styles.category}>
               <h2 className={styles.categoryTitle}>{cat.title}</h2>
               {cat.faqs.map((faq) => (

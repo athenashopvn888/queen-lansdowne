@@ -12,6 +12,7 @@ import {
   gbpLocation,
 } from "../lib/gbp-location";
 import styles from "../visit/visit.module.css";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 import VapeActionPanel from "../components/VapeActionPanel";
 
 const PAGE_URL = `${STORE_ORIGIN}${VAPE_LP_PATH}`;
@@ -114,8 +115,7 @@ export default function NicotineVapeQueenWestPage() {
             </p>
             <p>
               Delivery ordering from this store is a separate path, daily from 10:00 a.m. to
-              10:00 p.m. Native cigarettes are a separate retail category on this same Queen West
-              block.
+              10:00 p.m.{SHOW_CIGARETTES ? " Native cigarettes are a separate retail category on this same Queen West block." : ""}
             </p>
           </section>
 

@@ -11,6 +11,7 @@ import {
   gbpLocation,
 } from "../lib/gbp-location";
 import styles from "./visit.module.css";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 
 export const metadata: Metadata = {
   title: { absolute: "Visit Queen Lansdowne Cannabis on Queen West" },
@@ -151,16 +152,22 @@ export default function VisitPage() {
           </section>
 
           <section>
-            <h2 className={styles.sectionTitle}>Weed dispensary, delivery, cigarettes, and nicotine vapes from this block</h2>
+            <h2 className={styles.sectionTitle}>{SHOW_CIGARETTES ? "Weed dispensary, delivery, cigarettes, and nicotine vapes from this block" : "Weed dispensary, delivery, and nicotine vapes from this block"}</h2>
             <p>
               The neighbourhood owner for a weed dispensary on Queen West, the Parkdale edge, or
               Lansdowne is the{" "}
               <Link href="/weed-dispensary-queen-west">weed dispensary Queen West</Link> page.
               Other category owners live beside this visit guide:{" "}
-              <Link href="/cannabis-delivery-queen-west">cannabis delivery Queen West</Link>,{" "}
-              <Link href="/native-cigarettes-queen-west">Native cigarettes Queen West</Link>, and{" "}
+              <Link href="/cannabis-delivery-queen-west">cannabis delivery Queen West</Link>
+              {SHOW_CIGARETTES ? (
+                <>
+                  ,{" "}
+                  <Link href="/native-cigarettes-queen-west">Native cigarettes Queen West</Link>
+                </>
+              ) : null}
+              , and{" "}
               <Link href="/nicotine-vape-queen-west">nicotine vape Queen West</Link>. Current
-              cigarette and nicotine vape listings stay on their category pages. The 24-hour Queen
+              {SHOW_CIGARETTES ? " cigarette and nicotine vape listings stay on their category pages." : " nicotine vape listings stay on their category page."} The 24-hour Queen
               West page still owns open-now and overnight walk-in questions.
             </p>
           </section>

@@ -1,4 +1,5 @@
 import { allFlowers, allItems, type FlowerProduct, type ItemProduct } from "./products";
+import { filterPublicItems } from "./showCigarettes";
 import { getTvData } from "./tvStock";
 
 /**
@@ -13,7 +14,7 @@ export async function getLiveMenu(): Promise<{ flowers: FlowerProduct[]; items: 
   ]);
   return {
     flowers: Array.isArray(f?.body) ? (f.body as unknown as FlowerProduct[]) : allFlowers,
-    items: Array.isArray(i?.body) ? (i.body as unknown as ItemProduct[]) : allItems,
+    items: filterPublicItems(Array.isArray(i?.body) ? (i.body as unknown as ItemProduct[]) : allItems),
   };
 }
 

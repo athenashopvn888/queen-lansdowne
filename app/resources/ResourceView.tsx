@@ -15,6 +15,7 @@ import {
   type ResourceLink,
   type ResourcePage,
 } from "./resourceData";
+import { SHOW_CIGARETTES, isCigaretteHref, stripCigarettePhrases } from "../lib/showCigarettes";
 
 function displayDate(value: string) {
   return new Date(`${value}T12:00:00Z`).toLocaleDateString("en-CA", {
@@ -54,26 +55,30 @@ function renderInline(text: string) {
       nodes.push(<strong key={`strong-${match.index}`}>{match[2]}</strong>);
     } else if (match[4]) {
       const href = cleanInternalHref(match[4]);
-      nodes.push(
-        href ? (
-          <Link key={`code-link-${match.index}`} href={href} className={styles.inlineLink}>
-            {routeLabel(href)}
-          </Link>
-        ) : (
-          <code key={`code-${match.index}`}>{match[4]}</code>
-        )
-      );
+      if (!(href && isCigaretteHref(href))) {
+        nodes.push(
+          href ? (
+            <Link key={`code-link-${match.index}`} href={href} className={styles.inlineLink}>
+              {routeLabel(href)}
+            </Link>
+          ) : (
+            <code key={`code-${match.index}`}>{match[4]}</code>
+          )
+        );
+      }
     } else if (match[5] && match[6]) {
       const href = cleanInternalHref(match[6]);
-      nodes.push(
-        href ? (
-          <Link key={`md-link-${match.index}`} href={href} className={styles.inlineLink}>
-            {match[5]}
-          </Link>
-        ) : (
-          <span key={`bad-link-${match.index}`}>{match[5]}</span>
-        )
-      );
+      if (!(href && isCigaretteHref(href))) {
+        nodes.push(
+          href ? (
+            <Link key={`md-link-${match.index}`} href={href} className={styles.inlineLink}>
+              {match[5]}
+            </Link>
+          ) : (
+            <span key={`bad-link-${match.index}`}>{match[5]}</span>
+          )
+        );
+      }
     }
     lastIndex = pattern.lastIndex;
   }
@@ -251,7 +256,31 @@ function SecondTake({ page }: { page: ResourcePage }) {
   );
 }
 
-export default function ResourceView({ page }: { page: ResourcePage }) {
+function gateResourcePage(page: ResourcePage): ResourcePage {
+  if (SHOW_CIGARETTES) return page;
+  const text = stripCigarettePhrases;
+  return {
+    ...page,
+    h1: text(page.h1),
+    seoTitle: text(page.seoTitle),
+    metaDescription: text(page.metaDescription),
+    excerpt: text(page.excerpt),
+    body: text(page.body),
+    cards: page.cards
+      .filter((card) => !isCigaretteHref(card.href))
+      .map((card) => ({ ...card, title: text(card.title), description: text(card.description) })),
+    commercialLinks: page.commercialLinks
+      .filter((link) => !isCigaretteHref(link.href))
+      .map((link) => ({ ...link, title: text(link.title), description: text(link.description) })),
+    childRoutes: page.childRoutes.filter((route) => !isCigaretteHref(route)),
+    faqs: page.faqs
+      ?.filter((faq) => !/cigarette|native smoke|tobacco/i.test(`${faq.question} ${faq.answer}`))
+      .map((faq) => ({ ...faq, question: text(faq.question), answer: text(faq.answer) })),
+  };
+}
+
+export default function ResourceView({ page: sourcePage }: { page: ResourcePage }) {
+  const page = gateResourcePage(sourcePage);
   const childPages = getResourceChildren(page);
   const guideCards = page.cards.filter((card) => card.href === "/guides");
   const displayCards =

@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import ResourceView from "./ResourceView";
 import { getResourcePageByRoute, resourceCanonical } from "./resourceData";
+import { stripCigarettePhrases } from "../lib/showCigarettes";
 
 const page = getResourcePageByRoute("/resources");
 
 export function generateMetadata(): Metadata {
   if (!page) return {};
   return {
-    title: { absolute: page.seoTitle },
-    description: page.metaDescription,
+    title: { absolute: stripCigarettePhrases(page.seoTitle) },
+    description: stripCigarettePhrases(page.metaDescription),
     alternates: { canonical: resourceCanonical(page) },
     openGraph: {
-      title: page.seoTitle,
-      description: page.metaDescription,
+      title: stripCigarettePhrases(page.seoTitle),
+      description: stripCigarettePhrases(page.metaDescription),
       url: resourceCanonical(page),
       type: "website",
     },
