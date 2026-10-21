@@ -3,12 +3,15 @@ import Link from "next/link";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { getGuidesByLane } from "../lib/guideRegistry";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 import styles from "./guides-index.module.css";
 
 const BASE = "https://www.queenlansdownecannabis.ca";
 const CANONICAL = `${BASE}/guides`;
 const TITLE = "Guides | Queen Lansdowne Cannabis";
-const DESCRIPTION = "Browse Queen Lansdowne Cannabis name guides for strains, Native Cigarettes, Nicotine Vape, and THC Vape. Adults 19+ only; check today's menu for current listings.";
+const DESCRIPTION = SHOW_CIGARETTES
+  ? "Browse Queen Lansdowne Cannabis name guides for strains, Native Cigarettes, Nicotine Vape, and THC Vape. Adults 19+ only; check today's menu for current listings."
+  : "Browse Queen Lansdowne Cannabis name guides for strains, Nicotine Vape, and THC Vape. Adults 19+ only; check today's menu for current listings.";
 
 export const metadata: Metadata = { title: { absolute: TITLE }, description: DESCRIPTION, alternates: { canonical: CANONICAL }, robots: { index: true, follow: true } };
 

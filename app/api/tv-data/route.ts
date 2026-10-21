@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { allFlowers, allItems } from "../../lib/products";
+import { filterPublicItems } from "../../lib/showCigarettes";
 import { getTvData } from "../../lib/tvStock";
 
 export const runtime = "nodejs";
@@ -15,6 +16,7 @@ export async function GET(request: Request) {
     staticFlowers: allFlowers,
     staticItems: allItems,
   });
+  const payload = type === "items" && Array.isArray(body) ? filterPublicItems(body) : body;
 
-  return NextResponse.json(body, { headers });
+  return NextResponse.json(payload, { headers });
 }

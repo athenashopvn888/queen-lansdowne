@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { HOURS_LP_PATH, storeClaimsOpen24Hours } from "../lib/gbp-location";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 import styles from "./Navbar.module.css";
 import FlowerBogoStrip from "./FlowerBogoStrip";
 
@@ -34,8 +35,9 @@ const ALL_LINKS = [
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const navLinks = ALL_LINKS.filter((link) => link.href !== HOURS_LP_PATH || storeClaimsOpen24Hours());
-  const storeMenuLinks = ALL_LINKS.filter((link) => link.href.startsWith("/items/") || ["/exotic-weed", "/premium-weed", "/aaa-weed", "/aa-weed", "/budget-weed"].includes(link.href));
+  const visibleLinks = ALL_LINKS.filter((link) => SHOW_CIGARETTES || link.href !== "/items/cigarettes");
+  const navLinks = visibleLinks.filter((link) => link.href !== HOURS_LP_PATH || storeClaimsOpen24Hours());
+  const storeMenuLinks = visibleLinks.filter((link) => link.href.startsWith("/items/") || ["/exotic-weed", "/premium-weed", "/aaa-weed", "/aa-weed", "/budget-weed"].includes(link.href));
   const isStoreMenuActive = storeMenuLinks.some((link) => pathname === link.href);
   const isDeliveryActive = pathname === "/weed-delivery-toronto" || pathname === "/cannabis-delivery-queen-west";
   const scrollBarRef = useRef<HTMLDivElement>(null);

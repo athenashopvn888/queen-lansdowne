@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 import styles from "./GBPLandingPage.module.css";
 import { gbpLocation } from "../lib/gbp-location";
 import { StoreMeshNav } from "./StoreMeshNav";
@@ -39,7 +40,7 @@ export function GBPLandingPage() {
           <Link href="/visit" className={`${styles.btn} ${styles.btnSecondary}`}>Queen West visit guide</Link>
           <Link href="/24-hour-queen-west-dispensary" className={`${styles.btn} ${styles.btnSecondary}`}>Open now · 24-hour Queen West</Link>
           <Link href="/cannabis-delivery-queen-west" className={`${styles.btn} ${styles.btnSecondary}`}>Cannabis delivery Queen West</Link>
-          <Link href="/native-cigarettes-queen-west" className={`${styles.btn} ${styles.btnSecondary}`}>Native cigarettes Queen West</Link>
+          {SHOW_CIGARETTES ? <Link href="/native-cigarettes-queen-west" className={`${styles.btn} ${styles.btnSecondary}`}>Native cigarettes Queen West</Link> : null}
           <Link href="/nicotine-vape-queen-west" className={`${styles.btn} ${styles.btnSecondary}`}>Nicotine vape Queen West</Link>
         </div>
       </section>

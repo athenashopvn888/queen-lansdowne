@@ -8,6 +8,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { SEO_PAGES, getSeoPageBySlug } from "../../lib/seoPages";
 import { resolveDocumentTitle } from "../../lib/gbp-location";
+import { stripCigarettePhrases } from "../../lib/showCigarettes";
 import { TIER_CONFIG } from "../../lib/products";
 import styles from "./seo.module.css";
 
@@ -25,10 +26,12 @@ export async function generateMetadata({
   const { seoPage: slug } = await params;
   const page = getSeoPageBySlug(slug);
   if (!page) return {};
+  const title = stripCigarettePhrases(page.title);
+  const description = stripCigarettePhrases(page.metaDescription);
 
   return {
-    title: resolveDocumentTitle(page.title, { absolute: page.absoluteTitle }),
-    description: page.metaDescription,
+    title: resolveDocumentTitle(title, { absolute: page.absoluteTitle }),
+    description,
     alternates: {
       canonical: `https://www.queenlansdownecannabis.ca/info/${slug}`,
     },
@@ -42,8 +45,27 @@ export default async function SeoLandingPage({
   params: Promise<{ seoPage: string }>;
 }) {
   const { seoPage: slug } = await params;
-  const page = getSeoPageBySlug(slug);
-  if (!page) notFound();
+  const found = getSeoPageBySlug(slug);
+  if (!found) notFound();
+  const page = {
+    ...found,
+    title: stripCigarettePhrases(found.title),
+    metaDescription: stripCigarettePhrases(found.metaDescription),
+    h1: stripCigarettePhrases(found.h1),
+    heroTagline: stripCigarettePhrases(found.heroTagline),
+    sections: found.sections.map((section) => ({
+      heading: stripCigarettePhrases(section.heading),
+      body: stripCigarettePhrases(section.body),
+    })),
+    faqs: found.faqs.map((faq) => ({ q: stripCigarettePhrases(faq.q), a: stripCigarettePhrases(faq.a) })).filter((faq) => faq.q && faq.a),
+    heroPreview: found.heroPreview
+      ? {
+          ...found.heroPreview,
+          intro: stripCigarettePhrases(found.heroPreview.intro),
+          disclosure: stripCigarettePhrases(found.heroPreview.disclosure),
+        }
+      : undefined,
+  };
 
   const tiers = Object.values(TIER_CONFIG);
   const heroPreview = page.heroPreview;

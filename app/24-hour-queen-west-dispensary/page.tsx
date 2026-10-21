@@ -14,6 +14,7 @@ import {
   storeClaimsOpen24Hours,
 } from "../lib/gbp-location";
 import styles from "../visit/visit.module.css";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 
 const PAGE_URL = `${STORE_ORIGIN}${HOURS_LP_PATH}`;
 
@@ -47,7 +48,7 @@ export default function TwentyFourHourQueenWestPage() {
             Searching for a 24-hour dispensary near me on Queen West, the Parkdale edge, or the
             Lansdowne corridor? Queen Lansdowne Cannabis at 1472 Queen St W is open now — the door
             stays open around the clock, every day. This page is the first-class overnight /
-            open-now owner for this storefront, not a side note beside delivery or tobacco pages.
+            open-now owner for this storefront, not a side note beside delivery{SHOW_CIGARETTES ? " or tobacco" : ""} pages.
             The homepage remains the name, address, phone, hours, and map hub. Use the visit guide
             for streetcar stop, curb parking, and the south-side entrance.
           </p>
@@ -140,8 +141,7 @@ export default function TwentyFourHourQueenWestPage() {
               <Link href="/cannabis-delivery-queen-west">Queen West cannabis delivery</Link> page
               for ordering context, then the delivery menu to start LIVE ORDER. The{" "}
               <Link href="/weed-dispensary-queen-west">Queen West weed dispensary</Link> page
-              owns storefront / weed-store questions for this same corridor. Native cigarettes
-              and nicotine vapes are sold in store here as well.
+              owns storefront / weed-store questions for this same corridor. {SHOW_CIGARETTES ? "Native cigarettes and nicotine vapes are sold in store here as well." : "Nicotine vapes are sold in store here as well."}
             </p>
           </section>
 

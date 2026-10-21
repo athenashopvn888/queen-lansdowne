@@ -37,6 +37,7 @@ export interface ItemProduct {
 import flowersJson from "./flowers.json";
 import itemsJson from "./items.json";
 import type { BoardDeal } from "./flowerDeals";
+import { filterPublicItems } from "./showCigarettes";
 import { getTvData } from "./tvStock";
 
 export const allFlowers: FlowerProduct[] = flowersJson as FlowerProduct[];
@@ -67,13 +68,13 @@ export async function fetchLiveProducts(): Promise<{
     ]);
     return {
       flowers: flowerResult.body as FlowerProduct[],
-      items: itemResult.body as ItemProduct[],
+      items: filterPublicItems(itemResult.body as ItemProduct[]),
       isLive: flowerResult.headers["x-tv-data-source"] === "live",
       stockDate: flowerResult.headers["x-tv-data-as-of"] || null,
     };
   } catch (err) {
     console.warn("[products] Live fetch failed, using static data:", err);
-    return { flowers: allFlowers, items: allItems, isLive: false, stockDate: null };
+    return { flowers: allFlowers, items: filterPublicItems(allItems), isLive: false, stockDate: null };
   }
 }
 

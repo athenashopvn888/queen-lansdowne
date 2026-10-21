@@ -11,6 +11,7 @@ import { StoreMeshNav } from "../../components/StoreMeshNav";
 import SafeImage from "../../components/SafeImage";
 import { getItemPriceDisplay } from "../../lib/itemPricing";
 import { resolveDocumentTitle } from "../../lib/gbp-location";
+import { SHOW_CIGARETTES } from "../../lib/showCigarettes";
 import { getCategoryGuideGroups } from "../../lib/guideRegistry";
 import VapeActionPanel from "../../components/VapeActionPanel";
 import {
@@ -40,6 +41,16 @@ export async function generateMetadata({
   if (!catInfo) return {};
   const { items: liveItems } = await fetchLiveProducts();
   const items = liveItems.filter((item) => item.category.toUpperCase() === catInfo.key.toUpperCase());
+  if (catSlug === "cigarettes" && !SHOW_CIGARETTES) {
+    return {
+      title: resolveDocumentTitle("Queen Lansdowne Cannabis"),
+      description: "Queen Lansdowne Cannabis at 1472 Queen St W. Adults 19+.",
+      robots: { index: false, follow: true },
+      alternates: {
+        canonical: `https://www.queenlansdownecannabis.ca/items/${catSlug}`,
+      },
+    };
+  }
 
   return {
     title: ["vapes", "vape-disposables"].includes(catSlug)
@@ -73,7 +84,8 @@ export default async function ItemsCategoryPage({
     items = [...items, ...uniqueAccessories];
   }
   const { config } = catInfo;
-  const guideGroups = getCategoryGuideGroups(`/items/${catSlug}`);
+  const hideCigaretteChrome = catSlug === "cigarettes" && !SHOW_CIGARETTES;
+  const guideGroups = hideCigaretteChrome ? [] : getCategoryGuideGroups(`/items/${catSlug}`);
 
   // Check if banner file exists in the public folder
   const bannerExists = config.banner
@@ -83,11 +95,11 @@ export default async function ItemsCategoryPage({
   return (
     <main className={styles.main}>
       <Navbar />
-      {catSlug === "cigarettes" && <CigaretteSeasonalNotice sticky />}
+      {catSlug === "cigarettes" && SHOW_CIGARETTES && <CigaretteSeasonalNotice sticky />}
 
       {/* Hero Banner */}
       <section style={{ width: "100%", overflow: "hidden", marginTop: "92px", marginBottom: "24px" }}>
-        {config.banner && bannerExists ? (
+        {hideCigaretteChrome ? null : config.banner && bannerExists ? (
           <>
             <img
               src={config.banner}
@@ -113,7 +125,7 @@ export default async function ItemsCategoryPage({
       </section>
 
       {(catSlug === "vapes" || catSlug === "vape-disposables") && <CategoryCoreBanners kind="vapes" />}
-      {catSlug === "cigarettes" && <CategoryCoreBanners kind="cigarettes" />}
+      {catSlug === "cigarettes" && SHOW_CIGARETTES && <CategoryCoreBanners kind="cigarettes" />}
 
       {(catSlug === "vapes" || catSlug === "vape-disposables") && <VapeActionPanel compact />}
 
@@ -148,7 +160,7 @@ export default async function ItemsCategoryPage({
       )}
 
       {/* SEO Content */}
-      <section className={styles.seoSection}>
+      {!hideCigaretteChrome && <section className={styles.seoSection}>
         <div className={styles.container}>
           <h2 className={styles.seoTitle}>{config.seoTitle}</h2>
           <p className={styles.seoBody}>{config.seoDescription}</p>
@@ -172,7 +184,7 @@ export default async function ItemsCategoryPage({
             <p className={styles.visitText}>
               1472 Queen St W, Toronto, ON M6K 1M4 · Open 24 Hours Daily
             </p>
-            {catSlug === "cigarettes" && (
+            {catSlug === "cigarettes" && SHOW_CIGARETTES && (
               <p className={styles.visitText}>
                 Neighbourhood guide: <Link href="/native-cigarettes-queen-west">Native cigarettes Queen West</Link>
               </p>
@@ -185,7 +197,7 @@ export default async function ItemsCategoryPage({
           </div>
           {(catSlug === "cigarettes" || catSlug === "vapes") && <StoreMeshNav currentPath={`/items/${catSlug}`} />}
         </div>
-      </section>
+      </section>}
 
       <Footer />
     </main>

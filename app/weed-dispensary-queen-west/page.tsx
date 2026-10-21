@@ -12,6 +12,7 @@ import {
   gbpLocation,
 } from "../lib/gbp-location";
 import styles from "../visit/visit.module.css";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 
 const PAGE_URL = `${STORE_ORIGIN}${WEED_LP_PATH}`;
 
@@ -31,9 +32,12 @@ export const metadata: Metadata = {
 };
 
 export default function WeedDispensaryQueenWestPage() {
+  const faqs = SHOW_CIGARETTES
+    ? WEED_LP_FAQS
+    : WEED_LP_FAQS.map((faq) => ({ ...faq, a: faq.a.replace(", Native cigarettes,", "") }));
   return (
     <>
-      <JsonLd data={faqPageJsonLd(WEED_LP_FAQS, PAGE_URL)} />
+      <JsonLd data={faqPageJsonLd(faqs, PAGE_URL)} />
       <main className={styles.main}>
         <Navbar />
         <article className={styles.content}>
@@ -140,8 +144,15 @@ export default function WeedDispensaryQueenWestPage() {
               Delivery from this store is a separate path. Use the{" "}
               <Link href="/cannabis-delivery-queen-west">cannabis delivery Queen West</Link>{" "}
               page for ordering context, then the delivery menu to start LIVE ORDER.{" "}
-              <Link href="/native-cigarettes-queen-west">Native cigarettes</Link> and{" "}
-              <Link href="/nicotine-vape-queen-west">nicotine vapes</Link> are in-store
+              {SHOW_CIGARETTES ? (
+                <>
+                  <Link href="/native-cigarettes-queen-west">Native cigarettes</Link> and{" "}
+                  <Link href="/nicotine-vape-queen-west">nicotine vapes</Link>
+                </>
+              ) : (
+                <Link href="/nicotine-vape-queen-west">Nicotine vapes</Link>
+              )}{" "}
+              are in-store
               categories with their own Queen West pages. If you landed on the city weed
               dispensary URL, that page points back here.
             </p>
@@ -153,7 +164,7 @@ export default function WeedDispensaryQueenWestPage() {
 
           <section>
             <h2 className={styles.sectionTitle}>Queen West weed dispensary questions</h2>
-            {WEED_LP_FAQS.map((faq) => (
+            {faqs.map((faq) => (
               <details key={faq.q} className={styles.faqItem}>
                 <summary className={styles.faqQuestion}>{faq.q}</summary>
                 <p className={styles.faqAnswer}>{faq.a}</p>
