@@ -388,6 +388,29 @@ export default function TV2Page() {
                 );
               }
 
+              if (card.id === "CIGARETTES" && !SHOW_CIGARETTES && filtered.length === 0) {
+                return (
+                  <div
+                    key={card.id}
+                    className={styles.card}
+                    data-promo-card={card.id}
+                    style={{"--accent":card.accent} as React.CSSProperties}
+                  >
+                    <div className={styles.cardHeader}>💨 VAPES PROMO</div>
+                    <div className={styles.promoMain}>
+                      <div className={styles.promoViewport}>
+                        <img
+                          className={`${styles.promoImg} ${styles.promoActive}`}
+                          src="/banners/cannabis_banner_mashup_variation_01_600x600.webp"
+                          alt="Ultimate Cannabis Collection Promo"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
               return (
                 <ItemCard key={card.id} title={card.id === "CIGARETTES" && !SHOW_CIGARETTES ? "🍂 WRAPS & POUCHES" : card.title} accent={card.accent}
                   items={filtered} hiIdx={highlights[card.id]||0} preset={card.preset}
