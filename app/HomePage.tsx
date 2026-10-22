@@ -24,6 +24,7 @@ import Papa from "papaparse";
 import { useLiveFlowers } from "./lib/useLiveMenu";
 import { storeTierRange, tierRangeText } from "./lib/tierPriceRanges";
 import { SHOW_CIGARETTES } from "./lib/showCigarettes";
+import type { ResolvedBanner } from "./lib/fleet/types";
 
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
@@ -141,7 +142,7 @@ interface ReviewStats {
   avg: number;
 }
 
-export default function HomePage({ initialFlowers }: { initialFlowers: Parameters<typeof storeTierRange>[0] }) {
+export default function HomePage({ initialFlowers, contentBanners }: { initialFlowers: Parameters<typeof storeTierRange>[0]; contentBanners?: ResolvedBanner[] }) {
     const __liveFlowers = useLiveFlowers();
   const [featuredStrains, setFeaturedStrains] = useState<any[]>([]);
   const [reviews, setReviews] = useState<Review[]>([]);
@@ -231,7 +232,7 @@ export default function HomePage({ initialFlowers }: { initialFlowers: Parameter
     <main className={styles.main}>
       <Navbar />
       <HomeTitleBlock />
-      <FleetAnnouncementBanner />
+      {contentBanners ? <FleetAnnouncementBanner banners={contentBanners} /> : <FleetAnnouncementBanner />}
       <HomepageTopNotices />
       {/* ── NAVBAR ── */}
 

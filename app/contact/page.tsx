@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import { FULL_NAME_NAP } from "../lib/fullNameNap";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { getFleetContent } from "../lib/fleetContent";
 import { resolveDocumentTitle } from "../lib/gbp-location";
 import styles from "./contact.module.css";
 
-export const metadata: Metadata = {
+export const dynamic = "force-dynamic";
+
+const CONTACT_METADATA: Metadata = {
   title: resolveDocumentTitle("Contact Us — Queen Lansdowne Cannabis | 1472 Queen St W, Toronto"),
   description:
     "Visit Queen Lansdowne Cannabis at 1472 Queen St W, Toronto, ON M6K 1M4. We are open 24 hours daily. Walk-ins welcome.",
@@ -19,7 +22,25 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const fleet = await getFleetContent();
+  if (!fleet.active) return CONTACT_METADATA;
+  const page = fleet.pages.Contact;
+  const description = page?.metaDescription || "";
+  if (!description || description === CONTACT_METADATA.description) return CONTACT_METADATA;
+  return {
+    ...CONTACT_METADATA,
+    title: page.metaTitle ? resolveDocumentTitle(page.metaTitle) : CONTACT_METADATA.title,
+    description,
+    openGraph: { ...CONTACT_METADATA.openGraph, description },
+  };
+}
+
+export default async function ContactPage() {
+  const fleet = await getFleetContent();
+  const street = fleet.active ? fleet.nap.street : "1472 Queen St W";
+  const cityLine = fleet.active ? fleet.nap.cityLine : "Toronto, ON M6K 1M4";
+  const areaLine = fleet.active ? fleet.nap.areaLine : "Queen Lansdowne Cannabis on Queen Street West";
   return (
     <main className={styles.main}>
       <Navbar />
@@ -41,11 +62,11 @@ export default function ContactPage() {
               <div className={styles.infoIcon}>📍</div>
               <h2 className={styles.infoTitle}>Location</h2>
               <p className={styles.infoText}>
-                1472 Queen St W
+                {street}
                 <br />
-                Toronto, ON M6K 1M4
+                {cityLine}
                 <br />
-                <span className={styles.infoMuted}>Queen Lansdowne Cannabis on Queen Street West</span>
+                <span className={styles.infoMuted}>{areaLine}</span>
               </p>
             </div>
 

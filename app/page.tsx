@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import HomePage from "./HomePage";
 import { getLiveMenu } from "./lib/liveMenu";
 import { JsonLd } from "./lib/jsonLd";
+import { CODED_BANNERS } from "./lib/fleet/coded";
+import { getFleetContent } from "./lib/fleetContent";
 import { STORE_ORIGIN, faqPageJsonLd, HOME_FAQS } from "./lib/gbp-location";
 
 export const metadata: Metadata = {
@@ -25,11 +27,12 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function Page() {
-  const { flowers } = await getLiveMenu();
+  const [{ flowers }, fleet] = await Promise.all([getLiveMenu(), getFleetContent()]);
+  const contentBanners = fleet.active && fleet.banners.some((banner, index) => banner !== CODED_BANNERS[index]) ? fleet.banners : undefined;
   return (
     <>
       <JsonLd data={faqPageJsonLd(HOME_FAQS, `${STORE_ORIGIN}/`)} />
-      <HomePage initialFlowers={flowers} />
+      <HomePage initialFlowers={flowers} contentBanners={contentBanners} />
     </>
   );
 }
