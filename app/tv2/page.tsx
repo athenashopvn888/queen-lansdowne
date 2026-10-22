@@ -353,7 +353,7 @@ export default function TV2Page() {
                   </div>
                 );
               }
-              const promo = getTv2DaytimePromo(card.id, daytime, promoElapsedMs);
+              const promo = card.id === "CIGARETTES" && !SHOW_CIGARETTES ? undefined : getTv2DaytimePromo(card.id, daytime, promoElapsedMs);
 
               if (promo) {
                 return (
@@ -389,7 +389,7 @@ export default function TV2Page() {
               }
 
               return (
-                <ItemCard key={card.id} title={card.title} accent={card.accent}
+                <ItemCard key={card.id} title={card.id === "CIGARETTES" && !SHOW_CIGARETTES ? "🍂 WRAPS & POUCHES" : card.title} accent={card.accent}
                   items={filtered} hiIdx={highlights[card.id]||0} preset={card.preset}
                   offerPromo={SHOW_CIGARETTES && card.id === "CIGARETTES" ? getCigaretteOfferPromo(daytime, promoElapsedMs) : undefined} />
               );
