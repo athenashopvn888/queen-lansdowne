@@ -5,6 +5,7 @@ import {
   CIG_WORDING_FALLBACK,
   decideCigaretteSurface,
   decideWebCigaretteSurface,
+  publicWebsiteCigaretteFlag,
   readCigaretteTvHeader,
   reconcileSurfaceItems,
   resolveSurfaceFlag,
@@ -66,7 +67,44 @@ test("env hard-off hides both surfaces and a missing feed does not turn the webs
   assert.equal(decideCigaretteSurface({ cig: cig({ webOn: true, tvOn: true }), items, surface: "tv", envRaw: "off" }).reason, "env");
   assert.equal(decideWebCigaretteSurface({ cig: cig({ webOn: true, tvOn: true }), items, envRaw: "false" }).show, false);
   assert.equal(decideWebCigaretteSurface({ cig: null, items, errored: true }).show, false);
-  assert.equal(decideCigaretteSurface({ cig: null, items, surface: "tv", errored: true }).show, true);
+  assert.equal(decideCigaretteSurface({ cig: null, items, surface: "tv", errored: true }).show, false);
+});
+
+test("website stays off when the static gate is off, even if the feed web switch is on", () => {
+  const webOn = decideCigaretteSurface({ cig: cig({ webOn: true, tvOn: true }), items, surface: "web" });
+  assert.equal(webOn.show, true);
+  assert.equal(publicWebsiteCigaretteFlag(webOn, false), false);
+  assert.equal(publicWebsiteCigaretteFlag(webOn, SHOW_CIGARETTES), false);
+  assert.equal(publicWebsiteCigaretteFlag(webOn, true), true);
+  const errored = decideCigaretteSurface({ cig: cig({ webOn: true, tvOn: true }), items, surface: "web", errored: true });
+  const missing = decideCigaretteSurface({ cig: null, items, surface: "web" });
+  assert.equal(errored.show, false);
+  assert.equal(errored.reason, "error");
+  assert.equal(missing.show, false);
+  assert.equal(missing.reason, "missing");
+  assert.equal(publicWebsiteCigaretteFlag(errored, true), false);
+  assert.equal(publicWebsiteCigaretteFlag(missing, true), false);
+  assert.equal(decideWebCigaretteSurface({ cig: cig({ webOn: true, tvOn: false }), items, errored: true }).show, false);
+});
+
+test("TV hides on a feed error or a missing feed and follows tvOn on a successful block", () => {
+  assert.equal(decideCigaretteSurface({ cig: cig({ tvOn: true, webOn: false }), items, surface: "tv" }).show, true);
+  assert.equal(decideCigaretteSurface({ cig: cig({ tvOn: false, webOn: true }), items, surface: "tv" }).show, false);
+  const errored = decideCigaretteSurface({ cig: cig({ tvOn: true }), items, surface: "tv", errored: true });
+  const missing = decideCigaretteSurface({ cig: null, items, surface: "tv" });
+  assert.equal(errored.show, false);
+  assert.equal(errored.reason, "error");
+  assert.equal(missing.show, false);
+  assert.equal(missing.reason, "missing");
+  const hidden = reconcileSurfaceItems(items, items, errored.show);
+  assert.equal(hidden.some((item) => item.slug === carton.slug), false);
+  assert.equal(hidden.some((item) => item.slug === grabba.slug), false);
+  for (const kept of [backwoods, pouch, zyn, wrap, paper, cigarillo]) {
+    assert.equal(hidden.some((item) => item.slug === kept.slug), true, kept.slug);
+  }
+  const lastGood = decideCigaretteSurface({ cig: cig({ tvOn: true }), items, surface: "tv", errored: false });
+  assert.equal(lastGood.show, true);
+  assert.equal(lastGood.reason, "on");
 });
 
 test("TV2 card shows cigarettes when the flag is on and wraps or the vapes poster when it is off", () => {
@@ -117,6 +155,21 @@ test("tv boards read the live header and do not keep the static cigarette switch
   assert.doesNotMatch(tv, /SHOW_CIGARETTES/);
   assert.match(route, /reconcileSurfaceItems/);
   assert.match(route, /snapshotHeaders/);
+  assert.match(route, /toPublicCigaretteState/);
   assert.doesNotMatch(route, /filterPublicItems/);
   assert.match(web, /SHOW_CIGARETTES/);
+
+  const layout = readFileSync(new URL("../app/layout.tsx", import.meta.url), "utf8");
+  const status = readFileSync(new URL("../app/api/content-status/route.ts", import.meta.url), "utf8");
+  const feed = readFileSync(new URL("../app/lib/cigaretteFeed.ts", import.meta.url), "utf8");
+  const banner = readFileSync(new URL("../app/components/fleet/FleetAnnouncementBanner.tsx", import.meta.url), "utf8");
+  assert.match(layout, /web: SHOW_CIGARETTES \? cigarettes\.web : false/);
+  assert.match(status, /web: SHOW_CIGARETTES \? cigarettes\.web : false/);
+  assert.match(feed, /publicWebsiteCigaretteFlag\(snap\.web, SHOW_CIGARETTES\)/);
+  assert.match(feed, /!live && !cig/);
+  assert.match(banner, /useCigaretteState\(\)\.web/);
+  assert.doesNotMatch(banner, /SHOW_CIGARETTES/);
+  assert.match(tv, /setInterval\(loadData, 5\*60\*1000\)/);
+  assert.match(tv, /iRes\.ok \? readCigaretteTvHeader\(iRes\.headers\)\.show : false/);
+  assert.match(tv2, /show: false/);
 });

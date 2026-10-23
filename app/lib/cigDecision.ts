@@ -89,10 +89,11 @@ export function decideCigaretteSurface(input: {
       : undefined,
   );
   if (cigaretteEnvHardOff(input.envRaw)) return { show: false, reason: "env", wording };
-  // A missing feed or a feed error shows cigarettes. Only an explicit false flag hides them.
-  if (input.errored) return { show: true, reason: "error", wording };
+  // A feed error or a missing cig block hides the surface. Callers pass a last-good
+  // block with errored false, so a snapshot inside its cache window still follows tvOn/webOn.
+  if (input.errored) return { show: false, reason: "error", wording };
   if (!input.cig || typeof input.cig !== "object" || Array.isArray(input.cig)) {
-    return { show: true, reason: "missing", wording };
+    return { show: false, reason: "missing", wording };
   }
   if (!resolveSurfaceFlag(input.cig, input.surface)) return { show: false, reason: "off", wording };
   const items = Array.isArray(input.items) ? input.items : [];
@@ -101,9 +102,20 @@ export function decideCigaretteSurface(input: {
 }
 
 /**
+ * Website flag. The coded switch stays in front of the feed.
+ * A feed error or a missing block stays off, even when that switch is on.
+ * TV does not use this.
+ */
+export function publicWebsiteCigaretteFlag(decision: CigaretteSurfaceDecision, codedOn: boolean): boolean {
+  if (!codedOn) return false;
+  if (decision.reason === "error" || decision.reason === "missing") return false;
+  return decision.show;
+}
+
+/**
  * Website flag is webOn only (with the same on-fallback as resolveSurfaceFlag).
- * A missing feed does not turn the website on. Env hard-off still wins.
- * TV keeps decideCigaretteSurface, which fails open.
+ * A feed error or a missing block stays off. Env hard-off still wins.
+ * Callers apply the coded gate with publicWebsiteCigaretteFlag.
  */
 export function decideWebCigaretteSurface(input: {
   cig: unknown;
@@ -112,10 +124,11 @@ export function decideWebCigaretteSurface(input: {
   errored?: boolean;
 }): CigaretteSurfaceDecision & { wording: CigaretteWording } {
   const decided = decideCigaretteSurface({ ...input, surface: "web" });
-  if (decided.reason === "env") return decided;
+  if (decided.reason === "env" || decided.reason === "error" || decided.reason === "missing") {
+    return { ...decided, show: false };
+  }
   if (!resolveSurfaceFlag(input.cig, "web")) {
-    const present = Boolean(input.cig && typeof input.cig === "object" && !Array.isArray(input.cig));
-    return { show: false, reason: present ? "off" : "missing", wording: decided.wording };
+    return { show: false, reason: "off", wording: decided.wording };
   }
   const items = Array.isArray(input.items) ? input.items : [];
   if (!items.some((item) => isRealCigaretteItem(item))) {
