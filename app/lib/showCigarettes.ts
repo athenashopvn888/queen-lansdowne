@@ -17,6 +17,18 @@ function readShowCigarettesEnv(): boolean | undefined {
 
 export const SHOW_CIGARETTES = readShowCigarettesEnv() ?? SHOW_CIGARETTES_CONFIG;
 
+function hardOffRaw(raw: string | undefined): string | undefined {
+  if (raw != null) return raw;
+  // An explicit server or public false is a hard override. An empty value is not.
+  return process.env.SHOW_CIGARETTES ?? process.env.NEXT_PUBLIC_SHOW_CIGARETTES;
+}
+
+/** Explicit 0 / false / no / off. The feed cannot turn that surface back on. */
+export function cigaretteEnvHardOff(raw: string | undefined = hardOffRaw(undefined)): boolean {
+  if (raw == null) return false;
+  return /^(0|false|no|off)$/i.test(raw.trim());
+}
+
 /** Neighbourhood vape page. Hidden cigarette URLs 302 here. */
 export const CIGARETTE_REDIRECT_TARGET = "/vape-shop-queen-west";
 
