@@ -3,7 +3,7 @@ import CigaretteSeasonalNotice from "../CigaretteSeasonalNotice";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { SHOW_CIGARETTES } from "../../lib/showCigarettes";
+import { useCigaretteState } from "../CigaretteStateProvider";
 import FlowerBogoStrip from "../FlowerBogoStrip";
 import { FLEET_COLORS } from "../../lib/fleet/config";
 import type { ResolvedBanner } from "../../lib/fleet/types";
@@ -16,14 +16,16 @@ const CIGARETTE_IMAGE = "/banners/native-cigarette-offer-20260822.webp";
 const VAPE_IMAGE = "/banners/core-vapes-nicotine-thc.webp";
 const PREMIUM_CIGARETTE_IMAGE = "/banners/core-premium-bb-marlboro-belmont.webp";
 
-  const imageObjects = [
-  { name: `${STORE_NAME} top weed tiers`, description: `Exotic, Premium and AAA+ weed tiers at ${STORE_NAME} in ${STORE_AREA}.`, contentUrl: `${STORE_ORIGIN}${TOP_WEED_IMAGE}` },
-  { name: `${STORE_NAME} nicotine and THC vapes`, description: `Nicotine vapes and THC vapes at ${STORE_NAME} in ${STORE_AREA}.`, contentUrl: `${STORE_ORIGIN}${VAPE_IMAGE}` },
-  ...(SHOW_CIGARETTES ? [
-    { name: `${STORE_NAME} cigarette mix and match`, description: `Two packs for $5 mix and match and $25 carton cigarette offer at ${STORE_NAME} in ${STORE_AREA}.`, contentUrl: `${STORE_ORIGIN}${CIGARETTE_IMAGE}` },
-    { name: `${STORE_NAME} premium cigarette offer`, description: `BB Full Flavor and Lights two packs for $5 plus Marlboro and Belmont for $10 per pack at ${STORE_NAME} in ${STORE_AREA}.`, contentUrl: `${STORE_ORIGIN}${PREMIUM_CIGARETTE_IMAGE}` },
-  ] : []),
-].map((image) => ({ "@type": "ImageObject", ...image, caption: image.description }));
+function bannerImageObjects(showCigarettes: boolean) {
+  return [
+    { name: `${STORE_NAME} top weed tiers`, description: `Exotic, Premium and AAA+ weed tiers at ${STORE_NAME} in ${STORE_AREA}.`, contentUrl: `${STORE_ORIGIN}${TOP_WEED_IMAGE}` },
+    { name: `${STORE_NAME} nicotine and THC vapes`, description: `Nicotine vapes and THC vapes at ${STORE_NAME} in ${STORE_AREA}.`, contentUrl: `${STORE_ORIGIN}${VAPE_IMAGE}` },
+    ...(showCigarettes ? [
+      { name: `${STORE_NAME} cigarette mix and match`, description: `Two packs for $5 mix and match and $25 carton cigarette offer at ${STORE_NAME} in ${STORE_AREA}.`, contentUrl: `${STORE_ORIGIN}${CIGARETTE_IMAGE}` },
+      { name: `${STORE_NAME} premium cigarette offer`, description: `BB Full Flavor and Lights two packs for $5 plus Marlboro and Belmont for $10 per pack at ${STORE_NAME} in ${STORE_AREA}.`, contentUrl: `${STORE_ORIGIN}${PREMIUM_CIGARETTE_IMAGE}` },
+    ] : []),
+  ].map((image) => ({ "@type": "ImageObject", ...image, caption: image.description }));
+}
 
 function isHalloweenNoticeActive(date: Date) {
   const parts = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Toronto", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(date);
@@ -61,6 +63,7 @@ function BannerFigure({ banner }: { banner: ResolvedBanner }) {
 }
 
 export default function FleetAnnouncementBanner({ banners }: { title?: string; banners?: ResolvedBanner[] } = {}) {
+  const showCigarettes = useCigaretteState().web;
   const [showHalloweenNotice, setShowHalloweenNotice] = useState(false);
   useEffect(() => {
     const updateVisibility = () => setShowHalloweenNotice(isHalloweenNoticeActive(new Date()));
@@ -69,15 +72,15 @@ export default function FleetAnnouncementBanner({ banners }: { title?: string; b
     return () => window.clearInterval(timer);
   }, []);
 
-  const sheetBanners = banners?.filter((banner) => !banner.hidden && (SHOW_CIGARETTES || (banner.id !== "cigarettes" && banner.id !== "premium-cigarettes")));
+  const sheetBanners = banners?.filter((banner) => !banner.hidden && (showCigarettes || (banner.id !== "cigarettes" && banner.id !== "premium-cigarettes")));
 
   return (
     <aside data-fleet-homepage-announcement="" aria-label="Store announcements" style={{ display: "flex", flexDirection: "column", width: "100%", maxWidth: "100%", overflowX: "hidden", position: "relative", zIndex: 50 }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": imageObjects }).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": bannerImageObjects(showCigarettes) }).replace(/</g, "\\u003c") }} />
 
       {banners ? (
         <>
-          {SHOW_CIGARETTES ? <CigaretteSeasonalNotice /> : null}
+          {showCigarettes ? <CigaretteSeasonalNotice /> : null}
           {sheetBanners?.map((banner) => <BannerFigure key={banner.id} banner={banner} />)}
         </>
       ) : (
@@ -98,9 +101,9 @@ export default function FleetAnnouncementBanner({ banners }: { title?: string; b
         <figcaption style={captionStyle}>Nicotine vapes + THC vapes · <Link href="/items/vapes" style={captionLinkStyle}>Shop vapes</Link></figcaption>
       </figure>
 
-      {SHOW_CIGARETTES ? <CigaretteSeasonalNotice /> : null}
+      {showCigarettes ? <CigaretteSeasonalNotice /> : null}
 
-      {SHOW_CIGARETTES ? (
+      {showCigarettes ? (
       <figure data-core-banner="cigarettes" data-cig-mix-banner="" style={figureStyle}>
         <Link href="/items/cigarettes" aria-label={`Shop cigarette mix and match offers at ${STORE_NAME}`} style={linkStyle}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -110,7 +113,7 @@ export default function FleetAnnouncementBanner({ banners }: { title?: string; b
       </figure>
       ) : null}
 
-      {SHOW_CIGARETTES ? (
+      {showCigarettes ? (
       <figure data-core-banner="premium-cigarettes" data-premium-cigarette-banner="" style={figureStyle}>
         <Link href="/items/cigarettes" aria-label={`Shop BB, Marlboro and Belmont cigarette offers at ${STORE_NAME}`} style={linkStyle}>
           {/* eslint-disable-next-line @next/next/no-img-element */}

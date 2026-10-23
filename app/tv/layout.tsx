@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CigaretteStateProvider from "../components/CigaretteStateProvider";
 import { getCigaretteSnapshot, toPublicCigaretteState } from "../lib/cigaretteFeed";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 
 export const dynamic = "force-dynamic";
 
@@ -12,5 +13,5 @@ export const metadata: Metadata = {
 
 export default async function TvLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const cigarettes = toPublicCigaretteState(await getCigaretteSnapshot());
-  return <CigaretteStateProvider value={cigarettes}>{children}</CigaretteStateProvider>;
+  return <CigaretteStateProvider value={{ ...cigarettes, web: SHOW_CIGARETTES ? cigarettes.web : false }}>{children}</CigaretteStateProvider>;
 }
