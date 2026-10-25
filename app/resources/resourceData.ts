@@ -1,3 +1,5 @@
+import { trichomesFrostExplainedPage } from "./trichomesFrostExplained.ts";
+
 export type ResourceAuthor = {
   name: string;
   handle: string;
@@ -3336,10 +3338,15 @@ const PINKY_RESOURCE_ADDITIONS: ResourcePage[] = [
 ];
 // END PINKY QLC01 KNOWLEDGE BASE V2 SS
 
-export const RESOURCE_ROUTE_LABELS: Record<string, string> = { ...BASE_RESOURCE_ROUTE_LABELS, ...PINKY_RESOURCE_LABELS };
+export const RESOURCE_ROUTE_LABELS: Record<string, string> = {
+  ...BASE_RESOURCE_ROUTE_LABELS,
+  ...PINKY_RESOURCE_LABELS,
+  [trichomesFrostExplainedPage.route]: trichomesFrostExplainedPage.h1,
+};
 export const RESOURCE_PAGES: ResourcePage[] = [
   ...BASE_RESOURCE_PAGES.map((page) => ({ ...page, ...(PINKY_RESOURCE_OVERRIDES[page.route] || {}) })),
   ...PINKY_RESOURCE_ADDITIONS,
+  trichomesFrostExplainedPage,
 ];
 
 const resourceHome = RESOURCE_PAGES.find((page) => page.route === "/resources");
@@ -3354,7 +3361,16 @@ if (resourceHome) {
       updated: "2026-10-02",
     },
     ...resourceHome.cards.filter((card) => card.href !== "/guides"),
+    {
+      title: trichomesFrostExplainedPage.h1,
+      href: trichomesFrostExplainedPage.route,
+      description: trichomesFrostExplainedPage.excerpt,
+      category: trichomesFrostExplainedPage.pageType,
+      author: trichomesFrostExplainedPage.author.name,
+      updated: trichomesFrostExplainedPage.dateModified,
+    },
   ];
+  resourceHome.childRoutes = [...resourceHome.childRoutes, trichomesFrostExplainedPage.route];
 }
 
 export const RESOURCE_PATHS = RESOURCE_PAGES.map((page) => page.route);

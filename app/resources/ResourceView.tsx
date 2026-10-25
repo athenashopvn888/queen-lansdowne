@@ -16,6 +16,7 @@ import {
   type ResourcePage,
 } from "./resourceData";
 import { SHOW_CIGARETTES, isCigaretteHref, stripCigarettePhrases } from "../lib/showCigarettes";
+import { TRICHOMES_FROST_EXPLAINED_ROUTE } from "./trichomesFrostExplained.ts";
 
 function displayDate(value: string) {
   return new Date(`${value}T12:00:00Z`).toLocaleDateString("en-CA", {
@@ -45,7 +46,7 @@ function currentMenuLinkCopy(link: ResourceLink) {
 
 function renderInline(text: string) {
   const nodes: ReactNode[] = [];
-  const pattern = /(\*\*([^*]+)\*\*)|(`([^`]+)`)|\[([^\]]+)\]\((\/[^)\s]+)\)/g;
+  const pattern = /(\*\*([^*]+)\*\*)|(`([^`]+)`)|\[([^\]]+)\]\((\/[^)\s]+)\)|(\*([^*\n]+)\*)/g;
   let lastIndex = 0;
   let match: RegExpExecArray | null;
 
@@ -53,6 +54,8 @@ function renderInline(text: string) {
     if (match.index > lastIndex) nodes.push(<span key={`text-${lastIndex}`}>{text.slice(lastIndex, match.index)}</span>);
     if (match[2]) {
       nodes.push(<strong key={`strong-${match.index}`}>{match[2]}</strong>);
+    } else if (match[8]) {
+      nodes.push(<em key={`em-${match.index}`}>{match[8]}</em>);
     } else if (match[4]) {
       const href = cleanInternalHref(match[4]);
       if (!(href && isCigaretteHref(href))) {
@@ -97,10 +100,50 @@ function renderLines(text: string) {
   ));
 }
 
+function tableCells(line: string) {
+  return line.replace(/^\|/, "").replace(/\|$/, "").split("|").map((cell) => cell.trim());
+}
+
+function isMarkdownTable(block: string) {
+  const lines = block.split("\n").map((line) => line.trim()).filter(Boolean);
+  return lines.length >= 2 && lines.every((line) => line.startsWith("|") && line.endsWith("|"));
+}
+
+function renderTable(block: string, index: number) {
+  const rows = block.split("\n").map((line) => line.trim()).filter(Boolean).map(tableCells);
+  const header = rows[0] ?? [];
+  const bodyRows = rows.slice(1).filter((row) => !row.every((cell) => /^:?-{3,}:?$/.test(cell)));
+  return (
+    <div key={index} className={styles.tableWrap}>
+      <table className={styles.bodyTable}>
+        <thead>
+          <tr>
+            {header.map((cell, cellIndex) => (
+              <th key={cellIndex} scope="col">
+                {renderInline(cell)}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {bodyRows.map((row, rowIndex) => (
+            <tr key={rowIndex}>
+              {row.map((cell, cellIndex) => (
+                <td key={cellIndex}>{renderInline(cell)}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 function renderBody(body: string) {
   return body.split(/\n\n+/).map((block, index) => {
     const trimmed = block.trim();
     if (!trimmed) return null;
+    if (isMarkdownTable(trimmed)) return renderTable(trimmed, index);
     if (/^#{2,3}\s/.test(trimmed)) {
       return (
         <h2 key={index} className={styles.bodyHeading}>
@@ -257,7 +300,10 @@ function SecondTake({ page }: { page: ResourcePage }) {
 }
 
 function gateResourcePage(page: ResourcePage): ResourcePage {
-  if (SHOW_CIGARETTES) return page;
+  // This article has no cigarette copy. Skipping the phrase strip keeps its
+  // paragraph breaks, headings, and table intact. Other pages stay on the
+  // existing path.
+  if (SHOW_CIGARETTES || page.route === TRICHOMES_FROST_EXPLAINED_ROUTE) return page;
   const text = stripCigarettePhrases;
   return {
     ...page,
