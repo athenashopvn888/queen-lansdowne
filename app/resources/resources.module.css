@@ -132,6 +132,37 @@
   padding-left: 4px;
 }
 
+.tableWrap {
+  margin: 0 0 24px;
+  overflow-x: auto;
+}
+
+.bodyTable {
+  width: 100%;
+  border-collapse: collapse;
+  color: #475569;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.bodyTable th,
+.bodyTable td {
+  padding: 12px 14px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  text-align: left;
+  vertical-align: top;
+}
+
+.bodyTable th {
+  color: #171728;
+  background: #f8fafc;
+  font-weight: 800;
+}
+
+.bodyTable strong {
+  color: #171728;
+}
+
 .secondTake,
 .linkPanel,
 .storeCta {

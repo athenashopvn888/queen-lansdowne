@@ -22,7 +22,7 @@ const newRoutes = [
 ];
 
 test("PINKY knowledge-base routes are unique and complete", () => {
-  assert.equal(RESOURCE_PATHS.length, 40);
+  assert.equal(RESOURCE_PATHS.length, 41);
   assert.equal(new Set(RESOURCE_PATHS).size, RESOURCE_PATHS.length);
   for (const route of newRoutes) assert.ok(RESOURCE_PATHS.includes(route), route);
 });
