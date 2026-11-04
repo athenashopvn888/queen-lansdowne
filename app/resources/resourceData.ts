@@ -1,3 +1,4 @@
+import { howToPackABowlPage } from "./howToPackABowl.ts";
 import { trichomesFrostExplainedPage } from "./trichomesFrostExplained.ts";
 
 export type ResourceAuthor = {
@@ -3342,11 +3343,13 @@ export const RESOURCE_ROUTE_LABELS: Record<string, string> = {
   ...BASE_RESOURCE_ROUTE_LABELS,
   ...PINKY_RESOURCE_LABELS,
   [trichomesFrostExplainedPage.route]: trichomesFrostExplainedPage.h1,
+  [howToPackABowlPage.route]: howToPackABowlPage.h1,
 };
 export const RESOURCE_PAGES: ResourcePage[] = [
   ...BASE_RESOURCE_PAGES.map((page) => ({ ...page, ...(PINKY_RESOURCE_OVERRIDES[page.route] || {}) })),
   ...PINKY_RESOURCE_ADDITIONS,
   trichomesFrostExplainedPage,
+  howToPackABowlPage,
 ];
 
 const resourceHome = RESOURCE_PAGES.find((page) => page.route === "/resources");

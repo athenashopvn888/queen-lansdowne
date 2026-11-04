@@ -16,6 +16,7 @@ import {
   type ResourcePage,
 } from "./resourceData";
 import { SHOW_CIGARETTES, isCigaretteHref, stripCigarettePhrases } from "../lib/showCigarettes";
+import { HOW_TO_PACK_A_BOWL_ROUTE } from "./howToPackABowl.ts";
 import { TRICHOMES_FROST_EXPLAINED_ROUTE } from "./trichomesFrostExplained.ts";
 
 function displayDate(value: string) {
@@ -300,10 +301,16 @@ function SecondTake({ page }: { page: ResourcePage }) {
 }
 
 function gateResourcePage(page: ResourcePage): ResourcePage {
-  // This article has no cigarette copy. Skipping the phrase strip keeps its
-  // paragraph breaks, headings, and table intact. Other pages stay on the
+  // These articles have no cigarette copy. Skipping the phrase strip keeps
+  // paragraph breaks, headings, and tables intact. Other pages stay on the
   // existing path.
-  if (SHOW_CIGARETTES || page.route === TRICHOMES_FROST_EXPLAINED_ROUTE) return page;
+  if (
+    SHOW_CIGARETTES ||
+    page.route === TRICHOMES_FROST_EXPLAINED_ROUTE ||
+    page.route === HOW_TO_PACK_A_BOWL_ROUTE
+  ) {
+    return page;
+  }
   const text = stripCigarettePhrases;
   return {
     ...page,
@@ -373,13 +380,15 @@ export default function ResourceView({ page: sourcePage }: { page: ResourcePage 
         <LinkPanel links={page.commercialLinks} />
         <CardGrid cards={displayCards} />
 
-        <div className={styles.storeCta}>
-          <p>
-            Use the current menu for product details and the store page for current visit information before
-            heading to Queen and Lansdowne.
-          </p>
-          <Link href={STORE_ROUTE}>Open the store page</Link>
-        </div>
+        {page.route === HOW_TO_PACK_A_BOWL_ROUTE ? null : (
+          <div className={styles.storeCta}>
+            <p>
+              Use the current menu for product details and the store page for current visit information before
+              heading to Queen and Lansdowne.
+            </p>
+            <Link href={STORE_ROUTE}>Open the store page</Link>
+          </div>
+        )}
       </article>
       <Footer />
     </main>
