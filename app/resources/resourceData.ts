@@ -1,3 +1,4 @@
+import { dryHerbVaporizerVsVapePenPage } from "./dryHerbVaporizerVsVapePen.ts";
 import { howToPackABowlPage } from "./howToPackABowl.ts";
 import { trichomesFrostExplainedPage } from "./trichomesFrostExplained.ts";
 
@@ -3344,12 +3345,14 @@ export const RESOURCE_ROUTE_LABELS: Record<string, string> = {
   ...PINKY_RESOURCE_LABELS,
   [trichomesFrostExplainedPage.route]: trichomesFrostExplainedPage.h1,
   [howToPackABowlPage.route]: howToPackABowlPage.h1,
+  [dryHerbVaporizerVsVapePenPage.route]: dryHerbVaporizerVsVapePenPage.h1,
 };
 export const RESOURCE_PAGES: ResourcePage[] = [
   ...BASE_RESOURCE_PAGES.map((page) => ({ ...page, ...(PINKY_RESOURCE_OVERRIDES[page.route] || {}) })),
   ...PINKY_RESOURCE_ADDITIONS,
   trichomesFrostExplainedPage,
   howToPackABowlPage,
+  dryHerbVaporizerVsVapePenPage,
 ];
 
 const resourceHome = RESOURCE_PAGES.find((page) => page.route === "/resources");
