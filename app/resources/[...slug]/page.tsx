@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ResourceView from "../ResourceView";
 import { getResourcePageBySlugParts, getResourceStaticParams, resourceCanonical } from "../resourceData";
+import { DRY_HERB_VAPORIZER_VS_VAPE_PEN_ROUTE } from "../dryHerbVaporizerVsVapePen.ts";
 import { HOW_TO_PACK_A_BOWL_ROUTE } from "../howToPackABowl.ts";
 import { TRICHOMES_FROST_EXPLAINED_ROUTE } from "../trichomesFrostExplained.ts";
 import { stripCigarettePhrases } from "../../lib/showCigarettes";
@@ -22,7 +23,9 @@ export async function generateMetadata({ params }: ResourceRouteProps): Promise<
     title: { absolute: stripCigarettePhrases(page.seoTitle) },
     description: stripCigarettePhrases(page.metaDescription),
     alternates: { canonical: resourceCanonical(page) },
-    ...(page.route === TRICHOMES_FROST_EXPLAINED_ROUTE || page.route === HOW_TO_PACK_A_BOWL_ROUTE
+    ...(page.route === TRICHOMES_FROST_EXPLAINED_ROUTE ||
+    page.route === HOW_TO_PACK_A_BOWL_ROUTE ||
+    page.route === DRY_HERB_VAPORIZER_VS_VAPE_PEN_ROUTE
       ? {
           robots: {
             index: true,

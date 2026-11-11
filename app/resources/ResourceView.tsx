@@ -16,6 +16,7 @@ import {
   type ResourcePage,
 } from "./resourceData";
 import { SHOW_CIGARETTES, isCigaretteHref, stripCigarettePhrases } from "../lib/showCigarettes";
+import { DRY_HERB_VAPORIZER_VS_VAPE_PEN_ROUTE } from "./dryHerbVaporizerVsVapePen.ts";
 import { HOW_TO_PACK_A_BOWL_ROUTE } from "./howToPackABowl.ts";
 import { TRICHOMES_FROST_EXPLAINED_ROUTE } from "./trichomesFrostExplained.ts";
 
@@ -138,6 +139,18 @@ function renderTable(block: string, index: number) {
       </table>
     </div>
   );
+}
+
+function separateAttachedLists(body: string) {
+  const lines = body.split("\n");
+  const out: string[] = [];
+  const isList = (line: string) => /^(?:- |\d+\. )/.test(line);
+  for (const line of lines) {
+    const prev = out.length ? out[out.length - 1] : "";
+    if (isList(line) && prev.trim() !== "" && !isList(prev)) out.push("");
+    out.push(line);
+  }
+  return out.join("\n");
 }
 
 function renderBody(body: string) {
@@ -307,7 +320,8 @@ function gateResourcePage(page: ResourcePage): ResourcePage {
   if (
     SHOW_CIGARETTES ||
     page.route === TRICHOMES_FROST_EXPLAINED_ROUTE ||
-    page.route === HOW_TO_PACK_A_BOWL_ROUTE
+    page.route === HOW_TO_PACK_A_BOWL_ROUTE ||
+    page.route === DRY_HERB_VAPORIZER_VS_VAPE_PEN_ROUTE
   ) {
     return page;
   }
@@ -375,12 +389,14 @@ export default function ResourceView({ page: sourcePage }: { page: ResourcePage 
           </div>
         </header>
 
-        <div className={styles.content}>{renderBody(page.body)}</div>
+        <div className={styles.content}>
+          {renderBody(page.route === DRY_HERB_VAPORIZER_VS_VAPE_PEN_ROUTE ? separateAttachedLists(page.body) : page.body)}
+        </div>
         <SecondTake page={page} />
         <LinkPanel links={page.commercialLinks} />
         <CardGrid cards={displayCards} />
 
-        {page.route === HOW_TO_PACK_A_BOWL_ROUTE ? null : (
+        {page.route === HOW_TO_PACK_A_BOWL_ROUTE || page.route === DRY_HERB_VAPORIZER_VS_VAPE_PEN_ROUTE ? null : (
           <div className={styles.storeCta}>
             <p>
               Use the current menu for product details and the store page for current visit information before
