@@ -17,14 +17,14 @@ import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 const PAGE_URL = `${STORE_ORIGIN}${WEED_LP_PATH}`;
 
 export const metadata: Metadata = {
-  title: { absolute: "Weed Dispensary Queen West | Queen Lansdowne Cannabis" },
+  title: { absolute: "Weed Dispensary near me | Queen West | Queen Lansdowne Cannabis" },
   description:
     "Weed dispensary at Queen Lansdowne Cannabis, 1472 Queen St W on Queen West at the Parkdale edge near Lansdowne. Walk-in retail. Adults 19+. Homepage holds name, address, phone, and hours.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "Weed Dispensary Queen West | Queen Lansdowne Cannabis",
+    title: "Weed Dispensary near me | Queen West | Queen Lansdowne Cannabis",
     description:
       "Neighbourhood weed dispensary page for 1472 Queen St W on Queen West, the Parkdale edge, and the Lansdowne corridor. Adults 19+.",
     url: PAGE_URL,

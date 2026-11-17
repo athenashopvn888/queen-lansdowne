@@ -27,4 +27,4 @@ export const HOME_DELIVERY_FAQS = [
 ] as const;
 
 // Document <title> only (exact Google name | area). H1 keeps HOME_TITLE.
-export const HOME_DOC_TITLE = "Queen Lansdowne Cannabis Dispensary Weed Delivery | Queen West / Parkdale";
+export const HOME_DOC_TITLE = "Queen Lansdowne Cannabis Dispensary near me | Weed Delivery | Queen West / Parkdale";

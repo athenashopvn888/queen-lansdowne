@@ -44,7 +44,7 @@ const VERTICAL_PAGES = [
     path: "app/weed-dispensary-queen-west/page.tsx",
     href: WEED_LP_PATH,
     h1: "Weed dispensary on Queen West at the Parkdale–Lansdowne edge",
-    title: "Weed Dispensary Queen West | Queen Lansdowne Cannabis",
+    title: "Weed Dispensary near me | Queen West | Queen Lansdowne Cannabis",
     faqs: WEED_LP_FAQS,
   },
 ] as const;
