@@ -17,7 +17,7 @@ import {
 const read = (path: string) => fs.readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
 
 const H1 = "Weed dispensary on Queen West at the Parkdale–Lansdowne edge";
-const TITLE = "Weed Dispensary Queen West | Queen Lansdowne Cannabis";
+const TITLE = "Weed Dispensary near me | Queen West | Queen Lansdowne Cannabis";
 
 test("Queen West weed dispensary LP is the corridor owner with unique H1, title, and FAQ schema", () => {
   const page = read("app/weed-dispensary-queen-west/page.tsx");
