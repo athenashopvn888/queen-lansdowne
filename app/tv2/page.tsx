@@ -336,7 +336,7 @@ export default function TV2Page() {
           <div className={styles.grid}>
             {CARD_CONFIG.map(card => {
               const isCig = card.id === "CIGARETTES";
-              const shelf = items.filter(card.filter).filter(it => !(daytime && isNicotineItem(it)));
+              const shelf = items.filter(card.filter).filter(it => card.id === "CIGARETTES" || !(daytime && isNicotineItem(it)));
               const filtered = isCig ? filterBoardItems(shelf, tvCig.show) : shelf.filter(it => tvCig.show || !isRealCigaretteItem(it));
               const title = isCig ? cigaretteCardTitle(tvCig.show, tvCig.wording) : card.title;
               const broken = sheetBroken[card.id] || {};
