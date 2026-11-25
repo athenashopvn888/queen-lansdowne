@@ -23,7 +23,7 @@ import {
 import Papa from "papaparse";
 import { useLiveFlowers } from "./lib/useLiveMenu";
 import { storeTierRange, tierRangeText } from "./lib/tierPriceRanges";
-import { SHOW_CIGARETTES } from "./lib/showCigarettes";
+import { useCigaretteState } from "./components/CigaretteStateProvider";
 import type { ResolvedBanner } from "./lib/fleet/types";
 
 /* ── Bento Mosaic Config ── */
@@ -143,6 +143,7 @@ interface ReviewStats {
 }
 
 export default function HomePage({ initialFlowers, contentBanners }: { initialFlowers: Parameters<typeof storeTierRange>[0]; contentBanners?: ResolvedBanner[] }) {
+  const showCigarettes = useCigaretteState().web;
     const __liveFlowers = useLiveFlowers();
   const [featuredStrains, setFeaturedStrains] = useState<any[]>([]);
   const [reviews, setReviews] = useState<Review[]>([]);
@@ -326,7 +327,7 @@ export default function HomePage({ initialFlowers, contentBanners }: { initialFl
             </p>
           </div>
           <div className={styles.hubGrid}>
-            {NEIGHBOURHOOD_HUB_CARDS.filter((card) => (!("onlyWhen24h" in card) || storeClaimsOpen24Hours()) && (SHOW_CIGARETTES || card.href !== "/native-cigarettes-queen-west")).map((card) => (
+            {NEIGHBOURHOOD_HUB_CARDS.filter((card) => (!("onlyWhen24h" in card) || storeClaimsOpen24Hours()) && (showCigarettes || card.href !== "/native-cigarettes-queen-west")).map((card) => (
               <Link key={card.href} href={card.href} className={styles.hubCard}>
                 <span className={styles.hubKicker}>{card.kicker}</span>
                 <strong className={styles.hubTitle}>{card.title}</strong>
@@ -348,7 +349,7 @@ export default function HomePage({ initialFlowers, contentBanners }: { initialFl
           </div>
 
           <div className={styles.categoriesGrid}>
-            {EXPLORE_CATEGORIES.filter((cat) => SHOW_CIGARETTES || cat.slug !== "items/cigarettes").map((cat) => (
+            {EXPLORE_CATEGORIES.filter((cat) => showCigarettes || cat.slug !== "items/cigarettes").map((cat) => (
               <Link
                 key={cat.slug}
                 href={`/${cat.slug}`}
@@ -388,7 +389,7 @@ export default function HomePage({ initialFlowers, contentBanners }: { initialFl
               <Link href="/weed-dispensary-queen-west" className={styles.storeLink}>Weed dispensary Queen West</Link>
               {" · "}
               <Link href="/cannabis-delivery-queen-west" className={styles.storeLink}>Cannabis delivery Queen West</Link>
-              {SHOW_CIGARETTES ? (
+              {showCigarettes ? (
                 <>
                   {" · "}
                   <Link href="/native-cigarettes-queen-west" className={styles.storeLink}>Native cigarettes Queen West</Link>
@@ -549,7 +550,7 @@ export default function HomePage({ initialFlowers, contentBanners }: { initialFl
             <Link href="/24-hour-queen-west-dispensary" className={styles.visitCta}>Open now · 24-hour Queen West</Link>
             <Link href="/weed-dispensary-queen-west" className={styles.visitCta}>Weed dispensary Queen West</Link>
             <Link href="/cannabis-delivery-queen-west" className={styles.visitCtaSecondary}>Cannabis delivery Queen West</Link>
-            {SHOW_CIGARETTES ? <Link href="/native-cigarettes-queen-west" className={styles.visitCtaSecondary}>Native cigarettes Queen West</Link> : null}
+            {showCigarettes ? <Link href="/native-cigarettes-queen-west" className={styles.visitCtaSecondary}>Native cigarettes Queen West</Link> : null}
             <Link href="/nicotine-vape-queen-west" className={styles.visitCtaSecondary}>Nicotine vape Queen West</Link>
             <a
               href={gbpLocation.directionsUrl}

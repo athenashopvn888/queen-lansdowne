@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { HOURS_LP_PATH, storeClaimsOpen24Hours } from "../lib/gbp-location";
-import { SHOW_CIGARETTES } from "../lib/showCigarettes";
+import { useCigaretteState } from "./CigaretteStateProvider";
 import styles from "./Navbar.module.css";
 import FlowerBogoStrip from "./FlowerBogoStrip";
 
@@ -33,9 +33,10 @@ const ALL_LINKS = [
 ];
 
 export default function Navbar() {
+  const showCigarettes = useCigaretteState().web;
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const visibleLinks = ALL_LINKS.filter((link) => SHOW_CIGARETTES || link.href !== "/items/cigarettes");
+  const visibleLinks = ALL_LINKS.filter((link) => showCigarettes || link.href !== "/items/cigarettes");
   const navLinks = visibleLinks.filter((link) => link.href !== HOURS_LP_PATH || storeClaimsOpen24Hours());
   const storeMenuLinks = visibleLinks.filter((link) => link.href.startsWith("/items/") || ["/exotic-weed", "/premium-weed", "/aaa-weed", "/aa-weed", "/budget-weed"].includes(link.href));
   const isStoreMenuActive = storeMenuLinks.some((link) => pathname === link.href);

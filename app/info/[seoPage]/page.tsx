@@ -1,4 +1,5 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { getCigaretteSnapshot, toPublicCigaretteState } from "../../lib/cigaretteFeed";
 import type { Metadata } from "next";
 import Image from "next/image";
 import fs from "fs";
@@ -24,6 +25,7 @@ export async function generateMetadata({
   params: Promise<{ seoPage: string }>;
 }): Promise<Metadata> {
   const { seoPage: slug } = await params;
+  if (slug.startsWith("native-cigarettes") && !toPublicCigaretteState(await getCigaretteSnapshot()).web) redirect("/items/vapes");
   const page = getSeoPageBySlug(slug);
   if (!page) return {};
   const title = stripCigarettePhrases(page.title);
@@ -45,6 +47,7 @@ export default async function SeoLandingPage({
   params: Promise<{ seoPage: string }>;
 }) {
   const { seoPage: slug } = await params;
+  if (slug.startsWith("native-cigarettes") && !toPublicCigaretteState(await getCigaretteSnapshot()).web) redirect("/items/vapes");
   const found = getSeoPageBySlug(slug);
   if (!found) notFound();
   const page = {

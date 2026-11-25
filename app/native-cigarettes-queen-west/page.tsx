@@ -1,5 +1,7 @@
 import CigaretteSeasonalNotice from "../components/CigaretteSeasonalNotice";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
+import { getCigaretteSnapshot, toPublicCigaretteState } from "../lib/cigaretteFeed";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -31,7 +33,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function NativeCigarettesQueenWestPage() {
+export const dynamic = "force-dynamic";
+
+export default async function NativeCigarettesQueenWestPage() {
+  if (!toPublicCigaretteState(await getCigaretteSnapshot()).web) redirect("/items/vapes");
   return (
     <>
       <JsonLd data={faqPageJsonLd(CIGARETTES_LP_FAQS, PAGE_URL)} />
