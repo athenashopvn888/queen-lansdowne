@@ -1,9 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import { storeClaimsOpen24Hours } from "../lib/gbp-location";
-import { SHOW_CIGARETTES } from "../lib/showCigarettes";
+import { useCigaretteState } from "./CigaretteStateProvider";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+  const showCigarettes = useCigaretteState().web;
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
@@ -51,8 +54,8 @@ export default function Footer() {
               <Link href="/aa-weed">AA Weed Flower</Link>
               <Link href="/budget-weed">Budget Weed Flower</Link>
               <Link href="/items/edibles">Edibles</Link>
-              {SHOW_CIGARETTES ? <Link href="/items/cigarettes">Cigarettes</Link> : null}
-              {SHOW_CIGARETTES ? <Link href="/native-cigarettes-queen-west">Native Cigarettes Queen West</Link> : null}
+              {showCigarettes ? <Link href="/items/cigarettes">Cigarettes</Link> : null}
+              {showCigarettes ? <Link href="/native-cigarettes-queen-west">Native Cigarettes Queen West</Link> : null}
               <Link href="/items/vapes">Nicotine Vape</Link>
               <Link href="/nicotine-vape-queen-west">Nicotine Vape Queen West</Link>
               <Link href="/resources">Resources</Link>
@@ -69,7 +72,7 @@ export default function Footer() {
               <Link href="/weed-delivery-toronto">Weed Delivery</Link>
               <Link href="/weed-dispensary-toronto">Toronto Dispensary</Link>
               <Link href="/info/cheap-weed-toronto">Cheap Weed Toronto</Link>
-              {SHOW_CIGARETTES ? <Link href="/info/native-cigarettes-toronto">Native Cigarettes</Link> : null}
+              {showCigarettes ? <Link href="/info/native-cigarettes-toronto">Native Cigarettes</Link> : null}
               <Link href="/info/nicotine-vapes-toronto">Nicotine Vapes Toronto</Link>
               <Link href="/weed-dispensary-toronto">Weed Store Near Toronto</Link>
               <Link href="/weed-dispensary-toronto">Queen Lansdowne Cannabis Weed Dispensary in Toronto</Link>

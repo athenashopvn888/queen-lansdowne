@@ -11,7 +11,8 @@ import { StoreMeshNav } from "../../components/StoreMeshNav";
 import SafeImage from "../../components/SafeImage";
 import { getItemPriceDisplay } from "../../lib/itemPricing";
 import { resolveDocumentTitle } from "../../lib/gbp-location";
-import { SHOW_CIGARETTES } from "../../lib/showCigarettes";
+import { getCigaretteSnapshot, toPublicCigaretteState } from "../../lib/cigaretteFeed";
+import { isKeptWrapOrPaper } from "../../lib/showCigarettes";
 import { getCategoryGuideGroups } from "../../lib/guideRegistry";
 import VapeActionPanel from "../../components/VapeActionPanel";
 import {
@@ -37,11 +38,12 @@ export async function generateMetadata({
   params: Promise<{ category: string }>;
 }): Promise<Metadata> {
   const { category: catSlug } = await params;
+  const showCigarettes = toPublicCigaretteState(await getCigaretteSnapshot()).web;
   const catInfo = getCategoryFromSlug(catSlug);
   if (!catInfo) return {};
   const { items: liveItems } = await fetchLiveProducts();
   const items = liveItems.filter((item) => item.category.toUpperCase() === catInfo.key.toUpperCase());
-  if (catSlug === "cigarettes" && !SHOW_CIGARETTES) {
+  if (catSlug === "cigarettes" && !showCigarettes) {
     return {
       title: resolveDocumentTitle("Queen Lansdowne Cannabis"),
       description: "Queen Lansdowne Cannabis at 1472 Queen St W. Adults 19+.",
@@ -71,12 +73,14 @@ export default async function ItemsCategoryPage({
   params: Promise<{ category: string }>;
 }) {
   const { category: catSlug } = await params;
+  const showCigarettes = toPublicCigaretteState(await getCigaretteSnapshot()).web;
   const catInfo = getCategoryFromSlug(catSlug);
   if (!catInfo) notFound();
 
   /* Pre-Rolls also shows accessories (ADD ONS) */
   const { items: liveItems } = await fetchLiveProducts();
   let items = liveItems.filter((item) => item.category.toUpperCase() === catInfo.key.toUpperCase());
+  if (catSlug === "cigarettes" && !showCigarettes) items = items.filter(isKeptWrapOrPaper);
   if (catInfo.key === "PREROLLS") {
     const accessories = liveItems.filter((item) => item.category.toUpperCase() === "ADD ONS");
     const existingIds = new Set(items.map(i => i.sku));
@@ -84,7 +88,7 @@ export default async function ItemsCategoryPage({
     items = [...items, ...uniqueAccessories];
   }
   const { config } = catInfo;
-  const hideCigaretteChrome = catSlug === "cigarettes" && !SHOW_CIGARETTES;
+  const hideCigaretteChrome = catSlug === "cigarettes" && !showCigarettes;
   const guideGroups = hideCigaretteChrome ? [] : getCategoryGuideGroups(`/items/${catSlug}`);
 
   // Check if banner file exists in the public folder
@@ -95,7 +99,7 @@ export default async function ItemsCategoryPage({
   return (
     <main className={styles.main}>
       <Navbar />
-      {catSlug === "cigarettes" && SHOW_CIGARETTES && <CigaretteSeasonalNotice sticky />}
+      {catSlug === "cigarettes" && showCigarettes && <CigaretteSeasonalNotice sticky />}
 
       {/* Hero Banner */}
       <section style={{ width: "100%", overflow: "hidden", marginTop: "92px", marginBottom: "24px" }}>
@@ -125,7 +129,7 @@ export default async function ItemsCategoryPage({
       </section>
 
       {(catSlug === "vapes" || catSlug === "vape-disposables") && <CategoryCoreBanners kind="vapes" />}
-      {catSlug === "cigarettes" && SHOW_CIGARETTES && <CategoryCoreBanners kind="cigarettes" />}
+      {catSlug === "cigarettes" && showCigarettes && <CategoryCoreBanners kind="cigarettes" />}
 
       {(catSlug === "vapes" || catSlug === "vape-disposables") && <VapeActionPanel compact />}
 
@@ -184,7 +188,7 @@ export default async function ItemsCategoryPage({
             <p className={styles.visitText}>
               1472 Queen St W, Toronto, ON M6K 1M4 · Open 24 Hours Daily
             </p>
-            {catSlug === "cigarettes" && SHOW_CIGARETTES && (
+            {catSlug === "cigarettes" && showCigarettes && (
               <p className={styles.visitText}>
                 Neighbourhood guide: <Link href="/native-cigarettes-queen-west">Native cigarettes Queen West</Link>
               </p>
